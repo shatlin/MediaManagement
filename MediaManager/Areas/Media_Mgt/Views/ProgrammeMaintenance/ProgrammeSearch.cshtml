@@ -1,0 +1,461 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.ProgrammeMaintenanceViewModel
+@{
+    ViewBag.Title = "Programme Search";
+    Layout = MediaManager.Infrastructure.Helpers.SharedPages.LayoutPage;
+}
+<form action="#" method="post">
+<div class="mainHeading">
+    Programme Search
+</div>
+<div class="PlaceHolder">
+    <table width="100%" cellpadding="0" cellspacing="0" style="vertical-align: top;">
+        <tr>
+            <td>
+                <div>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="55%">
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <table width="100%" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="25%">
+                                                       <label class="label">Programme Title</label>  
+                                                    </td>
+                                                    <td width="75%" colspan="3">
+                                                        @Html.TextBoxFor(m => m.ProgrammeTitle, new { @class = "inputText3col" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                       <label class="label">Working Title</label> 
+                                                    </td>
+                                                    <td colspan="3">
+                                                        @Html.TextBoxFor(m => m.WorkingTitle, new { @class = "inputText3col" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="25%">
+                                                        <label class="label">Production House</label>
+                                                    </td>
+                                                    <td width="25%">
+                                                        <div class="select" >
+                                                            <select id="ProductionHouse" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.ProductionHouseLOVList != null)
+                                                                    {
+                                                                    <option value="Select" >--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.ProductionHouseLOVList)
+                                                                        {
+
+
+                                                                            string val = @dropddownval.StudioCode + new String('#', (10 - @dropddownval.StudioCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.StudioDescription;
+                                                                    <option value="@dropddownval.StudioCode ">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td width="25%">
+                                                        <label class="label">Primary Genre</label>
+                                                    </td>
+                                                    <td width="25%" align="right">
+                                                        <div class="select">
+                                                            <select id="PrimaryGenre" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.PrimaryGenreLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.PrimaryGenreLOVList)
+                                                                        {
+
+                                                                     string val = @dropddownval.ProgrammeCategoryValue + new String('#', (10 - @dropddownval.ProgrammeCategoryValue.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.ProgrammeCategoryDescription;
+                                                                    <option value="@dropddownval.ProgrammeCategoryValue ">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                       <label class="label"> Domestic Age Restriction</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="select">
+                                                            <select id="DomesticAgeRestriction" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.AgeRestricationLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.AgeRestricationLOVList)
+                                                                        {
+                                                                            string val = @dropddownval.GenRattingMPAACode + new String('#', (10 - @dropddownval.GenRattingMPAACode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GenRattingMPAADesc;
+                                                                          <option value="@dropddownval.GenRattingMPAACode">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                       <label class="label"> MediaManager Age Restriction</label>
+                                                    </td>
+                                                    <td align="right">
+                                                        <div class="select">
+                                                            <select id="MediaManagerAgeRestriction" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.AgeRestricationLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var Age in Model.AgeRestricationLOVList)
+                                                                        {
+
+                                                                            string val = @Age.GenRattingMPAACode + new String('#', (10 - @Age.GenRattingMPAACode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @Age.GenRattingMPAADesc;
+                                                                            <option value="@Age.GenRattingMPAACode">@val</option>
+                                                                        }
+                                                                    }
+                                                                }s
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                       <label class="label"> Production Year</label>
+                                                    </td>
+                                                    <td>
+                                                        @Html.TextBoxFor(m => m.ProductionYear, new { @class = "inputTextSamll", @value = "" })
+                                                    </td>
+                                                    <td>
+                                                      <label class="label">Quality/Grade</label> 
+                                                    </td>
+                                                    <td align="right">
+                                                        <div class="select">
+                                                            <select id="QualityGrade" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.QualityLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.QualityLOVList)
+                                                                        {
+                                                                            string val = @dropddownval.GenQualityCode + new String('#', (10 - @dropddownval.GenQualityCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GenQualityDesc;
+                                                                            <option value="@dropddownval.GenQualityCode">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                      <label class="label"> Nationality</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="select">
+                                                            <select id="Nationality" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.NationalityLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.NationalityLOVList)
+                                                                        {
+
+                                                                            string val = @dropddownval.GenNationalityCode + new String('#', (10 - @dropddownval.GenNationalityCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GenNationalityDesc;
+                                                                            <option value="@dropddownval.GenNationalityCode ">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                       <label class="label"> Type</label>
+                                                    </td>
+                                                    <td align="right">
+                                                        <div class="select">
+                                                            <select id="Type" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.TypeLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.TypeLOVList)
+                                                                        {
+
+                                                                            string val = @dropddownval.ProgrammeTypeValue + new String('#', (10 - @dropddownval.ProgrammeTypeValue.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.ProgrammeTypeDescription;
+                                                                          <option value="@dropddownval.ProgrammeTypeValue ">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                      <label class="label"> Colour Code</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="select">
+                                                            <select id="ColourCode" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.ColorLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.ColorLOVList)
+                                                                        {
+
+                                                                            string val = @dropddownval.GetColorCode + new String('#', (10 - @dropddownval.GetColorCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GetColorDesc;
+                                                                            <option value="@dropddownval.GetColorCode ">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <label class="label">Spoken Language</label>
+                                                    </td>
+                                                    <td align="right">
+                                                        <div class="select">
+                                                            <select id="SpokenLanguage" style="font-family:Courier New !important">
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.SpokenLangLOVList != null)
+                                                                    {
+                                                                    <option value="Select">--Select Option--</option>
+                                                                        foreach (var dropddownval in Model.SpokenLangLOVList)
+                                                                        {
+
+                                                                            string val = @dropddownval.LanguageID + new String('#', (10 - @dropddownval.LanguageID.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.LanguageName;
+                                                                            <option value="@dropddownval.LanguageID ">@val</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="1%">
+                            </td>
+                            <td width="40%" valign="top">
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="30%">
+                                          <label class="label"> Distributor</label>
+                                        </td>
+                                        <td width="20%">
+                                            <div class="select" >
+                                                @Html.DropDownListFor(m => m.Distributor ,
+                                                                       new SelectList(Model.DistributorsLOVList, "ComShortName", "ComName"), "--Select Option--", new { style = "font-family:Courier New !important" })
+                                            </div>
+                                        </td>
+                                        <td width="25%">
+                                            @Html.CheckBoxFor(m => m.CatComplete)
+                                           <span style="font-family:Tahoma; font-size:11px;"> Cat Complete</span>
+                                        </td>
+                                        <td width="25%">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                          <label class="label">Target Group</label>
+                                        </td>
+                                        <td>
+                                            <div class="select">
+                                                <select id="TargetGroup" style="font-family:Courier New !important">
+                                                    @if (Model != null)
+                                                    {
+                                                        if (Model.TargetGroupLOVList != null)
+                                                        {
+                                                        <option value="Select">--Select Option--</option>
+                                                            foreach (var dropddownval in Model.TargetGroupLOVList)
+                                                            {
+
+                                                                string val = @dropddownval.GenTargetGroupCode + new String('#', (10 - @dropddownval.GenTargetGroupCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GenTargetGroupDesc;
+                                                                            <option value="@dropddownval.GenTargetGroupCode">@val</option>
+                                                        
+                                                      
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.Archive)
+                                           <span style="font-family:Tahoma; font-size:11px;"> Archive</span>
+                                            @*   <input type="checkbox" id="Archive" value="true"  name="Archive" />  *@
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <label class="label">Secondary Genre</label>
+                                        </td>
+                                        <td>
+                                            <div class="select">
+                                                <select id="SecondaryGenre" style="font-family:Courier New !important">
+                                                    @if (Model != null)
+                                                    {
+                                                        if (Model.SecondaryGenreLOVList != null)
+                                                        {
+                                                        <option value="Select">--Select Option--</option>
+                                                            foreach (var dropddownval in Model.SecondaryGenreLOVList)
+                                                            {
+
+                                                                string val = @dropddownval.SubGenreCodeValue + new String('#', (10 - @dropddownval.SubGenreCodeValue.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.SubGenreCodeDescription;
+                                                                            <option value="@dropddownval.SubGenreCodeValue">@val</option>
+                                                                                                               
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.TXDigitized)
+                                          <span style="font-family:Tahoma; font-size:11px;">  TX-Digitized</span>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="label">Tertiary Genre</label>
+                                        </td>
+                                        <td>
+                                            <div class="select">
+                                                <select id="TertiaryGenre" style="font-family:Courier New !important">
+                                                    @if (Model != null)
+                                                    {
+                                                        if (Model.TertiaryGenreLOVList != null)
+                                                        {
+                                                        <option value="Select">--Select Option--</option>
+                                                            foreach (var dropddownval in Model.TertiaryGenreLOVList)
+                                                            {
+
+                                                                string val = @dropddownval.TertiaryGenreCode + new String('#', (10 - @dropddownval.TertiaryGenreCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.TertiaryGenreDescription;
+                                                                            <option value="@dropddownval.TertiaryGenreCode">@val</option>
+                                                        
+                                                        
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.NPACopy)
+                                           <span style="font-family:Tahoma; font-size:11px;"> NPA Copy</span>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <label class="label">Episodes</label>
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.Episodes, new { @class = "inputTextSamll" })
+                                        </td>
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.WideScreen)
+                                           <span style="font-family:Tahoma; font-size:11px;"> WideScreen </span>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                          <label class="label"> Ref No</label>
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.RefNo, new { @class = "inputTextSamll" })
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="4%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="right">
+                <input type="button" class="inputButton" value="Search Programme" onclick="Search_click()" />
+                <input type="button" class="inputButton" value="Reset" onclick="Reset_click()" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="PlaceHolder">
+    <table class="tableLayout" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <div id="teamGrid" class="GridContainer" style="height: 402px;">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <input type="button" class="inputButton" id="btnAddNewProgramme" value="Add new Programme"  onclick="btnAddNewProgramme_click()"/>
+                <input type="button" class="inputButtonDisable" id="btnProgrammeDetail" value="View Programme Details"
+                    onclick="btnProgrammeDetail_click()" />
+                <input type="button" class="inputButtonDisable" id="btnLicenseDetails" value="View License Details" />
+                 <a id="viewdetailsLink" href="~/Media_Mgt/ProgrammeMaintenance/ProgrammeMaintenance"></a>
+            </td>
+        </tr>
+            <tr>
+            <td align="right">
+               &nbsp;
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="overlay" class="web_dialog_overlay">
+</div>
+<div id="dialog" class="web_dialog">
+    <table>
+        <tr>
+            <td>
+                @Html.Partial("PartialLicenseReview")
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+</div>
+</form>
+<script type="text/javascript">
+    var ProgrammesearchactionUrl = '@Url.Action("GetProgramme", "ProgrammeMaintenance", new { area = "Media_Mgt" })';
+</script>
+<script src="~/Content/Scripts/Media_Mgt/ProgrammeMaintenance/ProgrammeSearch.js"
+    type="text/javascript"></script>
+

@@ -1,0 +1,658 @@
+﻿<form>
+<table cellpadding="0" cellspacing="0" class="Layout">
+    <tr>
+        <td colspan="2" class="web_dialog_title">
+           &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="font-size: 15px; font-family: Verdana,arial,sans-serif; font-weight: bolder;
+                color: #000; padding: 2px 10px;">
+               Programme Library License Review
+                 <div style="float: right; color: black">
+                    <a href="#" id="btnClose" class="web_dialog_title_a">X</a></div>
+            </div>
+            <div class="PlaceHolder_popup" style="padding-top: 3px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="margin-left: 15px">
+                    <tr>
+                        <td width="15%">
+                            Lic#
+                            <input type="text" id="txtLicNo" class="inputTextCol" readonly="readonly" />
+                        </td>
+                        <td width="10%">
+                            <input type="text" id="txtTitle" class="inputTextLarge" readonly="readonly" />
+                        </td>
+                        <td width="20%">
+                            <input type="text" id="txtProgRefNo" class="inputTextLarge" readonly="readonly" />
+                        </td>
+                        <td width="5%">
+                            Status
+                        </td>
+                        <td width="15%">
+                            <input type="text" id="txtLicenseStatus" class="inputText1Col" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Working Title
+                        </td>
+                        <td>
+                            <input type="text" id="txtWorkingTitle" class="inputTextLarge" readonly="readonly" />
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td valign="middle">
+                                        <input type="checkbox" id="chkExclusive" value="Exclusive"></>
+                                    </td>
+                                    <td>
+                                        <label class="label" style="width: 50px;">
+                                            Exclusive</label>
+                                    </td>
+                                    <td width="85px">
+                                        &nbsp;
+                                    </td>
+                                    <td valign="middle" align="right">
+                                        <input type="checkbox" id="chkPremier" value="Premier"></>
+                                    </td>
+                                    <td align="left">
+                                        <label class="label" style="width: 50px;">
+                                            Premier</label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            Licensee
+                        </td>
+                        <td>
+                            <input type="text" id="txtLicencee" class="inputText1Col" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Contract
+                        </td>
+                        <td>
+                            <input type="text" id="txtContract" class="inputTextLarge" readonly="readonly" />
+                        </td>
+                        <td>
+                            <input type="text" id="txtContractNo" class="inputTextLarge" readonly="readonly" />
+                        </td>
+                        <td>
+                            Channel
+                        </td>
+                        <td>
+                            <input type="text" id="txtChannel" class="inputText1Col" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <div class="PlaceHolder_popup">
+                <table cellpadding="2" cellspacing="2" style="margin-left: 10px">
+                    <tr>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td width="5%">
+                                        Start
+                                    </td>
+                                    <td width="15%">
+                                        <input type="text" id="txtStartLicPer" class="inputText1Col" readonly="readonly" />
+                                    </td>
+                                    <td width="5%">
+                                        Amort
+                                    </td>
+                                    <td width="15%">
+                                        <input type="text" class="inputTextCol" id="txtLicPerAmort" readonly="readonly" />
+                                    </td>
+                                    <td width="5%">
+                                        Play
+                                    </td>
+                                    <td width="15%">
+                                        <input type="text" id="txtPlay" class="inputTextCol" readonly="readonly" />&nbsp;&nbsp;&nbsp;Status
+                                    </td>
+                                    <td width="0%">
+                                    </td>
+                                    <td width="25%">
+                                        <input type="text" id="txtStatus" class="inputTextLarge" readonly="readonly" />
+                                    </td>
+                                    <td width="5%">
+                                        First
+                                    </td>
+                                    <td width="15%">
+                                        <input type="text" id="txtFirstShow" class="inputTextCol" readonly="readonly" />
+                                    </td>
+                                    <td width="5%">
+                                        Paid
+                                    </td>
+                                    <td width="15%">
+                                        <input type="text" id="txtPaidRuns" class="inputTextCol" readonly="readonly" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        End
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txtEndLicPer" class="inputText1Col" readonly="readonly" />
+                                    </td>
+                                    <td>
+                                        Lic
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txtTotLicRuns" class="inputTextCol" readonly="readonly" />
+                                    </td>
+                                    <td>
+                                        Registration
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txtReg" class="inputText1Col" readonly="readonly" />
+                                    </td>
+                                    <td colspan="2" style="padding-left: 2px;">
+                                        <input type="text" id="txtLicName" class="inputTextLarge" readonly="readonly" />
+                                    </td>
+                                    <td>
+                                        Last
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txtLastShow" class="inputTextCol" readonly="readonly" />
+                                    </td>
+                                    <td>
+                                        Free
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txtFreeRuns" class="inputTextCol" readonly="readonly" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12">
+                                        <table width="100%" id="LeftGrids" style="padding: 0px;">
+                                            <tr>
+                                                <td valign="top" width="45%" align="right" class="LayoutBorder">
+                                                    <table width="100%" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="subHeading">
+                                                                    Line Up Info
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div id="gridLineUpInfo" style="width: 525px; height: 105px;">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                &nbsp
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div id="gridInfo" style="width: 525px; height: 100px;">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td valign="top" width="5%">
+                                                    <td valign="top" width="50%" align="right" class="LayoutBorder">
+                                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="subHeading">
+                                                                        Schedule Info
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div id="gridScheduleInfo" style="width: 600px; height: 245px;">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="height: 0px;">
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<div class="Margin">
+    <table class="maxwidth">
+        <tr>
+            <td width="85%" align="right">
+            </td>
+            <td width="15%" align="center">
+                <input id="previousbtn" type="button" value="Prev" class="inputButton" onclick="previous_click()" />
+                <input id="nextbtn" type="button" value="Next" class="inputButton" onclick="next_click()" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+</div>
+</form>
+<script language="javascript" type="text/javascript">
+
+    var gridFirst;
+    var gridSecond;
+    var gridThree;
+    var myData = [];
+    var currentrecord = 0;
+    var recordcount = 0;
+    //    alert("doc height" + $(document).height()+ "Dialog height" + $('#dialog').height() + "docwidth" + $(document).width()+ "Dialog width" +$('#dialog').width());
+
+    //    var dialogtop=($(document).height()/2)-($('#dialog').height());
+    //    var dialogleft= ($(document).width()/2)-($('#dialog').width());
+    //    //console.clear();
+    ////console.log("_top"+ dialogtop);
+    ////console.log("_left"+ dialogleft);
+    ////    
+    ////    $('#dialog').css({ "margin-left": dialogtop + "px", "margin-top": dialogleft + "px"});
+
+    //    $('#dialog').css('top', dialogtop);
+    //    $('#dialog').css('left', dialogleft);
+
+
+    var gridoptions;
+    var columnsLineUp = [
+                    { id: "LineupPerMonth", name: "No", field: "LineupPerMonth" },
+                    { id: "LineupPerYear", name: "Yr", field: "LineupPerYear" },
+                    { id: "LinupStatus", name: "Stat", field: "LinupStatus" },
+                    { id: "ChannelShortName", name: "Channel", field: "ChannelShortName" },
+                    { id: "SchStartDate", name: "Sch Start Date", field: "SchStartDate" },
+                    { id: "SchEndDate", name: "Sch End Date", field: "SchEndDate" }
+
+
+                ];
+
+    var columnsSchInfo = [
+                    { id: "SchedulePerMonth", name: "Mo", field: "SchedulePerMonth" },
+                    { id: "SchedulePerYear", name: "Yr", field: "SchedulePerYear" },
+                    { id: "ScheduleDate", name: "Date", field: "ScheduleDate" },
+                     { id: "ScheduleTime", name: "Time", field: "ScheduleTime" },
+                    { id: "ScheduleType", name: "PD", field: "ScheduleType" },
+                    { id: "SchChannelName", name: "Channel", field: "SchChannelName" },
+                    { id: "SchStartDate", name: "Sch Start Date", field: "SchStartDate" },
+                    { id: "SchEndDate", name: "Sch End Date", field: "SchEndDate" }
+                    ];
+
+    var columnsSummary = [
+                    { id: "ChannelShortName", name: "Channel", field: "ChannelShortName" },
+                    { id: "ScheduleType", name: "Id", field: "ScheduleType" },
+                    { id: "ScheduleTotal", name: "#Scheduled", field: "ScheduleTotal" }
+
+                ];
+
+
+    gridoptions = {
+        enableCellNavigation: true,
+        enableColumnReorder: false,
+        forceFitColumns: true
+    }
+
+    var GetData = '@Url.Action("GetData", "ViewLicense", new { area = "Acquisition" })';
+
+    //    $('#nextbtn').prop("disabled", false);
+    //    $('#previousbtn').prop("disabled", true);
+    $('#chkExclusive').prop("disabled", true);
+    $('#chkPremier').prop("disabled", true);
+
+
+    function GetLicenseDetail() {
+
+        var refNo = GenRefno;
+        var item;
+
+        if (refNo != null) {
+
+            $.ajax({
+
+
+                url: GetData + '?RefNo=' + refNo,
+                async: false,
+                cache: false,
+                type: "POST",
+                dataType: 'Json',
+                data: {},
+
+                success: function (data) {
+
+                    myData = data.First;
+                    //alert(JSON.stringify(myData));
+                    recordcount = myData.length;
+                    if (recordcount == "0") {
+
+
+                        DisableToggleButton('#nextbtn', true);
+                        DisableToggleButton('#previousbtn', true);
+                        EmptyGrid();
+                        ClearText();
+
+                    }
+                    else {
+                        currentrecord = 0;
+                        manageprevnext();
+                        //                        DisableToggleButton('#nextbtn', false);
+                        //                        DisableToggleButton('#previousbtn', true); 
+                        item = myData[currentrecord];
+                        BindData(item);
+                    }
+
+
+
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+        else {
+            $('#nextbtn').prop("disabled", false);
+            $('#previousbtn').prop("disabled", false);
+
+            EmptyGrid();
+            ClearText();
+        }
+    };     //end of jax call
+
+
+
+    function firstgrid(myDataFirst) {
+
+        var gridwidth = $('#gridLineUpInfo').width();
+        $('#gridLineUpInfo').css({ "width": gridwidth + "px" });
+        gridFirst = new Slick.Grid("#gridLineUpInfo", myDataFirst, columnsLineUp, gridoptions);
+
+        setPopupFooter("#gridLineUpInfo", myDataFirst.length);
+
+
+    };
+
+    function secondgrid(myDataSecond) {
+
+        var gridwidth = $('#gridScheduleInfo').width();
+        var gridheight = $('#LeftGrids').offsetHeight;
+
+        $('#gridScheduleInfo').css({ "width": gridwidth + "px", "height": gridheight + "px" });
+        gridSecond = new Slick.Grid("#gridScheduleInfo", myDataSecond, columnsSchInfo, gridoptions);
+
+        setPopupFooter('#gridScheduleInfo', myDataSecond.length);
+    };
+
+    function thirdgrid(myDataThird) {
+
+        var gridwidth = $('#gridInfo').width();
+
+        gridThree = new Slick.Grid("#gridInfo", myDataThird, columnsSummary, gridoptions);
+        setPopupFooter('#gridInfo', myDataThird.length);
+
+    };
+
+    function EmptyGrid() {
+        FirstEmptyGrid();
+        SecondEmptyGrid();
+        ThirdEmptyGrid();
+    };
+
+
+    function FirstEmptyGrid() {
+        var emptyrowLineUp = [];
+
+        emptyrowLineUp[0] = { LineupPerMonth: "",
+            LineupPerYear: "",
+            LinupStatus: "",
+            ChannelShortName: "",
+            SchStartDate: "",
+            SchEndDate: ""
+        };
+
+        firstgrid(emptyrowLineUp);
+        setPopupFooter("#gridLineUpInfo", 0);
+    }
+
+    function SecondEmptyGrid() {
+        var emptyrowScheduleInfo = [];
+        emptyrowScheduleInfo[0] =
+        {
+            SchedulePerMonth: "",
+            SchedulePerYear: "",
+            ScheduleDate: "",
+            ScheduleTime: "",
+            ScheduleType: "",
+            SchChannelName: "",
+            SchStartDate: "",
+            SchEndDate: ""
+        };
+
+        secondgrid(emptyrowScheduleInfo);
+        setPopupFooter('#gridScheduleInfo', 0);
+    }
+
+    function ThirdEmptyGrid() {
+        var emptyrowInfo = [];
+
+        emptyrowInfo[0] =
+        {
+            ChannelShortName: "",
+            ScheduleType: "",
+            ScheduleTotal: ""
+        };
+
+        thirdgrid(emptyrowInfo);
+        setPopupFooter('#gridInfo', 0);
+    }
+
+
+
+    function BindData(item) {
+        try {
+            if (item.LinupSchVOList != null && item.LinupSchVOList.length != 0)
+
+                firstgrid(item.LinupSchVOList);
+            else
+                FirstEmptyGrid();
+
+            if (item.SchProgramScheduleVOLIst != null && item.SchProgramScheduleVOLIst.length != 0)
+                secondgrid(item.SchProgramScheduleVOLIst);
+            else
+                SecondEmptyGrid();
+
+            if (item.SchSummaryVOLIst != null && item.SchSummaryVOLIst.length != 0)
+                thirdgrid(item.SchSummaryVOLIst);
+            else
+                ThirdEmptyGrid();
+        }
+        catch (ex) {
+            alert(ex.Message + " " + ex.Description);
+        }
+
+        $("#txtLicNo").val(item.LicNumber.toString());
+        $("#txtTitle").val(item.ProgramTitle);
+        $("#txtProgRefNo").val(item.ProgramrefNo.toString());
+        $("#txtLicenseStatus").val(item.LicStatus);
+        $("#txtWorkingTitle").val(item.ProgramWorkingTitle);
+
+
+
+        $("#chkExclusive").checked = false;
+        $("#chkPremier").checked = false;
+
+        if (item.LicExclusive != null) {
+            if (item.LicExclusive == "Y")
+                $("#chkExclusive").checked = true;
+            else
+                $("#chkExclusive").checked = false;
+        }
+
+        if (item.PremierFlag != null) {
+            if (item.PremierFlag == "Y")
+                $("#chkPremier").checked = true;
+            else
+                $("#chkPremier").checked = false;
+        }
+        else
+            $("#chkPremier").checked = false;
+
+        $("#txtLicencee").val(item.LicenseeShortName);
+        $("#txtContract").val(item.ContractName);
+        $("#txtContractNo").val(item.ContractShortName.toString());
+        $("#txtChannel").val(item.ChannelServiceName);
+        $("#txtStartLicPer").val(item.LicStart);
+        $("#txtLicPerAmort").val(item.LicShowingLic);
+        $("#txtPlay").val(item.LicPlayStatus);
+        $("#txtStatus").val(item.StatusDescription);
+
+        var ShowFirst;
+        if (item.LicShowingFirst != null) {
+            ShowFirst = parseDate(item.LicShowingFirst);
+        }
+
+        $("#txtFirstShow").val(ShowFirst);
+        $("#txtPaidRuns").val(item.LicShowingPaid.toString());
+        $("#txtEndLicPer").val(item.LicEnd);
+        $("#txtTotLicRuns").val(item.LicShowingInt.toString());
+
+        var Reg;
+        if (item.RegistrationDate != null) {
+            Reg = parseDate(item.RegistrationDate);
+        }
+
+        $("#txtReg").val(Reg);
+        $("#txtLicName").val(item.RegistrationDetails);
+
+        var LastShow;
+        if (item.LicShowingLast != null) {
+            LastShow = parseDate(item.LicShowingLast);
+        }
+
+        $("#txtLastShow").val(LastShow);
+        $("#txtFreeRuns").val(item.LicShowingFree.toString());
+    }
+
+    function ClearText() {
+
+        $("#txtLicNo").val("");
+        $("#txtTitle").val("");
+        $("#txtProgRefNo").val("");
+        $("#txtLicenseStatus").val("");
+        $("#txtWorkingTitle").val("");
+        $("#chkExclusive").checked = false;
+        $("#chkPremier").checked = false;
+        $("#txtLicencee").val("");
+        $("#txtContract").val("");
+        $("#txtContractNo").val("");
+        $("#txtChannel").val("");
+        $("#txtStartLicPer").val("");
+        $("#txtLicPerAmort").val("");
+        $("#txtPlay").val("");
+        $("#txtStatus").val("");
+        $("#txtFirstShow").val("");
+        $("#txtPaidRuns").val("");
+        $("#txtEndLicPer").val("");
+        $("#txtTotLicRuns").val("");
+        $("#txtReg").val("");
+        $("#txtLicName").val("");
+        $("#txtLastShow").val("");
+        $("#txtFreeRuns").val("");
+    }
+
+
+    function previous_click() {
+
+        if (currentrecord > 0) {
+            currentrecord = currentrecord - 1;
+            manageprevnext();
+            var item1 = myData[currentrecord];
+            BindData(item1);
+        }
+    }
+
+    function next_click() {
+
+        if (currentrecord < (recordcount - 1)) {
+            currentrecord = currentrecord + 1;
+            manageprevnext();
+            var item2 = myData[currentrecord];
+            try {
+                BindData(item2);
+
+            } catch (ex) {
+                alert(ex.Message + " " + ex.Description);
+            }
+
+        }
+    }
+
+    function manageprevnext() {
+
+        if (currentrecord >= (recordcount - 1)) {
+            DisableToggleButton('#nextbtn', true);
+            //$('#nextbtn').prop("disabled", true);
+        }
+        else {
+            DisableToggleButton('#nextbtn', false);
+            //$('#nextbtn').prop("disabled", false);
+        }
+
+        if (currentrecord <= 0) {
+            DisableToggleButton('#previousbtn', true);
+            //$('#previousbtn').prop("disabled", true);
+        }
+        else {
+            DisableToggleButton('#previousbtn', false);
+            //$('#previousbtn').prop("disabled", false);
+        }
+    }
+
+    function parseDate(value) {
+        var d = new Date(parseInt(value.substr(6), 10));
+        var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return (d.getDate() + "-" + month[d.getMonth()] + "-" + d.getFullYear());
+    }
+      
+</script>

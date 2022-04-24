@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SchedulingOperationsServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Scheduling.SuperSport" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.SuperSport" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.Common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISchedulingOperations_GetChannels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannels" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_GetChannels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_GetChannels_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_SaveProgrammeCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProgrammeCollection" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_SaveProgrammeCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProgrammeCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_SaveProgrammeCollection_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_GetChannelsDayByDayRpt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelsDayByDayRpt" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_GetChannelsDayByDayRpt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelsDayByDayRptResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchedulingOperations_GetChannelsDayByDayRpt_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="ISchedulingOperations">
+    <wsdl:operation name="GetChannels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISchedulingOperations/GetChannels" message="tns:ISchedulingOperations_GetChannels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISchedulingOperations/GetChannelsResponse" message="tns:ISchedulingOperations_GetChannels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISchedulingOperations/GetChannelsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISchedulingOperations_GetChannels_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgrammeCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISchedulingOperations/SaveProgrammeCollection" message="tns:ISchedulingOperations_SaveProgrammeCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISchedulingOperations/SaveProgrammeCollectionResponse" message="tns:ISchedulingOperations_SaveProgrammeCollection_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISchedulingOperations/SaveProgrammeCollectionMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISchedulingOperations_SaveProgrammeCollection_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelsDayByDayRpt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISchedulingOperations/GetChannelsDayByDayRpt" message="tns:ISchedulingOperations_GetChannelsDayByDayRpt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISchedulingOperations/GetChannelsDayByDayRptResponse" message="tns:ISchedulingOperations_GetChannelsDayByDayRpt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISchedulingOperations/GetChannelsDayByDayRptMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISchedulingOperations_GetChannelsDayByDayRpt_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:ISchedulingOperations">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetChannels">
+      <soap:operation soapAction="http://tempuri.org/ISchedulingOperations/GetChannels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgrammeCollection">
+      <soap:operation soapAction="http://tempuri.org/ISchedulingOperations/SaveProgrammeCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelsDayByDayRpt">
+      <soap:operation soapAction="http://tempuri.org/ISchedulingOperations/GetChannelsDayByDayRpt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:ISchedulingOperations">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetChannels">
+      <soap12:operation soapAction="http://tempuri.org/ISchedulingOperations/GetChannels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgrammeCollection">
+      <soap12:operation soapAction="http://tempuri.org/ISchedulingOperations/SaveProgrammeCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelsDayByDayRpt">
+      <soap12:operation soapAction="http://tempuri.org/ISchedulingOperations/GetChannelsDayByDayRpt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SchedulingOperationsServices">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

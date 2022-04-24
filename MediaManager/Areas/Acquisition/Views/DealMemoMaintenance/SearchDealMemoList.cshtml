@@ -1,0 +1,45 @@
+﻿<h1>This is partial view</h1>
+@*<script src="../../../../Scripts/SlickGridTest.js" type="text/javascript"></script>*@
+
+<script type="text/javascript">
+    var grid;
+    var columns = [
+    { id: "dmNo", name: "DMNo", field: "DMNumber" },
+    { id: "contract", name: "Contract", field: "ContractNo" },
+    { id: "licensor", name: "Licensor", field: "LicenseNo" },
+    { id: "ContractEntity", name: "Contract Entity", field: "ContractEntity" },
+    {id: "MainLicensee", name: "MainLicensee" , field: "MainLicensee" },
+    { id: "Method", name: "AmortMethod", field: "AmortMethod" },
+    {id: "date", name: "Date", field: "MemoDate" },
+    { id: "type", name: "Type", field: "Type" },
+    { id: "currency", name: "Currency", field: "Currency" },
+    { id: "status", name: "Status", field: "Status" },
+    { id: "SignQARequired", name: "SignQARequired", field: "SignQARequired" }
+  ];
+
+    var options = {
+        enableCellNavigation: true,
+        enableColumnReorder: false
+    };
+
+    $(function () {
+        var myData = [];
+        //    $.getJSON('/Home/ArsenalX11', function (data) {
+        $.getJSON($('#whatever').data('search-url'), function (data) {
+            myData = data;
+            grid = new Slick.Grid("#teamGrid", myData, columns, options);
+        });
+    });
+</script>
+
+@*<ul>
+@foreach (MediaManager.ProgrammeLibraryServices.SeriesVO item in @Model)
+{
+    <li>@item.SeriesTitle </li>
+}
+<li>
+</li>
+</ul>*@
+
+ <div id="teamGrid" style="width:400px;height:300px;"></div>
+ <div data-search-url='@Url.Action("GetDealMemo", "DealMemoMaintenance", new { area = "Acquisition", id = 26049 })' id="whatever">...</div>

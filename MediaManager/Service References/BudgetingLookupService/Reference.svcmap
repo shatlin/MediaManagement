@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4595392d-3158-4e60-b321-df7a16696fd7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.200.10/MediaManagerServices/Budgeting/BudgetingLookupService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BudgetingLookupService.xsd" MetadataType="Schema" ID="fe2adf7a-0d4c-4656-a5aa-c62c3e486e0d" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BudgetingLookupService1.xsd" MetadataType="Schema" ID="fdbfbe89-1dba-4d00-92f8-7e94388084c6" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BudgetingLookupService2.xsd" MetadataType="Schema" ID="19c79004-eabc-41cb-b679-27e658c3da88" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BudgetingLookupService3.xsd" MetadataType="Schema" ID="2d0afb94-24a9-49df-85db-6e6e15372a72" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BudgetingLookupService4.xsd" MetadataType="Schema" ID="36c66072-baf4-4149-bcb2-88f43b7b36e0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd5" />
+    <MetadataFile FileName="BudgetingLookupService5.xsd" MetadataType="Schema" ID="92e06d96-0564-4270-954e-78cbaa8a66b9" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd4" />
+    <MetadataFile FileName="BudgetingLookupService6.xsd" MetadataType="Schema" ID="8fdde199-8322-4217-990d-c541a0cc4376" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd6" />
+    <MetadataFile FileName="BudgetingLookupService.disco" MetadataType="Disco" ID="44c22951-ca26-4590-a84e-b85e64971df4" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?disco" />
+    <MetadataFile FileName="BudgetingLookupService.wsdl" MetadataType="Wsdl" ID="77790f3e-fe45-425a-8d75-845b433a2373" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

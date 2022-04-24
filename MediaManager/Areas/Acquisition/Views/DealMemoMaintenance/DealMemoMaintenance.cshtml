@@ -1,0 +1,424 @@
+﻿@model MediaManager.Areas.Acquisition.ViewModels.DealMemoMaintenanceViewModel
+@{
+    ViewBag.Title = "Deal Memo Maintenance";
+    Layout = MediaManager.Infrastructure.Helpers.SharedPages.LayoutPage;
+}
+@Styles.Render("~/Content/seriedetailstyles")
+@Scripts.Render("~/Content/seriedetailscripts")
+<link href="~/Content/styles/jquery.contextMenu.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/styles/TabContainer.css" rel="stylesheet" type="text/css" />
+<script src="~/Content/Scripts/jquery/jquery.contextMenu.js" type="text/javascript"></script>
+<table class="Layout">
+    <tr>
+        <td class="pagecontent" id="DealMemoMaintenanceContentZone" >        
+            <ul id="SeriesTreeContextMenu" class="contextMenu">
+                <li class="edit"><a href="#contextMenuDefaultLanguages">Default Languages</a></li>
+                <li class="edit"><a href="#contextMenuDefaultTerritories">Default Territories</a></li>
+                <li class="edit"><a href="#contextMenuCheck">Status -Check</a></li>
+                <li class="edit"><a href="#contextMenuBudget">Status-Budget</a></li>
+                <li class="edit"><a href="#contextMenuUnBudget">Status_UnBudget</a></li>
+                <li class="edit"><a href="#contextMenuSignBuyer">Status-Sign(Buyer)</a></li>
+                  <li class="edit"><a href="#contextMenuUnSignBuyer">Status-Un-Sign(Buyer)</a></li>
+            </ul>
+            <div id="SeriesTreeDiv"></div>
+            <div class="Margin">
+            
+               <div class="mainHeading" style="padding:2px;">
+               Deal Memo Maintenance
+            </div>
+
+               
+            </div>
+         
+            <div class="Margin">
+                <table class="maxwidth">
+                    <tr>
+                        <td>
+                         <div class="PlaceHolderPopup">
+                            <table class="tableLayout">
+                                <tr>
+                                    <td>
+                                       <label class="label">DM Number</label>   
+                                    </td>
+                                      <td>
+                                       
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_DMNumber, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td>
+                                        <label class="label">Contract</label> 
+                                    </td>
+                                     <td>
+                                       
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_ContractNo, new { @class = "inputTextSamll" })
+                                        <img id="imgContractNo" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />
+                                    </td>
+                                    <td>
+                                       <label class="label">Date</label>  
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_MemoDate, new { @class = "inputTextSamll" })
+                                        <img id="imgMemoDate" src="~/Content/images/date.png" alt="" class="VerticalAlignMiddle" />
+                                    </td>
+                                    <td>
+                                       <label class="label">Licensor</label> 
+                                    </td>
+                                     <td class="RequiredIndicator">
+                                        *
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_LicenseNo, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.LicensorDesc, new { @class = "inputTextLarge" })
+                                        <img id="imgLicensor" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                       <label class="label">Currency</label> 
+                                    </td>
+                                      <td class="RequiredIndicator">
+                                       *
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_Currency, new { @class = "inputTextSamll" })
+                                        <img id="imgCurrency" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />
+                                    </td>
+                                    <td>
+                                       <label class="label">Type</label>  
+                                    </td>
+
+                                     <td class="RequiredIndicator">
+                                       *
+                                    </td>
+                                    <td >
+                                        @Html.DropDownListFor(m => m.TypeComboSelection, new SelectList(@Model.TypeCombo, "MecValue", "MecValue"), "--Select-- ")
+                                    </td>
+                                    <td >
+                                       <label class="label">Status</label>  
+                                    </td>
+                                    <td >
+                                        @Html.TextBoxFor(m => m.DMVo_Status, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td >
+                                       <label class="label">Contract Entity</label> 
+                                    </td>
+                                    <td  class="RequiredIndicator">
+                                        *
+                                    </td>
+                                    <td >
+                                        <div class="ui-widget">
+                                            @Html.TextBoxFor(m => m.DMVo_ContractEntity, new { @class = "inputTextSamll" })
+                                        </div>
+                                    </td>
+                                    <td >
+                                        @Html.TextBoxFor(m => m.ContractEntityDesc, new { @class = "inputTextLarge" })
+                                        <img id="imgContractEntity" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" >
+                                    </td>
+                                    <td >
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td >
+                                       <label class="label">Main Licensee</label>  
+                                    </td>
+                                    <td class="RequiredIndicator">
+                                        *
+                                    </td>
+                                    <td >
+                                        @Html.TextBoxFor(m => m.DMVo_MainLicensee, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td >
+                                        @Html.TextBoxFor(m => m.MainLicenseeDesc, new { @class = "inputTextLarge" })
+                                        <img id="imgMainLicence" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Margin">
+                <table class="maxwidth">
+                    <tr>
+                        <td width="35%" >
+                        <div class="PlaceHolderPopup">
+                            <table class="tableLayout" >
+                                <tr>
+                                    <td colspan="3" >
+                                    
+                                     <div class="subHeading" style="padding:0px;">
+                                Amortization Method
+                            </div>
+                                     
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                       <label class="label">Method ID</label> 
+                                    </td>
+                                     <td class="RequiredIndicator">
+                                        *
+                                    </td>
+                                    <td >
+                                        @Html.TextBoxFor(m => m.DMVo_AmortMethod, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td >
+                                        @Html.TextBoxFor(m => m.AmortMethodDesc, new { @class = "inputTextSamll" })
+                                        <img id="imgMethodId" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                       &nbsp;
+                                    </td>
+                                    <td >
+                                       
+                                    </td>
+                                    <td >
+                                    
+                                        <input type="text" class = "inputTextSamll" style="visibility:hidden;"/>
+                                    </td>
+                                    <td >
+                                        <table >
+                                            <tr>
+                                                <td>
+                                                   @Html.CheckBoxFor(m => m.DMVO_Align)&nbsp;Align
+                                                </td>
+                                                <td>
+                                                   @Html.CheckBoxFor(m => m.DMVO_Multiplex)&nbsp;Multiplex
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                        </td>
+
+                        <td width="65%">
+                        <div class="PlaceHolderPopup">
+                            <table class="tableLayout">
+                                <tr>
+                                    <td colspan="6">
+                                    <div class="subHeading" style="padding:0px;">
+                                        Price Details
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      <label class="label">Contract Price</label>   
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_ContractPrice, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td>
+                                       <label class="label">Price/Hour</label> 
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_PriceperHour, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td>
+                                       <label class="label">Mem Hrs Remaining</label> 
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_MemoHoursRemaining, new { @class = "inputTextSamll" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="label">Memo Price</label>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_MemoPrice, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td>
+                                       <label class="label">Hours</label> 
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_Hours, new { @class = "inputTextSamll" })
+                                    </td>
+                                    <td>
+                                       <label class="label">Licensed Hrs Remaining</label>  
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DMVo_LicensedHoursRemaining, new { @class = "inputTextSamll" })
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            
+            <div class="divTabContainer" style="border:0px;">
+                <table class="tableLayout" style="border:0px;">
+                    <tr>
+                        <td>
+                        
+                            <div id="tabs" style="border:0px;">
+                            
+                                <ul>
+                                    <li><a href="#Programme" id="tabPgm" onclick="save()">Programme</a></li>
+                                    @* <li><a href="#Rights" >Rights</a></li>*@
+                                    <li><a href="#Language" id="tabLan" onclick="save()">Language</a></li>
+                                    <li><a href="#Territory" id="tabTer" onclick="save()">Territory</a></li>
+                                    <li><a href="#Payment" id="tabPay" onclick="save()">Payment</a></li>
+                                    <li><a href="#History" id="tabHis" onclick="save()">History</a></li>
+                                </ul>
+                                      
+                                <div id="Programme">
+                      
+                                    @Html.Partial("DealMemoProgramme")
+                                  </div>
+                                
+                                @* <div id="Rights">
+                                    @Html.Partial("DealMemoRights")
+                                </div>*@
+                               
+                                <div id="Language">
+                                  <div class="PlaceHolderPopup">
+                                    @Html.Partial("DealMemoLanguage")
+                                    </div>
+                                </div>
+                                
+                                <div id="Territory">
+                                 <div class="PlaceHolderPopup">
+                                    @Html.Partial("DealMemoTerritory")
+                                </div>
+                                </div>
+                                <div id="Payment">
+                                 <div class="PlaceHolderPopup">
+                                    @Html.Partial("DealMemoPayment")
+                                </div>
+                                </div>
+                                <div id="History">
+                                 <div class="PlaceHolderPopup">
+                                    @Html.Partial("DealMemoHistory")
+                                </div>
+                                </div>
+                            </div>
+                           
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Margin">
+                <table class="maxwidth">
+                    <tr>
+                        <td width="50%" align="left" colspan="2">
+                           @* <input type="submit" name="btnCopyAllocations" value="Copy Allocations" id="btnCopyAllocations"
+                                class="inputButton" />*@
+                        </td>
+                        <td width="50%" align="right">
+                            <input type="button" value="Save" id="btnSave" onclick="SaveDealMemo_click()" class="inputButton" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+     
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript" id="ProgrammeTab">
+    var GetProgrammeParticularsUrl = '@Url.Action("GetProgrammeParticulars", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var AddNewProgrammeUrl = '@Url.Action("AddNewProgramme", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var AddNewLicenseeDetailUrl = '@Url.Action("AddNewLicenseeDetail", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var AddNewCatchUpLicenseeDetailUrl = '@Url.Action("AddNewCatchLicenseeDetail", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var AddNewRunsPerChannelUrl = '@Url.Action("AddNewRunsPerChannelDetail", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var AddNewPlateformRightsUrl = '@Url.Action("AddNewMediaPlateformRightsDetail", "DealMemoMaintenance", new { area = "Acquisition" })';
+
+    var GetTypeShowLOVListUrl = '@Url.Action("GetTypeShowLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetEventTypeLOVListUrl = '@Url.Action("GetEventTypeLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetProgramCategoryLOVListUrl = '@Url.Action("GetProgramCategoryLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetBOCategoryLOVListUrl = '@Url.Action("GetBOCategoryLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetTitleListUrl = '@Url.Action("GetTitleLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var getLicenseeListUrl = '@Url.Action("GetLicenseeLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var getChannelServiceListUrl = '@Url.Action("GetChannelServiceList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var getChannelListUrl = '@Url.Action("GetChannelList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetPlateFormRightsListUrl = '@Url.Action("GetCatchUpPlatformRights", "DealMemoMaintenance", new { area = "Acquisition" })';
+
+    var ValidateProgramDurationUrl = '@Url.Action("ValidateProgramDuration", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var CalculateLicenseeTimeUrl = '@Url.Action("CalculateLicenseeTime", "DealMemoMaintenance", new { area = "Acquisition" })';
+</script>
+
+<script type="text/javascript" id="LanguageTab">
+    var GetLanguageactionurl = '@Url.Action("GetLanguage", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetLanguageLOVListactionurl = '@Url.Action("GetLanguageLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var DefaultLanguageactionurl = '@Url.Action("DefaultLanguage", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var SuppiledByactionUrl = '@Url.Action("SuppliedBy", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var SupplierUserCostactionUrl = '@Url.Action("SupplierUserCost", "DealMemoMaintenance", new { area = "Acquisition" })';
+</script>
+
+<script type="text/javascript" id="TerritoryTab">
+    var GetTerritoryactionurl = '@Url.Action("GetTerritory", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetTerritoryLOVListactionurl = '@Url.Action("GetTerritoryLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetRightsLOVListactionurl = '@Url.Action("GetRightsLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var DefaultTerritoryactionurl = '@Url.Action("DefaultTerritory", "DealMemoMaintenance", new { area = "Acquisition" })'; 
+</script>
+
+<script type="text/javascript" id="PaymentTab">
+    var GetPaymentactionurl = '@Url.Action("GetPayment", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetPaymentCodeLOVListactionurl = '@Url.Action("GetPaymentCodeLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+</script>
+
+<script type="text/javascript" id="HistoryTab">
+    var GetHistoryactionurl = '@Url.Action("GetHistory", "DealMemoMaintenance", new { area = "Acquisition" })';
+</script>
+
+<script type="text/javascript" id="DealMemoMaintenanceMainPage">
+    var GetLicensorDescactionurl = '@Url.Action("GetLicensorDesc", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetContractEntityDescactionurl = '@Url.Action("GetContractEntityDesc", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetMainLicenseeDescactionurl = '@Url.Action("GetMainLicenseeDesc", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetAmortMethodDescactionurl = '@Url.Action("GetAmortMethodDesc", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetAmortMethodLOVListactionUrl = '@Url.Action("GetAmortMethodLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetCurrencyLOVListactionUrl = '@Url.Action("GetCurrencyLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetLicensorLOVListactionUrl = '@Url.Action("GetLicensorLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetContractEntityLOVListactionUrl = '@Url.Action("GetContractEntityLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetContractLOVListactionUrl = '@Url.Action("GetContractLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var GetMainLicenseeLOVListactionUrl = '@Url.Action("GetMainLicenseeLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var SaveLanguagesactionurl = ' @Url.Action("SaveLanguages", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var SaveTerritoryactionurl = ' @Url.Action("SaveTerritories", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var SavePaymentactionurl = ' @Url.Action("SavePayments", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var SaveDealMemoUrl = '@Url.Action("SaveDealMemo", "DealMemoMaintenance", new { area = "Acquisition" })';
+
+    var contextMenuCheckUrl = '@Url.Action("contextMenuCheck_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var Licenses_DetailUrl = '@Url.Action("Licenses_Detail_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuBudgetUrl = '@Url.Action("contextMenuBudget_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuUnBudgetUrl = '@Url.Action("contextMenuUnBudget_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuSignBuyerUrl = '@Url.Action("contextMenuSignBuyer_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuUnSignBuyerUrl = '@Url.Action("contextMenuUnSignBuyer_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuSignPDUrl = '@Url.Action("contextMenuSignPD_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuUnSignBuyerUrl = '@Url.Action("contextMenuUnSignBuyer_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuUnSignPDUrl = '@Url.Action("contextMenuUnSignPD_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuExecuteDealUrl = '@Url.Action("contextMenuExecuteDeal_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var contextMenuPrintUrl = '@Url.Action("contextMenuPrint_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var Budget_Title_MovesUrl = '@Url.Action("Budget_Title_Moves_Click", "DealMemoMaintenance", new { area = "Acquisition" })';
+
+    var ProgramTitleUrl = '@Url.Action("ProgrammeMaintenance", "ProgrammeMaintenance", new { area = "Media_Mgt" })';
+    var SeriesTreeUrl = '@Url.Action("SeriesTreeLoad", "SeriesTree", new { area = "Media_Mgt" })';
+</script>
+
+<script src="~/Content/Scripts/Acquisition/DealMemoMaintenance/DealMemoProgramme.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/Acquisition/DealMemoMaintenance/DealMemoLanguage.js"  type="text/javascript"></script>
+<script src="~/Content/Scripts/Acquisition/DealMemoMaintenance/DealMemoTerritory.js"  type="text/javascript"></script>
+<script src="~/Content/Scripts/Acquisition/DealMemoMaintenance/DealMemoPayment.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/Acquisition/DealMemoMaintenance/DealMemoHistory.js"  type="text/javascript"></script>
+<script src="~/Content/Scripts/Acquisition/DealMemoMaintenance/DealMemoMaintenance.js" type="text/javascript"></script>

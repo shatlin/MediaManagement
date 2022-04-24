@@ -1,0 +1,105 @@
+﻿@model MediaManager.Areas.Acquisition.Models.DealsNotSignedModel
+@using MediaManager.Infrastructure.Helpers;
+@{
+    ViewBag.Title = "Deals Not Signed";
+    Layout = SharedPages.LayoutPage; 
+}
+@*<h2>Deals Not Signed</h2>*@
+<script src="~/Content/Scripts/Acquisition/Report/DealsNotSigned.js" type="text/javascript"></script>
+<div class="mainHeading" style="padding-left: 10px;">
+    Deals Not Signed</div>
+<div>
+</div>
+<div class="ReportsubHeading" style="width: 52%">
+    Report Parameters</div>
+<div class="ReportPlaceHolder" style="width: 52%">
+    <table width="100%" border="1">
+        <tr align="center">
+            <td class="pagecontent">
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+                {                                
+                           
+                    <fieldset>
+                        <table class="tableLayout">
+                            <tr>
+                                <td width="30%">@Html.Label("Channel Company", new { @class = "label", @style = "text-align:left;" })
+                                </td>
+                                <td width="2%">
+                                </td>
+                                <td width="10%">
+                                    <select id="CompanyName" name="CompanyName">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.ChannelCompanyList != null)
+                                            {
+                                                foreach (MediaManager.AcquisitionLookupService.ChannelCompanyRptLookupItem LookupItem in Model.ChannelCompanyList)
+                                                {
+                                            <option value="@LookupItem.ComShortname:@LookupItem.ComName" id="@LookupItem.ComShortname">@LookupItem.ComShortname</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </td>
+                                <td width="2%">
+                                </td>
+                                <td width="57%">@Html.TextBox("ChannelCompany", null, new { @class = "inputTextLarge", @readonly = "true" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Html.Label("Budget Code", new { @class = "label", @style = "text-align:left;" })
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <select id="BudgetCode" name="BudgetCode">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.ChannelCompanyList != null)
+                                            {
+                                                foreach (MediaManager.BudgetingLookupService.ProgrammeCombinationTypesLookupItem LookupItem in Model.BudgetCodeList)
+                                                {
+                                            <option value="@LookupItem.ComboId:@LookupItem.Description" id="@LookupItem.ComboId">@LookupItem.ComboId</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </td>
+                                <td>
+                                </td>
+                                <td>@Html.TextBox("BudgetCodeDescription", null, new { @class = "inputTextLarge", @readonly = "true" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Html.Label("For Date", new { @class = "label", @style = "text-align:left;" })
+                                </td>
+                                <td class="RequiredIndicator">
+                                    *
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.ForDate, new { @class = "inputTextSamll", @placeholder = "select a date" })
+                                </td>
+                                <td>
+                                    <img src="../../Content/images/date.png" id="ForDateIcon" alt="" class="VerticalAlignMiddle" />
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" colspan="5">
+                                    <input type="submit" class="inputButton" name="btnGenerate" id="btnGenerate" value="Generate" />
+                                    <input type="button" class="inputButton" id="btnReset" value="Reset" />
+                                    <input type="submit" class="inputButton" id="btnExportToExcel" name="btnExportToExcel"
+                                        value="Export To Excel" />
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                            
+                                
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
+                }
+            </td>
+        </tr>
+    </table>
+</div>

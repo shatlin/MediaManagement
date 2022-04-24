@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LibraryMaintenanceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="LibraryMaintenanceServiceTCPEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagerLibrary" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILibraryMaintainence_GetFidCodeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFidCodeList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetFidCodeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFidCodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetFidCodeList_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetStorageList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStorageList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetStorageList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStorageListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetStorageList_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetMaxStorage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxStorage" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetMaxStorage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxStorageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetMaxStorage_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveLibraryDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLibraryDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveLibraryDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLibraryDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveLibraryDetail_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetLibrary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibrary" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetLibrary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetLibrary_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchLibrary_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLibrary" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchLibrary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchLibrary_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchLibraryStorageDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLibraryStorageDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchLibraryStorageDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLibraryStorageDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchLibraryStorageDetail_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveLibraryStorageDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLibraryStorageDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveLibraryStorageDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLibraryStorageDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveLibraryStorageDetail_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchTrafficToSuppDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTrafficToSuppDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchTrafficToSuppDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTrafficToSuppDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchTrafficToSuppDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveTrafficToSuppDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTrafficToSuppDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveTrafficToSuppDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTrafficToSuppDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveTrafficToSuppDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetMaterialList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetMaterialList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetMaterialList_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookOutDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBookOutDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookOutDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBookOutDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookOutDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q12:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveBookOutDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBookOutDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveBookOutDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBookOutDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveBookOutDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q13:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookInDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBookInDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookInDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBookInDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookInDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q14:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveBookInDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBookInDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveBookInDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBookInDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveBookInDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q15:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetProgramDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetProgramDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_GetProgramDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q16:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveProgDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProgDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveProgDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProgDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveProgDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q17:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookInOutHistoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBookInOutHistoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookInOutHistoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBookInOutHistoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchBookInOutHistoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q18:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchActiveUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchActiveUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchActiveUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchActiveUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchActiveUserDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q19:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SaveUserDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q20:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchMenUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMenUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchMenUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMenUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryMaintainence_SearchMenUserDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q21:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="ILibraryMaintainence">
+    <wsdl:operation name="GetFidCodeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetFidCodeList" message="tns:ILibraryMaintainence_GetFidCodeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetFidCodeListResponse" message="tns:ILibraryMaintainence_GetFidCodeList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetFidCodeListMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_GetFidCodeList_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStorageList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetStorageList" message="tns:ILibraryMaintainence_GetStorageList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetStorageListResponse" message="tns:ILibraryMaintainence_GetStorageList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetStorageListMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_GetStorageList_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxStorage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetMaxStorage" message="tns:ILibraryMaintainence_GetMaxStorage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetMaxStorageResponse" message="tns:ILibraryMaintainence_GetMaxStorage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetMaxStorageMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_GetMaxStorage_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLibraryDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveLibraryDetail" message="tns:ILibraryMaintainence_SaveLibraryDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveLibraryDetailResponse" message="tns:ILibraryMaintainence_SaveLibraryDetail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveLibraryDetailMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SaveLibraryDetail_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibrary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetLibrary" message="tns:ILibraryMaintainence_GetLibrary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetLibraryResponse" message="tns:ILibraryMaintainence_GetLibrary_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetLibraryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_GetLibrary_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLibrary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchLibrary" message="tns:ILibraryMaintainence_SearchLibrary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchLibraryResponse" message="tns:ILibraryMaintainence_SearchLibrary_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchLibraryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchLibrary_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLibraryStorageDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchLibraryStorageDetail" message="tns:ILibraryMaintainence_SearchLibraryStorageDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchLibraryStorageDetailResponse" message="tns:ILibraryMaintainence_SearchLibraryStorageDetail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchLibraryStorageDetailMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchLibraryStorageDetail_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLibraryStorageDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveLibraryStorageDetail" message="tns:ILibraryMaintainence_SaveLibraryStorageDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveLibraryStorageDetailResponse" message="tns:ILibraryMaintainence_SaveLibraryStorageDetail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveLibraryStorageDetailMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SaveLibraryStorageDetail_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTrafficToSuppDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchTrafficToSuppDetails" message="tns:ILibraryMaintainence_SearchTrafficToSuppDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchTrafficToSuppDetailsResponse" message="tns:ILibraryMaintainence_SearchTrafficToSuppDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchTrafficToSuppDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchTrafficToSuppDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTrafficToSuppDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveTrafficToSuppDetails" message="tns:ILibraryMaintainence_SaveTrafficToSuppDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveTrafficToSuppDetailsResponse" message="tns:ILibraryMaintainence_SaveTrafficToSuppDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveTrafficToSuppDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SaveTrafficToSuppDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetMaterialList" message="tns:ILibraryMaintainence_GetMaterialList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetMaterialListResponse" message="tns:ILibraryMaintainence_GetMaterialList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetMaterialListMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_GetMaterialList_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookOutDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookOutDetails" message="tns:ILibraryMaintainence_SearchBookOutDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookOutDetailsResponse" message="tns:ILibraryMaintainence_SearchBookOutDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookOutDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchBookOutDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBookOutDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveBookOutDetails" message="tns:ILibraryMaintainence_SaveBookOutDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveBookOutDetailsResponse" message="tns:ILibraryMaintainence_SaveBookOutDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveBookOutDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SaveBookOutDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookInDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookInDetails" message="tns:ILibraryMaintainence_SearchBookInDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookInDetailsResponse" message="tns:ILibraryMaintainence_SearchBookInDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookInDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchBookInDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBookInDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveBookInDetails" message="tns:ILibraryMaintainence_SaveBookInDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveBookInDetailsResponse" message="tns:ILibraryMaintainence_SaveBookInDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveBookInDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SaveBookInDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetProgramDetails" message="tns:ILibraryMaintainence_GetProgramDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetProgramDetailsResponse" message="tns:ILibraryMaintainence_GetProgramDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/GetProgramDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_GetProgramDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveProgDetails" message="tns:ILibraryMaintainence_SaveProgDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveProgDetailsResponse" message="tns:ILibraryMaintainence_SaveProgDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveProgDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SaveProgDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookInOutHistoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookInOutHistoryDetails" message="tns:ILibraryMaintainence_SearchBookInOutHistoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookInOutHistoryDetailsResponse" message="tns:ILibraryMaintainence_SearchBookInOutHistoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchBookInOutHistoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchBookInOutHistoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchActiveUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchActiveUserDetails" message="tns:ILibraryMaintainence_SearchActiveUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchActiveUserDetailsResponse" message="tns:ILibraryMaintainence_SearchActiveUserDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchActiveUserDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchActiveUserDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveUserDetails" message="tns:ILibraryMaintainence_SaveUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveUserDetailsResponse" message="tns:ILibraryMaintainence_SaveUserDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SaveUserDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SaveUserDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMenUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchMenUserDetails" message="tns:ILibraryMaintainence_SearchMenUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchMenUserDetailsResponse" message="tns:ILibraryMaintainence_SearchMenUserDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILibraryMaintainence/SearchMenUserDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILibraryMaintainence_SearchMenUserDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LibraryMaintenanceServiceTCPEndpoint" type="tns:ILibraryMaintainence">
+    <wsp:PolicyReference URI="#LibraryMaintenanceServiceTCPEndpoint_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetFidCodeList">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/GetFidCodeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStorageList">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/GetStorageList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxStorage">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/GetMaxStorage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLibraryDetail">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SaveLibraryDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibrary">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/GetLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLibrary">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLibraryStorageDetail">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchLibraryStorageDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLibraryStorageDetail">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SaveLibraryStorageDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTrafficToSuppDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchTrafficToSuppDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTrafficToSuppDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SaveTrafficToSuppDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialList">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/GetMaterialList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookOutDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchBookOutDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBookOutDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SaveBookOutDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookInDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchBookInDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBookInDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SaveBookInDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/GetProgramDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SaveProgDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookInOutHistoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchBookInOutHistoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchActiveUserDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchActiveUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SaveUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMenUserDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryMaintainence/SearchMenUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibraryMaintenanceService">
+    <wsdl:port name="LibraryMaintenanceServiceTCPEndpoint" binding="tns:LibraryMaintenanceServiceTCPEndpoint">
+      <soap12:address location="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>ravi.joshi@FPS.NIHILENT.COM</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

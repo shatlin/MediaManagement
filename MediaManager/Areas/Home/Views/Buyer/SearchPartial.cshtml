@@ -1,0 +1,91 @@
+﻿@model System.Data.DataTable
+@using System.Data
+<br />
+
+<h3>This is partial view</h3>
+<br />
+<script type="text/javascript">
+
+    $(function () {
+        
+        $("a.modalDlg").click(function () {
+
+            $("a.modalDlg").colorbox({
+                href: $(this).attr('href'),
+                close: "close",
+                transition: "elastic",
+                speed: 500,
+                initialWidth: 400,
+                initialHeight: 200,
+                maxHeight: 680,
+                scalePhotos: true,
+                opacity: 0.50,
+                onComplete: function () {
+                    $('.XClose').bind('click', function () {
+                        $.colorbox.close();
+                    });
+                }
+            });
+        });
+
+        $("a.abookModal").click(function () {
+            $("a.abookModal").colorbox({
+                href: $(this).attr('href'),
+                close: "close",
+                transition: "elastic",
+                speed: 500,
+                initialWidth: 400,
+                initialHeight: 200,
+                scalePhotos: true,
+                opacity: 0.50,
+                onComplete: function () {
+                    $('.XClose').bind('click', function () {
+                        $.colorbox.close();
+                    });
+                }
+            });
+        });
+
+    });  /* end document.ready() */
+    
+
+    </script>
+
+<table border="2" class="search_table" id="Search_Result">
+<thead>
+        <tr class="">
+            @foreach (System.Data.DataColumn col in Model.Columns) { 
+                <th class="table_search_header" >@col.Caption</th>
+            } 
+        </tr>
+    </thead>
+@foreach (System.Data.DataRow row in Model.Rows)
+{
+       
+    <tr class="" >
+    @foreach (var cell in row.ItemArray)
+    {
+        <td  class="table_search_td" >
+        @if (cell.Equals(row.ItemArray[1]))
+        {
+      <p>
+
+      @*<a href="/Scout/Title_popup?title=1" class="modalDlg" title="abc">new link</a>*@
+
+
+
+        @Html.ActionLink(cell.ToString(), "Title_popup", "Buyer", new { title = cell.ToString() }, new { @class = "modalDlg", title = "Edit List" })
+       </p>
+         @* @cell.ToString()*@
+        }
+        else
+        {
+             @cell.ToString()
+        }
+		
+         </td>
+    }
+    </tr>
+}
+
+</table>

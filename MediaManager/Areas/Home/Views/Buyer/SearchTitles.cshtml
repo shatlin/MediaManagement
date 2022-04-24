@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "SearchTitles";
+   
+}
+@*<link href="~/Content/dataTable.css" rel="stylesheet" type="text/css" />*@
+<link href="~/Content/master.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Popup.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript">
+    $(function () {
+
+        $("#title").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Scout/get_titles", type: "POST", dataType: "json",
+                    data: { searchText: request.term, maxResults: 10 },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return { label: item.title, value: item.title }
+                        }))
+                    }
+                })
+            },
+            select: function (event, ui) {
+                alert(ui.item ? ("You picked '" + ui.item.label + "' with an ID of " + ui.item.id + ui.item.mohasin + " --end--")
+                        : "Nothing selected, input was " + this.value + "Here it is my value ");
+            }
+        });
+
+    });
+    </script>
+<h2>
+    Search Titles</h2>
+<br />
+@using (Ajax.BeginForm("SearchPage", "Buyer", new AjaxOptions { UpdateTargetId = "result" }))
+{
+    <table >
+        <thead title="Search Criteria">
+        </thead>
+        <tbody>
+            <tr class="blackbackground">
+            </tr>
+            <tr>
+                <td>
+                    Title / Working Title
+                </td>
+                <td>
+                    <input type="text" id="title" name="title" />
+                </td>
+                <td>
+                    Title Status
+                </td>
+                <td>
+                    <input type="text" id="status" name="status" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Primary Genre
+                </td>
+                <td>
+                    <input type="text" id="primary_genre" name="primary_genre" />
+                </td>
+                <td>
+                    Secondary Genre
+                </td>
+                <td>
+                    <input type="text" id="secondary_genre" name="secondary_genre" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Language
+                </td>
+                <td>
+                    <input type="text" id="language" name="language" />
+                </td>
+                <td>
+                    Deal Memo No
+                </td>
+                <td>
+                    <input type="text" id="deal_memo_no" name="deal_memo_no" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Series
+                </td>
+                <td>
+                    <input type="text" id="series" name="series" />
+                </td>
+                <td>
+                    Season
+                </td>
+                <td>
+                    <input type="text" id="season" name="season" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <input type="submit" value="Submit" />
+                    <input type="button" value="Reset" class="for_reset_button" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+@*@Html.ActionLink("check this link for popup", "Titlepopup", "Searchtitles", null, new { @class = "modalDlg", title = "Edit List" })*@
+@*   <div id='basic-modal'>
+    <a href="/Searchtitles/Title_popup" style="color:Blue;" class="modalDlg">check this link for popup</a>
+   </div>*@
+    
+    <div id="result">
+    </div>
+    
+ 
+}

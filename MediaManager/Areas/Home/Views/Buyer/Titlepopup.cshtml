@@ -1,0 +1,61 @@
+﻿@model System.Data.DataTable
+<div id="form-wrapper">
+    @using (Html.BeginForm("Title_popup_submit", "Scout", FormMethod.Post, new { id = "target" }))
+    {
+@*<%-- <%: Html.ValidationSummary(true) %>--%>*@
+        
+        <div class="edit-set">
+            <table style="width: 430px">
+                @for (int i = 0; i <Model.Columns.Count-1; i=i+2)
+                {
+              @*  @int temp=i;*@
+                    
+            
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="editor-label">
+                                @Model.Columns[i].Caption 
+                            </div>
+                            <div class="editor-field readonly">
+                                @Model.Rows[0][i].ToString(); 
+                            </div>
+                        </td>
+                        <td style="width: 50%">
+                            <div class="editor-label">
+                              
+
+                                @Model.Columns[i+1].Caption 
+                                 
+                            </div>
+                            <div class="editor-field readonly">
+                           
+                                @Model.Rows[0][i + 1].ToString(); 
+                           
+                            </div>
+                        </td>
+                    </tr>
+                }
+                <tr>
+                 <td style="width: 50%;  ">
+                            <div class="editor-label">
+                                @Model.Columns[24].Caption 
+                            </div>
+                            <div class="editor-field readonly">
+                                @Model.Rows[0][24].ToString(); 
+                            </div>
+                        </td>
+                <td></td>
+                </tr>
+            </table>
+            @*   <div class="editor-field">
+               <input id="AddItem" type="text" value="New Item" name="AddItem"/>
+         
+            </div>*@
+        </div>
+
+        @*<div class="nonAjax">
+            <input type="submit" value="Save" class="button-cbox" /></div>*@
+        
+        
+    }
+</div>

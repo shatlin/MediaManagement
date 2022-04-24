@@ -1,0 +1,78 @@
+﻿@using MediaManager.Infrastructure.Helpers;
+@{
+    ViewBag.Title = "Report:" + ViewBag.Title;
+    Layout = SharedPages.ReportLayoutPage; 
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var height = "";
+        if ($.browser.mozilla) {
+            height = window.screen.availHeight * 0.760;
+        }
+        else if ($.browser.opera || $.browser.safari || $.browser.chrome) {
+            height = window.screen.availHeight * 0.85;
+        }
+        else if ($.browser.msie) {
+            if ($.browser.version == "7.0")
+                height = window.screen.availHeight * 0.764;
+            else if($.browser.version=="8.0")
+                height = window.screen.availHeight * 0.750;
+            else if ($.browser.version == "9.0")
+                height = window.screen.availHeight * 0.75;
+        }
+        else
+            height = window.screen.availHeight * 0.755;
+        $('#reportContainer').height(height);
+
+
+        //                        $(window).resize(function () {
+        //                            debugger;
+        //                                    if ($.browser.mozilla) {
+        //                                        height = $('#tableContainer').height() * 0.98;
+        //                                    }
+        //                                    else if ($.browser.opera || $.browser.safari || $.browser.chrome) {
+        //                                        height = $('#tableContainer').height() * 0.95;
+        //                                    }
+        //                                    else {
+        //                                        height = document.body.clientHeight * 0.90;
+        //                                    }
+        //                                    if ($('#reportContainer').height() < height)
+        //                                         $('#reportContainer').height(height);
+        //                        });
+
+        //$('#reportContainer').height(window.screen.availHeight * 0.768);
+        //        var height = "";
+        //        if ($.browser.mozilla) {
+        //            height = $('#tableContainer').height() * 0.98;
+        //        }
+        //        else if ($.browser.opera || $.browser.safari || $.browser.chrome) {
+        //            height = $('#tableContainer').height() * 0.95;
+        //        }
+        //        else {
+        //            height = document.body.clientHeight * 0.90;
+        //        }
+        //        $('#reportContainer').height(height);
+
+        //        $(document).resize(function () {
+        //            debugger;
+        //            $('#reportContainer').height(window.screen.availHeight * 0.768);
+
+        //        });
+        //        $(document).bind('resize', function () {
+        //            debugger;
+        //            $('#reportContainer').height(window.screen.availHeight * 0.768);
+
+        //        });
+    });
+</script>
+<table id="tableContainer" style="height:100%;width:100%;background-color:White" >
+    <tr>
+        <td>            
+            @*<div id="iframeContainerDiv"  style=" background-color:Black">*@
+            <iframe  width="100%" height="100%" id="reportContainer" style="background-color:White; vertical-align:top;" src="@Url.Content("~/Areas/Home/ReportViewer/ReportViewer.aspx?ReportPrerequisiteDataString=" + @Url.Encode(ViewBag.ReportprerequisiteDataString))"></iframe>      
+            @* </div>*@
+        </td>
+    </tr>
+</table>
+ 

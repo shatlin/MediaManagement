@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9b7bf99c-5991-42fa-92c0-39d3f90ddd09" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.200.10/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SchedulingOperationsServices.xsd" MetadataType="Schema" ID="0ce32e4d-b169-43c0-8beb-b797ef9a7409" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd5" />
+    <MetadataFile FileName="SchedulingOperationsServices1.xsd" MetadataType="Schema" ID="a8caf0ed-cf72-4d97-a962-cc05e5530116" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd8" />
+    <MetadataFile FileName="SchedulingOperationsServices2.xsd" MetadataType="Schema" ID="0c5e993f-d682-401f-bc78-39a27d457ef7" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd6" />
+    <MetadataFile FileName="SchedulingOperationsServices3.xsd" MetadataType="Schema" ID="a8db032f-6f8e-47d0-92ee-1401c53c38b2" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="SchedulingOperationsServices.disco" MetadataType="Disco" ID="78bb5f19-e376-41a7-bfac-029f6c1ba768" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?disco" />
+    <MetadataFile FileName="SchedulingOperationsServices4.xsd" MetadataType="Schema" ID="cf042323-20e1-4561-8708-e2870ac82824" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="SchedulingOperationsServices5.xsd" MetadataType="Schema" ID="eef5ae21-750c-477b-8f9c-3603f6dc544d" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd7" />
+    <MetadataFile FileName="SchedulingOperationsServices6.xsd" MetadataType="Schema" ID="e06203cc-436e-49f7-b87e-04ff308c82de" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="SchedulingOperationsServices.wsdl" MetadataType="Wsdl" ID="1273902e-e30a-4a44-80ee-0f0b7265d8da" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?wsdl" />
+    <MetadataFile FileName="SchedulingOperationsServices7.xsd" MetadataType="Schema" ID="55bf02c5-e3ac-4b58-a5d1-ea1d87a2c2e7" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="SchedulingOperationsServices8.xsd" MetadataType="Schema" ID="189810b4-26ee-4c96-a5a6-9351753e3234" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

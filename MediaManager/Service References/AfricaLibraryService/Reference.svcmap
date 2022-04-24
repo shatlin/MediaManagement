@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6bec2108-f26c-4e1c-9518-02434eb94513" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="97993194-09cf-452c-aa51-5227905b5502" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="903bf471-fa0a-4070-a317-1f10aff0837f" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="fb6e9218-8e65-4c87-a3e0-d307fdc3b2ef" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+    <MetadataFile FileName="Pluto.DataContracts.MediaManagerLibrary.xsd" MetadataType="Schema" ID="59361dca-1841-4fab-8df4-6895e6e8cc4e" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+    <MetadataFile FileName="Pluto.Common.Entities.xsd" MetadataType="Schema" ID="30a88697-a378-4ffe-97b4-d21e157cb32b" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+    <MetadataFile FileName="Pluto.Entities.MediaManagerLibrary.xsd" MetadataType="Schema" ID="56a4f50a-030a-43eb-8071-244ff7987838" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+    <MetadataFile FileName="Pluto.Common.Entities.Enums.xsd" MetadataType="Schema" ID="eb00d384-ac92-4f63-a72b-2d24f4bbef3e" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+    <MetadataFile FileName="Pluto.Infrastructure.ExceptionHandling.Exceptions.xsd" MetadataType="Schema" ID="4da3ec81-7c48-447d-83ef-7d016fabc7ea" SourceId="1" SourceUrl="net.tcp://localhost:8001/Pluto/Pluto.LibraryMaintenanceService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

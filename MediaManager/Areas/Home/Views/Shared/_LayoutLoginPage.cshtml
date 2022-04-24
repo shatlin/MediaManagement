@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<html lang="en">
+@using StackExchange.Profiling;
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - MediaManager</title>
+    <link href="~/Content/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/styles/Project.css" rel="stylesheet" type="text/css" />
+    @Scripts.Render("~/Content/LoginPagescripts")
+
+
+</head>
+<body>
+    <table class="LayoutHeader">
+        
+      
+        <tr>
+            <td class="bodycontentSides">
+            </td>
+            <td class="Loginbody-content">
+                @RenderBody()
+            </td>
+            <td class="bodycontentSides">
+            </td>
+        </tr>
+        
+    </table>
+    <div class="cbox">
+    </div>
+    @RenderSection("scripts", required: false)
+    @MiniProfiler.RenderIncludes(position: RenderPosition.Right)
+</body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.DealMemo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.DealMemo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="ArrayOfSplitPaymentVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SplitPaymentVO" nillable="true" type="tns:SplitPaymentVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSplitPaymentVO" nillable="true" type="tns:ArrayOfSplitPaymentVO" />
+  <xs:complexType name="SplitPaymentVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsEditable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MonthNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="PaymentMonth" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PaymentPercent" type="xs:double" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SplitPaymentVO" nillable="true" type="tns:SplitPaymentVO" />
+  <xs:complexType name="ArrayOfMediaServicePlatformVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaServicePlatformVO" nillable="true" type="tns:MediaServicePlatformVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediaServicePlatformVO" nillable="true" type="tns:ArrayOfMediaServicePlatformVO" />
+  <xs:complexType name="MediaServicePlatformVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q2:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsRightsAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSelected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSelectedCatchUp" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MapId" type="xs:int" />
+          <xs:element minOccurs="0" name="NoOfVPUsed" type="xs:int" />
+          <xs:element minOccurs="0" name="Platform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlatformCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlatformId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ProdYear" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaServicePlatformVO" nillable="true" type="tns:MediaServicePlatformVO" />
+  <xs:complexType name="ArrayOfRunsPerChannelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RunsPerChannelVO" nillable="true" type="tns:RunsPerChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRunsPerChannelVO" nillable="true" type="tns:ArrayOfRunsPerChannelVO" />
+  <xs:complexType name="RunsPerChannelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Allocations" type="xs:int" />
+          <xs:element minOccurs="0" name="AllocationsCosted" type="xs:int" />
+          <xs:element minOccurs="0" name="AllocationsCosted2" type="xs:int" />
+          <xs:element minOccurs="0" name="Channel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelROYFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Channel_Number" type="xs:int" />
+          <xs:element minOccurs="0" name="CopyActionForChannel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cost" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CostedRunsUsed" type="xs:int" />
+          <xs:element minOccurs="0" name="CostedRunsUsed2" type="xs:int" />
+          <xs:element minOccurs="0" name="CostingRuns" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="License_Cost" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Max_channel_Number" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PT_Runs" type="xs:int" />
+          <xs:element minOccurs="0" name="Runs" type="xs:int" />
+          <xs:element minOccurs="0" name="RunsRemaining" type="xs:int" />
+          <xs:element minOccurs="0" name="SchedulingWindowED" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchedulingWindowED2" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SchedulingWindowSD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchedulingWindowSD2" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TotalCostedRuns" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalUsedRuns" type="xs:int" />
+          <xs:element minOccurs="0" name="Used" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RunsPerChannelVO" nillable="true" type="tns:RunsPerChannelVO" />
+</xs:schema>

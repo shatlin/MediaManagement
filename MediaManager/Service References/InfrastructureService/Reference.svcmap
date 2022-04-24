@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="23461e3b-1f4d-432b-b972-4f4d3afae123" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InfrastructureService.wsdl" MetadataType="Wsdl" ID="d2280c4f-4225-4f6b-b0a7-e96fffc27561" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?wsdl" />
+    <MetadataFile FileName="InfrastructureService.xsd" MetadataType="Schema" ID="b529b5ea-1f25-41cd-bb90-82325dc0ebe0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InfrastructureService1.xsd" MetadataType="Schema" ID="30d90199-6d8d-45ff-b342-a3a5281ff7f1" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InfrastructureService2.xsd" MetadataType="Schema" ID="51d918c6-56cf-476f-8e27-8c7a43bd227f" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InfrastructureService3.xsd" MetadataType="Schema" ID="85815eda-837e-4a33-a81d-3b6c2a462b04" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InfrastructureService4.xsd" MetadataType="Schema" ID="86eef26a-9a44-42c1-863d-9c6508dc8215" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd6" />
+    <MetadataFile FileName="InfrastructureService5.xsd" MetadataType="Schema" ID="fa698b43-f1f6-4127-b554-d74d7f656fac" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd5" />
+    <MetadataFile FileName="InfrastructureService6.xsd" MetadataType="Schema" ID="6f226eeb-785f-413a-a61e-17bcf6e88588" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd4" />
+    <MetadataFile FileName="InfrastructureService.disco" MetadataType="Disco" ID="38471f53-52fc-467d-bceb-33cd82abf9dd" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

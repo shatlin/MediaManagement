@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RegionSplitService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Finance.Common" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRegionSplit_GetRegionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionList" />
+  </wsdl:message>
+  <wsdl:message name="IRegionSplit_GetRegionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRegionSplit_GetRegionList_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IRegionSplit">
+    <wsdl:operation name="GetRegionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegionSplit/GetRegionList" message="tns:IRegionSplit_GetRegionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegionSplit/GetRegionListResponse" message="tns:IRegionSplit_GetRegionList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRegionSplit/GetRegionListMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IRegionSplit_GetRegionList_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegionSplitServiceTCPEndpoint" type="tns:IRegionSplit">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRegionList">
+      <soap:operation soapAction="http://tempuri.org/IRegionSplit/GetRegionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:IRegionSplit">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetRegionList">
+      <soap12:operation soapAction="http://tempuri.org/IRegionSplit/GetRegionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegionSplitService">
+    <wsdl:port name="RegionSplitServiceTCPEndpoint" binding="tns:RegionSplitServiceTCPEndpoint">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

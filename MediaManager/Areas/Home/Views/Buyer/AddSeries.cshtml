@@ -1,0 +1,91 @@
+﻿@model MediaManager.Models.AddSeries
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#season').hide();
+
+        var s1 = '@Session["Series"]';
+        var s2 = '@Session["Season"]';
+
+        if (s1 != null || s2 != null) {
+
+            $('#AddSeries').show();
+            document.getElementById('txtSeries').value = s1;
+            document.getElementById('txtSeason').value = s2;
+        }
+        else {
+
+            $('#season').hide();
+        }
+    });
+    function showSeason() {
+
+        $('#season').show();                                   //        document.getElementById('season').style.display = "block" 
+    }
+
+     function generate()    {
+
+    var url = '@Url.Action("GenerateEpisodes", "Screener")';
+    window.location.href = url;  //+"?Series=" + document.getElementById('txtSeries').value + "&Season=" + document.getElementById('txtSeason').value; 
+    }
+
+
+</script>
+<br />
+<div id="AddSeries" style="background-color:Silver" >
+<br /><br />
+
+<div style="font-size:20px; height: 30px; font-weight:bold; vertical-align:baseline; text-align:left; border :2px">
+    Series Tree     </div>
+    <br /><br /><br />
+   @using (Html.BeginForm())
+   {
+    <table>
+    <tr>
+    <td style="width:33%">     <input type="button" id="btnAddSeason" value="Add Season"  onclick="showSeason()"/>    </td>
+    <td style="width:33%">    <input type="submit" value="Save" name="action"/>    </td> 
+    @*<td style="width:33%">    <input type="submit"  value="Generate Episodes"   name="action"/>    </td>
+    <td style="width:33%">    <input type="button" id="btnGenerateEpisodes" value="Generate Episodes" onclick="generate()" />    </td>    *@
+    </tr>     
+    <tr>
+    <td>
+    @Html.Label("Series Name")</td>
+    <td>    
+    @Html.TextBoxFor(m=>m.Series)
+@*    @Html.TextBox("Series", null,new {id = "txtSeries"})*@
+    </td>
+    </tr>
+      <tr id="season" >
+    <td >
+    @Html.Label("Season Name")</td>
+    <td>
+    @Html.TextBoxFor(m=>m.Season)
+
+ @*   @Html.TextBox("Season",null, new { id = "txtSeason" })*@
+    </td>
+    </tr>
+    </table>    
+     }
+    </div>
+
+   @*  <% using (Html.BeginForm()) {%>
+        <fieldset> 
+            <legend>Create person</legend> 
+            <p> 
+                <%= Html.LabelFor(model => model.Name) %> 
+                <%= Html.TextBoxFor(model => model.Name) %> 
+                <%= Html.ValidationMessageFor(model => model.Name) %> 
+            </p> 
+            <p> 
+                <%= Html.LabelFor(model => model.Email) %> 
+                <%= Html.TextBoxFor(model => model.Email) %> 
+                <%= Html.ValidationMessageFor(model => model.Email) %> 
+            </p> 
+            <p> 
+                <input type="submit" value="Cancel" name="action" /> 
+                <input type="submit" value="Create" name="action" /> 
+            </p> 
+        </fieldset>
+    <% } %>*@

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagement.TraffixAndTransfers" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagement.TraffixAndTransfers" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="ArrayOfChannelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChannelVO" nillable="true" type="tns:ChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChannelVO" nillable="true" type="tns:ArrayOfChannelVO" />
+  <xs:complexType name="ChannelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelPrepInstruction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelShortNameFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicNum" type="xs:int" />
+          <xs:element minOccurs="0" name="PrepInstructionAspectRatio" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PrepInstructionAspectRatioValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrepInstructionAudioCensoring" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PrepInstructionCreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PrepInstructionDVD" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PrepInstructionEntryOperator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrepInstructionHI" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PrepInstructionWideScreen" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelVO" nillable="true" type="tns:ChannelVO" />
+</xs:schema>

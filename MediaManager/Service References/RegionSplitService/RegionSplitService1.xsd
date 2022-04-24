@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Finance.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Finance.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="SearchRegionSplitRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Region" nillable="true" type="q2:RegionVO" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Territory" nillable="true" type="q3:TerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchRegionSplitRequest" nillable="true" type="tns:SearchRegionSplitRequest" />
+  <xs:complexType name="SearchRegionSplitResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q4:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="LicenseesVOList" nillable="true" type="q5:ArrayOfLicenseesVO" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="RegionVOList" nillable="true" type="q6:ArrayOfRegionVO" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="TerritoryVOList" nillable="true" type="q7:ArrayOfTerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchRegionSplitResponse" nillable="true" type="tns:SearchRegionSplitResponse" />
+</xs:schema>

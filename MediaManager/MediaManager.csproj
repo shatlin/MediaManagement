@@ -1,0 +1,2117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EBEA19CD-4E3B-4E7D-8B90-AFC78F180496}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MediaManager</RootNamespace>
+    <AssemblyName>MediaManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\Elmah-1.2-sp2\net-2.0\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler">
+      <HintPath>..\packages\MiniProfiler.2.0.2\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\Nlog\lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.111.7.20, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <HintPath>..\packages\Oracle.DataAccess\Lib\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Acquisition\AcquisitionAreaRegistration.cs" />
+    <Compile Include="Areas\Acquisition\BO\DealMemoMaintenanceBO.cs" />
+    <Compile Include="Areas\Acquisition\Controllers\DealMemoUserMaintenanceController.cs" />
+    <Compile Include="Areas\Acquisition\Controllers\LicenseRController.cs" />
+    <Compile Include="Areas\Acquisition\Controllers\ViewLicenseController.cs" />
+    <Compile Include="Areas\Acquisition\Models\ADMDealBetnDatesRptModel.cs" />
+    <Compile Include="Areas\Acquisition\Models\DealsNotSignedModel.cs" />
+    <Compile Include="Areas\Acquisition\Controllers\DealMemoMaintenanceController.cs" />
+    <Compile Include="Areas\Acquisition\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Acquisition\ViewModels\AcquisitionLookupManager.cs" />
+    <Compile Include="Areas\Acquisition\ViewModels\BudgetingLookupManager.cs" />
+    <Compile Include="Areas\Acquisition\ViewModels\DealMemo.cs" />
+    <Compile Include="Areas\Acquisition\ViewModels\DealMemoMaintenanceViewModel.cs" />
+    <Compile Include="Areas\Acquisition\ViewModels\DealMemoUserMaintenanceViewModel.cs" />
+    <Compile Include="Areas\Acquisition\ViewModels\LicenseViewModel.cs" />
+    <Compile Include="Areas\Acquisition\ViewModels\ViewLicenseModel.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\BO\SystemAdminBO.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Models\ManageUser.cs" />
+    <Compile Include="Areas\Admin\Models\ManageUsersRole.cs" />
+    <Compile Include="Areas\Admin\ViewModels\ManageRoleViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\ManageUsersViewModel.cs" />
+    <Compile Include="Areas\Home\BO\User.cs" />
+    <Compile Include="Areas\Home\Models\ReportParameter.cs" />
+    <Compile Include="Areas\Home\Models\ReportPrerequisiteDataModel.cs" />
+    <Compile Include="Areas\Home\Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Home\Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Home\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Home\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
+    <Compile Include="Areas\Home\Models\AccountModels.cs" />
+    <Compile Include="Areas\Home\Models\ErrorModel.cs" />
+    <Compile Include="Areas\Home\Models\OracleDBHelper.cs" />
+    <Compile Include="Areas\Home\Models\SampleRole.cs" />
+    <Compile Include="Areas\Home\Models\ScreenerModels.cs" />
+    <Compile Include="Areas\Home\Models\Title.cs" />
+    <Compile Include="Areas\Home\Queries\Home\GetlicensesQuery.cs" />
+    <Compile Include="Areas\Home\Queries\Home\GetTitlesQuery.cs" />
+    <Compile Include="Areas\Home\Queries\Home\UpdateTitlesQuery.cs" />
+    <Compile Include="Areas\Home\ReportViewer\ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Home\ReportViewer\ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Home\ViewModels\AddTitlesViewModel.cs" />
+    <Compile Include="Areas\Home\ViewModels\TitleListViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\Common\Common.cs" />
+    <Compile Include="Areas\Media_Mgt\Controllers\LibraryController.cs" />
+    <Compile Include="Areas\Media_Mgt\Controllers\ManageDispatchController.cs" />
+    <Compile Include="Areas\Media_Mgt\Controllers\ProgrammeMaintenanceController.cs" />
+    <Compile Include="Areas\Media_Mgt\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Media_Mgt\Controllers\SeriesMaintainceController.cs" />
+    <Compile Include="Areas\Media_Mgt\Controllers\SeriesTreeController.cs" />
+    <Compile Include="Areas\Media_Mgt\Controllers\TapeMaintenanceController.cs" />
+    <Compile Include="Areas\Media_Mgt\Models\AfrMatStatusRptModel.cs" />
+    <Compile Include="Areas\Media_Mgt\Models\SupplierCommunication.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\LibraryBookInViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\LibraryBookOutViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\LibraryViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\ManageDispatchViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\ProgrammeMaintenanceViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\SeriesSearchViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\SeriesTreeViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\TapeMaintenanceViewModel.cs" />
+    <Compile Include="Areas\Media_Mgt\ViewModels\TrafficToSupplierCommViewModel.cs" />
+    <Compile Include="Areas\scheduling\Models\PerDayRptModel.cs" />
+    <Compile Include="Areas\scheduling\Controllers\ReportController.cs" />
+    <Compile Include="Areas\scheduling\Models\ScheduleChangesRptModel.cs" />
+    <Compile Include="Areas\scheduling\ViewModels\SchedulingOperationsServicesManager.cs" />
+    <Compile Include="Infrastructure\Attributes\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\ElmahAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\HandleAndLogErrorAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\MultiButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Media_Mgt\Media_MgtAreaRegistration.cs" />
+    <Compile Include="Areas\scheduling\schedulingAreaRegistration.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Attributes\ReportAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\ValidationAttribute.cs" />
+    <Compile Include="Infrastructure\Logging\MediaManagerLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\WCFIntegration\CallContext.cs" />
+    <Compile Include="Infrastructure\WCFIntegration\CallContextBehavior.cs" />
+    <Compile Include="Infrastructure\WCFIntegration\CallContextBehaviorExtensionElement.cs" />
+    <Compile Include="Infrastructure\WCFIntegration\CallContextHeaderNames.cs" />
+    <Compile Include="Infrastructure\WCFIntegration\CallContextMessageInspector.cs" />
+    <Compile Include="Infrastructure\Helpers\ActionConstants.cs" />
+    <Compile Include="Infrastructure\Helpers\AreaConstants.cs" />
+    <Compile Include="Infrastructure\Helpers\ControllerConstants.cs" />
+    <Compile Include="Infrastructure\Lookups\ContractLicenseeLookups.cs" />
+    <Compile Include="Infrastructure\Lookups\ContractLicenseLookupLOVLoader.cs" />
+    <Compile Include="Infrastructure\Lookups\ContractLicenseLookupsManager.cs" />
+    <Compile Include="Infrastructure\Lookups\Lookups.cs" />
+    <Compile Include="Infrastructure\Lookups\LookupServiceLookups.cs" />
+    <Compile Include="Infrastructure\Lookups\Med_mngtLookupsManager.cs" />
+    <Compile Include="Infrastructure\Lookups\Med_mngtLOVLoader.cs" />
+    <Compile Include="Infrastructure\Lookups\Med_mngt_Lookups.cs" />
+    <Compile Include="Infrastructure\Lookups\SystemAdminLookupLoader.cs" />
+    <Compile Include="Infrastructure\Lookups\SystemAdminLookupManager.cs" />
+    <Compile Include="Infrastructure\Menu\ActionMenu.cs" />
+    <Compile Include="Infrastructure\Menu\ControllerMenu.cs" />
+    <Compile Include="Infrastructure\Menu\MenuName.cs" />
+    <Compile Include="Infrastructure\Menu\ModuleMenu.cs" />
+    <Compile Include="Infrastructure\Helpers\ServiceInvoker.cs" />
+    <Compile Include="Infrastructure\Helpers\SharedPages.cs" />
+    <Compile Include="Infrastructure\Helpers\UserContext.cs" />
+    <Compile Include="Infrastructure\Lookups\AcquisitionLookupsManager.cs" />
+    <Compile Include="Infrastructure\Lookups\AcquisitionLOVLoader.cs" />
+    <Compile Include="Infrastructure\Lookups\LookupsManager.cs" />
+    <Compile Include="Infrastructure\Lookups\LOVLoader.cs" />
+    <Compile Include="Infrastructure\Menu\MenuManager.cs" />
+    <Compile Include="Infrastructure\Report\ReportManager.cs" />
+    <Compile Include="Infrastructure\Roles\Roles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AcquisitionLookupService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MediaManagerLibraryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BudgetingLookupService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ContractLicenseLookupService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DealMemoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GeneralProgrammingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InfrastructureService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LicenseService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LookupsServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MediaManagementLookupServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProgrammeLibraryServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RegionSplitService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReportingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SchedulingOperationsServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SystemAdminService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Media_Mgt\Views\Library\ReceiptofMaterial.cshtml" />
+    <Content Include="Content\images\arrow_left_peppermint.png" />
+    <Content Include="Content\images\arrwo-right.png" />
+    <Content Include="Content\images\filter.png" />
+    <Content Include="Content\images\GridFilterIcon.png" />
+    <Content Include="Content\images\Mnet.jpg" />
+    <Content Include="Content\noty\jquery.noty.js" />
+    <Content Include="Content\noty\layouts\bottom.js" />
+    <Content Include="Content\noty\layouts\bottomCenter.js" />
+    <Content Include="Content\noty\layouts\bottomLeft.js" />
+    <Content Include="Content\noty\layouts\bottomRight.js" />
+    <Content Include="Content\noty\layouts\center.js" />
+    <Content Include="Content\noty\layouts\centerLeft.js" />
+    <Content Include="Content\noty\layouts\centerRight.js" />
+    <Content Include="Content\noty\layouts\inline.js" />
+    <Content Include="Content\noty\layouts\top.js" />
+    <Content Include="Content\noty\layouts\topCenter.js" />
+    <Content Include="Content\noty\layouts\topLeft.js" />
+    <Content Include="Content\noty\layouts\topRight.js" />
+    <Content Include="Content\noty\promise.js" />
+    <Content Include="Content\noty\themes\default.js" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoHistory.js" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoLanguage.js" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoMaintenance.js" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoPayment.js" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoProgramme.js" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoSearch.js" />
+    <Content Include="App_Readme\Elmah.Oracle.sql" />
+    <Content Include="App_Readme\Elmah.Oracle.txt" />
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Areas\Home\ReportViewer\ReportViewer.aspx" />
+    <Content Include="Areas\Home\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\Http403.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\_LayoutLoginPage.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\_SetMainMenuStrip.cshtml" />
+    <Content Include="Areas\Home\Views\Web.config" />
+    <Content Include="Areas\Home\Views\_ViewStart.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Content\colorbox\colorbox.css" />
+    <Content Include="Content\colorbox\images\border.png" />
+    <Content Include="Content\colorbox\images\border1.png" />
+    <Content Include="Content\colorbox\images\controls.png" />
+    <Content Include="Content\colorbox\images\controls1.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderBottomCenter.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderBottomLeft.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderBottomRight.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderMiddleLeft.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderMiddleRight.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderTopCenter.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderTopLeft.png" />
+    <Content Include="Content\colorbox\images\internet_explorer\borderTopRight.png" />
+    <Content Include="Content\colorbox\images\loading.gif" />
+    <Content Include="Content\colorbox\images\loading_background.png" />
+    <Content Include="Content\colorbox\images\overlay.png" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoUserMaintenance.js" />
+    <Content Include="Content\Scripts\Helper\Common.js" />
+    <Content Include="Content\Scripts\Media_Mgt\Library\MediaManagerMaterialStatus.js" />
+    <Content Include="Content\Scripts\Media_Mgt\Library\LibraryBookOut.js" />
+    <Content Include="Content\Scripts\Media_Mgt\Library\TrafficToSupplierCommunication.js" />
+    <Content Include="Content\Scripts\Media_Mgt\Library\LibraryBookIn.js" />
+    <Content Include="Content\Scripts\Media_Mgt\Library\_ProgrammeSearchPartial.js" />
+    <Content Include="Content\Scripts\Media_Mgt\ProgrammeMaintenance\ProgrammeMaintenance.js" />
+    <Content Include="Content\Scripts\Media_Mgt\SeriesMaintaince\SeriesDetails.js" />
+    <Content Include="Content\Scripts\Media_Mgt\SeriesMaintaince\SeriesTree.js" />
+    <Content Include="Content\SlickGrid-master\images\lov_down_arrow.png" />
+    <Content Include="Content\styles\To delete\dataTable.css" />
+    <Content Include="Content\images\arrwo-right.png" />
+    <Content Include="Content\images\datePicker.png" />
+    <Content Include="Content\styles\To delete\examples.css" />
+    <Content Include="Content\styles\To delete\ie.css" />
+    <Content Include="Content\images\accent.png" />
+    <Content Include="Content\images\actions.gif" />
+    <Content Include="Content\images\ajax-loader-small.gif" />
+    <Content Include="Content\images\arrow_redo.png" />
+    <Content Include="Content\images\arrow_right_peppermint.png" />
+    <Content Include="Content\images\arrow_right_spearmint.png" />
+    <Content Include="Content\images\arrow_undo.png" />
+    <Content Include="Content\images\border.png" />
+    <Content Include="Content\images\border1.png" />
+    <Content Include="Content\images\bullet.png" />
+    <Content Include="Content\images\bullet_blue.png" />
+    <Content Include="Content\images\bullet_star.png" />
+    <Content Include="Content\images\bullet_toggle_minus.png" />
+    <Content Include="Content\images\bullet_toggle_plus.png" />
+    <Content Include="Content\images\button_bg.gif" />
+    <Content Include="Content\images\button_hover_bg.gif" />
+    <Content Include="Content\images\calendar.gif" />
+    <Content Include="Content\images\collapse.gif" />
+    <Content Include="Content\images\comment_yellow.gif" />
+    <Content Include="Content\images\controls.png" />
+    <Content Include="Content\images\controls1.png" />
+    <Content Include="Content\images\date.png" />
+    <Content Include="Content\images\down.gif" />
+    <Content Include="Content\images\drag-handle.png" />
+    <Content Include="Content\images\editor-helper-bg.gif" />
+    <Content Include="Content\images\expand.gif" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\header-bg.gif" />
+    <Content Include="Content\images\header-columns-bg.gif" />
+    <Content Include="Content\images\header-columns-over-bg.gif" />
+    <Content Include="Content\images\help.png" />
+    <Content Include="Content\images\heroAccent.png" />
+    <Content Include="Content\images\img_btn.png" />
+    <Content Include="Content\images\info.gif" />
+    <Content Include="Content\images\internet_explorer\borderBottomCenter.png" />
+    <Content Include="Content\images\internet_explorer\borderBottomLeft.png" />
+    <Content Include="Content\images\internet_explorer\borderBottomRight.png" />
+    <Content Include="Content\images\internet_explorer\borderMiddleLeft.png" />
+    <Content Include="Content\images\internet_explorer\borderMiddleRight.png" />
+    <Content Include="Content\images\internet_explorer\borderTopCenter.png" />
+    <Content Include="Content\images\internet_explorer\borderTopLeft.png" />
+    <Content Include="Content\images\internet_explorer\borderTopRight.png" />
+    <Content Include="Content\images\listview.gif" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\loading_background.png" />
+    <Content Include="Content\images\Login Manager.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\lov_down_arrow.png" />
+    <Content Include="Content\images\lov_up_arrow.png" />
+    <Content Include="Content\images\overlay.png" />
+    <Content Include="Content\images\pencil.gif" />
+    <Content Include="Content\images\row-over-bg.gif" />
+    <Content Include="Content\images\sort-asc.gif" />
+    <Content Include="Content\images\sort-asc.png" />
+    <Content Include="Content\images\sort-desc.gif" />
+    <Content Include="Content\images\sort-desc.png" />
+    <Content Include="Content\images\stripes.png" />
+    <Content Include="Content\images\tag_red.png" />
+    <Content Include="Content\images\tick.png" />
+    <Content Include="Content\images\treeview-default.gif" />
+    <Content Include="Content\images\treeview-famfamfam.gif" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\images\user_identity.gif" />
+    <Content Include="Content\images\user_identity_plus.gif" />
+    <Content Include="Content\images\x.png" />
+    <Content Include="Content\styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Content\styles\jquery-ui.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.accordion.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.all.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.autocomplete.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.base.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.button.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.core.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.datepicker.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.dialog.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.progressbar.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.resizable.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.selectable.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.slider.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.tabs.css" />
+    <Content Include="Content\styles\To delete\JQuery\jquery.ui.theme.css" />
+    <Content Include="Content\styles\To delete\master.css" />
+    <Content Include="Content\styles\To delete\Popup.css" />
+    <Content Include="Content\styles\Project.css" />
+    <Content Include="Content\Scripts\Acquisition\DealMemoMaintenance\DealMemoTerritory.js" />
+    <Content Include="Content\Scripts\Acquisition\Report\DealsExecutedBetweenTwoDates.js" />
+    <Content Include="Content\Scripts\Acquisition\Report\DealsNotSigned.js" />
+    <Content Include="Content\Scripts\Admin\ManageRoles\ManageRole.js" />
+    <Content Include="Content\Scripts\Admin\ManageUsers\ManageUsers.js" />
+    <Content Include="Content\Scripts\MVC\firebugx.js" />
+    <Content Include="Content\Scripts\Helper\Validation.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.4.2.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.4.4.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.5.1.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.5.1.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.7.1.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.7.1.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.7.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-1.8.3.js" />
+    <Content Include="Content\Scripts\jquery\jquery-latest.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-ui-1.8.11.js" />
+    <Content Include="Content\Scripts\jquery\jquery-ui-1.8.11.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery-ui-1.8.20.js" />
+    <Content Include="Content\Scripts\jquery\jquery-ui-1.8.20.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery.colorbox.js" />
+    <Content Include="Content\styles\jquery.contextMenu.css" />
+    <Content Include="Content\Scripts\jquery\jquery.contextMenu.js" />
+    <Content Include="Content\Scripts\jquery\jquery.event.drag-2.0.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery.event.drop-2.0.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery.simulate.js" />
+    <Content Include="Content\Scripts\jquery\jquery.sparkline.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Content\Scripts\jquery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\jquery\jquery.validate.js" />
+    <Content Include="Content\Scripts\jquery\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Scripts\jquery\Jquery_AutoComplete.js" />
+    <Content Include="Content\Scripts\jquery\Jquery_BrowserCompatibility.js" />
+    <Content Include="Content\Scripts\Helper\JSLINQ.js" />
+    <Content Include="Content\Scripts\MVC\knockout-2.1.0.debug.js" />
+    <Content Include="Content\Scripts\MVC\knockout-2.1.0.js" />
+    <Content Include="Content\Scripts\Media_Mgt\ProgrammeMaintenance\ProgrammeSearch.js" />
+    <Content Include="Content\Scripts\Media_Mgt\Library\LibraryMaintenance.js" />
+    <Content Include="Content\Scripts\Media_Mgt\ManageDispatch\BulkDispatch.js" />
+    <Content Include="Content\Scripts\Media_Mgt\ManageDispatch\BulkReturn.js" />
+    <Content Include="Content\Scripts\Media_Mgt\SeriesMaintaince\SeriesMaintenance.js" />
+    <Content Include="Content\Scripts\Media_Mgt\TapMaintenance\CreateNewTape.js" />
+    <Content Include="Content\Scripts\Media_Mgt\TapMaintenance\TapeMaintenance.js" />
+    <Content Include="Content\Scripts\MVC\MicrosoftAjax.debug.js" />
+    <Content Include="Content\Scripts\MVC\MicrosoftAjax.js" />
+    <Content Include="Content\Scripts\MVC\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Content\Scripts\MVC\MicrosoftMvcAjax.js" />
+    <Content Include="Content\Scripts\MVC\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Content\Scripts\MVC\MicrosoftMvcValidation.js" />
+    <Content Include="Content\Scripts\MVC\modernizr-1.7.js" />
+    <Content Include="Content\Scripts\MVC\modernizr-1.7.min.js" />
+    <Content Include="Content\Scripts\MVC\modernizr-2.5.3.js" />
+    <Content Include="Content\Scripts\Scheduling\Report\CatchUpDayByDayReport.js" />
+    <Content Include="Content\Scripts\Scheduling\Report\DayByDayReport.js" />
+    <Content Include="Content\Scripts\Scheduling\Report\SchedulingChangesReport.js" />
+    <Content Include="Content\Scripts\Helper\shortcut.js" />
+    <Content Include="Content\Scripts\Helper\treeview.js" />
+    <Content Include="Content\Scripts\Helper\SlickGridManager.js" />
+    <Content Include="Content\Scripts\MVC\_references.js" />
+    <Content Include="Content\SlickGrid-master\controls\slick.columnpicker.css" />
+    <Content Include="Content\SlickGrid-master\controls\slick.columnpicker.js" />
+    <Content Include="Content\SlickGrid-master\controls\slick.pager.css" />
+    <Content Include="Content\SlickGrid-master\controls\slick.pager.js" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\SlickGrid-master\css\smoothness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Content\SlickGrid-master\examples\example-checkbox-row-select.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-colspan.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-composite-editor-item-details.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-custom-column-value-extractor.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-explicit-initialization.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-grouping.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-header-row.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-multi-column-sort.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-optimizing-dataview.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-plugin-headerbuttons.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-plugin-headermenu.html" />
+    <Content Include="Content\SlickGrid-master\examples\example-spreadsheet.html" />
+    <Content Include="Content\SlickGrid-master\examples\example1-simple.html" />
+    <Content Include="Content\SlickGrid-master\examples\example10-async-post-render.html" />
+    <Content Include="Content\SlickGrid-master\examples\example11-autoheight.html" />
+    <Content Include="Content\SlickGrid-master\examples\example12-fillbrowser.html" />
+    <Content Include="Content\SlickGrid-master\examples\example13-getItem-sorting.html" />
+    <Content Include="Content\SlickGrid-master\examples\example14-highlighting.html" />
+    <Content Include="Content\SlickGrid-master\examples\example2-formatters.html" />
+    <Content Include="Content\SlickGrid-master\examples\example3-editing.html" />
+    <Content Include="Content\SlickGrid-master\examples\example3a-compound-editors.html" />
+    <Content Include="Content\SlickGrid-master\examples\example3b-editing-with-undo.html" />
+    <Content Include="Content\SlickGrid-master\examples\example4-model.html" />
+    <Content Include="Content\SlickGrid-master\examples\example5-collapsing.html" />
+    <Content Include="Content\SlickGrid-master\examples\example6-ajax-loading.html" />
+    <Content Include="Content\SlickGrid-master\examples\example7-events.html" />
+    <Content Include="Content\SlickGrid-master\examples\example8-alternative-display.html" />
+    <Content Include="Content\SlickGrid-master\examples\example9-row-reordering.html" />
+    <Content Include="Content\SlickGrid-master\examples\examples.css" />
+    <Content Include="Content\SlickGrid-master\examples\slick-default-theme.css" />
+    <Content Include="Content\SlickGrid-master\examples\slick.compositeeditor.js" />
+    <Content Include="Content\SlickGrid-master\images\actions.gif" />
+    <Content Include="Content\SlickGrid-master\images\ajax-loader-small.gif" />
+    <Content Include="Content\SlickGrid-master\images\arrow_redo.png" />
+    <Content Include="Content\SlickGrid-master\images\arrow_right_peppermint.png" />
+    <Content Include="Content\SlickGrid-master\images\arrow_right_spearmint.png" />
+    <Content Include="Content\SlickGrid-master\images\arrow_undo.png" />
+    <Content Include="Content\SlickGrid-master\images\bullet_blue.png" />
+    <Content Include="Content\SlickGrid-master\images\bullet_star.png" />
+    <Content Include="Content\SlickGrid-master\images\bullet_toggle_minus.png" />
+    <Content Include="Content\SlickGrid-master\images\bullet_toggle_plus.png" />
+    <Content Include="Content\SlickGrid-master\images\calendar.gif" />
+    <Content Include="Content\SlickGrid-master\images\collapse.gif" />
+    <Content Include="Content\SlickGrid-master\images\comment_yellow.gif" />
+    <Content Include="Content\SlickGrid-master\images\down.gif" />
+    <Content Include="Content\SlickGrid-master\images\drag-handle.png" />
+    <Content Include="Content\SlickGrid-master\images\editor-helper-bg.gif" />
+    <Content Include="Content\SlickGrid-master\images\expand.gif" />
+    <Content Include="Content\SlickGrid-master\images\header-bg.gif" />
+    <Content Include="Content\SlickGrid-master\images\header-columns-bg.gif" />
+    <Content Include="Content\SlickGrid-master\images\header-columns-over-bg.gif" />
+    <Content Include="Content\SlickGrid-master\images\help.png" />
+    <Content Include="Content\SlickGrid-master\images\info.gif" />
+    <Content Include="Content\SlickGrid-master\images\listview.gif" />
+    <Content Include="Content\SlickGrid-master\images\pencil.gif" />
+    <Content Include="Content\SlickGrid-master\images\row-over-bg.gif" />
+    <Content Include="Content\SlickGrid-master\images\sort-asc.gif" />
+    <Content Include="Content\SlickGrid-master\images\sort-asc.png" />
+    <Content Include="Content\SlickGrid-master\images\sort-desc.gif" />
+    <Content Include="Content\SlickGrid-master\images\sort-desc.png" />
+    <Content Include="Content\SlickGrid-master\images\stripes.png" />
+    <Content Include="Content\SlickGrid-master\images\tag_red.png" />
+    <Content Include="Content\SlickGrid-master\images\tick.png" />
+    <Content Include="Content\SlickGrid-master\images\user_identity.gif" />
+    <Content Include="Content\SlickGrid-master\images\user_identity_plus.gif" />
+    <Content Include="Content\SlickGrid-master\lib\firebugx.js" />
+    <Content Include="Content\SlickGrid-master\lib\jquery-1.7.min.js" />
+    <Content Include="Content\SlickGrid-master\lib\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Content\SlickGrid-master\lib\jquery.event.drag-2.0.min.js" />
+    <Content Include="Content\SlickGrid-master\lib\jquery.event.drop-2.0.min.js" />
+    <Content Include="Content\SlickGrid-master\lib\jquery.jsonp-1.1.0.min.js" />
+    <Content Include="Content\SlickGrid-master\lib\jquery.simulate.js" />
+    <Content Include="Content\SlickGrid-master\lib\jquery.sparkline.min.js" />
+    <Content Include="Content\SlickGrid-master\lib\qunit.css" />
+    <Content Include="Content\SlickGrid-master\lib\qunit.js" />
+    <Content Include="Content\SlickGrid-master\MIT-LICENSE.txt" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.autotooltips.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.cellcopymanager.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.cellrangedecorator.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.cellrangeselector.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.cellselectionmodel.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.checkboxselectcolumn.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.headerbuttons.css" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.headerbuttons.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.headermenu.css" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.headermenu.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.rowmovemanager.js" />
+    <Content Include="Content\SlickGrid-master\plugins\slick.rowselectionmodel.js" />
+    <Content Include="Content\SlickGrid-master\slick.core.js" />
+    <Content Include="Content\SlickGrid-master\slick.dataview.js" />
+    <Content Include="Content\SlickGrid-master\slick.editors.js" />
+    <Content Include="Content\SlickGrid-master\slick.formatters.js" />
+    <Content Include="Content\SlickGrid-master\slick.grid.css" />
+    <Content Include="Content\SlickGrid-master\slick.grid.js" />
+    <Content Include="Content\SlickGrid-master\slick.groupitemmetadataprovider.js" />
+    <Content Include="Content\SlickGrid-master\slick.remotemodel.js" />
+    <Content Include="Content\SlickGrid-master\tests\dataview\dataview.js" />
+    <Content Include="Content\SlickGrid-master\tests\dataview\index.html" />
+    <Content Include="Content\SlickGrid-master\tests\grid\grid.js" />
+    <Content Include="Content\SlickGrid-master\tests\grid\index.html" />
+    <Content Include="Content\SlickGrid-master\tests\index.html" />
+    <Content Include="Content\SlickGrid-master\tests\model benchmarks.html" />
+    <Content Include="Content\SlickGrid-master\tests\scrolling benchmarks.html" />
+    <Content Include="Content\styles\style.css" />
+    <Content Include="Content\styles\TabContainer.css" />
+    <Content Include="Content\styles\treeview.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Acquisition\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Media_Mgt\Views\Web.config" />
+    <Content Include="Areas\scheduling\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Home\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\SeriesMaintaince.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoSearch.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoMaintenance.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoRights.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoProgramme.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ProgrammeMaintenance\ProgrammeSearch.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ProgrammeMaintenance\ProgrammeMaintenance.cshtml" />
+    <Content Include="Areas\Acquisition\Views\Report\ADMDealBetnDatesRpt.cshtml" />
+    <Content Include="Areas\Acquisition\Views\Report\DealsNotSigned.cshtml" />
+    <Content Include="Areas\Acquisition\Views\Report\Index.cshtml" />
+    <Content Include="Areas\Home\Views\Report\GenrateReport.cshtml" />
+    <Content Include="Areas\scheduling\Views\Report\SSCPerDayRpt.cshtml" />
+    <Content Include="Areas\scheduling\Views\Report\ScheduleChangesRpt.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoHistory.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoLanguage.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoPayment.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoMaintenance\DealMemoTerritory.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\SeriesDetails.cshtml" />
+    <Content Include="Areas\Acquisition\Views\LicenseR\Index.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ProgrammeMaintenance\ProgrammeSynopsis.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ProgrammeMaintenance\ProgrammeCastDetail.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\TapeMaintenance\TapeMaintenance.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\Http500.cshtml" />
+    <Content Include="Areas\Acquisition\Views\ViewLicense\ViewLicenseDetails.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\TapeMaintenance\CreateNewTape.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ManageDispatch\BulkDispatch.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ManageDispatch\BulkReturn.cshtml" />
+    <Content Include="Areas\Acquisition\Views\DealMemoUserMaintenance\DealMemoUserMaintenance.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\AddUpdateSeriesTitle.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\CreateChangeEpisode.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\AddSeasonTitle.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\UpdateSeasonTitle.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\EnterUpdateLiveInfo.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\ChangeEpisodenumberWorkingTitle.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesMaintaince\ChangeEpisodenumberActualNumber.cshtml" />
+    <Content Include="Areas\scheduling\Views\Report\CatchUpDayByDayReport.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\ManageRoles.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\Library\LibraryBookIn.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\Library\TrafficToSupplierCommunication.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\Library\LibraryBookOut.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ProgrammeMaintenance\PartialLicenseReview.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\Report\MediaManagerMaterialStsRpt.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\Library\_ProgrammeSearchPartial.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\Library\ReturnOfMaterial.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\SeriesTree\SeriesTreeLoad.cshtml" />
+    <Content Include="Areas\Home\Views\Shared\_ReportLayout.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\ProgrammeMaintenance\ProgrammeMaintenancePopup.cshtml" />
+    <None Include="Content\SlickGrid-master\.gitignore" />
+    <None Include="Content\SlickGrid-master\README.md" />
+    <None Include="Service References\MediaManagerLibraryService\Pluto.Common.Entities.Enums.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\Pluto.Common.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\Pluto.DataContracts.MediaManagerLibrary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\Pluto.Entities.MediaManagerLibrary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\Pluto.Infrastructure.ExceptionHandling.Exceptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\service.wsdl" />
+    <None Include="Service References\MediaManagerLibraryService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.GetFIDCodeIDValResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.GetMaterialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SaveActiveUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SaveBookInResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SaveBookOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SaveMaterialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SaveProgramResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchActiveUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchBookInOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchBookInResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchBookOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchMaterialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchMenUsersReponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\MediaManager.MediaManagerLibraryService.SearchProgramResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\ContractLicenseLookupService.wsdl" />
+    <None Include="Service References\ContractLicenseLookupService\ContractLicenseLookupService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\ContractLicenseLookupService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\ContractLicenseLookupService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\ContractLicenseLookupService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\ContractLicenseLookupService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\ContractLicenseLookupService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.ChannelServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.CodeMaintResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.ContractAgencyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.ContractCalcTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.ContractRoyaltyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.ContractStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.DeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.LicensePlayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.LicenseStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.LicEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.LicRightsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.LicShortResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.MediaPlatformResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.MediaTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.MeiGenRefResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.MoveBudgetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.PriceCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.PrimeLevelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.PrimeTimeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\MediaManager.ContractLicenseLookupService.SubCatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <Content Include="Areas\Admin\Views\Admin\ManageUsers.cshtml" />
+    <Content Include="Areas\Media_Mgt\Views\Library\LibraryMaintenance.cshtml" />
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService.wsdl" />
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\GeneralProgrammingService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.ChannelMaintenanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.CurrencyMaintenanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.GeneralProgrammingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.LicenseeMaintenanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SaveChannelBuyingCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SaveChannelServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SaveRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SaveSpotRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SaveSubTypeAndCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SaveSupplierCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SaveTerritoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SearchChannelBuyingCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SearchChannelServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SearchRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SearchSpotRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SearchSubTypeAndCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SearchSupplierCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\MediaManager.GeneralProgrammingService.SearchTerritoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService.wsdl" />
+    <None Include="Service References\RegionSplitService\RegionSplitService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RegionSplitService\MediaManager.RegionSplitService.SearchRegionSplitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Http.WebHost.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Http.SelfHost.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Http.dll" />
+    <None Include="_bin_deployableAssemblies\System.Net.Http.WebRequest.dll" />
+    <None Include="_bin_deployableAssemblies\System.Net.Http.Formatting.dll" />
+    <None Include="_bin_deployableAssemblies\System.Net.Http.dll" />
+    <None Include="_bin_deployableAssemblies\WebMatrix.WebData.xml" />
+    <None Include="_bin_deployableAssemblies\WebMatrix.WebData.dll" />
+    <None Include="_bin_deployableAssemblies\WebMatrix.Data.xml" />
+    <None Include="_bin_deployableAssemblies\WebMatrix.Data.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.xml" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Razor.xml" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Deployment.xml" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Deployment.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Administration.xml" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Administration.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Razor.xml" />
+    <None Include="_bin_deployableAssemblies\System.Web.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Helpers.xml" />
+    <None Include="_bin_deployableAssemblies\System.Web.Helpers.dll" />
+    <None Include="_bin_deployableAssemblies\NuGet.Core.dll" />
+    <None Include="_bin_deployableAssemblies\Microsoft.Web.WebPages.OAuth.xml" />
+    <None Include="_bin_deployableAssemblies\Microsoft.Web.WebPages.OAuth.dll" />
+    <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.xml" />
+    <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
+    <None Include="Content\colorbox\images\internet_explorer\Thumbs.db" />
+    <None Include="Content\colorbox\images\Thumbs.db" />
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService.wsdl" />
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.ActiveUserLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.AmortMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.BOCategoryLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.BroadcastTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.ChannelCompanyRptLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.ComNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.CompanyEnterpriseTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.CompanyTypeCCLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.CompanyTypeInternalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.CompetitorLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.ContractFormResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.CurrencyLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.DealMemoNumberLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.DeliveryCostResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.DeliveryModeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.DMSubGenreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.EnterpriseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.EnterpriseTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.EventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.GenEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.GenRefNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.LanIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.LicNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.LicTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.LiveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.LocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MaterialsReturnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MecCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MecItemClassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MecSoundTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MediaServiceLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MediaServicePlatformCombLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MemComNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MemConNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MemCurrencyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MemLicenseeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MemTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.MpyAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.ParentEnterpriseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.PayAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.PaymentCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.PB_MediaPlatformLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.PB_ProgrammeCategoryLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.RegionLeeLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.RegionLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.ReportCurrencyLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.ReturnCostResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.RightsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.SubTypeLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.TerritoryLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.TypeShowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.UserCompDetailLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.UserLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\MediaManager.AcquisitionLookupService.VenueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService.wsdl" />
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.BudgetStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.ChannelsForUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.FinancialProgrammeTypeCombinationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.FinancialYearCompanyLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.FinYearForUpdateRollingBudgetLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.FixedBudgetReportLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.FixedBudgetTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.LicenseeForFinacialBudgetLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.ProgrammeCombinationTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.RollingBudgetTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BudgetingLookupService\MediaManager.BudgetingLookupService.UsersForChannelsLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService.wsdl" />
+    <None Include="Service References\DealMemoService\DealMemoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.ChannelMaintenanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SaveCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SaveCompetitorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SaveCPDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SaveDealMemoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SaveLanguageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SaveUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SearchCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SearchCompetitorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SearchCPDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SearchDealMemoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SearchDealMemoReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SearchLanguageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SearchUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\MediaManager.DealMemoService.SeriesTreeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService.wsdl" />
+    <None Include="Service References\InfrastructureService\InfrastructureService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InfrastructureService\MediaManager.InfrastructureService.GetAppParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureService\MediaManager.InfrastructureService.LoadControlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureService\MediaManager.InfrastructureService.LoadMenusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InfrastructureService\MediaManager.InfrastructureService.LoadRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService.wsdl" />
+    <None Include="Service References\LicenseService\LicenseService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LicenseService\MediaManager.LicenseService.SaveLicenseeDeletionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LicenseService\MediaManager.LicenseService.SaveLicenseMaintenanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LicenseService\MediaManager.LicenseService.SaveMagicLicenseeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LicenseService\MediaManager.LicenseService.SearchLicenseeDeletionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LicenseService\MediaManager.LicenseService.SearchLicenseeReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LicenseService\MediaManager.LicenseService.SearchLicenseMaintenanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LicenseService\MediaManager.LicenseService.SearchMagicLicenseeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsServices.wsdl" />
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.BookingAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.CastAwardLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.CastRoleLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.CourierCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.DeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.EpisodeTitleLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.FillerCategoryLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.FillerDistributorLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.FillerTypeLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.FillerViewedByLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GenNationalityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetBudgetCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetChannelCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetChannelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetCompanyComTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetCompanyCountryCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetFMMLockLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetFMMStatusLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetGenCodeLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetGenColorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetGenDistributorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetGenQualityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetGenSeriesLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetGenTargetGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetLangSpokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetLibraryLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetLicenseeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetLicenseTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetPlayStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetPrgorammeCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetProgrammeTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetRatingINTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetRatingMPAAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetSeasonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetSeriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetSportTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetSubGenreLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.GetSupplierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.ManagementLevelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.MediaTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.MoodLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PaymentTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PersonnelNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.ProgramEventTypeLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromLibraryLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoActionLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoAvailableMaterialLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoLibrarianLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoLibUserTypeLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoMaterialStatusLookUpReponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoProgrammeTypeLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoTypeLookUpReponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.PromoUserLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.ResquestorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.StudioCodeLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookupsServices\MediaManager.LookupsServices.TapeFormatTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DealMemoService\DealMemoService.disco" />
+    <None Include="Service References\DealMemoService\configuration91.svcinfo" />
+    <None Include="Service References\DealMemoService\configuration.svcinfo" />
+    <None Include="Service References\DealMemoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices.wsdl" />
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.GetLookupsItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.LibraryLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.PB_FinalGradeLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.PersonnelLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.PersonnelUserLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.PromoUserStatusLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.TapeBookeeActionLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.TapeBookeeAreaLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.TapeBookeeLookupItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.TapeBookeeRackFromLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.TapeBookeeRackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.TapeFormatLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManager.MediaManagementLookupServices.TertiaryGenreLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService.disco" />
+    <None Include="Service References\ProgrammeLibraryServices\configuration91.svcinfo" />
+    <None Include="Service References\ProgrammeLibraryServices\configuration.svcinfo" />
+    <None Include="Service References\ProgrammeLibraryServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\InfrastructureService\InfrastructureService.disco" />
+    <None Include="Service References\InfrastructureService\configuration91.svcinfo" />
+    <None Include="Service References\InfrastructureService\configuration.svcinfo" />
+    <None Include="Service References\InfrastructureService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AcquisitionLookupService\AcquisitionLookupService.disco" />
+    <None Include="Service References\AcquisitionLookupService\configuration91.svcinfo" />
+    <None Include="Service References\AcquisitionLookupService\configuration.svcinfo" />
+    <None Include="Service References\AcquisitionLookupService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BudgetingLookupService\BudgetingLookupService.disco" />
+    <None Include="Service References\BudgetingLookupService\configuration91.svcinfo" />
+    <None Include="Service References\BudgetingLookupService\configuration.svcinfo" />
+    <None Include="Service References\BudgetingLookupService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ReportingService\ReportingService.disco" />
+    <None Include="Service References\ReportingService\configuration91.svcinfo" />
+    <None Include="Service References\ReportingService\configuration.svcinfo" />
+    <None Include="Service References\ReportingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices.disco" />
+    <None Include="Service References\SchedulingOperationsServices\configuration91.svcinfo" />
+    <None Include="Service References\SchedulingOperationsServices\configuration.svcinfo" />
+    <None Include="Service References\SchedulingOperationsServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetApprovalFlowConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetEmailRoleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetFieldApprovalFlowConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetRoleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetSystemDepartmentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetSystemUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetTaskControlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\MediaManager.SystemAdminService.GetTaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService.disco" />
+    <None Include="Service References\SystemAdminService\configuration91.svcinfo" />
+    <None Include="Service References\SystemAdminService\configuration.svcinfo" />
+    <None Include="Service References\SystemAdminService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\LookupsServices\LookupsService.disco" />
+    <None Include="Service References\LookupsServices\configuration91.svcinfo" />
+    <None Include="Service References\LookupsServices\configuration.svcinfo" />
+    <None Include="Service References\LookupsServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\LicenseService\LicenseService.disco" />
+    <None Include="Service References\LicenseService\configuration91.svcinfo" />
+    <None Include="Service References\LicenseService\configuration.svcinfo" />
+    <None Include="Service References\LicenseService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MediaManagementLookupServices\MediaManagementLookupServices.disco" />
+    <None Include="Service References\MediaManagementLookupServices\configuration91.svcinfo" />
+    <None Include="Service References\MediaManagementLookupServices\configuration.svcinfo" />
+    <None Include="Service References\MediaManagementLookupServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ContractLicenseLookupService\configuration91.svcinfo" />
+    <None Include="Service References\ContractLicenseLookupService\configuration.svcinfo" />
+    <None Include="Service References\ContractLicenseLookupService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GeneralProgrammingService\configuration91.svcinfo" />
+    <None Include="Service References\GeneralProgrammingService\configuration.svcinfo" />
+    <None Include="Service References\GeneralProgrammingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RegionSplitService\RegionSplitService.disco" />
+    <None Include="Service References\RegionSplitService\configuration91.svcinfo" />
+    <None Include="Service References\RegionSplitService\configuration.svcinfo" />
+    <None Include="Service References\RegionSplitService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MediaManagerLibraryService\configuration91.svcinfo" />
+    <None Include="Service References\MediaManagerLibraryService\configuration.svcinfo" />
+    <None Include="Service References\MediaManagerLibraryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\Site.css" />
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProgrammeLibraryServices\ProgrammeLibraryServices.wsdl" />
+    <None Include="Service References\ReportingService\ReportingService.wsdl" />
+    <None Include="Service References\ReportingService\ReportingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\ReportingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\ReportingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\ReportingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\ReportingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\ReportingService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\ReportingService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\MediaManager.ReportingService.ExportReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingService\MediaManager.ReportingService.GetReportServerDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices.wsdl" />
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\SchedulingOperationsServices8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\MediaManager.SchedulingOperationsServices.GetChannelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulingOperationsServices\MediaManager.SchedulingOperationsServices.SaveProgrammeCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService.wsdl" />
+    <None Include="Service References\SystemAdminService\SystemAdminService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemAdminService\SystemAdminService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Acquisition\Queries\" />
+    <Folder Include="Areas\Acquisition\Services\" />
+    <Folder Include="Areas\Acquisition\Views\Shared\" />
+    <Folder Include="Areas\Admin\Queries\" />
+    <Folder Include="Areas\Admin\Services\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Home\Views\Home\" />
+    <Folder Include="Areas\Media_Mgt\BO\" />
+    <Folder Include="Areas\Media_Mgt\Queries\" />
+    <Folder Include="Areas\Media_Mgt\Services\" />
+    <Folder Include="Areas\Media_Mgt\Views\Shared\" />
+    <Folder Include="Areas\scheduling\BO\" />
+    <Folder Include="Areas\scheduling\Queries\" />
+    <Folder Include="Areas\scheduling\Services\" />
+    <Folder Include="Areas\scheduling\Views\Shared\" />
+    <Folder Include="bin\" />
+    <Folder Include="Content\Scripts\Modules\" />
+    <Folder Include="Infrastructure\Caching\" />
+    <Folder Include="Infrastructure\Resources\" />
+    <Folder Include="Infrastructure\Security\" />
+    <Folder Include="Infrastructure\Services\" />
+    <Folder Include="Infrastructure\Threading\" />
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AcquisitionLookupService\" />
+    <WCFMetadataStorage Include="Service References\MediaManagerLibraryService\" />
+    <WCFMetadataStorage Include="Service References\BudgetingLookupService\" />
+    <WCFMetadataStorage Include="Service References\ContractLicenseLookupService\" />
+    <WCFMetadataStorage Include="Service References\DealMemoService\" />
+    <WCFMetadataStorage Include="Service References\GeneralProgrammingService\" />
+    <WCFMetadataStorage Include="Service References\InfrastructureService\" />
+    <WCFMetadataStorage Include="Service References\LicenseService\" />
+    <WCFMetadataStorage Include="Service References\LookupsServices\" />
+    <WCFMetadataStorage Include="Service References\MediaManagementLookupServices\" />
+    <WCFMetadataStorage Include="Service References\ProgrammeLibraryServices\" />
+    <WCFMetadataStorage Include="Service References\RegionSplitService\" />
+    <WCFMetadataStorage Include="Service References\ReportingService\" />
+    <WCFMetadataStorage Include="Service References\SchedulingOperationsServices\" />
+    <WCFMetadataStorage Include="Service References\SystemAdminService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4733</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

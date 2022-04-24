@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.DealMemo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.DealMemo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Finance.PaymentFunctions" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="DealMemoVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alert_Output" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Align" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AmortMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalBuyer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalBuyerDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ApprovalComments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalContract" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalContractNotes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalNotes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalProgrammeDirector" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalProgrammeDirectorDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ApprovalQAPassed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalQAPassedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Check_Output" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConTypeDesc" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Entities.Finance.PaymentFunctions" minOccurs="0" name="ContractDetail" nillable="true" type="q2:ContractDetailVO" />
+          <xs:element minOccurs="0" name="ContractEntity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractPrice" type="xs:double" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CostedProgrammeTypes" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DMNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="DMNumber_Search" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryCost" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryCostComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryModeOther" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryReturnCost" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HistoryDetails" nillable="true" type="tns:ArrayOfHistoryVO" />
+          <xs:element minOccurs="0" name="Hours" type="xs:int" />
+          <xs:element minOccurs="0" name="LanguageDetails" nillable="true" type="tns:ArrayOfLanguageVO" />
+          <xs:element minOccurs="0" name="LicenseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicensedHoursRemaining" type="xs:double" />
+          <xs:element minOccurs="0" name="LiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LiveInfoUpdateCount" type="xs:int" />
+          <xs:element minOccurs="0" name="LiveTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoanInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoanOther" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoanReturnBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoanReturnDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LoanTaken" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainLicensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialDateOther" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialDatetill" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaterialDaysPrior" type="xs:int" />
+          <xs:element minOccurs="0" name="MaterialDetails" nillable="true" type="tns:ArrayOfMaterialVO" />
+          <xs:element minOccurs="0" name="MaterialPublicityDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaterialTechnicalDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemoDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MemoHoursRemaining" type="xs:double" />
+          <xs:element minOccurs="0" name="MemoPrice" type="xs:double" />
+          <xs:element minOccurs="0" name="Multiplex" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Payment" nillable="true" type="tns:PaymentVO" />
+          <xs:element minOccurs="0" name="PaymentDetails" nillable="true" type="tns:ArrayOfPaymentVO" />
+          <xs:element minOccurs="0" name="PriceperHour" type="xs:double" />
+          <xs:element minOccurs="0" name="ProgTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrammeCPDetails" nillable="true" type="tns:ArrayOfMediaServicePlatformVO" />
+          <xs:element minOccurs="0" name="ProgrammeDetails" nillable="true" type="tns:ArrayOfProgrammeVO" />
+          <xs:element minOccurs="0" name="ProtectionAdditionalReq" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProtectionDetails" nillable="true" type="tns:ArrayOfCompetitorVO" />
+          <xs:element minOccurs="0" name="ProtectionException" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QARejectComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightsBroader" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RightsCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightsComments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightsExclusivity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightsMediaList" nillable="true" type="tns:ArrayOfMediaServicePlatformVO" />
+          <xs:element minOccurs="0" name="RightsOpenTimeAllowed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RightsOpenTimeDays" type="xs:int" />
+          <xs:element minOccurs="0" name="RightsPayTVDays" type="xs:int" />
+          <xs:element minOccurs="0" name="RightsTimeShift" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SelectedTab" type="tns:DealMemoVO.DealMemoTab" />
+          <xs:element minOccurs="0" name="Selected_Pgrm_GenRefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="SignQARequired" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SimulcastChannelsAllowed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StrDMNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tba" type="xs:boolean" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="TerritoryDetails" nillable="true" type="q4:ArrayOfTerritoryVO" />
+          <xs:element minOccurs="0" name="TitleList" nillable="true" type="tns:ArrayOfPaymentVO" />
+          <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Entities.Finance.PaymentFunctions" minOccurs="0" name="TotalPaid" nillable="true" type="q5:TotalPaidVO" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Entities.Finance.PaymentFunctions" minOccurs="0" name="TotalPaidDetails" nillable="true" type="q6:ArrayOfTotalPaidVO" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValidSignQASuppliers" nillable="true" type="q7:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Venue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DealMemoVO" nillable="true" type="tns:DealMemoVO" />
+  <xs:complexType name="ArrayOfHistoryVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoryVO" nillable="true" type="tns:HistoryVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoryVO" nillable="true" type="tns:ArrayOfHistoryVO" />
+  <xs:complexType name="HistoryVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q8:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FromStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QAComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryVO" nillable="true" type="tns:HistoryVO" />
+  <xs:complexType name="ArrayOfLanguageVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LanguageVO" nillable="true" type="tns:LanguageVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLanguageVO" nillable="true" type="tns:ArrayOfLanguageVO" />
+  <xs:complexType name="LanguageVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q9:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsDubbed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOriginal" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSubtitle" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsVoiceOver" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SuppliedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierUserCost" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LanguageVO" nillable="true" type="tns:LanguageVO" />
+  <xs:complexType name="ArrayOfMaterialVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialVO" nillable="true" type="tns:MaterialVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaterialVO" nillable="true" type="tns:ArrayOfMaterialVO" />
+  <xs:complexType name="MaterialVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q10:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Broadcast" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BroadcastDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClassDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Item" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sound" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SoundDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaterialVO" nillable="true" type="tns:MaterialVO" />
+  <xs:complexType name="PaymentVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q11:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountStr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CPDNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Contract" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DueDateDMPayment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DueDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FCDNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="FromMonth" type="xs:int" />
+          <xs:element minOccurs="0" name="FromYear" type="xs:int" />
+          <xs:element minOccurs="0" name="GenRefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="GenSerNo" type="xs:int" />
+          <xs:element minOccurs="0" name="GenTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemId" type="xs:int" />
+          <xs:element minOccurs="0" name="MonthNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OriginalTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaidMonth" type="xs:int" />
+          <xs:element minOccurs="0" name="PaidStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaidStatusBool" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaidYear" type="xs:int" />
+          <xs:element minOccurs="0" name="PayNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="PaymentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentCodeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentNo" type="xs:int" />
+          <xs:element minOccurs="0" name="PaymentPercent" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PaymentRate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" type="xs:double" />
+          <xs:element minOccurs="0" name="Programme" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SeriesTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SplitPaymentDetails" nillable="true" type="tns:ArrayOfSplitPaymentVO" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StatusDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StatusDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierRef" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToMonth" type="xs:int" />
+          <xs:element minOccurs="0" name="ToYear" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentVO" nillable="true" type="tns:PaymentVO" />
+  <xs:complexType name="ArrayOfSplitPaymentVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SplitPaymentVO" nillable="true" type="tns:SplitPaymentVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSplitPaymentVO" nillable="true" type="tns:ArrayOfSplitPaymentVO" />
+  <xs:complexType name="SplitPaymentVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q12:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsEditable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MonthNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="PaymentMonth" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PaymentPercent" type="xs:double" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SplitPaymentVO" nillable="true" type="tns:SplitPaymentVO" />
+  <xs:complexType name="ArrayOfPaymentVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentVO" nillable="true" type="tns:PaymentVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentVO" nillable="true" type="tns:ArrayOfPaymentVO" />
+  <xs:complexType name="ArrayOfMediaServicePlatformVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaServicePlatformVO" nillable="true" type="tns:MediaServicePlatformVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediaServicePlatformVO" nillable="true" type="tns:ArrayOfMediaServicePlatformVO" />
+  <xs:complexType name="MediaServicePlatformVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q13:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsRightsAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSelected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSelectedCatchUp" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MapId" type="xs:int" />
+          <xs:element minOccurs="0" name="NoOfVPUsed" type="xs:int" />
+          <xs:element minOccurs="0" name="Platform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlatformCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlatformId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ProdYear" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaServicePlatformVO" nillable="true" type="tns:MediaServicePlatformVO" />
+  <xs:complexType name="ArrayOfProgrammeVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProgrammeVO" nillable="true" type="tns:ProgrammeVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProgrammeVO" nillable="true" type="tns:ArrayOfProgrammeVO" />
+  <xs:complexType name="ProgrammeVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q14:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BORevenueUSD" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="BORevenueZAR" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="CatchUpLicenseeAllocationVOList" nillable="true" type="tns:ArrayOfCatchUpLicenseeAllocationVO" />
+          <xs:element minOccurs="0" name="CategoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConfirmedEpisodes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EpisodeCount" type="xs:int" />
+          <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISLive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsAtleastOneProgrammeRejected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsProgramSelected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsProgrammeRejected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSeries" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTitleExists" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LicenseeAllocationData" nillable="true" type="tns:ArrayOfLicenseeAllocationVO" />
+          <xs:element minOccurs="0" name="RefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="RejectedEpisodes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReleaseYear" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SeasonNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SeriesTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SportType_Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubGenre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TertiaryGenre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalPrice" type="xs:double" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="strTotalPrice" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeVO" nillable="true" type="tns:ProgrammeVO" />
+  <xs:complexType name="ArrayOfCatchUpLicenseeAllocationVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CatchUpLicenseeAllocationVO" nillable="true" type="tns:CatchUpLicenseeAllocationVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCatchUpLicenseeAllocationVO" nillable="true" type="tns:ArrayOfCatchUpLicenseeAllocationVO" />
+  <xs:complexType name="CatchUpLicenseeAllocationVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q15:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Allocation" type="xs:double" />
+          <xs:element minOccurs="0" name="CostedViewingPeriod" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Licesee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxViewingPeriod" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxViewingPeriodDays" type="xs:int" />
+          <xs:element minOccurs="0" name="MediaPlatFormCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatFormId" type="xs:int" />
+          <xs:element minOccurs="0" name="MediaServicePlatformList" nillable="true" type="tns:ArrayOfMediaServicePlatformVO" />
+          <xs:element minOccurs="0" name="No_Days" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="No_Months" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NonConsecutiveMonth" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RunsPerChannelData" nillable="true" type="tns:ArrayOfRunsPerChannelVO" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TBA" type="xs:boolean" />
+          <xs:element minOccurs="0" name="strAllocation" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CatchUpLicenseeAllocationVO" nillable="true" type="tns:CatchUpLicenseeAllocationVO" />
+  <xs:complexType name="ArrayOfRunsPerChannelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RunsPerChannelVO" nillable="true" type="tns:RunsPerChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRunsPerChannelVO" nillable="true" type="tns:ArrayOfRunsPerChannelVO" />
+  <xs:complexType name="RunsPerChannelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q16:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Allocations" type="xs:int" />
+          <xs:element minOccurs="0" name="AllocationsCosted" type="xs:int" />
+          <xs:element minOccurs="0" name="AllocationsCosted2" type="xs:int" />
+          <xs:element minOccurs="0" name="Channel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelROYFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Channel_Number" type="xs:int" />
+          <xs:element minOccurs="0" name="CopyActionForChannel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cost" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CostedRunsUsed" type="xs:int" />
+          <xs:element minOccurs="0" name="CostedRunsUsed2" type="xs:int" />
+          <xs:element minOccurs="0" name="CostingRuns" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="License_Cost" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Max_channel_Number" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PT_Runs" type="xs:int" />
+          <xs:element minOccurs="0" name="Runs" type="xs:int" />
+          <xs:element minOccurs="0" name="RunsRemaining" type="xs:int" />
+          <xs:element minOccurs="0" name="SchedulingWindowED" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchedulingWindowED2" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SchedulingWindowSD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchedulingWindowSD2" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TotalCostedRuns" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalUsedRuns" type="xs:int" />
+          <xs:element minOccurs="0" name="Used" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RunsPerChannelVO" nillable="true" type="tns:RunsPerChannelVO" />
+  <xs:complexType name="ArrayOfLicenseeAllocationVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LicenseeAllocationVO" nillable="true" type="tns:LicenseeAllocationVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLicenseeAllocationVO" nillable="true" type="tns:ArrayOfLicenseeAllocationVO" />
+  <xs:complexType name="LicenseeAllocationVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q17:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Allocation" type="xs:double" />
+          <xs:element minOccurs="0" name="BlackDays" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelRuns" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelService" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelServiceNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Cost_Runs" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsBioscopeLicensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Licesee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Max_channel_Number" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Max_channel_Service" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MediaPlatFormCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatFormId" type="xs:int" />
+          <xs:element minOccurs="0" name="No_Days" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="No_Months" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RunsPerChannelData" nillable="true" type="tns:ArrayOfRunsPerChannelVO" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TBA" type="xs:boolean" />
+          <xs:element minOccurs="0" name="strAllocation" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeAllocationVO" nillable="true" type="tns:LicenseeAllocationVO" />
+  <xs:complexType name="ArrayOfCompetitorVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompetitorVO" nillable="true" type="tns:CompetitorVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompetitorVO" nillable="true" type="tns:ArrayOfCompetitorVO" />
+  <xs:complexType name="CompetitorVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q18:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelServiceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelServiceNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelorService" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitorCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompetitorNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompetitorVO" nillable="true" type="tns:CompetitorVO" />
+  <xs:simpleType name="DealMemoVO.DealMemoTab">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Programme" />
+      <xs:enumeration value="Rights" />
+      <xs:enumeration value="Language" />
+      <xs:enumeration value="Territory" />
+      <xs:enumeration value="Protection" />
+      <xs:enumeration value="Payment" />
+      <xs:enumeration value="Material" />
+      <xs:enumeration value="Loan" />
+      <xs:enumeration value="Delivery" />
+      <xs:enumeration value="Approval" />
+      <xs:enumeration value="History" />
+      <xs:enumeration value="SeriesTree" />
+      <xs:enumeration value="LiveTree" />
+      <xs:enumeration value="CPD" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DealMemoVO.DealMemoTab" nillable="true" type="tns:DealMemoVO.DealMemoTab" />
+  <xs:complexType name="ArrayOfDealMemoVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DealMemoVO" nillable="true" type="tns:DealMemoVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDealMemoVO" nillable="true" type="tns:ArrayOfDealMemoVO" />
+  <xs:complexType name="ArrayOfSeriesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeriesVO" nillable="true" type="tns:SeriesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeriesVO" nillable="true" type="tns:ArrayOfSeriesVO" />
+  <xs:complexType name="SeriesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q19:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BORevenueUSD" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="BORevenueZAR" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="CategoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DMGenRefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="DMLicensor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DMNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="DMProgrammme_Price" type="xs:double" />
+          <xs:element minOccurs="0" name="DMProgrammme_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DMType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Episode_Count" type="xs:int" />
+          <xs:element minOccurs="0" name="Episode_Data" nillable="true" type="tns:ArrayOfEpisodeVO" />
+          <xs:element minOccurs="0" name="Event_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="First_Episode" type="xs:int" />
+          <xs:element minOccurs="0" name="Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Next_Episode" type="xs:int" />
+          <xs:element minOccurs="0" name="Price_First_Episode" type="xs:double" />
+          <xs:element minOccurs="0" name="Price_Other_Episode" type="xs:double" />
+          <xs:element minOccurs="0" name="Production_Year" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Relicense_From" type="xs:int" />
+          <xs:element minOccurs="0" name="Relicense_To" type="xs:int" />
+          <xs:element minOccurs="0" name="Season_Data" nillable="true" type="tns:ArrayOfSeriesVO" />
+          <xs:element minOccurs="0" name="Season_Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Selected_Season_Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SportType_Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TertiaryGenre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title_Additional_Text" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title_Episode_No" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title_Season" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title_Series" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title_Text" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Unlicensed_Episodes" type="xs:int" />
+          <xs:element minOccurs="0" name="WT_Additional_Text" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WT_Episode_No" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WT_Season" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WT_Series" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WT_Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeriesVO" nillable="true" type="tns:SeriesVO" />
+  <xs:complexType name="ArrayOfEpisodeVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EpisodeVO" nillable="true" type="tns:EpisodeVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEpisodeVO" nillable="true" type="tns:ArrayOfEpisodeVO" />
+  <xs:complexType name="EpisodeVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q20:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Epi_Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Epi_Event_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Epi_Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Epi_SportType_Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EpisodeStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Episode_Number" type="xs:int" />
+          <xs:element minOccurs="0" name="Episode_PH_Status" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Episode_Relicense" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Episode_Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Episode_Working_Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsEpisodeTBC" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPlaceHolderPresent" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LiveDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LiveTime" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemNo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PlaceHolder_Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Venue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EpisodeVO" nillable="true" type="tns:EpisodeVO" />
+  <xs:complexType name="DealMemoReviewVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q21:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Allocation_Licensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="Amount_Search" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DMNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="DMNumber_Search" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Event_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="License_End" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="License_Start" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Licensor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainLicensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemoDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No_Episodes" type="xs:int" />
+          <xs:element minOccurs="0" name="No_Episodes_Search" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Signature_PD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Signatures_Buyer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SportType_Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubGenre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TBA" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkingTitle" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DealMemoReviewVO" nillable="true" type="tns:DealMemoReviewVO" />
+  <xs:complexType name="ArrayOfDealMemoReviewVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DealMemoReviewVO" nillable="true" type="tns:DealMemoReviewVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDealMemoReviewVO" nillable="true" type="tns:ArrayOfDealMemoReviewVO" />
+  <xs:complexType name="CodeVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q22:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="CodeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Length" type="xs:int" />
+          <xs:element minOccurs="0" name="LongDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CodeVO" nillable="true" type="tns:CodeVO" />
+  <xs:complexType name="ArrayOfCodeVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CodeVO" nillable="true" type="tns:CodeVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCodeVO" nillable="true" type="tns:ArrayOfCodeVO" />
+  <xs:complexType name="UserVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q23:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Buyer" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DefaultUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EditDM" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RepCompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepLicensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SignCAd" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SignCFO" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SignDM" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SignFin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SignHOA" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SignQA" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SuperUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserVO" nillable="true" type="tns:UserVO" />
+  <xs:complexType name="ArrayOfUserVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserVO" nillable="true" type="tns:UserVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserVO" nillable="true" type="tns:ArrayOfUserVO" />
+  <xs:complexType name="ArrayOfCPDVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CPDVO" nillable="true" type="tns:CPDVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCPDVO" nillable="true" type="tns:ArrayOfCPDVO" />
+  <xs:complexType name="CPDVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q24:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DMNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="EndMonth" type="xs:int" />
+          <xs:element minOccurs="0" name="EndYear" type="xs:int" />
+          <xs:element minOccurs="0" name="Price" type="xs:double" />
+          <xs:element minOccurs="0" name="StartMonth" type="xs:int" />
+          <xs:element minOccurs="0" name="StartYear" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CPDVO" nillable="true" type="tns:CPDVO" />
+</xs:schema>

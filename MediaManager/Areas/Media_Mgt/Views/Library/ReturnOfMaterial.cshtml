@@ -1,0 +1,134 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.LibraryBookOutViewModel
+<table style="width: 800px; padding-left: 20px;">
+    <tr>
+        <td width="10%">
+            <img src="../../Content/images/Mnet.jpg" />
+        </td>
+        <td colspan="3" class="mainHeading" width="60%" style="text-align: center;" valign="top">
+            Return For Material Received
+        </td>
+        <td width="30%" align="right" style="padding: 4px;" valign="top">
+            <label id="labeldate">
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        @*<td ></td>*@
+        <td colspan="5">
+            <div id="divdv">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td align="left">
+        </td>
+        <td colspan="4">
+            <ol id="itemList" type="1" style="text-align: left;">
+            </ol>
+            @* <ol type="1">
+                <li>movieA</li><li>movieB</li></ol>*@
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        @*<td>
+        </td>
+        <td>
+        </td>*@
+        <td align="right" colspan="3">
+            Signature (Librarian)
+        </td>
+        <td align="right">
+            Signature (Given To)
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td align="right">
+            <input id="btnPrintDoc" type="button" class="inputButton" value="Print" onclick="printDoc('PrintAcceptancePopup')" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+  debugger;
+    var prglist = [];
+    for (var i = 0; i < programmetitledata.length; i++) {
+        //  prglist.push(programmetitledata[i].ProgrammeTitle);
+        prglist += "<li>" + programmetitledata[i].ProgrammeTitle + "</li>";
+    }
+    var d = new Date();
+    var curr_date = d.getDate();
+    var monthname = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "A ug", "Sep", "Oct", "Nov", "Dec");
+    var curr_month = (monthname[d.getMonth()]);
+    var curr_year = d.getFullYear();
+    var dd = curr_date + "-" + curr_month + "-" + curr_year;
+
+    var lbldate = document.getElementById("labeldate");
+    lbldate.innerHTML = "Date : " + dd.toString();
+
+   // var supp = displaydata.SuppplierID + ' (Supplier).';
+    var supp = displaydata.GivenTo;
+    var material = displaydata.MaterialID
+    var materialName = displaydata.MaterialName;
+    var user = currentuser;
+    var div = document.getElementById("divdv");
+    var div2 = document.getElementById("itemList");
+    //div.innerHTML = 'I,' + user + ' (Librarian) have returned ' + materialName  + '(ID: '+  material + ') to ' + supp + '. The material has the following programmes<br/>';
+
+
+    var displaystring = 'I,' + user + ' (Librarian) have returned ' + materialName + '(ID: ' + material + ') to ' + supp;
+    if (prglist.length > 0) {
+        displaystring += '<br>The material has the following programmes<br/><br/>';
+        div2.innerHTML = prglist;
+    }
+    div.innerHTML = displaystring;
+
+</script>

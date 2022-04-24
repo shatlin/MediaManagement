@@ -1,0 +1,199 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.LibraryBookInViewModel
+@{
+    ViewBag.Title = "Library Book In";
+    Layout = MediaManager.Infrastructure.Helpers.SharedPages.LayoutPage;
+}
+<form action="#" method="post">
+<div class="mainHeading">
+    Library Book In
+</div>
+<table class="Layout" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            <div class="PlaceHolder">
+                <table class="tableLayout">
+                    <tr>
+                        <td colspan="6">
+                            <div class="subHeading">
+                                Search Criteria
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%">
+                          <label class="label">Material ID</label>
+                        </td>
+                        <td width="10%">
+                            <input type="text" id="txtMaterialID" class="inputTextSamll" />
+                        </td>
+                        <td width="2%">
+                            <img id="LookupIcon1" src="../../Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />
+                        </td>
+                        <td width="10%">
+                            <label class="label">Material Name</label>
+                        </td>
+                        <td>
+                            <input type="text" id="txtMaterialName" class="inputTextSamll" />
+                        </td>
+                        <td width="2%">
+                        </td>
+                        <td width="6%">
+                           <label class="label">Date From</label>
+                        </td>
+                        <td width="30%">
+                            <input type="text" id="txtDateFrom" class="inputTextSamll" />
+                            <img id="imgMemoFromDate" src="~/Content/images/date.png" alt="" class="VerticalAlignMiddle" />
+                        </td>
+                        <td width="30%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label">Receipt No</label>
+                        </td>
+                        <td>
+                            <input type="text" id="txtReceiptno" class="inputTextSamll" />
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <label class="label">Supplier</label>
+                        </td>
+                        <td width="20%">
+                            <div class="select">
+                                @Html.DropDownListFor(m => m.Distributor,
+                                                     new SelectList(Model.DistributorsLOVList, "ComShortName", "ComName"),
+                                                              "Select")
+                            </div>
+                        </td>
+                       
+                        <td>                          
+                        </td>
+                        <td>
+                           <label class="label">Date To</label>
+                        </td>
+                        <td>
+                            <input type="text" id="txtDateTo" class="inputTextSamll" />
+                            <img id="imgMemoToDate" src="~/Content/images/date.png" alt="" class="VerticalAlignMiddle" />
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="9" style="text-align: right;">
+                            <input type="button" id="btnSearch" class="inputButton" value="Search" />
+                            <input type="button" id="btnSearchReset" class="inputButton" value="Reset" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<table class="Layout" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="3">
+            <div class="PlaceHolder" id="GridDiv1">
+                <table class="tableLayout">
+                    <tr>
+                        <td>
+                            <div class="subHeading">
+                                Search Result
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="BookIngrid" style="height: 400px">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td align="right" colspan="2">
+            <div style="margin-right: 30px;">
+                <input id="btnViewDetails" type="button" value="View Details" class="inputButton" />
+                <input id="btnSave" type="button" class="inputButton" value="Save" />
+                <input id="btnPrint" type="button" class="inputButton" value="Print Acceptance By Supplier" />
+            </div>
+        </td>
+    </tr>
+</table>
+<div id="dialogProgrammeSearch" style="display: none" title="Manage Material Content">
+    @Html.Partial("_ProgrammeSearchPartial")
+</div>
+<div id="dialogMaterialMaster" style="display: none" title="Manage Material Content">
+    <table class="Layout" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="3">
+                <div class="PlaceHolder" id="GridDiv">
+                    <table class="tableLayout">
+                        <tr>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="gridMaterialMaster" style="height: 400px">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="PrintAcceptancePopup">
+</div>
+</form>
+<script src="~/Content/SlickGrid-master/plugins/slick.autotooltips.js" type="text/javascript"></script>
+<script type="text/javascript" src="~/Content/Scripts/Media_Mgt/Library/LibraryBookIn.js"></script>
+<script type="text/javascript">
+
+
+    var urlSupplierList = '@Url.Action("GetSupplierLookup", "Library", new { area = "Media_Mgt" })';
+    var urlSupplierListforValidation = '@Url.Action("GetSupplierList", "Library", new { area = "Media_Mgt" })';
+
+    var urlMaterialTypeList = '@Url.Action("GetMaterialTypeLookup", "Library", new { area = "Media_Mgt" })';
+    var urlMaterialTypeListforValidation = '@Url.Action("GetMaterialTyepList", "Library", new { area = "Media_Mgt" })';
+
+    var urlSupplierCopyTypeList = '@Url.Action("GetSupplierCopyTypeLookup", "Library", new { area = "Media_Mgt" })';
+    var urlSupplierCopyTypeListforValidation = '@Url.Action("GetSupplierCopyTypeList", "Library", new { area = "Media_Mgt" })';
+
+    var urlLibraryNameList = '@Url.Action("GetLibraryNameLookup", "Library", new { area = "Media_Mgt" })';
+    var urlLibraryNameListforValidation = '@Url.Action("GetLibraryNameList", "Library", new { area = "Media_Mgt" })';
+
+    var urlStatusList = '@Url.Action("GetStatusNameLookup", "Library", new { area = "Media_Mgt" })';
+    var urlStatusListforValidation = '@Url.Action("GetStatusNameList", "Library", new { area = "Media_Mgt" })';
+
+    var urlAcceptRejectStatusList = '@Url.Action("GetAcceptRejectStatusLookup", "Library", new { area = "Media_Mgt" })';
+
+    var urlStorageList = '@Url.Action("GetStorageLookup", "Library", new { area = "Media_Mgt" })';
+    var urlStorageListforValidation = '@Url.Action("GetStorageLists", "Library", new { area = "Media_Mgt" })';
+
+    var urlSearchLibraryBookInDetail = '@Url.Action("SearchLibraryBookInDetail", "Library", new { area = "Media_Mgt" })';
+
+    var urlSaveLibraryBookInDetail = '@Url.Action("SaveLibraryBookInDetail", "Library", new { area = "Media_Mgt" })';
+    var urlLoadProgramDetail = '@Url.Action("LoadProgramDetail", "Library", new { area = "Media_Mgt" })';
+    var urlSaveProgramDetail = '@Url.Action("SaveProgramDetail", "Library", new { area = "Media_Mgt" })';
+
+    var urlMaterialLookup = '@Url.Action("GetMaterialListLOV", "Library", new { area = "Media_Mgt" })';
+
+    //    var urlMaterialTypeList = '@Url.Action("GetMaterialType", "Library", new { area = "Media_Mgt" })';
+    //var urlAcceptRejectStatusList = '@Url.Action("GetAcceptRejectStatus", "Library", new { area = "Media_Mgt" })';
+
+    var urlSaveProgramDetail = '@Url.Action("SaveProgramDetail", "Library", new { area = "Media_Mgt" })';
+
+    var urlmaterialDetail = '@Url.Action("LoadProgramDetail", "Library", new { area = "Media_Mgt" })';
+    var currentuser = '@User.Identity.Name';
+
+
+    var urlprintAcc = '@Url.Action("ReceiptofMaterial", "Library", new { area = "Media_Mgt" })';
+
+   
+    
+</script>

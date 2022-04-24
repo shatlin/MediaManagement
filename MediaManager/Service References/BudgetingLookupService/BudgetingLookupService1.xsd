@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" />
+  <xs:element name="GetBudgetStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q1:BudgetStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBudgetStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetBudgetStatusResult" nillable="true" type="q2:BudgetStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFixedBudgetTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q3:FixedBudgetTemplateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFixedBudgetTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetFixedBudgetTemplateResult" nillable="true" type="q4:FixedBudgetTemplateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRollingBudgetTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q5:RollingBudgetTemplateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRollingBudgetTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetRollingBudgetTemplateResult" nillable="true" type="q6:RollingBudgetTemplateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannelsForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q7:ChannelsForUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannelsForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetChannelsForUserResult" nillable="true" type="q8:ChannelsForUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgrammeCombinationTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q9:ProgrammeCombinationTypesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgrammeCombinationTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetProgrammeCombinationTypesResult" nillable="true" type="q10:ProgrammeCombinationTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersForChannels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q11:UsersForChannelsLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersForChannelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetUsersForChannelsResult" nillable="true" type="q12:UsersForChannelsLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinYearForUpdateRollingBudget">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q13:FinYearForUpdateRollingBudgetLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinYearForUpdateRollingBudgetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetFinYearForUpdateRollingBudgetResult" nillable="true" type="q14:FinYearForUpdateRollingBudgetLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseeForFinancialBudget">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q15:LicenseeForFinacialBudgetLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseeForFinancialBudgetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetLicenseeForFinancialBudgetResult" nillable="true" type="q16:LicenseeForFinacialBudgetLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinancialProgrammeType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q17:FinancialProgrammeTypeCombinationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinancialProgrammeTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetFinancialProgrammeTypeResult" nillable="true" type="q18:FinancialProgrammeTypeCombinationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFixedBudgetReportLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q19:FixedBudgetReportLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFixedBudgetReportLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetFixedBudgetReportLookupResult" nillable="true" type="q20:FixedBudgetReportLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinancialYearCompanyLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="financialYearCompanyLookupRequest" nillable="true" type="q21:FinancialYearCompanyLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinancialYearCompanyLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetFinancialYearCompanyLookupResult" nillable="true" type="q22:FinancialYearCompanyLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

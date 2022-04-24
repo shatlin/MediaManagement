@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="32f4919c-948b-4a99-8f2c-09a226f28dc0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GeneralProgrammingService.wsdl" MetadataType="Wsdl" ID="269d3a59-61d1-4399-870a-c655502aa0f0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?wsdl" />
+    <MetadataFile FileName="GeneralProgrammingService.xsd" MetadataType="Schema" ID="e6e48644-2386-42d9-9e07-6b2473ee3e98" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="GeneralProgrammingService1.xsd" MetadataType="Schema" ID="556ee0c4-251f-4063-920c-0a82d41d017d" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd5" />
+    <MetadataFile FileName="GeneralProgrammingService2.xsd" MetadataType="Schema" ID="f90bbeb2-5a01-4178-bcd1-3a287363a231" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd6" />
+    <MetadataFile FileName="GeneralProgrammingService3.xsd" MetadataType="Schema" ID="924afb71-b3ca-4bc5-a771-eb845a8a92d2" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd7" />
+    <MetadataFile FileName="GeneralProgrammingService4.xsd" MetadataType="Schema" ID="b50a45f3-1ebf-4711-9070-4331511ee4a3" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GeneralProgrammingService5.xsd" MetadataType="Schema" ID="41c30f9d-9992-4408-b86a-b9b61df2592d" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GeneralProgrammingService6.xsd" MetadataType="Schema" ID="151695b2-a44d-4c64-ae25-49328a615c9e" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GeneralProgrammingService7.xsd" MetadataType="Schema" ID="fa3b67c9-015c-4d47-acfe-73133a4b737f" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GeneralProgrammingService8.xsd" MetadataType="Schema" ID="fe1dae5b-ee46-446c-abb5-213e7075b623" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

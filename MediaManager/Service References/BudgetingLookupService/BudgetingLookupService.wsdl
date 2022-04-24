@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BudgetingLookupService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBudgetingLookupService_GetBudgetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBudgetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetBudgetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBudgetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetBudgetStatus_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFixedBudgetTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedBudgetTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFixedBudgetTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedBudgetTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFixedBudgetTemplate_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetRollingBudgetTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRollingBudgetTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetRollingBudgetTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRollingBudgetTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetRollingBudgetTemplate_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetChannelsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelsForUser" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetChannelsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetChannelsForUser_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetProgrammeCombinationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgrammeCombinationTypes" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetProgrammeCombinationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgrammeCombinationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetProgrammeCombinationTypes_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetUsersForChannels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForChannels" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetUsersForChannels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForChannelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetUsersForChannels_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinYearForUpdateRollingBudget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinYearForUpdateRollingBudget" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinYearForUpdateRollingBudget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinYearForUpdateRollingBudgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinYearForUpdateRollingBudget_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetLicenseeForFinancialBudget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseeForFinancialBudget" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetLicenseeForFinancialBudget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseeForFinancialBudgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetLicenseeForFinancialBudget_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinancialProgrammeType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialProgrammeType" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinancialProgrammeType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialProgrammeTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinancialProgrammeType_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFixedBudgetReportLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedBudgetReportLookup" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFixedBudgetReportLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFixedBudgetReportLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFixedBudgetReportLookup_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinancialYearCompanyLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialYearCompanyLookup" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinancialYearCompanyLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialYearCompanyLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBudgetingLookupService_GetFinancialYearCompanyLookup_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IBudgetingLookupService">
+    <wsdl:operation name="GetBudgetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetBudgetStatus" message="tns:IBudgetingLookupService_GetBudgetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetBudgetStatusResponse" message="tns:IBudgetingLookupService_GetBudgetStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetBudgetStatusMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetBudgetStatus_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedBudgetTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetTemplate" message="tns:IBudgetingLookupService_GetFixedBudgetTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetTemplateResponse" message="tns:IBudgetingLookupService_GetFixedBudgetTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetTemplateMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetFixedBudgetTemplate_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRollingBudgetTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetRollingBudgetTemplate" message="tns:IBudgetingLookupService_GetRollingBudgetTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetRollingBudgetTemplateResponse" message="tns:IBudgetingLookupService_GetRollingBudgetTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetRollingBudgetTemplateMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetRollingBudgetTemplate_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelsForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetChannelsForUser" message="tns:IBudgetingLookupService_GetChannelsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetChannelsForUserResponse" message="tns:IBudgetingLookupService_GetChannelsForUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetChannelsForUserMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetChannelsForUser_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgrammeCombinationTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetProgrammeCombinationTypes" message="tns:IBudgetingLookupService_GetProgrammeCombinationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetProgrammeCombinationTypesResponse" message="tns:IBudgetingLookupService_GetProgrammeCombinationTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetProgrammeCombinationTypesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetProgrammeCombinationTypes_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForChannels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetUsersForChannels" message="tns:IBudgetingLookupService_GetUsersForChannels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetUsersForChannelsResponse" message="tns:IBudgetingLookupService_GetUsersForChannels_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetUsersForChannelsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetUsersForChannels_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinYearForUpdateRollingBudget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinYearForUpdateRollingBudget" message="tns:IBudgetingLookupService_GetFinYearForUpdateRollingBudget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinYearForUpdateRollingBudgetResponse" message="tns:IBudgetingLookupService_GetFinYearForUpdateRollingBudget_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinYearForUpdateRollingBudgetMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetFinYearForUpdateRollingBudget_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseeForFinancialBudget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetLicenseeForFinancialBudget" message="tns:IBudgetingLookupService_GetLicenseeForFinancialBudget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetLicenseeForFinancialBudgetResponse" message="tns:IBudgetingLookupService_GetLicenseeForFinancialBudget_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetLicenseeForFinancialBudgetMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetLicenseeForFinancialBudget_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialProgrammeType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinancialProgrammeType" message="tns:IBudgetingLookupService_GetFinancialProgrammeType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinancialProgrammeTypeResponse" message="tns:IBudgetingLookupService_GetFinancialProgrammeType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinancialProgrammeTypeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetFinancialProgrammeType_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedBudgetReportLookup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetReportLookup" message="tns:IBudgetingLookupService_GetFixedBudgetReportLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetReportLookupResponse" message="tns:IBudgetingLookupService_GetFixedBudgetReportLookup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetReportLookupMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetFixedBudgetReportLookup_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialYearCompanyLookup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinancialYearCompanyLookup" message="tns:IBudgetingLookupService_GetFinancialYearCompanyLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinancialYearCompanyLookupResponse" message="tns:IBudgetingLookupService_GetFinancialYearCompanyLookup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBudgetingLookupService/GetFinancialYearCompanyLookupMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IBudgetingLookupService_GetFinancialYearCompanyLookup_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:IBudgetingLookupService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBudgetStatus">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetBudgetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedBudgetTemplate">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRollingBudgetTemplate">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetRollingBudgetTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelsForUser">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetChannelsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgrammeCombinationTypes">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetProgrammeCombinationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForChannels">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetUsersForChannels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinYearForUpdateRollingBudget">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFinYearForUpdateRollingBudget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseeForFinancialBudget">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetLicenseeForFinancialBudget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialProgrammeType">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFinancialProgrammeType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedBudgetReportLookup">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetReportLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialYearCompanyLookup">
+      <soap:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFinancialYearCompanyLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:IBudgetingLookupService">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetBudgetStatus">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetBudgetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedBudgetTemplate">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRollingBudgetTemplate">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetRollingBudgetTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelsForUser">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetChannelsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgrammeCombinationTypes">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetProgrammeCombinationTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForChannels">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetUsersForChannels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinYearForUpdateRollingBudget">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFinYearForUpdateRollingBudget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseeForFinancialBudget">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetLicenseeForFinancialBudget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialProgrammeType">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFinancialProgrammeType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedBudgetReportLookup">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFixedBudgetReportLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialYearCompanyLookup">
+      <soap12:operation soapAction="http://tempuri.org/IBudgetingLookupService/GetFinancialYearCompanyLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BudgetingLookupService">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Budgeting/BudgetingLookupService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

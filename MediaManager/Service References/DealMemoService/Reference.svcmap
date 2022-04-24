@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6daeb4fe-a2db-4c24-baef-8ba44b44cf06" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.200.10/MediaManagerServices/Acquisition/DealMemoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DealMemoService.wsdl" MetadataType="Wsdl" ID="f470541d-e4d0-48fb-a718-68086965f9d4" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?wsdl" />
+    <MetadataFile FileName="DealMemoService.xsd" MetadataType="Schema" ID="be7655d3-c673-4d60-addf-4e5ff414b42c" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DealMemoService1.xsd" MetadataType="Schema" ID="7e57f277-270f-4ce0-b82b-27b5342d4d4d" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd10" />
+    <MetadataFile FileName="DealMemoService2.xsd" MetadataType="Schema" ID="5f801f2e-38c4-4b85-aae9-51b2f8032fb7" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd6" />
+    <MetadataFile FileName="DealMemoService3.xsd" MetadataType="Schema" ID="4eab0425-dc2c-4cc1-a761-b4ccc8b276d0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DealMemoService4.xsd" MetadataType="Schema" ID="4b59f517-833b-49a3-83a7-de2a322386ee" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DealMemoService5.xsd" MetadataType="Schema" ID="faa69433-1ca2-466a-9770-b53de153a0fe" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DealMemoService6.xsd" MetadataType="Schema" ID="3a57d11e-301e-48a4-b436-f1ccaf6719aa" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd5" />
+    <MetadataFile FileName="DealMemoService.disco" MetadataType="Disco" ID="120ef4dc-ea56-4c40-8b8d-4c8eeaa94e83" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?disco" />
+    <MetadataFile FileName="DealMemoService7.xsd" MetadataType="Schema" ID="890b332f-2804-4f70-b708-e5391709c029" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DealMemoService8.xsd" MetadataType="Schema" ID="ed120c6e-476f-4718-81d6-db085651500c" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd7" />
+    <MetadataFile FileName="DealMemoService9.xsd" MetadataType="Schema" ID="368bf313-e57c-4b8e-9f9e-e7215f457b82" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd9" />
+    <MetadataFile FileName="DealMemoService10.xsd" MetadataType="Schema" ID="5185d524-b831-4c9a-a330-70e3b61e0c05" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

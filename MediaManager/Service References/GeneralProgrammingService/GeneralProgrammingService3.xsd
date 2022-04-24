@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="ArrayOfContractVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractVO" nillable="true" type="tns:ContractVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractVO" nillable="true" type="tns:ArrayOfContractVO" />
+  <xs:complexType name="ContractVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountingDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Alignment" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CalcInfo_Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CatchUp" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CatchUpRights" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CatchUp_BrandingRestriction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CatchUp_FeaturesScheduleAfterPremiereBroadcast" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CatchUp_FeaturesScheduleWithInXDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_FeaturesScheduleXDaysBeforeLinearPlayout" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_FeaturesScheduleXDaysBeforeLinearPlayoutFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CatchUp_LicPeriodAfterXDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_LicPeriodDuringLastXDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_MaxAccessFee" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="CatchUp_MaxPercentRestriction" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_MinMajorStudioRestriction" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_MuDRestriction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CatchUp_OtherRules" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CatchUp_PreRollNoticeReq" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CatchUp_SeriesNoofEpisodeRestrictions" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_SeriesScheduleAfterPremiereBroadcast" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CatchUp_SeriesScheduleWithInXDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_SeriesScheduleXDaysBeforeLinearPlayout" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CatchUp_SeriesScheduleXDaysBeforeLinearPlayoutFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CatchUp_TransTechRestriction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CategoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContracEntity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContracEntityDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContracEntity_Number" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractFee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractNo" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractPrice" type="xs:double" />
+          <xs:element minOccurs="0" name="ContractShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExbPerDay" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ExchangeRate" type="xs:double" />
+          <xs:element minOccurs="0" name="ExhibitionDays" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FileData" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicensePeriod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseTypeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Limit_Per_Channel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Limit_Per_Day" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Limit_Per_Service" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MainLicensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainLicenseeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainLicensee_Number" type="xs:int" />
+          <xs:element minOccurs="0" name="Max_Runs" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Max_Runs_Percentages" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="MinimumSubs" type="xs:int" />
+          <xs:element minOccurs="0" name="Multiplex" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PrimeTime_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RenewalDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RoyaltyCalculations" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoyaltyCalculationsDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Runs" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SignedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierCode_Number" type="xs:int" />
+          <xs:element minOccurs="0" name="SupplierDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractVO" nillable="true" type="tns:ContractVO" />
+</xs:schema>

@@ -1,0 +1,88 @@
+﻿/*..Tab Container..*/
+
+  .ui-tabs
+    {
+        position: relative;
+        padding: 0;
+        zoom: 1;
+    }
+    .ui-tabs .ui-tabs-panel
+    {
+        display: block;
+        border-width: 0;
+        padding: 0px;
+        border: 0px;
+        background: #ccc;
+    }
+    .ui-tabs .ui-tabs-nav
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .ui-tabs .ui-tabs-nav li a
+    {
+        float: left;
+        padding: .1em .2em;
+        text-decoration: none;
+    }
+    .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl
+    {
+        -moz-border-radius-topleft: 0px /*{cornerRadius}*/;
+        -webkit-border-top-left-radius: 0px /*{cornerRadius}*/;
+        -khtml-border-top-left-radius: 0px /*{cornerRadius}*/;
+        border-top-left-radius: 0px /*{cornerRadius}*/;
+    }
+    .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr
+    {
+        -moz-border-radius-topright: 0px /*{cornerRadius}*/;
+        -webkit-border-top-right-radius: 0px /*{cornerRadius}*/;
+        -khtml-border-top-right-radius: 0px /*{cornerRadius}*/;
+        border-top-right-radius: 0px /*{cornerRadius}*/;
+    }
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl
+    {
+        -moz-border-radius-bottomleft: 0px /*{cornerRadius}*/;
+        -webkit-border-bottom-left-radius: 0px /*{cornerRadius}*/;
+        -khtml-border-bottom-left-radius: 0px /*{cornerRadius}*/;
+        border-bottom-left-radius: 0px /*{cornerRadius}*/;
+    }
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br
+    {
+        -moz-border-radius-bottomright: 0px /*{cornerRadius}*/;
+        -webkit-border-bottom-right-radius: 0px /*{cornerRadius}*/;
+        -khtml-border-bottom-right-radius: 0px /*{cornerRadius}*/;
+        border-bottom-right-radius: 0px /*{cornerRadius}*/;
+    }
+    .ui-combobox {
+        position: relative;
+        display: inline-block;
+    }
+    .ui-combobox-toggle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: -1px;
+        padding: 0;
+        /* adjust styles for IE 6/7 */
+        *height: 1.7em;
+        *top: 0.1em;
+    }
+    .ui-combobox-input {
+        margin: 0;
+        padding: 0.3em;
+        width:85px;
+        height:12px;
+        background:white;
+    }
+       .ui-autocomplete
+    {
+        position: absolute;
+        cursor: default;
+        max-height: 200px;
+        max-width: 250px;
+        width: auto;
+        min-width: 150px;
+        overflow: auto;
+    }
+    
+    /*....TabContainer end ...*/

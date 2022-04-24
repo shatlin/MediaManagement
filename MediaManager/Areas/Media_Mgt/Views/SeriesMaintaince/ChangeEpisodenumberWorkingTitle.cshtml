@@ -1,0 +1,441 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.SeriesSearchViewModel
+<script type="text/javascript">
+    function fun() {
+        //alert('inside fun');
+        $.ajax({
+            url: '@Url.Action("SaveChangeEpisodeWorkingTitle", "SeriesMaintaince", new { area = "Media_Mgt" })',
+            type: "POST",
+            dataType: "Json",
+            success: function (data) { },
+            error: function (data) { }
+        });
+        //var SearchAllDetails = '@Url.Action("SaveChangeEpisodeWorkingTitle", "SeriesMaintaince", new { area = "Media_Mgt" })'
+    }
+
+</script>
+<script type="text/javascript">
+    var SrcEpisodeFrom;
+    var SrcEpisodeTo;
+    var DesEpisodeFrom;
+    var DesEpisodeTo;
+    var TextExample;
+    var TextAdditional;
+    var chkSeries;
+    var chkSeasons;
+    var chkAddtext;
+    var chkLeadingzeros;
+    var MinEpisodeNo;
+    var MaxEpisodeNo;
+
+    var first_epi_no;
+    var last_epi_no;
+    var ArrExampleText = new Array();
+
+    var TempArray = new Array();
+    TempArray[0] = '';
+
+    onLoad();
+
+
+
+    function popup_change_working_title_Save_click() {
+
+        clearAllMessages();
+        if (Validate()) {
+
+            var changecriteria = {
+                SrcEpisodeFromWorking: $('#txtChangeSrcEpisodeFrom').val(),
+                SrcEpisodeToWorking: $('#txtChangeSrcEpisodeTo').val(),
+                SrcEpisodeTo1Working: $('#txtToEpisodeFrom').val(),
+                SrcEpisodeTo2Working: $('#txtToSrcEpisodeTo').val(),
+                SrcEpisodeExampleWorking: $('#txtSrcEpisodeExample').val(),
+                SrcSeries: $('#chkSerieschked').is(':checked'),
+                SrcSeasons: $('#chkSeasonschked').is(':checked'),
+                SrcAddtionalText: $('#chkAddTextchked').is(':checked'),
+                SrcLeadingZeros: $('#chkLeadingZeroschked').is(':checked'),
+                SeriesNumber: currentSeriesno,
+                SeasonNumber: currentseasonno,
+                SeriesTitle: currentseriestitle,
+                SeasonTitle: currentseasontitle
+            };
+
+
+
+            var pSeriesSearchWorkingTitle = { seriesTitleMaintChangeEpisodeWorkingNo: changecriteria};
+            var dataToSend = JSON.stringify(pSeriesSearchWorkingTitle);
+            $.ajax({
+                url: '@Url.Action("SaveChangeWorkingtitle", "SeriesMaintaince", new { area = "Media_Mgt" })',
+
+                type: "POST",
+                dataType: "Json",
+                data: JSON.stringify(pSeriesSearchWorkingTitle),
+                contentType: 'application/json; charset=UTF-8',
+                //                        processData: false,
+                // 
+                cache: false,
+                success: function (data) {
+
+                    if (data.length > 0) {
+
+                        if (data == 'Y') {
+                            getEpisodeGrid(currentseasontitle, currentseasonno, currentseriestitle, currentSeriesno);
+                            showMessage("Transaction saved succesfully", "information");
+                        }
+                        else {
+                            showMessage("No Data Save", "information");
+                        }
+                    }
+                },
+                error: function () {
+                    alert('error');
+                }
+            });       //end of jax call
+            CloseDialog();
+        }
+
+    }
+
+    function CloseDialog() {
+        dialoghandler.dialog("close");
+    }
+
+    function onLoad() {
+
+        clearAllMessages();
+
+        // if (currentSeriesno != null && currentseasonno != null) {
+        var actionParm = { SeriesNumber: currentSeriesno, SeasonNumber: currentseasonno };
+
+
+        //Second Call goes here
+        $.ajax({
+            url: '@Url.Action("GetEpisodeNumbers", "SeriesMaintaince", new { area = "Media_Mgt" })',
+            type: "POST",
+            dataType: 'Json',
+            data: actionParm,
+            async: false,
+
+            success: function (data) {
+
+                if (data != null) {
+
+                    $('#txtChangeSrcEpisodeFrom').val(data.ProgramDetails.ProgramMinEpisodeNo);
+                    $('#txtChangeSrcEpisodeTo').val(data.ProgramDetails.ProgramMaxEpisodeNo);
+
+                    MinEpisodeNo = data.ProgramDetails.ProgramMinEpisodeNo;
+                    MaxEpisodeNo = data.ProgramDetails.ProgramMaxEpisodeNo;
+
+                    first_epi_no = data.ProgramDetails.ProgramMinEpisodeNo;
+                    last_epi_no = data.ProgramDetails.ProgramMaxEpisodeNo;
+                    $('#txtToEpisodeFrom').val('9999');
+                    $('#txtToSrcEpisodeTo').val('9999');
+
+                    var strSeries = data.SeriesTitle;
+                    var strSeason = data.SeasonTitle;
+                    var strLeadZero = $('#txtChangeSrcEpisodeFrom').val();
+
+
+
+                    if (typeof (strSeries) != 'undefined') {
+
+                        ArrExampleText[0] = strSeries;
+
+                    }
+
+                    if (typeof (strSeason) != 'undefined') {
+                        ArrExampleText[1] = strSeason;
+                    }
+
+                    if (typeof (strLeadZero) != 'undefined') {
+                        ArrExampleText[3] = '000' + strLeadZero;
+                    }
+
+
+                }
+
+            },
+            Error: function () {
+                ShowNotyPannel("Error", "error");
+
+            }
+        });
+
+    }
+
+
+    if (currentaction == 'ChangeEpisodenumberWorkingTitle') {
+        showMessage("", "information");
+    }
+
+
+    function ShowExampleText() {
+
+
+        var isSeriesChecked = $('#chkSerieschked').is(':checked');
+        var isSeasonChecked = $('#chkSeasonschked').is(':checked');
+        var isAdditionalChecked = $('#chkAddTextchked').is(':checked');
+        var isLeadZeroChecked = $('#chkLeadingZeroschked').is(':checked');
+
+        for (var i = 0; i < ArrExampleText.length; i++) {
+
+            if (isSeriesChecked == true && i == 0) {
+
+                TempArray[0] = ArrExampleText[0];
+
+            }
+            else if (isSeriesChecked == false && i == 0) {
+                TempArray[0] = '';
+            }
+
+            if (isSeasonChecked == true && i == 1) {
+
+                TempArray[0] = TempArray[0] + " " + ArrExampleText[1];
+
+            }
+
+            if (isAdditionalChecked == true && i == 2) {
+
+                if ($('#txtAdditionalText').length > 0 && typeof (ArrExampleText[2]) != 'undefined') {
+                    TempArray[0] = TempArray[0] + " " + ArrExampleText[2];
+                }
+
+                $('#txtAdditionalText').prop("disabled", false);
+            }
+            else if (isAdditionalChecked == false && i == 2) {
+                $('#txtAdditionalText').prop("disabled", true);
+            }
+
+            if (isLeadZeroChecked == true && i == 3) {
+
+                TempArray[0] = TempArray[0] + " " + ArrExampleText[3];
+                SetDestinationEpisodeFrom();
+            }
+
+
+        }
+
+
+        $('#txtSrcEpisodeExample').val(TempArray[0]);
+    }
+
+    function ActionTxtAdditionalTextChanged() {
+
+        var value = $('#txtAdditionalText').val();
+
+        if (typeof (value) != 'undefined') {
+            ArrExampleText[2] = $('#txtAdditionalText').val();
+
+        }
+        ShowExampleText();
+
+    }
+
+    function SetDestinationEpisodeFrom() {
+
+        if ($('#txtToEpisodeFrom').val() != null) {
+            var integerDesEpisodeFrom = $('#txtToEpisodeFrom').val();
+            var integerDiff = parseInt($('#txtChangeSrcEpisodeTo').val()) - parseInt($('#txtChangeSrcEpisodeFrom').val());
+
+            $('#txtToSrcEpisodeTo').val(parseInt(integerDesEpisodeFrom) + parseInt(integerDiff));
+
+        }
+
+
+    }
+
+
+    function Validate() {
+
+
+        if ($('#txtToEpisodeFrom').val() == '9999' || $('#txtToSrcEpisodeTo').val() == '9999') {
+            alert("Please enter new episode numbers");
+            e.preventDefault();
+            return false;
+        }
+
+        if (parseInt($('#txtChangeSrcEpisodeTo').val()) > parseInt(MaxEpisodeNo) || parseInt($('#txtChangeSrcEpisodeTo').val()) < parseInt(MinEpisodeNo)) {
+            alert("Ending episode number does not exists. Please enter valid range");
+            e.preventDefault();
+            return false;
+        }
+
+        if ($('#txtToEpisodeFrom').val() == "" || $('#txtToSrcEpisodeTo').val() == "" || $('#txtChangeSrcEpisodeFrom').val() == "" || $('#txtChangeSrcEpisodeTo').val() == "" || $('#txtSrcEpisodeExample').val() == "") {
+            alert("Enter required fields");
+            e.preventDefault();
+            return false;
+        }
+
+        if ($('#txtToEpisodeFrom').val() != "") {
+            var value = $('#txtToEpisodeFrom').val().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            var intRegex = /^\d+$/;
+            if (!intRegex.test(value)) {
+                alert("Enter numeric number for episode");
+
+                return false;
+            }
+        }
+
+        if ($('#txtToSrcEpisodeTo').val() != "") {
+            var value = $('#txtToSrcEpisodeTo').val().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            var intRegex = /^\d+$/;
+            if (!intRegex.test(value)) {
+                alert("Enter numeric number for episode");
+
+                return false;
+            }
+        }
+
+        if ($('#txtChangeSrcEpisodeFrom').val() != "") {
+            var value = $('#txtChangeSrcEpisodeFrom').val().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            var intRegex = /^\d+$/;
+            if (!intRegex.test(value)) {
+                alert("Enter numeric number for episode");
+
+                return false;
+            }
+        }
+
+        if ($('#txtChangeSrcEpisodeTo').val() != "") {
+            var value = $('#txtChangeSrcEpisodeTo').val().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            var intRegex = /^\d+$/;
+            if (!intRegex.test(value)) {
+                alert("Enter numeric number for episode");
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+
+</script>
+<form method="post" action="ChangeEpisodenumberWorkingTitle">
+<div>
+    <div class="subHeading">
+        Change Episode Number Working Title Description
+    </div>
+    <div style="padding-left: 5px;">
+        <table class="tableLayout" style="padding: 5px">
+            <tr>
+                <td width="35%">
+                    @Html.LabelFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeExampleWorking, "Example", new {@class="label"})
+                </td>
+                <td class="RequiredIndicator" width="2%">
+                    *
+                </td>
+                <td width="15%">
+                    @Html.TextBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeExampleWorking, new { @class = "inputText2col", @id = "txtSrcEpisodeExample", @readonly = "readonly" })
+                </td>
+                <td width="10%">
+                </td>
+                <td width="2%">
+                </td>
+                <td width="10%">
+                </td>
+                <td width="18%">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeFromWorking, "From",new {@class="label"})
+                </td>
+                <td class="RequiredIndicator">
+                    *
+                </td>
+                <td colspan="5">
+                    <table>
+                        <tr>
+                          <td width="30%">
+                                @Html.TextBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeFromWorking, new { @class = "inputText1Col", @id = "txtChangeSrcEpisodeFrom", @onblur = "SetDestinationEpisodeFrom()" })
+                            </td>
+                              <td width="10%">
+                                @Html.LabelFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeToWorking, "To", new {@class="label"})
+                            </td>
+                           <td class="RequiredIndicator" width="2%">
+                                *
+                            </td>
+                           <td width="8%">
+                                @Html.TextBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeToWorking, new { @class = "inputText1Col", @id = "txtChangeSrcEpisodeTo", @onblur = "SetDestinationEpisodeFrom()" })
+                            </td>
+                             <td width="50%"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeTo1Working, "To", new { @class = "label" })
+                </td>
+                <td class="RequiredIndicator">
+                    *
+                </td>
+                <td colspan="5">
+                    <table>
+                        <tr>
+                           <td width="30%">
+                                @Html.TextBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeTo1Working, new { @class = "inputText1Col", @id = "txtToEpisodeFrom", @onblur = "SetDestinationEpisodeFrom()" })
+                            </td>
+                            
+                            <td width="10%">
+                                @Html.LabelFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeTo2Working, "To", new { @class = "label" })
+                            </td>
+                            <td class="RequiredIndicator" width="2%">
+                                *
+                            </td>
+                           <td width="8%">
+                                @Html.TextBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeTo2Working, new { @class = "inputText1Col", @id = "txtToSrcEpisodeTo", @readonly = "readonly" })
+                            </td>
+                            <td width="50%"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 0px 5px 0px;">
+                    @Html.CheckBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcSeries, new { @id = "chkSerieschked", @onclick = "ShowExampleText()" })
+                   <span style="font-size:11px;font-family:"Tahoma",arial,sans-serif;">Series </span>
+                </td>
+                <td colspan="6">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.CheckBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcSeasons, new { @id = "chkSeasonschked", @onclick = "ShowExampleText()" })
+                    <span style="font-size:11px;font-family:"Tahoma",arial,sans-serif;">Season</span>
+                </td>
+                <td colspan="6">
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    @Html.CheckBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcAddtionalText, new { @id = "chkAddTextchked", @onclick = "ShowExampleText()" })
+                   <span style="font-size:11px;font-family:"Tahoma",arial,sans-serif;">Additional Text</span>
+                </td>
+                <td>
+                </td>
+                <td colspan="5">
+                    @Html.TextBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcEpisodeWorkingTitleAddnText, new { @class = "inputText2col", @id = "txtAdditionalText", @onblur = "ActionTxtAdditionalTextChanged(this)" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.CheckBoxFor(m => m.seriesTitleMaintChangeEpisodeWorkingNo.SrcLeadingZeros, new { @id = "chkLeadingZeroschked", @onclick = "ShowExampleText()" })
+                   <span style="font-size:11px;font-family:"Tahoma",arial,sans-serif;">Leading Zeros Y/N</span>   
+                </td>
+                <td colspan="6">
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td colspan="7" align="right">
+                    <input type="button" value="Save" name="Save" class="inputButton" onclick="popup_change_working_title_Save_click()" />
+                    <input type="button" value="Cancel" name="Cancel" class="inputButton" onclick="CloseDialog();" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</form>

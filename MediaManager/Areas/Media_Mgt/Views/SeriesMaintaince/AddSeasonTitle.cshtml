@@ -1,0 +1,447 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.SeriesSearchViewModel
+<br />
+@*
+<h3>Change Episode For New Series/Season</h3>
+<input type="button" value="Please close Popup" onclick="closepopup1()" />*@
+<div>
+    <div class="mainHeadingNoPadding" style="padding-left:5px;">
+        <label id="lblHeading">
+        </label>
+    </div>
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <div>
+                    <table width="100%">
+                        <tr>
+                            <td colspan="3">
+                                <div class="subHeading">
+                                    Change Episodes For The New Series/Season
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%" style="padding-left: 5px">
+                                @Html.LabelFor(m => m.addSeasonTitle.SeasonTitle, new {@class="label" })
+                            </td>
+                            <td class="RequiredIndicator" width="2%">
+                                *
+                            </td>
+                            <td width="78%">
+                                @Html.TextBoxFor(m => m.addSeasonTitle.SeasonTitle, new { @class = "inputText2col", @id = "txtTitle" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 5px">@Html.LabelFor(m => m.addSeasonTitle.SeasonNumber)
+                            </td>
+                            <td class="RequiredIndicator" width="2%">
+                                *
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m => m.addSeasonTitle.SeasonNumber, new { @class = "inputText1Col", @id = "txtNumber" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                               
+                            </td>
+                            
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding-left:5px">
+                <table width="100%">
+                    <tr>
+                        <td width="20%">
+                            @Html.LabelFor(m => m.addSeasonTitle.EpisodeTitle, new { @class = "label" })
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td width="78%">
+                            @Html.TextBoxFor(m => m.addSeasonTitle.EpisodeTitle, new { @class = "inputText2col", @id = "txtExample" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.addSeasonTitle.IsProgramChk, new { @class = "inputText2col", @id = "checkPrgm" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.addSeasonTitle.IsProgramChk, new {@class="label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.addSeasonTitle.IsSerieschk, new { @class = "inputText2col", @id = "checkSeries", @onclick = "ShowExampleText()" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.addSeasonTitle.IsSerieschk, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.addSeasonTitle.IsSeasonChks, new { @class = "inputText2col", @id = "checkSeason", @onclick = "ShowExampleText()" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.addSeasonTitle.IsSeasonChks, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.addSeasonTitle.IsAdditionalText, new { @class = "inputText2col", @id = "checkAdditionalText", @onclick = "ShowExampleText()" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.addSeasonTitle.IsAdditionalText, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.addSeasonTitle.AddtionalText, new { @class = "inputText2col", @id = "txtAdditionalText", @disabled = "true", @onblur = "ActionTxtAdditionalTextChanged(this)" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.addSeasonTitle.IsEpisodeChk, new { @class = "inputText2col", @id = "checkEpisodeNo" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.addSeasonTitle.IsEpisodeChk, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.addSeasonTitle.IsLeadingZeroChk, new { @class = "inputText2col", @id = "checkLeadZero", @onclick = "ShowExampleText()" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.addSeasonTitle.IsLeadingZeroChk, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="2%">
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td align="right">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input id="buttonSave" type="button" value="Save" class="inputButton" onclick="SaveSeasonTitle();" />
+                                        <input id="buttonReset" type="button" class="inputButton" value="Reset" onclick="ResetValues();" />
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<script language="javascript" type="text/javascript">
+
+    var flag;
+    var strExample;
+    var addText;
+    var ArrExampleText = new Array();
+
+
+    var TempArray = new Array();
+    TempArray[0] = '';
+
+
+    onLoadCall();
+    if (currentaction == 'AddSeasonTitle') {
+
+        $('#checkPrgm').prop("disabled", true);
+        DisabledCheckBoxes(true);
+
+        if (currentseasontitle != null && currentseasontitle != 0) {
+            $('#txtTitle').val(currentseasontitle);
+        } else {
+            $('#txtTitle').val(currentseriestitle);
+        }
+
+        if (currentseasonno != 0) {
+            $('#txtNumber').val(currentseasonno);
+        }
+
+        $('#lblHeading').text("Add Season Title");
+
+        flag = false;
+    }
+    else if (currentaction == 'UpdateSeasonTitle') {
+        if (currentseasontitle != null) {
+            $('#txtTitle').val(currentseasontitle);
+        } else {
+            $('#txtTitle').val(currentseriestitle);
+        }
+
+        $('#txtNumber').val(currentseasonno);
+        DisabledCheckBoxes(true);
+        flag = true;
+
+        $('#lblHeading').text("Update Season Title");
+
+    }
+
+
+
+    function SaveSeasonTitle() {
+
+        clearAllMessages();
+
+        if ($('#txtTitle').val() == "") {
+            showMessage("Please Enter Season Title", "error");
+        }
+        else if ($('#txtNumber').val() == "") {
+            showMessage("Please Enter Season Number", "error");
+        }
+        else {
+            var answer;
+            if (currentaction == 'AddSeasonTitle') {
+                answer = confirm("Are you sure you want to create a new season?")
+
+            }
+            else if (currentaction == 'UpdateSeasonTitle') {
+                answer = confirm("Are you sure you want to change the season title ?")
+
+            }
+
+            if (answer) {
+                var seasonTitleDetails = {
+                    SeasonTitle: $('#txtTitle').val(),
+                    SeasonNumber: $('#txtNumber').val(),
+                    EpisodeTitle: $('#txtExample').val(),
+                    IsProgramChk: $('#checkPrgm').is(':checked'),
+                    IsSerieschk: $('#checkSeries').is(':checked'),
+                    IsSeasonChks: $('#checkSeason').is(':checked'),
+                    IsAdditionalText: $('#checkAdditionalText').is(':checked'),
+                    AddtionalText: $('#txtAdditionalText').val(),
+                    IsEpisodeChk: $('#checkEpisodeNo').is(':checked'),
+                    IsLeadingZeroChk: $('#checkLeadZero').is(':checked'),
+                    SeriesTitle: currentseriestitle,
+                    Flag: flag
+
+                };
+                var SearchViewModelForSeasonTitle = { addSeasonTitle: seasonTitleDetails };
+                var dataToSend = JSON.stringify(SearchViewModelForSeasonTitle);
+                $.ajax({
+                    url: '@Url.Action("SaveSeasonTitle", "SeriesMaintaince", new { area = "Media_Mgt" })',
+
+                    type: "POST",
+                    dataType: "Json",
+                    data: JSON.stringify(SearchViewModelForSeasonTitle),
+                    contentType: 'application/json; charset=UTF-8',
+                    //                        processData: false,
+                    // 
+                    cache: false,
+                    success: function (data) {
+
+                        showMessage("Record saved succesfully", "information");
+
+                        location.reload();
+                    },
+                    error: function () {
+                        alert('error');
+                    }
+                });    //end of jax call
+
+                dialoghandler.dialog("close");
+
+            }
+        }
+    }
+
+    $("#checkPrgm").click(function (e) {
+        var isChecked = $('#checkPrgm').is(':checked');
+        if (isChecked) {
+
+            DisabledCheckBoxes(false);
+        }
+        else {
+            DisabledCheckBoxes(true);
+
+        }
+
+    });
+
+    function ResetValues() {
+        clearAllMessages();
+
+        $("#checkPrgm").attr("checked", false);
+
+        $('#txtTitle').val("");
+        $('#txtNumber').val("");
+        $("#checkPrgm").attr("checked", false);
+        $("#checkAdditionalText").attr("checked", false);
+        $("#checkEpisodeNo").attr("checked", false);
+        $("#checkLeadZero").attr("checked", false);
+        $("#checkSeason").attr("checked", false);
+        $("#checkSeries").attr("checked", false);
+        $('#txtAdditionalText').prop("disabled", true);
+        $('#txtAdditionalText').val("");
+        $('#txtExample').val("");
+
+    }
+
+    function DisabledCheckBoxes(value) {
+        $('#checkSeries').prop("disabled", value);
+        $('#checkSeason').prop("disabled", value);
+        $('#checkAdditionalText').prop("disabled", value);
+        $('#txtExample').prop("disabled", value);
+        $('#checkEpisodeNo').prop("disabled", value);
+        $('#checkLeadZero').prop("disabled", value);
+    }
+
+    function ActionTxtAdditionalTextChanged() {
+
+        var value = $('#txtAdditionalText').val();
+
+        if (typeof (value) != 'undefined') {
+            ArrExampleText[2] = $('#txtAdditionalText').val();
+            addText = $('#txtAdditionalText').val();
+        }
+        ShowExampleText();
+
+    }
+
+    function onLoadCall() {
+
+        clearAllMessages();
+
+        $('#txtAdditionalText').val("");
+
+        $('#checkSeries').attr('checked', 'checked');
+        $('#checkSeason').attr('checked', 'checked');
+        $('#checkEpisodeNo').attr('checked', 'checked');
+
+        ArrExampleText[0] = currentseriestitle;
+        if (currentseasontitle != null) {
+            ArrExampleText[1] = currentseasontitle;
+        } else {
+            ArrExampleText[1] = '';
+        }
+        ArrExampleText[3] = '000';
+
+        ShowExampleText();
+    }
+
+    function ShowExampleText() {
+
+        var isSeriesChecked = $('#checkSeries').is(':checked');
+        var isSeasonChecked = $('#checkSeason').is(':checked');
+        var isAdditionalChecked = $('#checkAdditionalText').is(':checked');
+        var isLeadZeroChecked = $('#checkLeadZero').is(':checked');
+
+        for (var i = 0; i < ArrExampleText.length; i++) {
+
+            if (isSeriesChecked == true && i == 0) {
+
+                TempArray[0] = ArrExampleText[0];
+
+            }
+            else if (isSeriesChecked == false && i == 0) {
+                TempArray[0] = '';
+            }
+
+            if (isSeasonChecked == true && i == 1) {
+
+                TempArray[0] = TempArray[0] + " " + ArrExampleText[1];
+
+            }
+
+            if (isAdditionalChecked == true && i == 2) {
+
+                if ($('#txtAdditionalText').length > 0 && typeof (ArrExampleText[2]) != 'undefined') {
+                    TempArray[0] = TempArray[0] + " " + ArrExampleText[2];
+                }
+
+                $('#txtAdditionalText').prop("disabled", false);
+            }
+            else if (isAdditionalChecked == false && i == 2) {
+                $('#txtAdditionalText').prop("disabled", true);
+            }
+
+            if (isLeadZeroChecked == true && i == 3) {
+                TempArray[0] = TempArray[0] + " " + ArrExampleText[3];
+            }
+
+
+        }
+
+
+        $('#txtExample').val(TempArray[0]);
+    }
+
+</script>

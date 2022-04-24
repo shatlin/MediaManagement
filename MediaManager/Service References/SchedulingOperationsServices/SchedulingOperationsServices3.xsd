@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="ChannelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CanDelete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanInsert" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanSelect" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanUpdate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ChannelEndTime" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelMediaPlatform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelMediaService" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelShortNameFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelStartTime" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentChannelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeShiftDifference" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelVO" nillable="true" type="tns:ChannelVO" />
+  <xs:complexType name="ArrayOfChannelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChannelVO" nillable="true" type="tns:ChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChannelVO" nillable="true" type="tns:ArrayOfChannelVO" />
+</xs:schema>

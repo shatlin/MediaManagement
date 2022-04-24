@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Contracts" />
+  <xs:complexType name="ArrayOfAuthoritiesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthoritiesVO" nillable="true" type="tns:AuthoritiesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthoritiesVO" nillable="true" type="tns:ArrayOfAuthoritiesVO" />
+  <xs:complexType name="AuthoritiesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Delete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Insert" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Select" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Update" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthoritiesVO" nillable="true" type="tns:AuthoritiesVO" />
+  <xs:complexType name="ArrayOfTerritoryVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TerritoryVO" nillable="true" type="tns:TerritoryVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTerritoryVO" nillable="true" type="tns:ArrayOfTerritoryVO" />
+  <xs:complexType name="TerritoryVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q2:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdjustFactor" type="xs:double" />
+          <xs:element minOccurs="0" name="Contract" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractNo" type="xs:int" />
+          <xs:element minOccurs="0" name="CopyActionForTeritory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="Price" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightsCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RightsDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerritoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerritoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerritoryUpdateCount" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WTax" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WTaxPercents" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TerritoryVO" nillable="true" type="tns:TerritoryVO" />
+  <xs:complexType name="ChannelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelAuthorities" nillable="true" type="tns:ArrayOfAuthoritiesVO" />
+          <xs:element minOccurs="0" name="ChannelCreated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ChannelEndTime" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelNumberTo" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelNumber_Search" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelPrimaryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelROYFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ChannelRegionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelSimulcastFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelSimulcastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelSite" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelStartTime" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelStartTimeString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelTerritories" nillable="true" type="tns:ArrayOfTerritoryVO" />
+          <xs:element minOccurs="0" name="ChannelTimeShiftFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelTimeShiftName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CopyFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="ListOfPlatform" nillable="true" type="tns:ArrayOfChannelVO" />
+          <xs:element minOccurs="0" name="MappingId" type="xs:int" />
+          <xs:element minOccurs="0" name="MediaPlatform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaService" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Platform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlatformDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlatformId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Schedulable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ScheduleStartTime" type="xs:int" />
+          <xs:element minOccurs="0" name="SimualCastChannelVO" nillable="true" type="tns:SimualCastChannelVO" />
+          <xs:element minOccurs="0" name="SimualCastChannelVOList" nillable="true" type="tns:ArrayOfSimualCastChannelVO" />
+          <xs:element minOccurs="0" name="SuccessChannelFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeZoneEastMediaManager" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeZoneSouthMediaManager" type="xs:int" />
+          <xs:element minOccurs="0" name="WriteOff" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelVO" nillable="true" type="tns:ChannelVO" />
+  <xs:complexType name="ArrayOfChannelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChannelVO" nillable="true" type="tns:ChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChannelVO" nillable="true" type="tns:ArrayOfChannelVO" />
+  <xs:complexType name="SimualCastChannelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q4:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SCChannelEndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelEndTime" type="xs:int" />
+          <xs:element minOccurs="0" name="SCChannelEndTimeString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SCChannelNumber_Search" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelSimulcastFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelSimulcastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelStartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelStartTime" type="xs:int" />
+          <xs:element minOccurs="0" name="SCChannelStartTimeString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelTimeShiftFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelTimeShiftName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCChannelType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCParentChannelID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCParentChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SCParentChannelNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SimualCastChannelVO" nillable="true" type="tns:SimualCastChannelVO" />
+  <xs:complexType name="ArrayOfSimualCastChannelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SimualCastChannelVO" nillable="true" type="tns:SimualCastChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSimualCastChannelVO" nillable="true" type="tns:ArrayOfSimualCastChannelVO" />
+  <xs:complexType name="GeneralProgrammingVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q5:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bo_category_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bo_category_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CategoryField" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Category_Old" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Category_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Category_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_plat_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_plat_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_service_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_service_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatformVO" nillable="true" type="tns:GeneralProgrammingVO" />
+          <xs:element minOccurs="0" name="MediaPlatformVOList" nillable="true" type="tns:ArrayOfGeneralProgrammingVO" />
+          <xs:element minOccurs="0" name="Pgm_category_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pgm_category_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="tns:Category" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralProgrammingVO" nillable="true" type="tns:GeneralProgrammingVO" />
+  <xs:complexType name="ArrayOfGeneralProgrammingVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeneralProgrammingVO" nillable="true" type="tns:GeneralProgrammingVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeneralProgrammingVO" nillable="true" type="tns:ArrayOfGeneralProgrammingVO" />
+  <xs:simpleType name="Category">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Programme" />
+      <xs:enumeration value="BO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="MediaPlatformGPVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q6:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CopyActionForMediaPlatform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="MappingId" type="xs:int" />
+          <xs:element minOccurs="0" name="Med_plat_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_plat_code_old" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_plat_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_service_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatformUpdateCount" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaPlatformGPVO" nillable="true" type="tns:MediaPlatformGPVO" />
+  <xs:complexType name="ArrayOfMediaPlatformGPVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaPlatformGPVO" nillable="true" type="tns:MediaPlatformGPVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediaPlatformGPVO" nillable="true" type="tns:ArrayOfMediaPlatformGPVO" />
+  <xs:complexType name="MediaServiceGPVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q7:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Med_platform_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_platform_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_service_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_service_code_old" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Med_service_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatformList" nillable="true" type="tns:ArrayOfMediaPlatformGPVO" />
+          <xs:element minOccurs="0" name="MediaPlatformVO" nillable="true" type="tns:MediaPlatformGPVO" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaServiceGPVO" nillable="true" type="tns:MediaServiceGPVO" />
+  <xs:complexType name="ArrayOfMediaServiceGPVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaServiceGPVO" nillable="true" type="tns:MediaServiceGPVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediaServiceGPVO" nillable="true" type="tns:ArrayOfMediaServiceGPVO" />
+  <xs:complexType name="CurrenciesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q8:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyExchangeRates" nillable="true" type="tns:ArrayOfCurrencyExchangeRatesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrenciesVO" nillable="true" type="tns:CurrenciesVO" />
+  <xs:complexType name="ArrayOfCurrencyExchangeRatesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrencyExchangeRatesVO" nillable="true" type="tns:CurrencyExchangeRatesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrencyExchangeRatesVO" nillable="true" type="tns:ArrayOfCurrencyExchangeRatesVO" />
+  <xs:complexType name="CurrencyExchangeRatesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q9:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCodeB" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExchangeRate" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Month" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrencyExchangeRatesVO" nillable="true" type="tns:CurrencyExchangeRatesVO" />
+  <xs:complexType name="ArrayOfCurrenciesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrenciesVO" nillable="true" type="tns:CurrenciesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrenciesVO" nillable="true" type="tns:ArrayOfCurrenciesVO" />
+  <xs:complexType name="LicenseeAuthoritiesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q10:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Delete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Insert" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LicenseeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Select" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Update" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeAuthoritiesVO" nillable="true" type="tns:LicenseeAuthoritiesVO" />
+  <xs:complexType name="LicenseesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q11:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BioscopeFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ChannelCompanyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelCompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeAuthorities" nillable="true" type="tns:ArrayOfLicenseeAuthoritiesVO" />
+          <xs:element minOccurs="0" name="LicenseeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="MediaServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaServiceDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseesVO" nillable="true" type="tns:LicenseesVO" />
+  <xs:complexType name="ArrayOfLicenseeAuthoritiesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LicenseeAuthoritiesVO" nillable="true" type="tns:LicenseeAuthoritiesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLicenseeAuthoritiesVO" nillable="true" type="tns:ArrayOfLicenseeAuthoritiesVO" />
+  <xs:complexType name="ArrayOfLicenseesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LicenseesVO" nillable="true" type="tns:LicenseesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLicenseesVO" nillable="true" type="tns:ArrayOfLicenseesVO" />
+  <xs:complexType name="CompanyVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q12:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyAddressdetails" nillable="true" type="tns:ArrayOfAddressVO" />
+          <xs:element minOccurs="0" name="CompanyAddresses" nillable="true" type="tns:ArrayOfAddressVO" />
+          <xs:element minOccurs="0" name="CompanyBanks" nillable="true" type="tns:ArrayOfBankDetailsVO" />
+          <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Contracts" minOccurs="0" name="CompanyContracts" nillable="true" type="q13:ArrayOfContractVO" />
+          <xs:element minOccurs="0" name="CompanyInternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyMarkups" nillable="true" type="tns:ArrayOfMarkupVO" />
+          <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyTerritory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyTerritoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyTypeCodeDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyVO" nillable="true" type="tns:CompanyVO" />
+  <xs:complexType name="ArrayOfAddressVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressVO" nillable="true" type="tns:AddressVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressVO" nillable="true" type="tns:ArrayOfAddressVO" />
+  <xs:complexType name="AddressVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q14:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressContacts" nillable="true" type="tns:ArrayOfContactDetailsVO" />
+          <xs:element minOccurs="0" name="AddressName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="AddressTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CoeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddressVO" nillable="true" type="tns:AddressVO" />
+  <xs:complexType name="ArrayOfContactDetailsVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactDetailsVO" nillable="true" type="tns:ContactDetailsVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactDetailsVO" nillable="true" type="tns:ArrayOfContactDetailsVO" />
+  <xs:complexType name="ContactDetailsVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q15:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sort_No" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactDetailsVO" nillable="true" type="tns:ContactDetailsVO" />
+  <xs:complexType name="ArrayOfBankDetailsVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankDetailsVO" nillable="true" type="tns:BankDetailsVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankDetailsVO" nillable="true" type="tns:ArrayOfBankDetailsVO" />
+  <xs:complexType name="BankDetailsVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q16:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BankDetails" nillable="true" type="tns:ArrayOfBankDetailsVO" />
+          <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BankNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="BeneficiaryID" type="xs:int" />
+          <xs:element minOccurs="0" name="BeneficiaryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractBankLinkId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractNo" type="xs:int" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IntermediaryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsIntermediary" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SwiftAddress" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankDetailsVO" nillable="true" type="tns:BankDetailsVO" />
+  <xs:complexType name="ArrayOfMarkupVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MarkupVO" nillable="true" type="tns:MarkupVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMarkupVO" nillable="true" type="tns:ArrayOfMarkupVO" />
+  <xs:complexType name="MarkupVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q17:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgentCompanyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Percentage" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MarkupVO" nillable="true" type="tns:MarkupVO" />
+  <xs:complexType name="ArrayOfCompanyVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyVO" nillable="true" type="tns:CompanyVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyVO" nillable="true" type="tns:ArrayOfCompanyVO" />
+  <xs:complexType name="ChannelServicesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q18:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelServicesID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelServicesName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelServicesNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryChannelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTypes" nillable="true" type="tns:ArrayOfSubTypeVO" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="secondaryChannel" nillable="true" type="tns:ArrayOfSecondaryChannelVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelServicesVO" nillable="true" type="tns:ChannelServicesVO" />
+  <xs:complexType name="ArrayOfSubTypeVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubTypeVO" nillable="true" type="tns:SubTypeVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubTypeVO" nillable="true" type="tns:ArrayOfSubTypeVO" />
+  <xs:complexType name="SubTypeVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q19:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTypeCheck" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SubTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubTypeVO" nillable="true" type="tns:SubTypeVO" />
+  <xs:complexType name="ArrayOfSecondaryChannelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecondaryChannelVO" nillable="true" type="tns:SecondaryChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecondaryChannelVO" nillable="true" type="tns:ArrayOfSecondaryChannelVO" />
+  <xs:complexType name="SecondaryChannelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q20:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IncludeSubs" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MediaPlatformCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecondaryChannelVO" nillable="true" type="tns:SecondaryChannelVO" />
+  <xs:complexType name="ArrayOfChannelServicesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChannelServicesVO" nillable="true" type="tns:ChannelServicesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChannelServicesVO" nillable="true" type="tns:ArrayOfChannelServicesVO" />
+  <xs:complexType name="RegionVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q21:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegionVO" nillable="true" type="tns:RegionVO" />
+  <xs:complexType name="ArrayOfRegionVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegionVO" nillable="true" type="tns:RegionVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegionVO" nillable="true" type="tns:ArrayOfRegionVO" />
+  <xs:complexType name="SubTypeAndCategoryVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q22:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SaveNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="subCategoryList" nillable="true" type="tns:ArrayOfSubCategoryVO" />
+          <xs:element minOccurs="0" name="subTypeAndCategoryLinkList" nillable="true" type="tns:ArrayOfSubTypeAndCategoryLinkVO" />
+          <xs:element minOccurs="0" name="subTypeList" nillable="true" type="tns:ArrayOfSubTypeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubTypeAndCategoryVO" nillable="true" type="tns:SubTypeAndCategoryVO" />
+  <xs:complexType name="ArrayOfSubCategoryVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubCategoryVO" nillable="true" type="tns:SubCategoryVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubCategoryVO" nillable="true" type="tns:ArrayOfSubCategoryVO" />
+  <xs:complexType name="SubCategoryVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q23:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubCategoryCheck" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SubCategoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubCategoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubCategoryVO" nillable="true" type="tns:SubCategoryVO" />
+  <xs:complexType name="ArrayOfSubTypeAndCategoryLinkVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubTypeAndCategoryLinkVO" nillable="true" type="tns:SubTypeAndCategoryLinkVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubTypeAndCategoryLinkVO" nillable="true" type="tns:ArrayOfSubTypeAndCategoryLinkVO" />
+  <xs:complexType name="SubTypeAndCategoryLinkVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q24:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubCategoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubCategoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTypeCatsCheck" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SubTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TclNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubTypeAndCategoryLinkVO" nillable="true" type="tns:SubTypeAndCategoryLinkVO" />
+  <xs:complexType name="SpotRateVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q25:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SpotRateExchangeRates" nillable="true" type="tns:ArrayOfSpotRateExchangeRatesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SpotRateVO" nillable="true" type="tns:SpotRateVO" />
+  <xs:complexType name="ArrayOfSpotRateExchangeRatesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpotRateExchangeRatesVO" nillable="true" type="tns:SpotRateExchangeRatesVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpotRateExchangeRatesVO" nillable="true" type="tns:ArrayOfSpotRateExchangeRatesVO" />
+  <xs:complexType name="SpotRateExchangeRatesVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q26:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCodeA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCodeB" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Day" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EntryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ExchangeRate" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Month" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SpotRateID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SpotRateExchangeRatesVO" nillable="true" type="tns:SpotRateExchangeRatesVO" />
+  <xs:complexType name="ArrayOfSpotRateVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpotRateVO" nillable="true" type="tns:SpotRateVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpotRateVO" nillable="true" type="tns:ArrayOfSpotRateVO" />
+</xs:schema>

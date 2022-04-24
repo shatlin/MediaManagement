@@ -1,0 +1,1593 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.SeriesSearchViewModel
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="40%">
+            <div class="subHeading">
+                <h1>
+                    <label id="lblHeading">
+                    </label>
+                </h1>
+            </div>
+            <div class="subHeading">
+                Working Title Description
+            </div>
+            <div style="padding-left: 4px;">
+                <table class="Layout">
+                    <tr>
+                        <td>
+                            @Html.CheckBoxFor(m => m.addSeasonTitle.IsProgramChk, new { @class = "inputText2col", @id = "checkWorkingTitle" })
+                        </td>
+                        <td>
+                            @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.IsWorkingTitleChk, new { @id = "lblcheckWorkingTitle", @class = "label" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="24%">
+                            Example:
+                        </td>
+                        <td width="64%">
+                            <table>
+                                <tr>
+                                    <td class="RequiredIndicator">
+                                        *
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.DisplayWorkingTitle, new { @class = "inputTextSmall", @id = "txtDisplayWorkingTitle", @readonly = "readonly" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckSeries, new { @id = "chkCheckSeries", @onclick = "CheckSeries(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckSeries, new { @class="label"})
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckEpisodeNum, new { @id = "chkCheckEpisodeNum", @onclick = "CheckEpisodeNum(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckEpisodeNum, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckSeason, new { @id = "chkCheckSeason", @onclick = "CheckSeason(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckSeason, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckLeadZero, new { @id = "chkCheckLeadZero", @onclick = "CheckLeadZero(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckLeadZero, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckAddText, new { @id = "chkCheckAddText", @onclick = "CheckAddText(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckAddText, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.AddText, new { @class = "inputTextSmall", @id = "txtAddText", @style = "visibility:hidden", @onblur = "AddTextfocuslost(this)" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="font-size:13px; font-family:Verdana,arial,sans-serif; font-weight:bold; padding:3px 4px 3px 0px;">
+                                Programme Title Description
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.IsProgramChk, new { @class = "inputText2col", @id = "checkPrgm" })
+                        </td>
+                        <td>
+                            @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.IsProgramChk, new { @id = "lblcheckPrgm", @class="label" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Example:
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td class="RequiredIndicator">
+                                        *
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.DisplayProgTitle, new { @class = "inputTextSmall", @id = "txtDisplayProgTitle", @readonly = "readonly" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrSeries, new { @id = "chkCheckPrSeries", @onclick = "CheckPrSeries(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrSeries, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrEpisodeNum, new { @id = "chkCheckPrEpisodeNum", @onclick = "CheckPrEpisodeNum(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrEpisodeNum, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrSeason, new { @id = "chkCheckPrSeason", @onclick = "CheckPrSeason(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrSeason, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrLeadZero, new { @id = "chkCheckPrLeadZero", @onclick = "CheckPrLeadZero(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckPrLeadZero, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckProgAddText, new { @id = "chkCheckPrAddText", @onclick = "CheckPrAddText(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.CheckProgAddText, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.PrAddText, new { @class = "inputTextSmall", @id = "txtPrAddText", @style = "visibility:hidden", @onblur = "PrAddTextfocuslost(this)" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            @* <div style="padding-left: 4px;">
+                <div class="subHeading">
+                    Programme Title Description
+                </div>
+                <div>
+                 <table class="Layout">
+                    
+                    
+                   
+                </table>
+                
+                </div>
+               
+            </div>*@
+        </td>
+        <td width="60%">
+            <table>
+                <tr>
+                    <td>
+                     @*  @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.NumofEpisodes)*@
+                       <label id="lblNumofEpisodes" > </label>
+                    </td>
+                    <td>
+                                    </td>
+                    <td>@Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.NumofEpisodes, new { @class = "inputTextSmall", @id = "txtNumofEpisodes" })
+                    </td>
+                    <td>
+                    </td>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.ProgType)
+                    </td>
+                    <td class="RequiredIndicator">
+                                        *
+                                    </td>
+                    <td>
+                        <select id="ddlprogType">
+                            @if (Model != null)
+                            {
+                                if (Model.programmeTypeLOVList != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.programmeTypeLOVList)
+                                    {
+                                       
+                                        string val = @dropddownval.ProgrammeTypeValue + new String('#', (10 - @dropddownval.ProgrammeTypeValue.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.ProgrammeTypeDescription;
+                                       <option value="@dropddownval.ProgrammeTypeValue">@val</option>
+                                     
+                                            
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkProgTypeVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     @*@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.FirstEpiNum)*@
+                      <label id="lblFirstEpiNum" > </label> 
+                    </td>
+                    <td>
+                                    </td>
+                    <td>@Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.FirstEpiNum, new { @class = "inputTextSmall", @id = "txtFirstEpiNum" })
+                    </td>
+                    <td>
+                    </td>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.Duration)
+                    </td>
+                    <td
+                                    </td>
+                    <td>@Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.Duration, new { @class = "inputTextSmall", @id = "txtDuration" })
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkDurationVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.SportType)
+                    </td>
+                    <td>
+                                    </td>
+                    <td>
+                        <select id="ddlSportsTypeGenre">
+                            @if (Model != null)
+                            {
+                                if (Model.genreItemList != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.genreItemList)
+                                    {
+                                        string val = @dropddownval.SportTypeValue + new String('#', (10 - @dropddownval.SportTypeValue.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.SportTypeDescription;
+                                          <option value="@dropddownval.SportTypeValue">@val</option>
+                               
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkSportVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.SubGenre)
+                    </td>
+                    <td>
+                                    </td>
+                    <td>
+                        <select id="ddlSubGenre">
+                            @if (Model != null)
+                            {
+                                if (Model.SecondaryGenreLOVList != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.SecondaryGenreLOVList)
+                                    {
+                                        string val = @dropddownval.SubGenreCodeValue + new String('#', (10 - @dropddownval.SubGenreCodeValue.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.SubGenreCodeDescription;
+                                         <option value="@dropddownval.SubGenreCodeValue">@val</option>
+                                
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkSubGenreVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.EventType)
+                    </td>
+                   <td>
+                                    </td>
+                    <td>
+                        <select id="ddlEventType">
+                            @if (Model != null)
+                            {
+                                if (Model.eventLOVList != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.eventLOVList)
+                                    {
+                                        string val = @dropddownval.CodeValue + new String('#', (10 - @dropddownval.CodeValue.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.CodeDescription;
+                                        <option value="@dropddownval.CodeValue">@val</option>
+                                
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkEventVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.ProdHouse)
+                    </td>
+                   <td>
+                                    </td>
+                    <td>
+                        <select id="ddlProdHouse" >
+                            @if (Model != null)
+                            {
+                                if (Model.productioHouseLOVList != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.productioHouseLOVList)
+                                    {
+                                        string val = @dropddownval.StudioCode + new String('#', (10 - @dropddownval.StudioCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.StudioDescription;
+                                          <option value="@dropddownval.StudioCode">@val</option>
+                               
+                                 
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkProdHouseVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.Distribution)
+                    </td>
+                     <td>
+                                    </td>
+                    <td>
+                        <select id="ddlDistribution">
+                            @if (Model != null)
+                            {
+                                if (Model.DistributorLOVList != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.DistributorLOVList)
+                                    {
+                                        string val = @dropddownval.ComNumber + new String('#', (10 - @dropddownval.ComNumber.ToString().Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.ComName;
+                                         <option value="@dropddownval.ComNumber">@val</option>
+                               
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkDistributionVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                    <td>
+                    </td>
+                     <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.OfficialRating)
+                    </td>
+                    <td>
+                                    </td>
+                    <td>
+                        <select id="ddlofficialraing">
+                            @if (Model != null)
+                            {
+                                if (Model.officialRating != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.officialRating)
+                                    {
+                                        string val = @dropddownval.GenRattingMPAACode + new String('#', (10 - @dropddownval.GenRattingMPAACode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GenRattingMPAADesc;
+                                        <option value="@dropddownval.GenRattingMPAACode">@val</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkOfficialVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.UnofficailRating)
+                    </td>
+                    <td>
+                                    </td>
+                    <td>
+                        <select id="ddlunofficialraing">
+                            @if (Model != null)
+                            {
+                                if (Model.officialRating != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.officialRating)
+                                    {
+                                        string val = @dropddownval.GenRattingMPAACode + new String('#', (10 - @dropddownval.GenRattingMPAACode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GenRattingMPAADesc;
+                                        <option value="@dropddownval.GenRattingMPAACode">@val</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkunOfficialVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.ProdYear)
+                    </td>
+                     <td class="RequiredIndicator" id="tdProdValidationSymbol">
+                                        *
+                                    </td>
+                    <td>@Html.TextBoxFor(m => m.seriesTitleMaintenanaceCrChEpisode.ProdYear, new { @class = "inputTextSmall", @id = "txtProdYear" })
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkProdYearVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.Nationality)
+                    </td>
+                     <td>
+                                    </td>
+                    <td>
+                        <select id="Nationality">
+                            @if (Model != null)
+                            {
+                                if (Model.NationalityLOVList != null)
+                                {
+                                <option value="Select">----Select----</option>
+                                    foreach (var dropddownval in Model.NationalityLOVList)
+                                    {
+                                        string val = @dropddownval.GenNationalityCode + new String('#', (10 - @dropddownval.GenNationalityCode.Length)).Replace("#", @Server.HtmlDecode("&nbsp;")) + @dropddownval.GenNationalityDesc;
+                                        <option value="@dropddownval.GenNationalityCode">@val</option>
+                             
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkNationalityVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.Comments)
+                    </td>
+                     <td>
+                                    </td>
+                    <td colspan="5">@Html.TextAreaFor(m => m.seriesTitleMaintenanaceCrChEpisode.Comments, new { @style = "width: 425px; height: 56px;", @id = "txtEpisodeComments" })
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkCommentVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td >
+            <div style="font-size:13px; font-family:Verdana,arial,sans-serif; font-weight:bold; padding:3px 4px 3px 6px;">
+                Local Programme Info
+            </div>
+        </td>
+        <td >
+            <div style="font-size:10px; font-family:Verdana,arial,sans-serif; font-weight:bold; padding:3px 4px 3px 6px;">
+                Tick The Feilds That You Would Like To Change
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table width="100%" style="padding:5px" cellpadding="0">
+                <tr>
+                    <td>
+                        <div id="divLocalProgram" style="height: 146px; width: 980px">
+                        </div>
+                    </td>
+                    <td align="left">
+                        <input type="checkbox" id="chkLocalProgVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.seriesTitleMaintenanaceCrChEpisode.TextSynopsis)
+                    </td>
+                    <td>
+                        <select id="ddlSynopsis">
+                            <option value="0">Full Synopsis</option>
+                            <option value="1">Local Synopsis</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="chkSynopsisVisibility" onclick="enableDisableCtrlVisibility();" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">@Html.TextAreaFor(m => m.seriesTitleMaintenanaceCrChEpisode.TextSynopsis, new { @style = "width: 988px; height: 36px;padding-bottom:5px;", @id = "txtEpisodeSynposiscomment" })
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right" style="padding-top:5px;">
+            <input type="button" value="Generate" id="btnGenerate" class="inputButton" onclick="Generate();" />
+            <input type="button" value="Change Epis" class="inputButton" id="btnchangeEpisode"
+                onclick="seriesTitleMaintenanaceCrChEpisode_ChangeEpis_click()" />
+            <input type="button" value="Save" class="inputButton" id="btnSaveEpisode" onclick="seriesTitleMaintenanaceCrChEpisode_save_click()"  />
+            <input type="button" value="Cancel" class="inputButton" onclick="seriesTitleMaintenanaceCrChEpisode_cancel_click()" />
+        </td>
+    </tr>
+</table>
+
+
+<div id="TerLOV" title="TerritoryCode" />
+<script type="text/javascript">
+    var displaytitle = ['', '', '', '', ''];
+    var displayprogrammetitle = ['', '', '', '', ''];
+    function AddTextfocuslost(evntobj) {
+        displaytitle[2] = $('#txtAddText').val();
+        $('#txtDisplayWorkingTitle').val(displaytitle[0] + ' ' + displaytitle[1] + ' ' + displaytitle[2] + ' ' + displaytitle[3] + ' ' + displaytitle[4]);
+    }
+
+
+    function CheckSeries(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitle[0] = currentseriestitle;
+        else
+            displaytitle[0] = '';
+        $('#txtDisplayWorkingTitle').val(displaytitle[0] + ' ' + displaytitle[1] + ' ' + displaytitle[2] + ' ' + displaytitle[3] + ' ' + displaytitle[4]);
+    };
+    function CheckEpisodeNum(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitle[4] = '1';
+        else
+            displaytitle[4] = '';
+        $('#txtDisplayWorkingTitle').val(displaytitle[0] + ' ' + displaytitle[1] + ' ' + displaytitle[2] + ' ' + displaytitle[3] + ' ' + displaytitle[4]);
+
+    }
+    function CheckSeason(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitle[1] = currentseasontitle;
+        else
+            displaytitle[1] = '';
+        $('#txtDisplayWorkingTitle').val(displaytitle[0] + ' ' + displaytitle[1] + ' ' + displaytitle[2] + ' ' + displaytitle[3] + ' ' + displaytitle[4]);
+    }
+    function CheckLeadZero(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitle[3] = '000';
+        else
+            displaytitle[3] = '';
+        $('#txtDisplayWorkingTitle').val(displaytitle[0] + ' ' + displaytitle[1] + ' ' + displaytitle[2] + ' ' + displaytitle[3] + ' ' + displaytitle[4]);
+    }
+    function CheckAddText(checkboxvalue) {
+
+        if (checkboxvalue.checked) {
+            displaytitle[2] = $('#txtAddText').val();
+            $('#txtAddText').css("visibility", "visible");
+        }
+        else {
+            displaytitle[2] = '';
+            $('#txtAddText').css("visibility", "hidden");
+        }
+        $('#txtDisplayWorkingTitle').val(displaytitle[0] + ' ' + displaytitle[1] + ' ' + displaytitle[2] + ' ' + displaytitle[3] + ' ' + displaytitle[4]);
+
+    }
+
+
+
+    function PrAddTextfocuslost(evntobj) {
+        displayprogrammetitle[2] = $('#txtPrAddText').val();
+        $('#txtDisplayProgTitle').val(displayprogrammetitle[0] + ' ' + displayprogrammetitle[1] + ' ' + displayprogrammetitle[2] + ' ' + displayprogrammetitle[3] + ' ' + displayprogrammetitle[4]);
+    }
+    function CheckPrSeries(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displayprogrammetitle[0] = currentseriestitle;
+        else
+            displayprogrammetitle[0] = '';
+        $('#txtDisplayProgTitle').val(displayprogrammetitle[0] + ' ' + displayprogrammetitle[1] + ' ' + displayprogrammetitle[2] + ' ' + displayprogrammetitle[3] + ' ' + displayprogrammetitle[4]);
+    };
+    function CheckPrEpisodeNum(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displayprogrammetitle[4] = '1';
+        else
+            displayprogrammetitle[4] = '';
+        $('#txtDisplayProgTitle').val(displayprogrammetitle[0] + ' ' + displayprogrammetitle[1] + ' ' + displayprogrammetitle[2] + ' ' + displayprogrammetitle[3] + ' ' + displayprogrammetitle[4]);
+
+    }
+    function CheckPrSeason(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displayprogrammetitle[1] = currentseasontitle;
+        else
+            displayprogrammetitle[1] = '';
+        $('#txtDisplayProgTitle').val(displayprogrammetitle[0] + ' ' + displayprogrammetitle[1] + ' ' + displayprogrammetitle[2] + ' ' + displayprogrammetitle[3] + ' ' + displayprogrammetitle[4]);
+    }
+    function CheckPrLeadZero(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displayprogrammetitle[3] = '000';
+        else
+            displayprogrammetitle[3] = '';
+        $('#txtDisplayProgTitle').val(displayprogrammetitle[0] + ' ' + displayprogrammetitle[1] + ' ' + displayprogrammetitle[2] + ' ' + displayprogrammetitle[3] + ' ' + displayprogrammetitle[4]);
+    }
+    function CheckPrAddText(checkboxvalue) {
+
+        if (checkboxvalue.checked) {
+            displayprogrammetitle[2] = $('#txtPrAddText').val();
+            $('#txtPrAddText').css("visibility", "visible");
+        }
+        else {
+            displayprogrammetitle[2] = '';
+            $('#txtPrAddText').css("visibility", "hidden");
+        }
+        $('#txtDisplayProgTitle').val(displayprogrammetitle[0] + ' ' + displayprogrammetitle[1] + ' ' + displayprogrammetitle[2] + ' ' + displayprogrammetitle[3] + ' ' + displayprogrammetitle[4]);
+
+    }
+
+
+    var chkFlag;
+    var ChangeEpisodeFlag;
+    var chkCommonFlag = '';
+    var chkVal;
+    var answer;
+    var PopupHeading;
+
+    if (currentaction == 'CreateEpisode') {
+
+        clearAllMessages();
+        chkFlag = false;
+        ChangeEpisodeFlag = false;
+        DisabledControl(false);
+        $('#btnchangeEpisode').prop("disabled", true);
+        HideShow('show');
+        chkVal = 'create';
+
+
+        $('#lblHeading').text("Create Episodes for Selected Season");
+        $('#lblFirstEpiNum').text("1st Episode Number");
+        $('#lblNumofEpisodes').text("Number Of Episodes");
+
+        PopupHeading = 'Territory code';
+        $.noty.closeAll();
+
+      
+
+    }
+    else if (currentaction == 'ChangeEpisode') {
+
+        clearAllMessages();
+        PopupHeading = 'Territory code';
+        chkFlag = true;
+        ChangeEpisodeFlag = true;
+        DisabledControl(true);
+        $('#btnchangeEpisode').prop("disabled", false);
+        HideShow('hide');
+        chkVal = 'change';
+        $('#lblHeading').text("Change Episode For selected Season");
+
+        $('#lblFirstEpiNum').text("To Episode Number");
+        $('#lblNumofEpisodes').text("From Episode Number");
+
+        $.noty.closeAll();
+
+       
+    }
+
+
+    onLoad();
+
+
+    var btnClickForeText = '';
+    var LocalProgData = [];
+    function CreateChangeEpisode() {
+
+        clearAllMessages();
+
+        var val = ValidateControl(chkVal);
+     
+
+        //Set LocalProgGrid Data Here
+        var LocalData = gridLocal.getData();
+        LocalProgData = JSON.stringify(LocalData);
+
+
+        var CrUpdateEpisode = {
+            NumofEpisodes: $('#txtNumofEpisodes').val(),
+            FirstEpiNum: $('#txtFirstEpiNum').val(),
+            PrTitleZero: displayprogrammetitle[0],
+            PrTitleOne: displayprogrammetitle[1],
+            PrTitleTwo: displayprogrammetitle[2],
+            WrkTitleZero: displaytitle[0],
+            WrkTitleOne: displaytitle[1],
+            WrkTitleTwo: displaytitle[2],
+            CheckEpisodeNum: $('#chkCheckEpisodeNum').is(':checked'),
+            CheckLeadZero: $('#chkCheckLeadZero').is(':checked'),
+            CheckPrEpisodeNum: $('#chkCheckPrEpisodeNum').is(':checked'),
+            CheckPrLeadZero: $('#chkCheckPrLeadZero').is(':checked'),
+            SeasonNumber: currentseasonno,
+            SeriesNumber: currentSeriesno,
+            Comments: $('#txtEpisodeComments').val(),
+            Duration: $('#txtDuration').val(),
+            SeriesTitle: currentseriestitle,
+            SeasonTitle: currentseasontitle,
+            ButtonText: $("#btnGenerate").attr("value"),
+            BtnSaveFlag: btnClickForeText,
+            LocalGridData: LocalProgData,
+            ProgType: $('#ddlprogType option:selected').val(),
+            ProgrammeCategory: $('#ddlSportsTypeGenre option:selected').val(),
+            SubGenre: $('#ddlSubGenre option:selected').val(),
+            ProgrammeStudio: $('#ddlProdHouse option:selected').val(),
+            EventType: $('#ddlEventType option:selected').val(),
+            Nationality: $('#Nationality option:selected').val(),
+            Distribution: $('#ddlDistribution option:selected').val(),
+            OfficialRating: $('#ddlofficialraing option:selected').val(),
+            unOfficialRating: $('#ddlunofficialraing option:selected').val(),
+            EventValue: "",
+            ChangeEpisode: ChangeEpisodeFlag,
+            CommonFlag: chkCommonFlag,
+            ProdYear: $('#txtProdYear').val(),
+            Flag: chkFlag
+
+        };
+
+
+        var SearchViewModelForCreateChangeEpisode = { seriesTitleMaintenanaceCrChEpisode: CrUpdateEpisode};
+        var dataToSend = JSON.stringify(SearchViewModelForCreateChangeEpisode);
+
+        $.ajax({
+
+            url: '@Url.Action("CreateUpdateEpisode", "SeriesMaintaince", new { area = "Media_Mgt" })',
+
+            type: "POST",
+            dataType: "Json",
+            data: JSON.stringify(SearchViewModelForCreateChangeEpisode),
+            contentType: 'application/json; charset=UTF-8',
+            //                        processData: false,
+            // 
+            cache: false,
+            success: function (data) {
+
+                // var Tempepisodedata = [];
+
+                //Tempepisodedata = episodedata;
+
+
+                if ($("#btnGenerate").attr("value") == 'Undo') {
+                    // alert("Cilck on Undo");
+                    $("#btnGenerate").attr('value', 'Genrate');
+
+
+                }
+                else if ($("#btnGenerate").attr("value") == 'Genrate') {
+                    $("#btnGenerate").attr('value', 'Undo');
+
+                }
+
+
+                episodedata = data;
+                episodegrid.setData(episodedata);
+                episodegrid.render();
+
+
+
+                // location.reload();
+                showMessage("Transaction Completed Successfully", "information");
+
+
+
+            },
+            error: function () {
+                alert('error');
+            }
+        });                     //end of jax call
+
+        // dialoghandler.dialog("close");
+
+    }
+
+    function ShowMessage(message) {
+     
+        if (chkCommonFlag == 'Save') {
+            noty({ text: message, type: 'information', dismissQueue: false,
+                layout: 'bottom', theme: 'defaultTheme'
+            });
+        }
+
+        $.noty.closeAll();
+    } 
+
+    function seriesTitleMaintenanaceCrChEpisode_save_click() {
+     
+        chkCommonFlag = 'Save';
+        btnClickForeText = $("#btnSaveEpisode").attr("value");
+        CreateChangeEpisode();
+        getEpisodeGrid(currentseasontitle, currentseasonno, currentseriestitle, currentSeriesno);
+        dialoghandler.dialog("close");
+
+    }
+
+    function seriesTitleMaintenanaceCrChEpisode_cancel_click() {
+        dialoghandler.dialog("close");
+    }
+
+    function Generate() {
+        clearAllMessages();
+        if ($("#btnGenerate").attr("value") == 'Undo') {
+            $("#btnGenerate").attr('value', 'Genrate');
+            getEpisodeGrid(currentseasontitle, currentseasonno, currentseriestitle, currentSeriesno);
+           
+        }
+        else {
+            CreateChangeEpisode();
+        }
+        
+    }
+
+    function onLoad() {
+
+        clearAllMessages();
+       // if (currentSeriesno != null && currentseasonno != null) {
+            var actionParm = { SeriesNumber: currentSeriesno, SeasonNumber: currentseasonno };
+           
+
+            $.ajax({
+                url: '@Url.Action("DisplayDetailsOnLoad", "SeriesMaintaince", new { area = "Media_Mgt" })',
+                type: "POST",
+                dataType: 'Json',
+                data: actionParm,
+                async: false,
+
+                success: function (data) {
+
+                    if (chkFlag == false) {
+
+                        if (data.ProgramDetails.ProgramMaxEpisodeNo == 1) {
+                            $('#txtFirstEpiNum').val(data.ProgramDetails.ProgramMaxEpisodeNo);
+                        }
+                        else {
+                            $('#txtFirstEpiNum').val(data.ProgramDetails.ProgramMaxEpisodeNo);
+                        }
+
+                        $('#txtNumofEpisodes').val("1");
+
+
+
+                    }
+                    else {
+
+                        if (data.ProgramDetails.ProgramMaxEpisodeNo == 1) {
+                            $('#txtFirstEpiNum').val(data.ProgramDetails.ProgramMaxEpisodeNo);
+                        }
+                        else if (data.ProgramDetails.ProgramMaxEpisodeNo != null) {
+                            $('#txtFirstEpiNum').val(data.ProgramDetails.ProgramMaxEpisodeNo - 1);
+                            $('#txtNumofEpisodes').val("1");
+                        }
+
+                        if ($('#txtNumofEpisodes').val() == "") {
+                            $('#txtNumofEpisodes').val("0");
+                        }
+                    }
+
+
+
+                    if (data.ProgramDetails.ProgramType != null) {
+
+                       
+                        var items = $("#ddlprogType option").length;
+                        if (items > 0) {
+                            $('#ddlprogType').val(data.ProgramDetails.ProgramType);
+                        }
+
+
+                    }
+
+                    if (data.ProgramDetails.ProgrammeCategory != null) {
+
+                        var items = $("#ddlSportsTypeGenre option").length;
+                        if (items > 0) {
+                            $('#ddlSportsTypeGenre').val(data.ProgramDetails.ProgrammeCategory);
+
+                        }
+                    }
+
+                    if (data.ProgramDetails.EventType != null) {
+                        var items = $("#ddlEventType option").length;
+                        if (items > 0) {
+                            $('#ddlEventType').val(data.ProgramDetails.EventType);
+                        }
+                    }
+
+                    if (data.ProgramDetails.ProgrameRatingMPAA != null) {
+                        var items = $("#ddlofficialraing option").length;
+                        if (items > 0) {
+                            $('#ddlofficialraing').val(data.ProgramDetails.ProgrameRatingMPAA);
+                        }
+                    }
+
+                    if (data.ProgramDetails.ProgrammeReleaseYear != null && data.ProgramDetails.ProgrammeReleaseYear != 0)
+                        $('#txtProdYear').val(data.ProgramDetails.ProgrammeReleaseYear);
+
+                    if (data.ProgramDetails.ProgramSubGenre != null) {
+                        var items = $("#ddlSubGenre option").length;
+                        if (items > 0) {
+
+                            $('#ddlSubGenre').val(data.ProgramDetails.ProgramSubGenre);
+                        }
+                    }
+
+                    if (data.ProgramDetails.ProgrammeStudio != null) {
+                        var items = $("#ddlProdHouse option").length;
+
+                        if (items > 0) {
+                            $('#ddlProdHouse').val(data.ProgramDetails.ProgrammeStudio);
+
+                        }
+
+                    }
+
+                    if (data.ProgramDetails.ProgramRatingINT != null) {
+                        var items = $("#ddlunofficialraing option").length;
+                        if (items > 0) {
+                            $('#ddlunofficialraing').val(data.ProgramDetails.ProgramRatingINT);
+                        }
+
+                    }
+
+                    if (data.ProgramDetails.ProgrammeDurationC != null)
+                        $('#txtDuration').val(data.ProgramDetails.ProgrammeDurationC);
+
+
+
+                },
+                Error: function () {
+                    ShowNotyPannel("Error", "error");
+
+                }
+            });
+
+
+       // }
+
+         checkInitialCheck();
+    }
+
+    function checkInitialCheck() {
+        $("#chkCheckPrSeries").attr("checked", true);
+        var obj1 = document.getElementById("chkCheckPrSeries");
+        var obj2 = document.getElementById("chkCheckPrSeason");
+        var obj3 = document.getElementById("chkCheckPrEpisodeNum");
+
+        var obj4 = document.getElementById("chkCheckSeries");
+        var obj5 = document.getElementById("chkCheckEpisodeNum");
+        var obj6 = document.getElementById("chkCheckSeason");
+
+        CheckPrSeries(obj1);
+        $("#chkCheckPrSeason").attr("checked", true);
+        CheckPrSeason(obj2);
+        $("#chkCheckPrEpisodeNum").attr("checked", true);
+        CheckPrEpisodeNum(obj3);
+
+        CheckSeries(obj4);
+        CheckEpisodeNum(obj5);
+        CheckSeason(obj6);
+    }
+
+    function enableDisableCtrlVisibility() {
+        if ($('#chkProgTypeVisibility').is(':checked')) {
+            $('#ddlprogType').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlprogType').prop("disabled", true);
+        }
+
+        if ($('#chkDurationVisibility').is(':checked')) {
+            $('#txtDuration').prop("disabled", false);
+
+        }
+        else {
+            $('#txtDuration').prop("disabled", true);
+        }
+
+        if ($('#chkSportVisibility').is(':checked')) {
+            $('#ddlSportsTypeGenre').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlSportsTypeGenre').prop("disabled", true);
+        }
+
+        if ($('#chkSubGenreVisibility').is(':checked')) {
+            $('#ddlSubGenre').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlSubGenre').prop("disabled", true);
+        }
+
+        if ($('#chkEventVisibility').is(':checked')) {
+            $('#ddlEventType').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlEventType').prop("disabled", true);
+        }
+
+        if ($('#chkProdHouseVisibility').is(':checked')) {
+            $('#ddlProdHouse').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlProdHouse').prop("disabled", true);
+        }
+
+
+        if ($('#chkDistributionVisibility').is(':checked')) {
+            $('#ddlDistribution').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlDistribution').prop("disabled", true);
+        }
+
+
+        if ($('#chkOfficialVisibility').is(':checked')) {
+            $('#ddlofficialraing').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlofficialraing').prop("disabled", true);
+        }
+
+
+        if ($('#chkunOfficialVisibility').is(':checked')) {
+            $('#ddlunofficialraing').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlunofficialraing').prop("disabled", true);
+        }
+
+        if ($('#chkProdYearVisibility').is(':checked')) {
+            $('#txtProdYear').prop("disabled", false);
+
+        }
+        else {
+            $('#txtProdYear').prop("disabled", true);
+        }
+
+        if ($('#chkNationalityVisibility').is(':checked')) {
+            $('#Nationality').prop("disabled", false);
+
+        }
+        else {
+            $('#Nationality').prop("disabled", true);
+        }
+
+        if ($('#chkCommentVisibility').is(':checked')) {
+            $('#txtEpisodeComments').prop("disabled", false);
+
+        }
+        else {
+            $('#txtEpisodeComments').prop("disabled", true);
+        }
+
+        if ($('#chkLocalProgVisibility').is(':checked')) {
+            $('#divLocalProgram').prop("disabled", false);
+
+        }
+        else {
+            $('#divLocalProgram').prop("disabled", true);
+        }
+
+        if ($('#chkSynopsisVisibility').is(':checked')) {
+            $('#ddlSynopsis').prop("disabled", false);
+            $('#txtEpisodeSynposiscomment').prop("disabled", false);
+
+        }
+        else {
+            $('#ddlSynopsis').prop("disabled", true);
+            $('#txtEpisodeSynposiscomment').prop("disabled", true);
+        }
+
+
+
+    }
+
+    function DisabledControl(value) {
+        $('#chkCheckSeries').prop("disabled", value);
+        $('#chkCheckEpisodeNum').prop("disabled", value);
+        $('#chkCheckSeason').prop("disabled", value);
+        $('#checkEpisodeNo').prop("disabled", value);
+        $('#chkCheckAddText').prop("disabled", value);
+
+
+        $('#chkCheckPrSeries').prop("disabled", value);
+        $('#chkCheckPrEpisodeNum').prop("disabled", value);
+        $('#chkCheckPrSeason').prop("disabled", value);
+        $('#chkCheckPrAddText').prop("disabled", value);
+
+        $('#ddlprogType').prop("disabled", value);
+        $('#ddlSportsTypeGenre').prop("disabled", value);
+        $('#ddlSubGenre').prop("disabled", value);
+        $('#ddlEventType').prop("disabled", value);
+
+
+        $('#ddlProdHouse').prop("disabled", value);
+        $('#ddlDistribution').prop("disabled", value);
+        $('#ddlofficialraing').prop("disabled", value);
+        $('#ddlunofficialraing').prop("disabled", value);
+        $('#Nationality').prop("disabled", value);
+        $('#divLocalProgram').prop("disabled", value);
+        $('#txtSynopsisComments').prop("disabled", value);
+        $('#txtDuration').prop("disabled", value);
+        $('#txtProdYear').prop("disabled", value);
+        $('#txtEpisodeComments').prop("disabled", value);
+
+    }
+
+
+    $("#checkWorkingTitle").click(function (e) {
+        var isChecked = $('#checkWorkingTitle').is(':checked');
+        if (isChecked) {
+
+            $('#chkCheckSeries').prop("disabled", false);
+            $('#chkCheckEpisodeNum').prop("disabled", false);
+            $('#chkCheckSeason').prop("disabled", false);
+            $('#checkEpisodeNo').prop("disabled", false);
+            $('#chkCheckAddText').prop("disabled", false);
+        }
+        else {
+            $('#chkCheckSeries').prop("disabled", true);
+            $('#chkCheckEpisodeNum').prop("disabled", true);
+            $('#chkCheckSeason').prop("disabled", true);
+            $('#checkEpisodeNo').prop("disabled", true);
+            $('#chkCheckAddText').prop("disabled", true);
+
+        }
+
+    });
+
+
+    $("#checkPrgm").click(function (e) {
+        var isChecked = $('#checkPrgm').is(':checked');
+        if (isChecked) {
+
+            $('#chkCheckPrSeries').prop("disabled", false);
+            $('#chkCheckPrEpisodeNum').prop("disabled", false);
+            $('#chkCheckPrSeason').prop("disabled", false);
+
+            $('#chkCheckPrAddText').prop("disabled", false);
+        }
+        else {
+            $('#chkCheckPrSeries').prop("disabled", true);
+            $('#chkCheckPrEpisodeNum').prop("disabled", true);
+            $('#chkCheckPrSeason').prop("disabled", true);
+            $('#chkCheckPrAddText').prop("disabled", true);
+
+        }
+
+    });
+
+
+
+    function HideShow(val) {
+
+
+        $(document).ready(function () {
+
+            if (val == "show") {
+                $('#btnGenerate').show();
+                $('#checkWorkingTitle').hide();
+                $('#checkPrgm').hide();
+                $('#lblcheckWorkingTitle').hide();
+                $('#lblcheckPrgm').hide();
+
+                $('#chkProgTypeVisibility').hide();
+                $('#chkDurationVisibility').hide();
+                $('#chkSportVisibility').hide()
+                $('#chkSubGenreVisibility').hide()
+                $('#chkEventVisibility').hide();
+                $('#chkProdHouseVisibility').hide();
+                $('#chkDistributionVisibility').hide();
+                $('#chkOfficialVisibility').hide();
+                $('#chkunOfficialVisibility').hide();
+                $('#chkProdYearVisibility').hide();
+                $('#chkNationalityVisibility').hide();
+                $('#chkCommentVisibility').hide();
+                $('#chkLocalProgVisibility').hide();
+                $('#chkSynopsisVisibility').hide();
+            }
+
+            if (val == "hide") {
+                $('#btnGenerate').hide();
+                $('#checkWorkingTitle').show();
+                $('#checkPrgm').show();
+                $('#lblcheckWorkingTitle').show();
+                $('#lblcheckPrgm').show();
+                $('#chkProgTypeVisibility').show();
+                $('#chkDurationVisibility').show();
+                $('#chkSportVisibility').show()
+                $('#chkSubGenreVisibility').show()
+                $('#chkEventVisibility').show();
+                $('#chkProdHouseVisibility').show();
+                $('#chkDistributionVisibility').show();
+                $('#chkOfficialVisibility').show();
+                $('#chkunOfficialVisibility').show();
+                $('#chkProdYearVisibility').show();
+                $('#chkNationalityVisibility').show();
+                $('#chkCommentVisibility').show();
+                $('#chkLocalProgVisibility').show();
+                $('#chkSynopsisVisibility').show();
+            }
+
+        });
+
+    }
+
+
+
+
+    function ValidateControl(chkVal) {
+
+    
+        if ($('#txtDisplayWorkingTitle').val() == "") {
+            alert("Please enter display working title");
+            e.preventDefault();
+            return false;
+        }
+     
+          if ($('#ddlprogType').val() == "Select") {
+                alert("Please enter required field");
+                e.preventDefault();
+                return false;
+            }
+            try {
+                var tempprodyear = /^([0-9][0-9][0-9][0-9])/.test($('#txtProdYear').val());
+            }
+            catch (ex) {
+                alert("Invalid Production Year.");
+                e.preventDefault();
+                return false;
+            }
+            if (!tempprodyear) {
+                alert("Invalid Production Year.");
+                e.preventDefault();
+                return false;
+            }
+            
+
+          if ($('#txtDisplayProgTitle').val() == "") {
+                alert("Please enter required field");
+                e.preventDefault();
+                return false;
+          }
+
+          if (chkVal == 'create') {
+                if ($('#txtProdYear').val() == "") {
+                    alert("Please enter required field");
+                    e.preventDefault();
+                    return false;
+                }
+            }
+
+
+        if ($('#txtFirstEpiNum').val() == "") {
+            alert("Please enter valid first episode number to create");
+            e.preventDefault();
+            return false;
+        }
+
+        if ($('#txtNumofEpisodes').val() == "") {
+            alert("Please enter number of episodes");
+            e.preventDefault();
+            return false;
+        }
+
+       
+
+  }
+
+
+
+    function seriesTitleMaintenanaceCrChEpisode_ChangeEpis_click() {
+
+        clearAllMessages();
+        var ChangeEpisodeData = {
+
+            NumofEpisodes: $('#txtNumofEpisodes').val(),
+            FirstEpiNum: $('#txtFirstEpiNum').val(),
+            Duration: $('#txtDuration').val(),
+            DisplayWorkingTitle: $('#txtDisplayWorkingTitle').val(),
+            ProgrammeCategory: $('#ddlSportsTypeGenre option:selected').val(),
+            SubGenre: $('#ddlSubGenre option:selected').val(),
+            CheckEpisodeNum: $('#chkCheckEpisodeNum').is(':checked'),
+            CheckLeadZero: $('#chkCheckLeadZero').is(':checked'),
+            EventType: $('#ddlEventType option:selected').val(),
+            SeriesTitle: currentseriestitle,
+            SeasonTitle: currentseasontitle,
+            SeasonNumber: currentseasonno,
+            SeriesNumber: currentSeriesno
+
+        };
+
+        var SearchViewModelForChangeEpisode = { SeriesTitleChangeEpisode: ChangeEpisodeData };
+        var dataToSend = JSON.stringify(SearchViewModelForChangeEpisode);
+
+        $.ajax({
+
+            url: '@Url.Action("changeEpisodeInfo", "SeriesMaintaince", new { area = "Media_Mgt" })',
+
+            type: "POST",
+            dataType: "Json",
+            data: JSON.stringify(SearchViewModelForChangeEpisode),
+            contentType: 'application/json; charset=UTF-8',
+            //                        processData: false,
+            // 
+            cache: false,
+            success: function (data) {
+
+
+                episodedata = data;
+                episodegrid.setData(episodedata);
+                episodegrid.render();
+
+
+            },
+            error: function () {
+                alert('error');
+            }
+        });              //end of jax call
+
+
+    }
+
+
+    //----------------------------------------------Grid For adding new Information-----------------------------------------------------
+
+
+
+    var selrow;
+    var gitems1;
+    var selectedrow;
+    var cellvalue;
+    var gridLocal;
+    var dataView;
+    var getGriddata;
+
+    var columns = [
+{ id: "TerritoryCode", name: "Ter", field: "TerritoryCode", headerCssClass: "HeaderLovImage" },
+{ id: "LocalTitle", name: "Local Title", field: "LocalTitle", editor: Slick.Editors.Text },
+{ id: "LocalReleaseCinema", name: "Cinema", field: "LocalReleaseCinema", editor: Slick.Editors.Date },
+{ id: "LocalReleaseVid", name: "Video", field: "LocalReleaseVid", editor: Slick.Editors.Date },
+{ id: "LocalReleaseTV", name: "TV", field: "LocalReleaseTV", editor: Slick.Editors.Date },
+{ id: "LocalComment", name: "Comment", field: "LocalComment", editor: Slick.Editors.LongText }
+
+];
+
+
+
+    var options1 = {
+        enableCellNavigation: true,
+        enableColumnReorder: false,
+        forceFitColumns: true,
+        editable: true,
+        autoEdit: true,
+        enableAddRow: true
+    };
+
+
+
+
+    var data = [];
+
+    data[0] = { TerritoryCode: "",
+        LocalTitle: "",
+        LocalReleaseCinema: "",
+        LocalReleaseVid: "",
+        LocalReleaseTV: "",
+        LocalComment: ""
+    };
+
+
+
+    BindGrid(data);
+
+    function BindGrid(data) {
+        try {
+            clearAllMessages();
+            gridLocal = new Slick.Grid("#divLocalProgram", data, columns, options1);
+
+
+            gridLocal.onAddNewRow.subscribe(function (e, args) {
+                var item = args.item;
+                var column = args.column;
+                gridLocal.invalidateRow(data.length);
+                $.extend(item, args.item);
+                data.push(item);
+                gridLocal.updateRowCount();
+                gridLocal.render();
+
+            });
+
+            
+        }
+        catch (ex) {
+            alert("error");
+        }
+    }
+
+
+
+
+    gridLocal.onKeyDown.subscribe(function (e, args) {
+
+        clearAllMessages();
+
+        var GetGenreLOVactionurl1 = '@Url.Action("GetTerritory", "SeriesMaintaince", new { area = "Media_Mgt" })';
+
+        if (e.keyCode == 120) {
+
+            if (gridLocal.getColumns()[args.cell].id == "TerritoryCode") {
+
+//                if (gridLocal.getEditorLock().isActive())
+//                    gridLocal.getEditorLock().deactivate(gridLocal.getEditController());
+
+
+                selrow = args.row;
+
+
+                if (selrow > data.length - 1) {
+
+                    var tempitems = {
+                        TerritoryCode: "",
+                        LocalTitle: "",
+                        LocalReleaseCinema: "",
+                        LocalReleaseVid: "",
+                        LocalReleaseTV: "",
+                        LocalComment: ""
+                    };
+
+                    data.push(tempitems)
+
+                    gridLocal.setData(data);
+                    gridLocal.render();
+                 
+                  
+
+                }
+
+                gitems1 = data[args.row];
+
+              //  alert(gitems1 + ' ' + data.length.toString() + ' ' + selrow.toString());
+
+
+
+                var lookupInvokerControl1 = "TerLOV";
+                var idfield1 = "TerCode";
+                var popupcolumns1 = [
+
+                                { id: "TerCode", name: "TerritoryCode", field: "TerCode" },
+                                { id: "TerritoryCodeDesc", name: "TerritoryCodeDesc", field: "TerName" }
+                              ];
+
+
+                ShowCommonLookup(GetGenreLOVactionurl1, options1, popupcolumns1, lookupInvokerControl1, idfield1, PopupHeading, null);
+            }
+        }
+
+    });
+
+
+    
+
+//    function SetLookupDataToInvoker(SelectedRowData, lookupInvokerControl) {
+
+//        $.noty.closeAll();
+//        clearAllMessages();
+
+//        if (SelectedRowData != null) {
+//            
+//          if (lookupInvokerControl == "TerLOV") {
+//                popupselectedvalue1 = SelectedRowData.TerCode;
+
+//                var cdata = gridLocal.getData();
+//                 
+//               var items1 = {
+//                   "TerCode": popupselectedvalue1
+//                };
+
+
+//               $.extend(items1, gitems1);
+
+
+//               if (gitems1 != null) {
+//                   
+//                    gitems1.TerritoryCode = SelectedRowData.TerCode;
+//                }
+//                else {
+
+//                    cdata.push(items1);
+//                }
+
+
+//                if (!gridLocal.getEditorLock().isActive())
+//                    gridLocal.getEditorLock().activate(gridLocal.getEditController());
+
+
+//                gridLocal.setData(cdata);
+//                gridLocal.render();
+//                gridLocal.setActiveCell(0, 3);
+//                gridLocal.setActiveCell(selrow, 0);
+//                gridLocal.editActiveCell();
+
+
+//           }
+//        }
+//    }
+
+
+ 
+</script>

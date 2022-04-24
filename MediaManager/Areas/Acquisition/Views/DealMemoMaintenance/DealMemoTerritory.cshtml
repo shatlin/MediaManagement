@@ -1,0 +1,48 @@
+﻿@model MediaManager.Areas.Acquisition.ViewModels.DealMemoMaintenanceViewModel
+
+
+
+<table class="Layout" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <table width=100% >
+                                <tr>
+                                   <td>
+                                        <div class="subHeading" style="padding:0px;">
+                                            Territories Licensed
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                     <td>
+                                        <div id="TerritoryGrid"  style="height: 400px;" >
+                                        </div>           
+                                    </td>
+                                </tr>                              
+                            </table>
+                        </td>
+                    </tr>
+                   
+                   <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td> 
+                                        <label class="label">Rights &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+                                    </td>
+                                    <td>
+                                @Html.DropDownListFor(m => m.DMVo.RightsCode, new SelectList(Model.Rights.Select(x => new { Value = x.Substring(0, 1), Text = x }), "Value", "Text"), new { @class = "select" })
+                            </td>
+                                    <td>
+                          <button type="submit" name="btnTerritory"  class="inputButton" onclick="defaultTerritories()">Set Default Territories</button>
+                        </td>
+                                </tr>
+                            </table>
+                        </td>
+                   </tr>
+                </table>
+<div id="TerritoryLOV" title="Territory Details"></div>
+<div id="RightsLOV" title="Territory Rights"></div>
+
+
+

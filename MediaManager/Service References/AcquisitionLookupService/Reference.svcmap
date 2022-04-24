@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9ab4f652-df1a-436b-8731-47c9b633d669" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AcquisitionLookupService.wsdl" MetadataType="Wsdl" ID="cdaa4040-83da-430e-b552-e34273556966" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?wsdl" />
+    <MetadataFile FileName="AcquisitionLookupService.xsd" MetadataType="Schema" ID="b31c7ec8-125a-489a-b4f4-85bf02b5085b" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AcquisitionLookupService1.xsd" MetadataType="Schema" ID="30dee99c-dce5-4646-930b-7eb3eda8b383" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AcquisitionLookupService2.xsd" MetadataType="Schema" ID="c0b1f839-a625-4955-8950-4f520e68e3b7" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AcquisitionLookupService3.xsd" MetadataType="Schema" ID="a3dcf375-33e7-4387-9552-ddaf1cb78357" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AcquisitionLookupService4.xsd" MetadataType="Schema" ID="4c62036f-eeba-41db-8e8e-01ff729c98c9" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd6" />
+    <MetadataFile FileName="AcquisitionLookupService5.xsd" MetadataType="Schema" ID="d17d501c-b4d8-4ca3-b3d7-49c29cc5c41c" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AcquisitionLookupService6.xsd" MetadataType="Schema" ID="52b79d11-9e06-471a-8d14-c0863d09ac76" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd5" />
+    <MetadataFile FileName="AcquisitionLookupService.disco" MetadataType="Disco" ID="3f284ad9-a752-406d-984f-b4717126cfe0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

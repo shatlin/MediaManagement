@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="TaskControlVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ControlName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDisabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsHide" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RoleId" type="ser:guid" />
+          <xs:element minOccurs="0" name="RoleTaskFieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskControlVO" nillable="true" type="tns:TaskControlVO" />
+  <xs:complexType name="ArrayOfTaskControlVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskControlVO" nillable="true" type="tns:TaskControlVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskControlVO" nillable="true" type="tns:ArrayOfTaskControlVO" />
+  <xs:complexType name="NotificationEmailVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q2:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailID" type="xs:int" />
+          <xs:element minOccurs="0" name="MailFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Recipient" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationEmailVO" nillable="true" type="tns:NotificationEmailVO" />
+  <xs:complexType name="ArrayOfNotificationEmailVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotificationEmailVO" nillable="true" type="tns:NotificationEmailVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotificationEmailVO" nillable="true" type="tns:ArrayOfNotificationEmailVO" />
+  <xs:complexType name="ArrayOfNotificationEmailRoleVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotificationEmailRoleVO" nillable="true" type="tns:NotificationEmailRoleVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotificationEmailRoleVO" nillable="true" type="tns:ArrayOfNotificationEmailRoleVO" />
+  <xs:complexType name="NotificationEmailRoleVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmailID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationEmailRoleVO" nillable="true" type="tns:NotificationEmailRoleVO" />
+  <xs:complexType name="ApprovalFlowConfigVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q4:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApprovalFlowConfigHistoryVOList" nillable="true" type="tns:ArrayOfApprovalFlowConfigHistoryVO" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsSignCAD" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignCFO" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignExecute" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignFin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignHOA" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UpdateCountForApproval" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApprovalFlowConfigVO" nillable="true" type="tns:ApprovalFlowConfigVO" />
+  <xs:complexType name="ArrayOfApprovalFlowConfigHistoryVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApprovalFlowConfigHistoryVO" nillable="true" type="tns:ApprovalFlowConfigHistoryVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApprovalFlowConfigHistoryVO" nillable="true" type="tns:ArrayOfApprovalFlowConfigHistoryVO" />
+  <xs:complexType name="ApprovalFlowConfigHistoryVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q5:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApprovalFlowFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApprovalFlowTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Field" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApprovalFlowConfigHistoryVO" nillable="true" type="tns:ApprovalFlowConfigHistoryVO" />
+  <xs:complexType name="FieldApprovalFlowConfigVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q6:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldApprovalFlowConfigHistoryVOList" nillable="true" type="tns:ArrayOfApprovalFlowConfigHistoryVO" />
+          <xs:element minOccurs="0" name="FieldApprovalFlowConfigVOList" nillable="true" type="tns:ArrayOfFieldApprovalFlowVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FieldApprovalFlowConfigVO" nillable="true" type="tns:FieldApprovalFlowConfigVO" />
+  <xs:complexType name="ArrayOfFieldApprovalFlowVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldApprovalFlowVO" nillable="true" type="tns:FieldApprovalFlowVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFieldApprovalFlowVO" nillable="true" type="tns:ArrayOfFieldApprovalFlowVO" />
+  <xs:complexType name="FieldApprovalFlowVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q7:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Field" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsSignCAD" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignCFO" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignFin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignHOA" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SafUpdateCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FieldApprovalFlowVO" nillable="true" type="tns:FieldApprovalFlowVO" />
+</xs:schema>

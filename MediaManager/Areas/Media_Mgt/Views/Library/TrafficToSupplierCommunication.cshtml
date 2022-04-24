@@ -1,0 +1,134 @@
+﻿@model MediaManager.Areas.Media_Mgt.Models.SupplierCommunication
+@{
+    ViewBag.Title = "Traffic To Supplier Communication";
+    Layout = MediaManager.Infrastructure.Helpers.SharedPages.LayoutPage;
+}
+
+<script src="~/Content/Scripts/Media_Mgt/Library/TrafficToSupplierCommunication.js"
+    type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var GetMaterialTyepListActionURL = '@Url.Action("GetMaterialTyepList", "Library", new { area = "Media_Mgt" })';
+        var GetModeOfCommunicationListActionURL = '@Url.Action("GetModeOfCommunicationList", "Library", new { area = "Media_Mgt" })';
+        var GetLibraryListActionURL = '@Url.Action("GetLibraryList", "Library", new { area = "Media_Mgt" })';
+        var SaveActionURL = '@Url.Action("SaveSupplierCommunication", "Library", new { area = "Media_Mgt" })';
+        var GetSearchListActionURL = '@Url.Action("GetSearchList", "Library", new { area = "Media_Mgt" })';
+        var GetMaterialListActionURL = '@Url.Action("GetMaterialListLOV", "Library", new { area = "Media_Mgt" })';
+    </script>
+    
+
+<form action="#" method="post">
+<table cellpadding="0" cellspacing="0" id="Layout" width="100%" class="Layout">
+    <tr>
+        <td>
+            @*class="pagecontent"*@
+            <div class="mainHeading">
+                Traffic To Supplier Communication
+            </div>
+            <div id="SearchInputDiv" class="PlaceHolder">
+                <table id="SearchInputTable" cellpadding="0" cellspacing="0" class="tableLayout" > 
+                    <tr>
+                        <td colspan="13">
+                            <div class="subHeading">
+                                Search Criteria
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td colspan="13">
+                    &nbsp;
+                    </td>
+                    </tr>
+                    <tr>
+                        <td width="10%" style="padding-left:5px">
+                           <label class="label">Supplier</label> 
+                        </td>
+                        <td width="10%">
+                        @Html.TextBoxFor(m => m.Supplier, new { @class = "inputTextSamll" })
+                        </td>
+                        <td width="2%">
+                            <img id="LookupIconSupplier" src="../../Content/images/lov_down_arrow.png" alt=""
+                                class="VerticalAlignMiddle" />
+                        </td>
+                        
+                       <td width="10%">
+                           <label class="label">Material ID</label>
+                        </td>
+                        
+                       <td width="10%">
+                            @Html.TextBoxFor(m => m.MaterialId, new { @class = "inputTextSamll" })
+                        </td>
+                     <td width="2%">
+                            <img id="LookupIconMaterialID" src="../../Content/images/lov_down_arrow.png" alt=""
+                                class="VerticalAlignMiddle" />
+                        </td>
+                                               
+                      
+                        <td width="10%">
+                           <label class="label"> Material Name</label>
+                        </td>
+                        <td width="10%">
+                             @Html.TextBoxFor(m => m.MaterialName, new { @class = "inputTextSamll" })
+                        </td>
+                         <td width="2%">
+                            @*<img id="LookupIconMaterialName" src="../../Content/images/lov_down_arrow.png" alt=""
+                                class="VerticalAlignMiddle" />*@
+                        </td>
+                        <td width="34%">
+                        </td>
+
+
+                    </tr>
+                   
+                    <tr>
+                       
+                        <td align="right" colspan="13">
+                            <input type="button" class="inputButton" value="Search" id="btnSearch" onclick="find_click()"  />
+                            <input type="button" class="inputButton" value="Reset" id="btn" onclick="Reset()"  />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<table class="Layout" id="tblSearchResult" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="pagecontent">
+            <div class="PlaceHolder" id="GridDiv">
+                <table class="tableLayout">
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="subHeading">
+                                Search Result
+                            </div>
+                            <div id="grdSearchResults" class="GridContainer" style="height: 410px;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <br />
+                            <input type="button" class="inputButton" value="Save" id="btnSave"
+                                onclick="Save()" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+</form>
+
+<div id="LicenseeLOV" title="Licensee Details"></div>
+<script type="text/javascript">
+    var dmsearchactionUrl = '@Url.Action("GetDealMemo", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var amortlookupactionUrl = '@Url.Action("GetAmortMethodLOVList", "DealMemoMaintenance", new { area = "Acquisition" })';
+    var urlSupplierList = '@Url.Action("GetSupplierListLookup", "Library", new { area = "Media_Mgt" })';
+</script>
+

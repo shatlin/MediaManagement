@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.DataContract.SystemAdmin" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.DataContract.SystemAdmin" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" />
+  <xs:complexType name="GetRoleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleList" nillable="true" type="q1:ArrayOfRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRoleResponse" nillable="true" type="tns:GetRoleResponse" />
+  <xs:complexType name="GetRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q2:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleList" nillable="true" type="q2:ArrayOfRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRoleRequest" nillable="true" type="tns:GetRoleRequest" />
+  <xs:complexType name="GetTaskResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="TaskList" nillable="true" type="q3:ArrayOfTaskVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTaskResponse" nillable="true" type="tns:GetTaskResponse" />
+  <xs:complexType name="GetSystemUsersResponse">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="MenUserList" nillable="true" type="q4:ArrayOfMENUserVO" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="SystemUserList" nillable="true" type="q5:ArrayOfSystemUserVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSystemUsersResponse" nillable="true" type="tns:GetSystemUsersResponse" />
+  <xs:complexType name="GetSystemDepartmentsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q6:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemDepartmentsVO" nillable="true" type="q6:SystemDepartmentsVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSystemDepartmentsRequest" nillable="true" type="tns:GetSystemDepartmentsRequest" />
+  <xs:complexType name="GetSystemDepartmentsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q7:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemDepartmentsVOList" nillable="true" type="q7:ArrayOfSystemDepartmentsVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSystemDepartmentsResponse" nillable="true" type="tns:GetSystemDepartmentsResponse" />
+  <xs:complexType name="GetSystemUserRequest">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="MenUserVO" nillable="true" type="q8:MENUserVO" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="SystemUserList" nillable="true" type="q9:ArrayOfSystemUserVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSystemUserRequest" nillable="true" type="tns:GetSystemUserRequest" />
+  <xs:complexType name="GetTaskControlRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q10:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="TaskControlVO" nillable="true" type="q11:TaskControlVO" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="TaskControlVOList" nillable="true" type="q12:ArrayOfTaskControlVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTaskControlRequest" nillable="true" type="tns:GetTaskControlRequest" />
+  <xs:complexType name="GetTaskControlResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q13:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="TaskControlVOList" nillable="true" type="q14:ArrayOfTaskControlVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTaskControlResponse" nillable="true" type="tns:GetTaskControlResponse" />
+  <xs:complexType name="GetEmailRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q15:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="NotificationEmailVO" nillable="true" type="q16:NotificationEmailVO" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="NotificationEmailVOList" nillable="true" type="q17:ArrayOfNotificationEmailVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmailRequest" nillable="true" type="tns:GetEmailRequest" />
+  <xs:complexType name="GetEmailResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q18:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="NotificationEmailRoleList" nillable="true" type="q19:ArrayOfNotificationEmailRoleVO" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="NotificationEmailVOList" nillable="true" type="q20:ArrayOfNotificationEmailVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmailResponse" nillable="true" type="tns:GetEmailResponse" />
+  <xs:complexType name="GetEmailRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q21:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="RoleList" nillable="true" type="q22:ArrayOfNotificationEmailRoleVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmailRoleRequest" nillable="true" type="tns:GetEmailRoleRequest" />
+  <xs:complexType name="GetEmailRoleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q23:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="RoleList" nillable="true" type="q24:ArrayOfNotificationEmailRoleVO" />
+          <xs:element minOccurs="0" name="SuccessFlag" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetEmailRoleResponse" nillable="true" type="tns:GetEmailRoleResponse" />
+  <xs:complexType name="GetApprovalFlowConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q25:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="ApprovalFlowConfigVO" nillable="true" type="q26:ApprovalFlowConfigVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetApprovalFlowConfigResponse" nillable="true" type="tns:GetApprovalFlowConfigResponse" />
+  <xs:complexType name="GetApprovalFlowConfigRequest">
+    <xs:sequence>
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="ApprovalFlowConfigVO" nillable="true" type="q27:ApprovalFlowConfigVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetApprovalFlowConfigRequest" nillable="true" type="tns:GetApprovalFlowConfigRequest" />
+  <xs:complexType name="GetFieldApprovalFlowConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q28:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="FieldApprovalFlowConfigVO" nillable="true" type="q29:FieldApprovalFlowConfigVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFieldApprovalFlowConfigResponse" nillable="true" type="tns:GetFieldApprovalFlowConfigResponse" />
+  <xs:complexType name="GetFieldApprovalFlowConfigRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q30:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" minOccurs="0" name="FieldApprovalFlowConfigVO" nillable="true" type="q31:FieldApprovalFlowConfigVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFieldApprovalFlowConfigRequest" nillable="true" type="tns:GetFieldApprovalFlowConfigRequest" />
+  <xs:complexType name="GetRegionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q32:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RegionList" nillable="true" type="q32:ArrayOfMENUserVO" />
+          <xs:element minOccurs="0" name="UserData" nillable="true" type="q32:MENUserVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRegionsRequest" nillable="true" type="tns:GetRegionsRequest" />
+  <xs:complexType name="GetRegionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q33:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RegionList" nillable="true" type="q33:ArrayOfMENUserVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRegionsResponse" nillable="true" type="tns:GetRegionsResponse" />
+</xs:schema>

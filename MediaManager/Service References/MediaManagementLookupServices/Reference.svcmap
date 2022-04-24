@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d4849f6c-b09d-44ba-a760-7fcc7c7d9466" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MediaManagementLookupServices.xsd" MetadataType="Schema" ID="9efdc708-9d26-417d-8639-7d3bcde336ca" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="MediaManagementLookupServices.wsdl" MetadataType="Wsdl" ID="c1abf9d4-ba7a-4d32-a56d-1b6fc159d0d4" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?wsdl" />
+    <MetadataFile FileName="MediaManagementLookupServices1.xsd" MetadataType="Schema" ID="74bc334c-9f96-402d-a640-cb94ff39bb88" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd6" />
+    <MetadataFile FileName="MediaManagementLookupServices2.xsd" MetadataType="Schema" ID="d8831a76-d1e0-4092-af1a-2da94debaff5" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd5" />
+    <MetadataFile FileName="MediaManagementLookupServices3.xsd" MetadataType="Schema" ID="053eae28-74fd-45ed-900f-c9d6d587a53a" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="MediaManagementLookupServices.disco" MetadataType="Disco" ID="fc0621cf-9ddd-4b83-b5dd-65eb2e0f6130" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?disco" />
+    <MetadataFile FileName="MediaManagementLookupServices4.xsd" MetadataType="Schema" ID="d635c9cf-c7e9-449d-a303-4d25ac340d49" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="MediaManagementLookupServices5.xsd" MetadataType="Schema" ID="b40e82cb-bb00-46f2-9016-fa01c177fd3f" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="MediaManagementLookupServices6.xsd" MetadataType="Schema" ID="d9c9159e-cdd9-4777-b560-1e14d771df67" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="MediaManagementLookupServices7.xsd" MetadataType="Schema" ID="f7a34255-894c-483f-908c-6644bb1aca4c" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

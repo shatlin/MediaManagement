@@ -1,0 +1,51 @@
+﻿
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    $('#season').hide();
+    });
+function showSeason() {
+
+    $('#season').show();                                   //        document.getElementById('season').style.display = "block" 
+}
+
+function generate() {
+
+    var url = '@Url.Action("GenerateEpisodes", "Screener")';
+    window.location.href = url;              //.replace('__id__', id);
+}
+
+</script>
+<br />
+<div id="AddSeries" style="background-color:Silver" >
+<br /><br />
+
+<div style="font-size:20px; height: 30px; font-weight:bold; vertical-align:baseline; text-align:left; border :2px">
+    Series Tree     </div>
+    <br /><br /><br />
+    <table>
+    <tr>
+    <td style="width:33%">     <input type="button" id="btnAddSeason" value="Add Season"  onclick="showSeason()"/>    </td>
+      <td style="width:33%">    <input type="button" id="btnSave" value="Save" />    </td> 
+
+     <td style="width:33%">    <input type="button" id="btnGenerateEpisodes" value="Generate Episodes"  onclick="generate()"/>    </td>
+    </tr>
+    <tr >
+    <td  >
+    @Html.Label("Series Name")</td>
+    <td>
+    @Html.TextBox("Series")
+    </td>
+    </tr>
+      <tr id="season" >
+    <td >
+    @Html.Label("Season Name")</td>
+    <td>
+    @Html.TextBox("Season")
+    </td>
+    </tr>
+    </table>
+    
+
+    </div>

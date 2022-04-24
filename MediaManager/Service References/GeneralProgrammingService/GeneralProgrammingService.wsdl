@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GeneralProgrammingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.GeneralProgramming" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Contracts" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGeneralProgramming_CreateChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateChannel" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_CreateChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_CreateChannel_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveMediaPlatformDataDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaPlatformDataDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveMediaPlatformDataDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaPlatformDataDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrenciesAndExchangeRates_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCurrenciesAndExchangeRates" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrenciesAndExchangeRates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCurrenciesAndExchangeRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrenciesAndExchangeRates_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCurrenciesAndExchangeRates_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrenciesAndExchangeRates" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCurrenciesAndExchangeRates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrenciesAndExchangeRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCurrenciesAndExchangeRates_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrenciesAndExchangeRates_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCurrenciesAndExchangeRates_SS" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrenciesAndExchangeRates_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCurrenciesAndExchangeRates_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrenciesAndExchangeRates_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCurrenciesAndExchangeRates_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrenciesAndExchangeRates_SS" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCurrenciesAndExchangeRates_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrenciesAndExchangeRates_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCurrenciesAndExchangeRates_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchLicenseesAndAuthorities_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseesAndAuthorities" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchLicenseesAndAuthorities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseesAndAuthoritiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchLicenseesAndAuthorities_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveLicenseesAndAuthorities_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseesAndAuthorities" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveLicenseesAndAuthorities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseesAndAuthoritiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveLicenseesAndAuthorities_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchChannelDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchChannelDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChannelDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChannelDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelBuyingCompanyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchChannelBuyingCompanyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelBuyingCompanyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchChannelBuyingCompanyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelBuyingCompanyDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelBuyingCompanyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChannelBuyingCompanyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelBuyingCompanyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChannelBuyingCompanyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelBuyingCompanyDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelServicesDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchChannelServicesDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelServicesDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchChannelServicesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchChannelServicesDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q12:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelServicesDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChannelServicesDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelServicesDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChannelServicesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveChannelServicesDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q13:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchTerritoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTerritoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchTerritoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTerritoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchTerritoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q14:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveTerritoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTerritoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveTerritoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTerritoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveTerritoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q15:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchRegionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRegionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchRegionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRegionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchRegionDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q16:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveRegionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRegionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveRegionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRegionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveRegionDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q17:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSubTypeAndCategoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSubTypeAndCategoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSubTypeAndCategoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSubTypeAndCategoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSubTypeAndCategoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q18:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSubTypeAndCategoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubTypeAndCategoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSubTypeAndCategoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubTypeAndCategoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSubTypeAndCategoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q19:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSupplierCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSupplierCompanies" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSupplierCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSupplierCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSupplierCompanies_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q20:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSupplierCompanyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSupplierCompanyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSupplierCompanyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSupplierCompanyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSupplierCompanyDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q21:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSupplierCompanyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSupplierCompanyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSupplierCompanyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSupplierCompanyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSupplierCompanyDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q22:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSpotRateDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSpotRateDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchSpotRateDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSpotRateDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrencyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCurrencyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCurrencyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCurrencyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSpotRateDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSpotRateDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSpotRateDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSpotRateDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSpotRateCurrencyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSpotRateCurrencyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveSpotRateCurrencyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSpotRateCurrencyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCategory" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategory" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchMediaServiceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMediaServiceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchMediaServiceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMediaServiceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchMediaPlatformDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMediaPlatformDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SearchMediaPlatformDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMediaPlatformDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveMediaServiceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaServiceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveMediaServiceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaServiceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveMediaPlatformDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaPlatformDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_SaveMediaPlatformDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaPlatformDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_CopyChannelDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyChannelDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_CopyChannelDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyChannelDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralProgramming_CopyChannelDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q23:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IGeneralProgramming">
+    <wsdl:operation name="CreateChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/CreateChannel" message="tns:IGeneralProgramming_CreateChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/CreateChannelResponse" message="tns:IGeneralProgramming_CreateChannel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/CreateChannelMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_CreateChannel_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaPlatformDataDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDataDetails" message="tns:IGeneralProgramming_SaveMediaPlatformDataDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDataDetailsResponse" message="tns:IGeneralProgramming_SaveMediaPlatformDataDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrenciesAndExchangeRates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates" message="tns:IGeneralProgramming_SearchCurrenciesAndExchangeRates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRatesResponse" message="tns:IGeneralProgramming_SearchCurrenciesAndExchangeRates_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRatesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchCurrenciesAndExchangeRates_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrenciesAndExchangeRates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates" message="tns:IGeneralProgramming_SaveCurrenciesAndExchangeRates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRatesResponse" message="tns:IGeneralProgramming_SaveCurrenciesAndExchangeRates_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRatesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveCurrenciesAndExchangeRates_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrenciesAndExchangeRates_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates_SS" message="tns:IGeneralProgramming_SearchCurrenciesAndExchangeRates_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates_SSResponse" message="tns:IGeneralProgramming_SearchCurrenciesAndExchangeRates_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchCurrenciesAndExchangeRates_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrenciesAndExchangeRates_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates_SS" message="tns:IGeneralProgramming_SaveCurrenciesAndExchangeRates_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates_SSResponse" message="tns:IGeneralProgramming_SaveCurrenciesAndExchangeRates_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveCurrenciesAndExchangeRates_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseesAndAuthorities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchLicenseesAndAuthorities" message="tns:IGeneralProgramming_SearchLicenseesAndAuthorities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchLicenseesAndAuthoritiesResponse" message="tns:IGeneralProgramming_SearchLicenseesAndAuthorities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchLicenseesAndAuthoritiesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchLicenseesAndAuthorities_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseesAndAuthorities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveLicenseesAndAuthorities" message="tns:IGeneralProgramming_SaveLicenseesAndAuthorities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveLicenseesAndAuthoritiesResponse" message="tns:IGeneralProgramming_SaveLicenseesAndAuthorities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveLicenseesAndAuthoritiesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveLicenseesAndAuthorities_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelDetails" message="tns:IGeneralProgramming_SearchChannelDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelDetailsResponse" message="tns:IGeneralProgramming_SearchChannelDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchChannelDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelDetails" message="tns:IGeneralProgramming_SaveChannelDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelDetailsResponse" message="tns:IGeneralProgramming_SaveChannelDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveChannelDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelBuyingCompanyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelBuyingCompanyDetails" message="tns:IGeneralProgramming_SearchChannelBuyingCompanyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelBuyingCompanyDetailsResponse" message="tns:IGeneralProgramming_SearchChannelBuyingCompanyDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelBuyingCompanyDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchChannelBuyingCompanyDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelBuyingCompanyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelBuyingCompanyDetails" message="tns:IGeneralProgramming_SaveChannelBuyingCompanyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelBuyingCompanyDetailsResponse" message="tns:IGeneralProgramming_SaveChannelBuyingCompanyDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelBuyingCompanyDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveChannelBuyingCompanyDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelServicesDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelServicesDetails" message="tns:IGeneralProgramming_SearchChannelServicesDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelServicesDetailsResponse" message="tns:IGeneralProgramming_SearchChannelServicesDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchChannelServicesDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchChannelServicesDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelServicesDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelServicesDetails" message="tns:IGeneralProgramming_SaveChannelServicesDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelServicesDetailsResponse" message="tns:IGeneralProgramming_SaveChannelServicesDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveChannelServicesDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveChannelServicesDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerritoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchTerritoryDetails" message="tns:IGeneralProgramming_SearchTerritoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchTerritoryDetailsResponse" message="tns:IGeneralProgramming_SearchTerritoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchTerritoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchTerritoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTerritoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveTerritoryDetails" message="tns:IGeneralProgramming_SaveTerritoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveTerritoryDetailsResponse" message="tns:IGeneralProgramming_SaveTerritoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveTerritoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveTerritoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRegionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchRegionDetails" message="tns:IGeneralProgramming_SearchRegionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchRegionDetailsResponse" message="tns:IGeneralProgramming_SearchRegionDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchRegionDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchRegionDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRegionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveRegionDetails" message="tns:IGeneralProgramming_SaveRegionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveRegionDetailsResponse" message="tns:IGeneralProgramming_SaveRegionDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveRegionDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveRegionDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSubTypeAndCategoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSubTypeAndCategoryDetails" message="tns:IGeneralProgramming_SearchSubTypeAndCategoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSubTypeAndCategoryDetailsResponse" message="tns:IGeneralProgramming_SearchSubTypeAndCategoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSubTypeAndCategoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchSubTypeAndCategoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubTypeAndCategoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSubTypeAndCategoryDetails" message="tns:IGeneralProgramming_SaveSubTypeAndCategoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSubTypeAndCategoryDetailsResponse" message="tns:IGeneralProgramming_SaveSubTypeAndCategoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSubTypeAndCategoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveSubTypeAndCategoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSupplierCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanies" message="tns:IGeneralProgramming_SearchSupplierCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSupplierCompaniesResponse" message="tns:IGeneralProgramming_SearchSupplierCompanies_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSupplierCompaniesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchSupplierCompanies_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSupplierCompanyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanyDetails" message="tns:IGeneralProgramming_SearchSupplierCompanyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanyDetailsResponse" message="tns:IGeneralProgramming_SearchSupplierCompanyDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanyDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SearchSupplierCompanyDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupplierCompanyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSupplierCompanyDetails" message="tns:IGeneralProgramming_SaveSupplierCompanyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSupplierCompanyDetailsResponse" message="tns:IGeneralProgramming_SaveSupplierCompanyDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSupplierCompanyDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_SaveSupplierCompanyDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSpotRateDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSpotRateDetails" message="tns:IGeneralProgramming_SearchSpotRateDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchSpotRateDetailsResponse" message="tns:IGeneralProgramming_SearchSpotRateDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrencyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrencyDetails" message="tns:IGeneralProgramming_SearchCurrencyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCurrencyDetailsResponse" message="tns:IGeneralProgramming_SearchCurrencyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSpotRateDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSpotRateDetails" message="tns:IGeneralProgramming_SaveSpotRateDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSpotRateDetailsResponse" message="tns:IGeneralProgramming_SaveSpotRateDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSpotRateCurrencyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSpotRateCurrencyDetails" message="tns:IGeneralProgramming_SaveSpotRateCurrencyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveSpotRateCurrencyDetailsResponse" message="tns:IGeneralProgramming_SaveSpotRateCurrencyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCategory" message="tns:IGeneralProgramming_SearchCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchCategoryResponse" message="tns:IGeneralProgramming_SearchCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCategory" message="tns:IGeneralProgramming_SaveCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveCategoryResponse" message="tns:IGeneralProgramming_SaveCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaServiceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchMediaServiceDetails" message="tns:IGeneralProgramming_SearchMediaServiceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchMediaServiceDetailsResponse" message="tns:IGeneralProgramming_SearchMediaServiceDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaPlatformDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchMediaPlatformDetails" message="tns:IGeneralProgramming_SearchMediaPlatformDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SearchMediaPlatformDetailsResponse" message="tns:IGeneralProgramming_SearchMediaPlatformDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaServiceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveMediaServiceDetails" message="tns:IGeneralProgramming_SaveMediaServiceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveMediaServiceDetailsResponse" message="tns:IGeneralProgramming_SaveMediaServiceDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaPlatformDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDetails" message="tns:IGeneralProgramming_SaveMediaPlatformDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDetailsResponse" message="tns:IGeneralProgramming_SaveMediaPlatformDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyChannelDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralProgramming/CopyChannelDetails" message="tns:IGeneralProgramming_CopyChannelDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralProgramming/CopyChannelDetailsResponse" message="tns:IGeneralProgramming_CopyChannelDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IGeneralProgramming/CopyChannelDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IGeneralProgramming_CopyChannelDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:IGeneralProgramming">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateChannel">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/CreateChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaPlatformDataDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDataDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrenciesAndExchangeRates">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrenciesAndExchangeRates">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrenciesAndExchangeRates_SS">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrenciesAndExchangeRates_SS">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseesAndAuthorities">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchLicenseesAndAuthorities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseesAndAuthorities">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveLicenseesAndAuthorities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchChannelDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveChannelDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelBuyingCompanyDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchChannelBuyingCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelBuyingCompanyDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveChannelBuyingCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelServicesDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchChannelServicesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelServicesDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveChannelServicesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerritoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTerritoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRegionDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchRegionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRegionDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveRegionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSubTypeAndCategoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSubTypeAndCategoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubTypeAndCategoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSubTypeAndCategoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSupplierCompanies">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSupplierCompanyDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupplierCompanyDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSupplierCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSpotRateDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSpotRateDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrencyDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCurrencyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSpotRateDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSpotRateDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSpotRateCurrencyDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSpotRateCurrencyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCategory">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaServiceDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchMediaServiceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaPlatformDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchMediaPlatformDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaServiceDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveMediaServiceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaPlatformDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyChannelDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralProgramming/CopyChannelDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:IGeneralProgramming">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CreateChannel">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/CreateChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaPlatformDataDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDataDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrenciesAndExchangeRates">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrenciesAndExchangeRates">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrenciesAndExchangeRates_SS">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCurrenciesAndExchangeRates_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrenciesAndExchangeRates_SS">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveCurrenciesAndExchangeRates_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseesAndAuthorities">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchLicenseesAndAuthorities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseesAndAuthorities">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveLicenseesAndAuthorities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchChannelDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveChannelDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelBuyingCompanyDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchChannelBuyingCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelBuyingCompanyDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveChannelBuyingCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchChannelServicesDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchChannelServicesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChannelServicesDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveChannelServicesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerritoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTerritoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRegionDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchRegionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRegionDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveRegionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSubTypeAndCategoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSubTypeAndCategoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubTypeAndCategoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSubTypeAndCategoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSupplierCompanies">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSupplierCompanyDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSupplierCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupplierCompanyDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSupplierCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSpotRateDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchSpotRateDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCurrencyDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCurrencyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSpotRateDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSpotRateDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSpotRateCurrencyDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveSpotRateCurrencyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCategory">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaServiceDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchMediaServiceDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaPlatformDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SearchMediaPlatformDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaServiceDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveMediaServiceDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaPlatformDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/SaveMediaPlatformDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyChannelDetails">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralProgramming/CopyChannelDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralProgrammingService">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

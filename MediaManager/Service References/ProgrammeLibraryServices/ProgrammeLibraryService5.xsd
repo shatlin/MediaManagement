@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" />
+  <xs:element name="DeleteProgramQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q1:DeleteProgramRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProgramQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="DeleteProgramQueryResult" nillable="true" type="q2:DeleteProgramResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEpisode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q3:DeleteEpisodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEpisodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="DeleteEpisodeResult" nillable="true" type="q4:DeleteEpisodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCastQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q5:SaveCastRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCastQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveCastQueryResult" nillable="true" type="q6:SaveCastResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEpisodeEventValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q7:UpdateEpisodeEventValueRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEpisodeEventValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="UpdateEpisodeEventValueResult" nillable="true" type="q8:UpdateEpisodeEventValueResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentEmailFromSeriesTitle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q9:SentEmailFromSeriesTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SentEmailFromSeriesTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SentEmailFromSeriesTitleResult" nillable="true" type="q10:SentEmailFromSeriesTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProgramTitle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q11:SearchProgramByTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProgramTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SearchProgramTitleResult" nillable="true" type="q12:SearchProgramByTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCastQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q13:SearchCastQueryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCastQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SearchCastQueryResult" nillable="true" type="q14:SearchCastQueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocalProgramTitleSearchQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q15:LocalProgrammeTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocalProgramTitleSearchQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="LocalProgramTitleSearchQueryResult" nillable="true" type="q16:LocalProgrammeTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLocalProgramTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q17:LocalProgrammeTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLocalProgramTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveLocalProgramTitleQueryResult" nillable="true" type="q18:LocalProgrammeTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProducerQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q19:SearchProducerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProducerQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SearchProducerQueryResult" nillable="true" type="q20:SearchProducerResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProducerQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q21:SaveProducerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProducerQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveProducerQueryResult" nillable="true" type="q22:SaveProducerResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSeriesTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q23:SearchSeriesTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSeriesTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SearchSeriesTitleQueryResult" nillable="true" type="q24:SearchSeriesTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveChangeWorkingTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q25:SaveChangeWorkingTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveChangeWorkingTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveChangeWorkingTitleQueryResult" nillable="true" type="q26:SaveChangeWorkingTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProgramQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q27:SearchProramRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProgramQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SearchProgramQueryResult" nillable="true" type="q28:SearchProgramResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProgramQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q29:SaveProgramRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProgramQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveProgramQueryResult" nillable="true" type="q30:SaveProgramResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProgramLinkingQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q31:SearchProgramForLinkingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProgramLinkingQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SearchProgramLinkingQueryResult" nillable="true" type="q32:SearchProgramForLinkingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTapeLinkingQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q33:SearchTapeForLinkingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTapeLinkingQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SearchTapeLinkingQueryResult" nillable="true" type="q34:SearchTapeTitleForLinkingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkTapeTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q35:LinkTapeProgramRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkTapeTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="LinkTapeTitleQueryResult" nillable="true" type="q36:LinkTapeProgramResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEpisodesCountQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q37:GetEpisodesCountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEpisodesCountQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="GetEpisodesCountQueryResult" nillable="true" type="q38:GetEpisodesCountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgramDetailsQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q39:GetProgramDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgramDetailsQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="GetProgramDetailsQueryResult" nillable="true" type="q40:GetProgramDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseDetailsQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q41:GetLicenseDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseDetailsQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="GetLicenseDetailsQueryResult" nillable="true" type="q42:GetLicenseDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatchUpLicenseDetailsQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q43:GetCatchUpLicenseDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatchUpLicenseDetailsQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="GetCatchUpLicenseDetailsQueryResult" nillable="true" type="q44:GetCatchUpLicenseDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEnterUpdateLiveInfoQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q45:SaveEnterUpdateLiveInfoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEnterUpdateLiveInfoQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveEnterUpdateLiveInfoQueryResult" nillable="true" type="q46:SaveEnterUpdateLiveInfoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSeriesTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q47:AddSeriesTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSeriesTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="AddSeriesTitleQueryResult" nillable="true" type="q48:AddSeriesTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSeriesTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q49:DeleteSerieTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSeriesTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="DeleteSeriesTitleQueryResult" nillable="true" type="q50:DeleteSeriesTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSeasonTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q51:AddSeasonTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSeasonTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="AddSeasonTitleQueryResult" nillable="true" type="q52:AddSeasonTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSeasonTitleQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q53:DeleteSeasonRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSeasonTitleQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="DeleteSeasonTitleQueryResult" nillable="true" type="q54:DeleteSeasonResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayEpisodesQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q55:DisplayEpisodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayEpisodesQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="DisplayEpisodesQueryResult" nillable="true" type="q56:DisplayEpisodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveChangedEpisodeNoActualQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q57:SaveChangedEpisodeNoActualRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveChangedEpisodeNoActualQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveChangedEpisodeNoActualQueryResult" nillable="true" type="q58:SaveChangedEpisodeNoActualResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveChangedEpisodesOnClose">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q59:SaveChangedEpisodesOnCloseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveChangedEpisodesOnCloseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveChangedEpisodesOnCloseResult" nillable="true" type="q60:SaveChangedEpisodesOnCloseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCreatedEpisodeQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q61:SaveCreatedEpisodesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCreatedEpisodeQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveCreatedEpisodeQueryResult" nillable="true" type="q62:SaveCreatedEpisodesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSeasonQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q63:UpdateSeasonTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSeasonQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="UpdateSeasonQueryResult" nillable="true" type="q64:UpdateSeasonTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSeriesQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q65:UpdateSeriesTitleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSeriesQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="UpdateSeriesQueryResult" nillable="true" type="q66:UpdateSeriesTitleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEpisodeDetailsQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q67:GetEpisodeDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEpisodeDetailsQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="GetEpisodeDetailsQueryResult" nillable="true" type="q68:GetEpisodeDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaySeasonTitle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q69:DisplaySeasonRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaySeasonTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="DisplaySeasonTitleResult" nillable="true" type="q70:DisplaySeasonResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUpdatedEpisodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q71:SaveUpdatedEpisodesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUpdatedEpisodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="SaveUpdatedEpisodesResult" nillable="true" type="q72:SaveUpdatedEpisodesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEpisodesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="request" nillable="true" type="q73:GetEpisodeListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEpisodesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" minOccurs="0" name="GetEpisodesListResult" nillable="true" type="q74:GetEpisodeListResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

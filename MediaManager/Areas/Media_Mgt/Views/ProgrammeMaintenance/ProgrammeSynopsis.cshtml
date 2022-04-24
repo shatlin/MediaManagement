@@ -1,0 +1,15 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.ProgrammeMaintenanceViewModel
+
+<table class="tableLayout">
+<tr style="width:1328px;height:30px"><td>
+@Html.DropDownList("Synopsis1", new SelectList(Model.SynopsisOptions.Select(x => new { Value = x, Text = x }), "Value", "Text"), new { @class = "select" })
+</td>
+</tr>
+<tr style="width:1328px;height:115px">
+<td>
+<textarea id="Synopsis" rows="2" cols="20" style="width:1328px;height:121px;background-color:#C0C0C0"></textarea>
+@* @Html.TextArea("Synopsis")*@
+</td>
+</tr>
+</table>
+

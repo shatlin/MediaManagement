@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4c0e81bd-9a42-4515-8e60-6bf8d02d3821" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.200.10/MediaManagerServices/SystemAdmin/SystemAdminService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SystemAdminService.xsd" MetadataType="Schema" ID="55442cb6-eff8-4627-ad94-8d7e9594f10b" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SystemAdminService1.xsd" MetadataType="Schema" ID="58d03d3b-34cb-4334-95d4-a2c2a5a91cf8" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd5" />
+    <MetadataFile FileName="SystemAdminService2.xsd" MetadataType="Schema" ID="d27719a4-dd04-4f3a-ad8d-94b83ce6a5fc" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SystemAdminService3.xsd" MetadataType="Schema" ID="8966ad54-1d9f-4860-81ec-c923a1f64578" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd6" />
+    <MetadataFile FileName="SystemAdminService4.xsd" MetadataType="Schema" ID="d5f29f82-8dc4-4364-ad76-fbf147c37e23" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemAdminService5.xsd" MetadataType="Schema" ID="00739a52-6a39-44f6-8a01-e9d1126b7ff9" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemAdminService.wsdl" MetadataType="Wsdl" ID="779f55f7-5252-4426-8137-6bc84e48e0a1" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?wsdl" />
+    <MetadataFile FileName="SystemAdminService6.xsd" MetadataType="Schema" ID="c98d2360-65b7-4b38-b176-66c3000686b4" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SystemAdminService.disco" MetadataType="Disco" ID="f4112fcf-ff1b-4e16-8a98-3b98ab2d4045" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

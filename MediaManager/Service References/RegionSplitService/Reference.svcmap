@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4cf55a00-74d3-439f-a8a3-108974268231" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RegionSplitService.xsd" MetadataType="Schema" ID="b0503608-da24-46b0-8a74-c97d58c73eb4" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RegionSplitService.disco" MetadataType="Disco" ID="5be41579-d0cf-4bef-bd5e-22ba40405cc1" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?disco" />
+    <MetadataFile FileName="RegionSplitService.wsdl" MetadataType="Wsdl" ID="0919b15e-068a-4aa1-9724-f4fb59f734e0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?wsdl" />
+    <MetadataFile FileName="RegionSplitService1.xsd" MetadataType="Schema" ID="c09d042c-ef45-4d26-b91a-9bfabdf7b5b8" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RegionSplitService2.xsd" MetadataType="Schema" ID="86d3e083-a218-49b8-9177-3aa22d7befff" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd6" />
+    <MetadataFile FileName="RegionSplitService3.xsd" MetadataType="Schema" ID="a67c5f02-3bcd-4397-a6ae-a1e8bdbcba66" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RegionSplitService4.xsd" MetadataType="Schema" ID="5377f93a-302c-4235-90f5-25e1e39023b4" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd5" />
+    <MetadataFile FileName="RegionSplitService5.xsd" MetadataType="Schema" ID="000c1b62-6464-45e4-8ecf-8e17285d6b3e" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd3" />
+    <MetadataFile FileName="RegionSplitService6.xsd" MetadataType="Schema" ID="b05e1e8e-1553-4136-b098-767a5ce3d132" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Finance/RegionSplitService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

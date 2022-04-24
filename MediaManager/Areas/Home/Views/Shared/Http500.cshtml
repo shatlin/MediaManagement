@@ -1,0 +1,30 @@
+﻿@model MediaManager.Models.ErrorModel
+@{
+    Layout = null;
+}
+<table class="ContentFormHolder">
+    <tr>
+        <td class="pagecontent">
+            <table>
+                <tr>
+                    <td class="main-form">
+                        <div>
+                           <p style="font-weight:bolder;text-align:center" class="ErrorHeader">
+                                @Model.ErrorTitle</p>
+                        </div>
+                        <div>
+                            <br />
+                            <br />
+                            @if (Model.ExceptionDetail != null)
+                            {
+                                <p class="ErrorMessageHeader">
+                                    Error Details:</p><br />
+                                <p style="color:Red" >@Model.ExceptionDetail.Message</p> 
+                            }
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,302 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.ProgrammeMaintenanceViewModel
+
+
+@{
+    ViewBag.Title = "Programme Search";
+}
+
+
+
+
+
+<table class="ContentFormHolder" width="1300px">
+    <tr>
+        <td class="pagecontent">
+            <table>
+                <tr>
+                    <td class="main-form">
+                        <div class="Grid">
+                            <table class="table AppForm">
+                                <tr>
+                                    <td colspan="8">
+                                        Programme Search
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayNameFor(m=>m.ProgrammeTitle)
+                                    </td>
+                                    <td colspan="3">
+                                        @Html.TextBoxFor(m => m.ProgrammeTitle)
+                                    </td>
+                                     <td >
+                                        @Html.DisplayNameFor(m=>m.Distributor)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m =>m.Distributor)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(m=>m.CatComplete)
+                                        
+                                    </td>
+                                    <td>@Html.DisplayNameFor(m=>m.CatComplete)</td>
+                                    </tr>
+                                <tr>
+                                    <td >
+                                        @Html.DisplayNameFor(m=>m.WorkingTitle)
+                                    </td>
+                                    <td colspan="3">
+                                        @Html.TextBoxFor(m => m.WorkingTitle)
+                                    </td>
+                                     <td >
+                                        @Html.DisplayNameFor(m=>m.TargetGroup)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m =>m.TargetGroup)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(m=>m.Archive)
+                                       
+                                    </td>
+                                    <td> @Html.DisplayNameFor(m => m.Archive)</td>
+                                    </tr>
+                                <tr>
+                                    <td >
+                                        @Html.DisplayNameFor(m=>m.ProductionHouse)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.ProductionHouse)
+
+                                    </td><td >
+                                        @Html.DisplayNameFor(m=>m.PrimaryGenre)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.PrimaryGenre)
+                                    </td>
+
+
+
+                                     <td >
+                                        @Html.DisplayNameFor(m=>m.SecondaryGenre)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m =>m.SecondaryGenre)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(m=>m.TXDigitized)
+                                        
+                                    </td>
+                                    <td>@Html.DisplayNameFor(m => m.TXDigitized)</td>
+                                    </tr>
+                                <tr>
+                                    <td >
+                                        @Html.DisplayNameFor(m=>m.DomesticAgeRestriction)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.DomesticAgeRestriction)
+
+                                    </td><td >
+                                        @Html.DisplayNameFor(m=>m.MediaManagerAgeRestriction)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.MediaManagerAgeRestriction)
+                                    </td>
+                                     <td >
+                                        @Html.DisplayNameFor(m=>m.TertiaryGenre)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m =>m.TertiaryGenre)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(m=>m.NPACopy)
+                                        
+                                    </td>
+                                    <td>
+                                    @Html.DisplayNameFor(m => m.NPACopy)</td>
+                                    </tr>
+                                <tr>
+                                    <td >
+                                        @Html.DisplayNameFor(m=>m.ProductionYear)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.ProductionYear)
+
+                                    </td><td >
+                                        @Html.DisplayNameFor(m=>m.QualityGrade)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.QualityGrade)
+                                    </td>
+                                     <td >
+                                        @Html.DisplayNameFor(m=>m.Episodes)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m =>m.Episodes)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(m=>m.WideScreen)
+                                        
+                                    </td>
+                                    <td>
+                                    @Html.DisplayNameFor(m => m.WideScreen)
+                                    </td>
+                                    </tr>
+                                <tr>
+                                    <td >
+                                        @Html.DisplayNameFor(m=>m.Nationality)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.Nationality)
+
+                                    </td><td >
+                                        @Html.DisplayNameFor(m=>m.Type)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.Type)
+                                    </td>
+                                     <td >
+                                        @Html.DisplayNameFor(m=>m.RefNo)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.RefNo)
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    </tr>
+                                <tr>
+                                    <td >
+                                        @Html.DisplayNameFor(m=>m.ColourCode)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.ColourCode)
+
+                                    </td>
+                                    <td >
+                                        @Html.DisplayNameFor(m=>m.SpokenLanguage)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.SpokenLanguage)
+                                    </td>
+                                     <td>
+                                       
+                                    </td>
+                                    <td>
+                                       
+                                    </td>
+                                    <td>
+                                       </td>
+                                        
+                                    <td> 
+                                    </td>
+                                    </tr>
+                                <tr>
+                                    <td >
+                                       
+                                    </td>
+                                    <td>
+                                       
+
+                                    </td>
+                                    <td >
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                     <td>
+                                       
+                                    </td>
+                                    <td>
+                                       
+                                    </td>
+                                    <td>
+                                    <input type="submit" value="Search Programme" />
+                                       </td>
+                                        
+                                    <td> 
+                                    <input type="submit" value="Reset" />
+                                    </td>
+                                    </tr>
+
+                            </table>
+                           
+
+
+                           <table>
+                                
+                                <tr>
+                                    <td >
+                                       programme Title
+                                    </td>
+                                    <td>
+                                       working Title
+
+                                    </td>
+                                    <td >
+                                        Distributor
+                                    </td>
+                                    <td>
+                                        Primary Genre
+                                    </td>
+                                     <td>
+                                       Type
+                                    </td>
+                                    <td>
+                                       
+                                    </td>
+                                    <td>
+                                    
+                                       </td>
+                                        
+                                    <td> 
+                                    
+                                    </td>
+                                    </tr>
+
+                            </table>
+
+
+                            <table class="table AppForm">
+                              
+                                <tr>
+                                    <td >
+                                       
+                                    </td>
+                                    <td>
+                                       
+
+                                    </td>
+                                    <td >
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                     <td>
+                                       
+                                    </td>
+                                    <td>
+                                       <input type="submit" value="View License Details" />
+                                    </td>
+                                    <td>
+                                    <input type="submit" value="Add new Programme" />
+                                       </td>
+                                        
+                                    <td> 
+                                    <input type="submit" value="View Programme Detail" />
+                                    </td>
+                                    </tr>
+
+                            </table>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

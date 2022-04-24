@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" />
+  <xs:element name="GetTapeActionsLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q1:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeActionsLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetTapeActionsLookupResult" nillable="true" type="q2:GetLookupsItemsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeCategoryLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q3:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeCategoryLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetTapeCategoryLookupResult" nillable="true" type="q4:GetLookupsItemsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeLengthLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q5:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeLengthLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetTapeLengthLookupResult" nillable="true" type="q6:GetLookupsItemsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeTypeLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q7:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeTypeLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetTapeTypeLookupResult" nillable="true" type="q8:GetLookupsItemsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeLookups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q9:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeLookupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetBookeeLookupsResult" nillable="true" type="q10:TapeBookeeLookupItemsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRackRowLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q11:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRackRowLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetRackRowLookupResult" nillable="true" type="q12:GetLookupsItemsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeAreaLookups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q13:TapeBookeeAreaLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeAreaLookupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetBookeeAreaLookupsResult" nillable="true" type="q14:TapeBookeeAreaLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeActionLookups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q15:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeActionLookupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetBookeeActionLookupsResult" nillable="true" type="q16:TapeBookeeActionLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRackFromToLookups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q17:TapeBookeeRackFromLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRackFromToLookupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetRackFromToLookupsResult" nillable="true" type="q18:TapeBookeeRackFromLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeRackLookups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q19:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookeeRackLookupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetBookeeRackLookupsResult" nillable="true" type="q20:TapeBookeeRackResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeFormatLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q21:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTapeFormatLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetTapeFormatLookupResult" nillable="true" type="q22:TapeFormatLookUpResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonnelLOV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q23:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonnelLOVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetPersonnelLOVResult" nillable="true" type="q24:PersonnelLookUpResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLibraryLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q25:GetLookupsItemsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLibraryLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetLibraryLookupResult" nillable="true" type="q26:LibraryLookUpResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPromoUserStatusLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q27:PromoUserStatusLookUpRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPromoUserStatusLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetPromoUserStatusLookupResult" nillable="true" type="q28:PromoUserStatusLookUpResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonnelUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="getPersnUserRequest" nillable="true" type="q29:PersonnelUserLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonnelUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetPersonnelUsersResult" nillable="true" type="q30:PersonnelUserLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTertiaryGenreLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q31:TertiaryGenreLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTertiaryGenreLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetTertiaryGenreLookupResult" nillable="true" type="q32:TertiaryGenreLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinalGradeLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="request" nillable="true" type="q33:PB_FinalGradeLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFinalGradeLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.Common" minOccurs="0" name="GetFinalGradeLookupResult" nillable="true" type="q34:PB_FinalGradeLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

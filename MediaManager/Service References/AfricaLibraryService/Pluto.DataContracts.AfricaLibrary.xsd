@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagerLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagerLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="GetFIDCodeIDValRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="FidCodeVO" nillable="true" type="q2:FidCodeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFIDCodeIDValRequest" nillable="true" type="tns:GetFIDCodeIDValRequest" />
+  <xs:complexType name="GetFIDCodeIDValResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="FidCodeListVOList" nillable="true" type="q4:ArrayOfFidCodeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFIDCodeIDValResponse" nillable="true" type="tns:GetFIDCodeIDValResponse" />
+  <xs:complexType name="SearchLibraryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q5:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="LibraryVO" nillable="true" type="q6:LibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLibraryRequest" nillable="true" type="tns:SearchLibraryRequest" />
+  <xs:complexType name="SearchLibraryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q7:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="LibrarySearchList" nillable="true" type="q8:ArrayOfLibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLibraryResponse" nillable="true" type="tns:SearchLibraryResponse" />
+  <xs:complexType name="SearchMaterialRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q9:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="MaterialVO" nillable="true" type="q10:MaterialVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchMaterialRequest" nillable="true" type="tns:SearchMaterialRequest" />
+  <xs:complexType name="SearchMaterialResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q11:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="MaterialSearchList" nillable="true" type="q12:ArrayOfMaterialVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchMaterialResponse" nillable="true" type="tns:SearchMaterialResponse" />
+  <xs:complexType name="SaveMaterialRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q13:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="MaterialVOList" nillable="true" type="q14:ArrayOfMaterialVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveMaterialRequest" nillable="true" type="tns:SaveMaterialRequest" />
+  <xs:complexType name="SaveMaterialResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q15:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="MaterialVOList" nillable="true" type="q16:ArrayOfMaterialVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveMaterialResponse" nillable="true" type="tns:SaveMaterialResponse" />
+  <xs:complexType name="GetMaterialResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q17:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="MaterialDetailList" nillable="true" type="q18:ArrayOfMaterialVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMaterialResponse" nillable="true" type="tns:GetMaterialResponse" />
+  <xs:complexType name="SearchBookOutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q19:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookOutVO" nillable="true" type="q20:BookOutVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchBookOutRequest" nillable="true" type="tns:SearchBookOutRequest" />
+  <xs:complexType name="SearchBookOutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q21:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookOutSearchList" nillable="true" type="q22:ArrayOfBookOutVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchBookOutResponse" nillable="true" type="tns:SearchBookOutResponse" />
+  <xs:complexType name="SaveBookOutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q23:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="bookOutVOList" nillable="true" type="q24:ArrayOfBookOutVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveBookOutRequest" nillable="true" type="tns:SaveBookOutRequest" />
+  <xs:complexType name="SaveBookOutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q25:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookOutVOList" nillable="true" type="q26:ArrayOfBookOutVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveBookOutResponse" nillable="true" type="tns:SaveBookOutResponse" />
+  <xs:complexType name="SearchBookInRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q27:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookInVO" nillable="true" type="q28:BookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchBookInRequest" nillable="true" type="tns:SearchBookInRequest" />
+  <xs:complexType name="SearchBookInResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q29:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookInSearchList" nillable="true" type="q30:ArrayOfBookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchBookInResponse" nillable="true" type="tns:SearchBookInResponse" />
+  <xs:complexType name="SaveBookInRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q31:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="bookInVOList" nillable="true" type="q32:ArrayOfBookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveBookInRequest" nillable="true" type="tns:SaveBookInRequest" />
+  <xs:complexType name="SaveBookInResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q33:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookInVOList" nillable="true" type="q34:ArrayOfBookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveBookInResponse" nillable="true" type="tns:SaveBookInResponse" />
+  <xs:complexType name="SearchProgramRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q35:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookInProgramVO" nillable="true" type="q36:BookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchProgramRequest" nillable="true" type="tns:SearchProgramRequest" />
+  <xs:complexType name="SearchProgramResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q37:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookInProgramSearchList" nillable="true" type="q38:ArrayOfBookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchProgramResponse" nillable="true" type="tns:SearchProgramResponse" />
+  <xs:complexType name="SaveProgramRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q39:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="bookinprogramVOList" nillable="true" type="q40:ArrayOfBookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveProgramRequest" nillable="true" type="tns:SaveProgramRequest" />
+  <xs:complexType name="SaveProgramResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q41:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="bookinprogramVOList" nillable="true" type="q42:ArrayOfBookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveProgramResponse" nillable="true" type="tns:SaveProgramResponse" />
+  <xs:complexType name="SearchBookInOutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q43:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookInOutVO" nillable="true" type="q44:BookOutVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchBookInOutRequest" nillable="true" type="tns:SearchBookInOutRequest" />
+  <xs:complexType name="SearchBookInOutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q45:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="BookInOutSearchList" nillable="true" type="q46:ArrayOfBookOutVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchBookInOutResponse" nillable="true" type="tns:SearchBookInOutResponse" />
+  <xs:complexType name="SearchActiveUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q47:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="LibraryVO" nillable="true" type="q48:LibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchActiveUserRequest" nillable="true" type="tns:SearchActiveUserRequest" />
+  <xs:complexType name="SearchActiveUserResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q49:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="ActiveUserSearchList" nillable="true" type="q50:ArrayOfLibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchActiveUserResponse" nillable="true" type="tns:SearchActiveUserResponse" />
+  <xs:complexType name="SaveActiveUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q51="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q51:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="activeUserVOList" nillable="true" type="q52:ArrayOfLibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveActiveUserRequest" nillable="true" type="tns:SaveActiveUserRequest" />
+  <xs:complexType name="SaveActiveUserResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q53="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q53:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="ActiveUserVOList" nillable="true" type="q54:ArrayOfLibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveActiveUserResponse" nillable="true" type="tns:SaveActiveUserResponse" />
+  <xs:complexType name="SearchMenUsersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q55:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="LibraryVO" nillable="true" type="q56:LibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchMenUsersRequest" nillable="true" type="tns:SearchMenUsersRequest" />
+  <xs:complexType name="SearchMenUsersReponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q57:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" minOccurs="0" name="MenUserSearchList" nillable="true" type="q58:ArrayOfLibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchMenUsersReponse" nillable="true" type="tns:SearchMenUsersReponse" />
+</xs:schema>

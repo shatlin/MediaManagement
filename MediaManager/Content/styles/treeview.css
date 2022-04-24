@@ -1,0 +1,39 @@
+* {
+	margin:0;
+	padding:0;
+/*	font-family:Georgia, "Times New Roman", Times, sans-serif; */
+/*	font: normal 11px/11px "Tahoma",arial,sans-serif;*/
+	
+}
+html {
+	height:100%;
+}
+#tree_root li {
+	padding-left:5px;
+	
+}
+#tree_root a {
+	background-repeat:no-repeat;
+	text-decoration:none;
+	padding-left:20px;
+	height:20px;
+	color: #000;
+	font-size:11px;
+	/*display:block;
+
+line-height:10px;
+*/
+	display:inline-block;
+	
+}
+#tree_root a.expandable {
+	 padding-left:15px;
+	 padding-top:1px;
+	 background-image: url(images/bullet_toggle_plus.png);
+}
+#tree_root a.expanded {
+	padding-left:15px;
+	padding-top:1px;
+	background-image:url(images/bullet_toggle_minus.png)
+	
+}

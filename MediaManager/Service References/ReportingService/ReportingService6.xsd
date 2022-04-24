@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/ReportingService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+  <xs:complexType name="ReportsVO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ModuleId" type="xs:int" />
+          <xs:element minOccurs="0" name="NetworkDomain" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NetworkPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NetworkUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReportPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReportServerUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportsVO" nillable="true" type="tns:ReportsVO" />
+  <xs:complexType name="BaseVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuditData" nillable="true" type="tns:AuditDataVO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAppMessage" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="PersistFlag" type="q1:PersistFlagEnum" />
+      <xs:element minOccurs="0" name="SuccessFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdateCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseVO" nillable="true" type="tns:BaseVO" />
+  <xs:complexType name="AuditDataVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EntryOperator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditDataVO" nillable="true" type="tns:AuditDataVO" />
+  <xs:complexType name="ArrayOfAppMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppMessage" nillable="true" type="tns:AppMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppMessage" nillable="true" type="tns:ArrayOfAppMessage" />
+  <xs:complexType name="AppMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="Type" type="q2:MessageTypeEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppMessage" nillable="true" type="tns:AppMessage" />
+  <xs:complexType name="ArrayOfReportSPParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportSPParameter" nillable="true" type="tns:ReportSPParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportSPParameter" nillable="true" type="tns:ArrayOfReportSPParameter" />
+  <xs:complexType name="ReportSPParameter">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="DbType" type="q3:DbTypeEnum" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ParamDirection" type="q4:ParameterDirectionEnum" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportSPParameter" nillable="true" type="tns:ReportSPParameter" />
+</xs:schema>

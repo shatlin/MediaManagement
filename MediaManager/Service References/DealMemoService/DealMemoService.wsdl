@@ -1,0 +1,2008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DealMemoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.DealMemo" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Finance.PaymentFunctions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.GeneralProgramming" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoProgrammeTitles_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoProgrammeTitles" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoProgrammeTitles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoProgrammeTitlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoProgrammeTitles_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GetDuration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDuration" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GetDuration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GetDuration_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoforReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoforReview" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoforReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoforReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoforReview_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchLanguageDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLanguageDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchLanguageDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLanguageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchLanguageDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveLanguageDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLanguageDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveLanguageDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLanguageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveLanguageDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchLanguageDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLanguageDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchLanguageDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLanguageDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchLanguageDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveLanguageDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLanguageDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveLanguageDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLanguageDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveLanguageDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCodeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCodeDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCodeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCodeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCodeDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveCodeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCodeDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveCodeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCodeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveCodeDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchUserDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveUserDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCompetitorDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCompetitorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCompetitorDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCompetitorDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCompetitorDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q12:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveCompetitorDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCompetitorDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveCompetitorDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCompetitorDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveCompetitorDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q13:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCompetitorForLookUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCompetitorForLookUp" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCompetitorForLookUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCompetitorForLookUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchCompetitorForLookUp_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q14:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CopyDealMemoProgramLicenseeRuns_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyDealMemoProgramLicenseeRuns" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CopyDealMemoProgramLicenseeRuns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyDealMemoProgramLicenseeRunsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CopyDealMemoProgramLicenseeRuns_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q15:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchMediaRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMediaRights" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchMediaRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMediaRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchMediaRights_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q16:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_InsertDeleteMediaRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDeleteMediaRights" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_InsertDeleteMediaRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDeleteMediaRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_InsertDeleteMediaRights_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q17:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CopyMediaRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyMediaRights" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CopyMediaRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyMediaRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CopyMediaRights_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q18:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GetCatchUpPlatformRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatchUpPlatformRights" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GetCatchUpPlatformRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatchUpPlatformRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GetCatchUpPlatformRights_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q19:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemo" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemo_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q20:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q21:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoGridLevelDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoGridLevelDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoGridLevelDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoGridLevelDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoGridLevelDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q22:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoLanguageDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoLanguageDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoLanguageDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoLanguageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoLanguageDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q23:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultLanguageDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDefaultLanguageDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultLanguageDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDefaultLanguageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultLanguageDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q24:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoHistoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoHistoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoHistoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoHistoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoHistoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q25:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoProtectionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoProtectionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoProtectionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoProtectionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoProtectionDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q26:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultProtectionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDefaultProtectionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultProtectionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDefaultProtectionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultProtectionDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q27:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoTerritoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoTerritoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoTerritoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoTerritoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoTerritoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q28:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultTerritoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDefaultTerritoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultTerritoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoDefaultTerritoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoDefaultTerritoryDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q29:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoMaterialDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoMaterialDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoMaterialDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoMaterialDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoMaterialDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q30:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoPaymentDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoPaymentDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoPaymentDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoPaymentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoPaymentDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q31:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoProgrammeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoProgrammeDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoProgrammeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoProgrammeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoProgrammeDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q32:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoSeriesDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoSeriesDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoSeriesDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoSeriesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoSeriesDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q33:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoSeriesDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoSeriesDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoSeriesDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoSeriesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoSeriesDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q34:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoCPDDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoCPDDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoCPDDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoCPDDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoCPDDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q35:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoCPDDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoCPDDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoCPDDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoCPDDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoCPDDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q36:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q37:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoLiveDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoLiveDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoLiveDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDealMemoLiveDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchDealMemoLiveDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q38:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoLiveDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoLiveDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoLiveDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDealMemoLiveDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SaveDealMemoLiveDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q39:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GenerateEpisodeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateEpisodeDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GenerateEpisodeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateEpisodeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_GenerateEpisodeDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q40:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoAllocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoAllocation" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoAllocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoAllocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoAllocation_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q41:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoChannelRuns_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoChannelRuns" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoChannelRuns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoChannelRunsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoChannelRuns_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q42:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoLiveDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoLiveDate" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoLiveDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoLiveDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoLiveDate_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q43:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoSign_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoSign" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoSign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDealMemoSignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_CheckDealMemoSign_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q44:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_ChangeDealMemoStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeDealMemoStatus" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_ChangeDealMemoStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeDealMemoStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_ChangeDealMemoStatus_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q45:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_ExecuteDealMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDealMemo" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_ExecuteDealMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDealMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_ExecuteDealMemo_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q46:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_MoveBudgetTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveBudgetTitle" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_MoveBudgetTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveBudgetTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_MoveBudgetTitle_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q47:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchBudgetedDealMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBudgetedDealMemo" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchBudgetedDealMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBudgetedDealMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_SearchBudgetedDealMemo_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q48:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoStatus" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoStatus_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q49:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoChannel" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoChannel_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q50:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoPaymentAmt_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoPaymentAmt" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoPaymentAmt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Lookup_DealMemoPaymentAmtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealMemo_Lookup_DealMemoPaymentAmt_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q51:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IDealMemo">
+    <wsdl:operation name="Lookup_DealMemoProgrammeTitles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoProgrammeTitles" message="tns:IDealMemo_Lookup_DealMemoProgrammeTitles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoProgrammeTitlesResponse" message="tns:IDealMemo_Lookup_DealMemoProgrammeTitles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoProgrammeTitlesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_Lookup_DealMemoProgrammeTitles_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDuration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/GetDuration" message="tns:IDealMemo_GetDuration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/GetDurationResponse" message="tns:IDealMemo_GetDuration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/GetDurationMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_GetDuration_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoforReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoforReview" message="tns:IDealMemo_SearchDealMemoforReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoforReviewResponse" message="tns:IDealMemo_SearchDealMemoforReview_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoforReviewMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoforReview_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLanguageDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchLanguageDetails" message="tns:IDealMemo_SearchLanguageDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchLanguageDetailsResponse" message="tns:IDealMemo_SearchLanguageDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchLanguageDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchLanguageDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLanguageDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveLanguageDetails" message="tns:IDealMemo_SaveLanguageDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveLanguageDetailsResponse" message="tns:IDealMemo_SaveLanguageDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveLanguageDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveLanguageDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLanguageDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchLanguageDetails_SS" message="tns:IDealMemo_SearchLanguageDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchLanguageDetails_SSResponse" message="tns:IDealMemo_SearchLanguageDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchLanguageDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchLanguageDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLanguageDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveLanguageDetails_SS" message="tns:IDealMemo_SaveLanguageDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveLanguageDetails_SSResponse" message="tns:IDealMemo_SaveLanguageDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveLanguageDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveLanguageDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCodeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchCodeDetails" message="tns:IDealMemo_SearchCodeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchCodeDetailsResponse" message="tns:IDealMemo_SearchCodeDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchCodeDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchCodeDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCodeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveCodeDetails" message="tns:IDealMemo_SaveCodeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveCodeDetailsResponse" message="tns:IDealMemo_SaveCodeDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveCodeDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveCodeDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchUserDetails" message="tns:IDealMemo_SearchUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchUserDetailsResponse" message="tns:IDealMemo_SearchUserDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchUserDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchUserDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveUserDetails" message="tns:IDealMemo_SaveUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveUserDetailsResponse" message="tns:IDealMemo_SaveUserDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveUserDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveUserDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompetitorDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchCompetitorDetails" message="tns:IDealMemo_SearchCompetitorDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchCompetitorDetailsResponse" message="tns:IDealMemo_SearchCompetitorDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchCompetitorDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchCompetitorDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompetitorDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveCompetitorDetails" message="tns:IDealMemo_SaveCompetitorDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveCompetitorDetailsResponse" message="tns:IDealMemo_SaveCompetitorDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveCompetitorDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveCompetitorDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompetitorForLookUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchCompetitorForLookUp" message="tns:IDealMemo_SearchCompetitorForLookUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchCompetitorForLookUpResponse" message="tns:IDealMemo_SearchCompetitorForLookUp_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchCompetitorForLookUpMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchCompetitorForLookUp_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyDealMemoProgramLicenseeRuns">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/CopyDealMemoProgramLicenseeRuns" message="tns:IDealMemo_CopyDealMemoProgramLicenseeRuns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/CopyDealMemoProgramLicenseeRunsResponse" message="tns:IDealMemo_CopyDealMemoProgramLicenseeRuns_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/CopyDealMemoProgramLicenseeRunsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_CopyDealMemoProgramLicenseeRuns_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchMediaRights" message="tns:IDealMemo_SearchMediaRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchMediaRightsResponse" message="tns:IDealMemo_SearchMediaRights_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchMediaRightsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchMediaRights_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDeleteMediaRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/InsertDeleteMediaRights" message="tns:IDealMemo_InsertDeleteMediaRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/InsertDeleteMediaRightsResponse" message="tns:IDealMemo_InsertDeleteMediaRights_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/InsertDeleteMediaRightsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_InsertDeleteMediaRights_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyMediaRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/CopyMediaRights" message="tns:IDealMemo_CopyMediaRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/CopyMediaRightsResponse" message="tns:IDealMemo_CopyMediaRights_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/CopyMediaRightsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_CopyMediaRights_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatchUpPlatformRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/GetCatchUpPlatformRights" message="tns:IDealMemo_GetCatchUpPlatformRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/GetCatchUpPlatformRightsResponse" message="tns:IDealMemo_GetCatchUpPlatformRights_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/GetCatchUpPlatformRightsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_GetCatchUpPlatformRights_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemo" message="tns:IDealMemo_SearchDealMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoResponse" message="tns:IDealMemo_SearchDealMemo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemo_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDetails" message="tns:IDealMemo_SearchDealMemoDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDetailsResponse" message="tns:IDealMemo_SearchDealMemoDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoGridLevelDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoGridLevelDetails" message="tns:IDealMemo_SearchDealMemoGridLevelDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoGridLevelDetailsResponse" message="tns:IDealMemo_SearchDealMemoGridLevelDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoGridLevelDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoGridLevelDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoLanguageDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoLanguageDetails" message="tns:IDealMemo_SearchDealMemoLanguageDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoLanguageDetailsResponse" message="tns:IDealMemo_SearchDealMemoLanguageDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoLanguageDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoLanguageDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultLanguageDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultLanguageDetails" message="tns:IDealMemo_SearchDealMemoDefaultLanguageDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultLanguageDetailsResponse" message="tns:IDealMemo_SearchDealMemoDefaultLanguageDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultLanguageDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoDefaultLanguageDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoHistoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoHistoryDetails" message="tns:IDealMemo_SearchDealMemoHistoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoHistoryDetailsResponse" message="tns:IDealMemo_SearchDealMemoHistoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoHistoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoHistoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoProtectionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoProtectionDetails" message="tns:IDealMemo_SearchDealMemoProtectionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoProtectionDetailsResponse" message="tns:IDealMemo_SearchDealMemoProtectionDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoProtectionDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoProtectionDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultProtectionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultProtectionDetails" message="tns:IDealMemo_SearchDealMemoDefaultProtectionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultProtectionDetailsResponse" message="tns:IDealMemo_SearchDealMemoDefaultProtectionDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultProtectionDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoDefaultProtectionDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoTerritoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoTerritoryDetails" message="tns:IDealMemo_SearchDealMemoTerritoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoTerritoryDetailsResponse" message="tns:IDealMemo_SearchDealMemoTerritoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoTerritoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoTerritoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultTerritoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultTerritoryDetails" message="tns:IDealMemo_SearchDealMemoDefaultTerritoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultTerritoryDetailsResponse" message="tns:IDealMemo_SearchDealMemoDefaultTerritoryDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoDefaultTerritoryDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoDefaultTerritoryDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoMaterialDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoMaterialDetails" message="tns:IDealMemo_SearchDealMemoMaterialDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoMaterialDetailsResponse" message="tns:IDealMemo_SearchDealMemoMaterialDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoMaterialDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoMaterialDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoPaymentDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoPaymentDetails" message="tns:IDealMemo_SearchDealMemoPaymentDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoPaymentDetailsResponse" message="tns:IDealMemo_SearchDealMemoPaymentDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoPaymentDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoPaymentDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoProgrammeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoProgrammeDetails" message="tns:IDealMemo_SearchDealMemoProgrammeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoProgrammeDetailsResponse" message="tns:IDealMemo_SearchDealMemoProgrammeDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoProgrammeDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoProgrammeDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoSeriesDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoSeriesDetails" message="tns:IDealMemo_SearchDealMemoSeriesDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoSeriesDetailsResponse" message="tns:IDealMemo_SearchDealMemoSeriesDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoSeriesDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoSeriesDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoSeriesDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoSeriesDetails" message="tns:IDealMemo_SaveDealMemoSeriesDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoSeriesDetailsResponse" message="tns:IDealMemo_SaveDealMemoSeriesDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoSeriesDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveDealMemoSeriesDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoCPDDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoCPDDetails" message="tns:IDealMemo_SearchDealMemoCPDDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoCPDDetailsResponse" message="tns:IDealMemo_SearchDealMemoCPDDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoCPDDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoCPDDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoCPDDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoCPDDetails" message="tns:IDealMemo_SaveDealMemoCPDDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoCPDDetailsResponse" message="tns:IDealMemo_SaveDealMemoCPDDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoCPDDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveDealMemoCPDDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoDetails" message="tns:IDealMemo_SaveDealMemoDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoDetailsResponse" message="tns:IDealMemo_SaveDealMemoDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveDealMemoDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoLiveDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoLiveDetails" message="tns:IDealMemo_SearchDealMemoLiveDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoLiveDetailsResponse" message="tns:IDealMemo_SearchDealMemoLiveDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchDealMemoLiveDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchDealMemoLiveDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoLiveDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoLiveDetails" message="tns:IDealMemo_SaveDealMemoLiveDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoLiveDetailsResponse" message="tns:IDealMemo_SaveDealMemoLiveDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SaveDealMemoLiveDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SaveDealMemoLiveDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEpisodeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/GenerateEpisodeDetails" message="tns:IDealMemo_GenerateEpisodeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/GenerateEpisodeDetailsResponse" message="tns:IDealMemo_GenerateEpisodeDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/GenerateEpisodeDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_GenerateEpisodeDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoAllocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoAllocation" message="tns:IDealMemo_CheckDealMemoAllocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoAllocationResponse" message="tns:IDealMemo_CheckDealMemoAllocation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoAllocationMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_CheckDealMemoAllocation_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoChannelRuns">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoChannelRuns" message="tns:IDealMemo_CheckDealMemoChannelRuns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoChannelRunsResponse" message="tns:IDealMemo_CheckDealMemoChannelRuns_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoChannelRunsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_CheckDealMemoChannelRuns_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoLiveDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoLiveDate" message="tns:IDealMemo_CheckDealMemoLiveDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoLiveDateResponse" message="tns:IDealMemo_CheckDealMemoLiveDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoLiveDateMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_CheckDealMemoLiveDate_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoSign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoSign" message="tns:IDealMemo_CheckDealMemoSign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoSignResponse" message="tns:IDealMemo_CheckDealMemoSign_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/CheckDealMemoSignMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_CheckDealMemoSign_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDealMemoStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/ChangeDealMemoStatus" message="tns:IDealMemo_ChangeDealMemoStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/ChangeDealMemoStatusResponse" message="tns:IDealMemo_ChangeDealMemoStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/ChangeDealMemoStatusMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_ChangeDealMemoStatus_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDealMemo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/ExecuteDealMemo" message="tns:IDealMemo_ExecuteDealMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/ExecuteDealMemoResponse" message="tns:IDealMemo_ExecuteDealMemo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/ExecuteDealMemoMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_ExecuteDealMemo_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveBudgetTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/MoveBudgetTitle" message="tns:IDealMemo_MoveBudgetTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/MoveBudgetTitleResponse" message="tns:IDealMemo_MoveBudgetTitle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/MoveBudgetTitleMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_MoveBudgetTitle_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBudgetedDealMemo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/SearchBudgetedDealMemo" message="tns:IDealMemo_SearchBudgetedDealMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/SearchBudgetedDealMemoResponse" message="tns:IDealMemo_SearchBudgetedDealMemo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/SearchBudgetedDealMemoMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_SearchBudgetedDealMemo_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoStatus" message="tns:IDealMemo_Lookup_DealMemoStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoStatusResponse" message="tns:IDealMemo_Lookup_DealMemoStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoStatusMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_Lookup_DealMemoStatus_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoChannel" message="tns:IDealMemo_Lookup_DealMemoChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoChannelResponse" message="tns:IDealMemo_Lookup_DealMemoChannel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoChannelMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_Lookup_DealMemoChannel_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoPaymentAmt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoPaymentAmt" message="tns:IDealMemo_Lookup_DealMemoPaymentAmt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoPaymentAmtResponse" message="tns:IDealMemo_Lookup_DealMemoPaymentAmt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IDealMemo/Lookup_DealMemoPaymentAmtMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IDealMemo_Lookup_DealMemoPaymentAmt_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:IDealMemo">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Lookup_DealMemoProgrammeTitles">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoProgrammeTitles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDuration">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/GetDuration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoforReview">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoforReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLanguageDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLanguageDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLanguageDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchLanguageDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLanguageDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveLanguageDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCodeDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchCodeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCodeDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveCodeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompetitorDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchCompetitorDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompetitorDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveCompetitorDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompetitorForLookUp">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchCompetitorForLookUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CopyDealMemoProgramLicenseeRuns">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/CopyDealMemoProgramLicenseeRuns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaRights">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchMediaRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDeleteMediaRights">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/InsertDeleteMediaRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CopyMediaRights">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/CopyMediaRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCatchUpPlatformRights">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/GetCatchUpPlatformRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemo">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoGridLevelDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoGridLevelDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoLanguageDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultLanguageDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDefaultLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoHistoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoHistoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoProtectionDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoProtectionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultProtectionDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDefaultProtectionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoTerritoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultTerritoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDefaultTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoMaterialDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoMaterialDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoPaymentDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoPaymentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoProgrammeDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoProgrammeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoSeriesDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoSeriesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoSeriesDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoSeriesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoCPDDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoCPDDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoCPDDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoCPDDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoLiveDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoLiveDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoLiveDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoLiveDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEpisodeDetails">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/GenerateEpisodeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoAllocation">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoAllocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoChannelRuns">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoChannelRuns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoLiveDate">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoLiveDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoSign">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoSign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDealMemoStatus">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/ChangeDealMemoStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDealMemo">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/ExecuteDealMemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveBudgetTitle">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/MoveBudgetTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBudgetedDealMemo">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/SearchBudgetedDealMemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoStatus">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoChannel">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoPaymentAmt">
+      <soap:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoPaymentAmt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:IDealMemo">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Lookup_DealMemoProgrammeTitles">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoProgrammeTitles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDuration">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/GetDuration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoforReview">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoforReview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLanguageDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLanguageDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLanguageDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchLanguageDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLanguageDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveLanguageDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCodeDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchCodeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCodeDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveCodeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompetitorDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchCompetitorDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompetitorDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveCompetitorDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompetitorForLookUp">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchCompetitorForLookUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CopyDealMemoProgramLicenseeRuns">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/CopyDealMemoProgramLicenseeRuns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMediaRights">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchMediaRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDeleteMediaRights">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/InsertDeleteMediaRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CopyMediaRights">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/CopyMediaRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCatchUpPlatformRights">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/GetCatchUpPlatformRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemo">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoGridLevelDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoGridLevelDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoLanguageDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultLanguageDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDefaultLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoHistoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoHistoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoProtectionDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoProtectionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultProtectionDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDefaultProtectionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoTerritoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoDefaultTerritoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoDefaultTerritoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoMaterialDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoMaterialDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoPaymentDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoPaymentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoProgrammeDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoProgrammeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoSeriesDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoSeriesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoSeriesDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoSeriesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoCPDDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoCPDDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoCPDDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoCPDDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDealMemoLiveDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchDealMemoLiveDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDealMemoLiveDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SaveDealMemoLiveDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateEpisodeDetails">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/GenerateEpisodeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoAllocation">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoAllocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoChannelRuns">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoChannelRuns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoLiveDate">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoLiveDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDealMemoSign">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/CheckDealMemoSign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDealMemoStatus">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/ChangeDealMemoStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDealMemo">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/ExecuteDealMemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveBudgetTitle">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/MoveBudgetTitle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBudgetedDealMemo">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/SearchBudgetedDealMemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoStatus">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoChannel">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Lookup_DealMemoPaymentAmt">
+      <soap12:operation soapAction="http://tempuri.org/IDealMemo/Lookup_DealMemoPaymentAmt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DealMemoService">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

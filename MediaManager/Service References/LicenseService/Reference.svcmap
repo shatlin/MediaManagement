@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0d1ff0da-bf6a-48f9-914d-79be769db43e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LicenseService.xsd" MetadataType="Schema" ID="634f84a4-30a8-4c2a-9fad-99c5f3123666" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd4" />
+    <MetadataFile FileName="LicenseService1.xsd" MetadataType="Schema" ID="5cbef679-952c-43b1-a41e-c3af0a32da30" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd9" />
+    <MetadataFile FileName="LicenseService2.xsd" MetadataType="Schema" ID="c9ff84f2-66c6-46e8-8520-606a07aa54d2" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd6" />
+    <MetadataFile FileName="LicenseService3.xsd" MetadataType="Schema" ID="c378235c-d62d-4769-9a3b-3f862bdd76b1" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd7" />
+    <MetadataFile FileName="LicenseService4.xsd" MetadataType="Schema" ID="6fb3c66f-34bb-4187-a17c-9392f8b9305c" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LicenseService5.xsd" MetadataType="Schema" ID="85d6879c-0336-4106-ae16-e0e5b0e601a0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd8" />
+    <MetadataFile FileName="LicenseService6.xsd" MetadataType="Schema" ID="48217d10-89cf-44f4-8996-198dec0962f1" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LicenseService.wsdl" MetadataType="Wsdl" ID="cc918363-7aef-4151-9a4f-3e998cc60ede" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?wsdl" />
+    <MetadataFile FileName="LicenseService.disco" MetadataType="Disco" ID="21098763-2966-4181-a5fd-19ac758cfa97" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?disco" />
+    <MetadataFile FileName="LicenseService7.xsd" MetadataType="Schema" ID="5561aef5-4a22-4520-8d3c-15ab53d7e0cf" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LicenseService8.xsd" MetadataType="Schema" ID="bc641212-9152-4397-a814-dbb5d887872e" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LicenseService9.xsd" MetadataType="Schema" ID="a032cd81-7e1d-4f41-8c24-17e069f66528" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

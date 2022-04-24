@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="79b5aa3f-fcc1-40e8-a4c2-cde249667969" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProgrammeLibraryService.xsd" MetadataType="Schema" ID="6e3afde9-80d7-4eaf-85f3-1b91cf8fd09e" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ProgrammeLibraryService1.xsd" MetadataType="Schema" ID="0b8fd3b1-8548-456c-97a1-4d77fa317efe" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProgrammeLibraryService2.xsd" MetadataType="Schema" ID="0ae5b35f-d36a-4547-a272-77ae180b7167" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ProgrammeLibraryService3.xsd" MetadataType="Schema" ID="28b10ee7-a09c-4572-8f0c-dee007c3416c" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd9" />
+    <MetadataFile FileName="ProgrammeLibraryService4.xsd" MetadataType="Schema" ID="07e3e2ce-a86c-4b33-b576-d76df878a40a" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ProgrammeLibraryService5.xsd" MetadataType="Schema" ID="78fcf235-c3dc-413e-874d-2573224599db" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProgrammeLibraryService6.xsd" MetadataType="Schema" ID="5fd6cebb-a414-448e-865f-a6bf06a24cf3" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProgrammeLibraryService7.xsd" MetadataType="Schema" ID="2640064b-2311-4465-b900-4af03af9a11e" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProgrammeLibraryService.disco" MetadataType="Disco" ID="1048e106-2713-4c78-b1ba-07e2f6b8f087" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?disco" />
+    <MetadataFile FileName="ProgrammeLibraryService8.xsd" MetadataType="Schema" ID="abbc7d17-6c10-48f6-a228-694aa26a43ac" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ProgrammeLibraryService9.xsd" MetadataType="Schema" ID="17a75666-ed61-4801-a048-58757fff6065" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ProgrammeLibraryServices.wsdl" MetadataType="Wsdl" ID="2d47a2bc-8f2f-428a-9355-4a1ded46b0cc" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

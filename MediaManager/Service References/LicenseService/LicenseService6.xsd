@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.Licenses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.Licenses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+  <xs:complexType name="SaveLicenseeDeletionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeDeletionList" nillable="true" type="q2:ArrayOfProgrammeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveLicenseeDeletionRequest" nillable="true" type="tns:SaveLicenseeDeletionRequest" />
+  <xs:complexType name="SaveLicenseeDeletionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeDeletionList" nillable="true" type="q4:ArrayOfProgrammeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveLicenseeDeletionResponse" nillable="true" type="tns:SaveLicenseeDeletionResponse" />
+  <xs:complexType name="SearchLicenseeDeletionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q5:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeDeletionList" nillable="true" type="q6:ProgrammeVO" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeList" nillable="true" type="q7:LicenseeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLicenseeDeletionRequest" nillable="true" type="tns:SearchLicenseeDeletionRequest" />
+  <xs:complexType name="SearchLicenseeDeletionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q8:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeDeletionList" nillable="true" type="q9:ArrayOfProgrammeVO" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseebyNumberList" nillable="true" type="q10:LicenseeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLicenseeDeletionResponse" nillable="true" type="tns:SearchLicenseeDeletionResponse" />
+  <xs:complexType name="SearchLicenseeReviewRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q11:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeList" nillable="true" type="q12:LicenseeVO" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeSearchList" nillable="true" type="q13:ProgrammeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLicenseeReviewRequest" nillable="true" type="tns:SearchLicenseeReviewRequest" />
+  <xs:complexType name="SearchLicenseeReviewResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q14:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseeSearchList" nillable="true" type="q15:ArrayOfProgrammeVO" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseebyNumberList" nillable="true" type="q16:LicenseeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLicenseeReviewResponse" nillable="true" type="tns:SearchLicenseeReviewResponse" />
+  <xs:complexType name="SearchMagicLicenseeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q17:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="MagiclicenseeList" nillable="true" type="q18:LicenseVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchMagicLicenseeRequest" nillable="true" type="tns:SearchMagicLicenseeRequest" />
+  <xs:complexType name="SearchMagicLicenseeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q19:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="MagicLicenseebyNumberList" nillable="true" type="q20:LicenseVO" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="MagiclicenseeList" nillable="true" type="q21:ArrayOfLicenseVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchMagicLicenseeResponse" nillable="true" type="tns:SearchMagicLicenseeResponse" />
+  <xs:complexType name="SaveMagicLicenseeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q22:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="MagicLicenseList" nillable="true" type="q23:LicenseVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveMagicLicenseeRequest" nillable="true" type="tns:SaveMagicLicenseeRequest" />
+  <xs:complexType name="SaveMagicLicenseeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q24:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="MagicLicenseList" nillable="true" type="q25:LicenseVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveMagicLicenseeResponse" nillable="true" type="tns:SaveMagicLicenseeResponse" />
+  <xs:complexType name="SearchLicenseMaintenanceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q26:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="License" nillable="true" type="q27:LicenseVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLicenseMaintenanceRequest" nillable="true" type="tns:SearchLicenseMaintenanceRequest" />
+  <xs:complexType name="SearchLicenseMaintenanceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q28:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="License" nillable="true" type="q29:LicenseVO" />
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseHistoryList" nillable="true" type="q30:ArrayOfLicenseHistoryVO" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseList" nillable="true" type="q31:ArrayOfLicenseVO" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicensePaymentPlanList" nillable="true" type="q32:ArrayOfPaymentPlanVO" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="LicenseTerritoryList" nillable="true" type="q33:ArrayOfTerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchLicenseMaintenanceResponse" nillable="true" type="tns:SearchLicenseMaintenanceResponse" />
+  <xs:complexType name="SaveLicenseMaintenanceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q34:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="License" nillable="true" type="q35:LicenseVO" />
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseHistoryList" nillable="true" type="q36:ArrayOfLicenseHistoryVO" />
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicensePaymentPlanList" nillable="true" type="q37:ArrayOfPaymentPlanVO" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="LicenseTerritoryList" nillable="true" type="q38:ArrayOfTerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveLicenseMaintenanceRequest" nillable="true" type="tns:SaveLicenseMaintenanceRequest" />
+  <xs:complexType name="SaveLicenseMaintenanceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q39:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="License" nillable="true" type="q40:LicenseVO" />
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicenseHistoryList" nillable="true" type="q41:ArrayOfLicenseHistoryVO" />
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" minOccurs="0" name="LicensePaymentPlanList" nillable="true" type="q42:ArrayOfPaymentPlanVO" />
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="LicenseTerritoryList" nillable="true" type="q43:ArrayOfTerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveLicenseMaintenanceResponse" nillable="true" type="tns:SaveLicenseMaintenanceResponse" />
+</xs:schema>

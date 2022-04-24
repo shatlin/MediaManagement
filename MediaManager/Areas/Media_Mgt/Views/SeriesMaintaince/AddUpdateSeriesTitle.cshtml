@@ -1,0 +1,251 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.SeriesSearchViewModel
+<form method="post">
+<table class="Layout" cellpadding="0" cellspacing="0" align="left">
+    <tr>
+        <td>
+            @*<div class="mainHeading">
+                Add Series Title
+            </div>*@
+            <div>
+                <table class="tableLayout">
+                    <tr>
+                        <td colspan="3">
+                            <div class="subHeading">
+                                Change Episodes For New Series/Season
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="35%" style="padding-left:5px;">
+                            @Html.LabelFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.SeriesTitle, new { @class = "label" })
+                        </td>
+                        <td width="25%">
+                            @Html.TextBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.SeriesTitle, new { @class = "inputText2col", @id = "txtSeriesTitle" })
+                        </td>
+                         <td width="40%">
+                        </td>
+                    </tr>
+                    <tr>
+                    <td width="15%" style="padding-left:5px;">
+                           <label class="label"> Example:</label>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @if (Model.seriesTitleMaintAddUpdateSeriesTitle.IsAddSeriesTitle)
+                                        {
+                                            @Html.CheckBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.UpdateProgrammeTitle, new { @onclick = "enabledisableallthecontrolls(this)", @id = "chkUpdateProgrammeTitle", @disabled = "true" })
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.UpdateProgrammeTitle, new { @onclick = "enabledisableallthecontrolls(this)", @id = "chkUpdateProgrammeTitle" })
+                           
+                                        }
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.UpdateProgrammeTitle, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckSeries, new { @id = "chkCheckSeries", @disabled = "true", @onclick = "CheckSeries(this)" })
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckSeries, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckSeason, new { @id = "chkCheckSeason", @disabled = "true", @onclick = "CheckSeason(this)" })
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckSeason, new { @class = "label" })
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.SeasonTitle, new { @style = "visibility:collapse", @id = "txtSeasonTitle" })
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckAdditionalText, new { @id = "chkCheckAdditionalText", @disabled = "true", @onclick = "CheckAddText(this)" })
+                                    </td>
+                                    <td>
+                                       
+                                    </td>
+                                    <td>
+                                     @Html.LabelFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.AdditionalText, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.AdditionalText, new { @class = "inputText2col", @style = "visibility:collapse", @id = "txtAdditionalText", @onblur = "AddTextfocuslost(this)" })
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckEpisodeNo, new { @id = "chkCheckEpisodeNo", @disabled = "true", @onclick = "CheckEpisodeNum(this)" })
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                    @Html.LabelFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckEpisodeNo, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @Html.CheckBoxFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckLeadZero, new { @id = "chkCheckLeadZero", @disabled = "true", @onclick = "CheckLeadZero(this)" })
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                    @Html.LabelFor(m => m.seriesTitleMaintAddUpdateSeriesTitle.CheckLeadZero, new { @class = "label" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td align="right">
+                        </td>
+                        <td>
+                            <input type="button" value="Save" class="inputButton" onclick="seriesTitleMaintAddUpdateSeriesTitle_save_click()" />
+                            <input type="button" value="Cancel" class="inputButton" onclick="seriesTitleMaintAddUpdateSeriesTitle_cancel_click()" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+</form>
+<script type="text/javascript" id="AddUpdateSeriesTitle">
+    var displaytitleAddseries = ['', '', '', '', ''];
+   
+
+   
+    function seriesTitleMaintAddUpdateSeriesTitle_cancel_click() {
+        getEpisodeGrid(currentseriestitle, currentSeriesno, currentseasontitle, currentseasonno);
+        dialoghandler.dialog("close");
+    };
+    function enabledisableallthecontrolls(checkboxvalue) {
+        $('#chkCheckSeries').attr('disabled', !checkboxvalue.checked);
+        $('#chkCheckSeason').attr('disabled', !checkboxvalue.checked);
+        $('#chkCheckAdditionalText').attr('disabled', !checkboxvalue.checked);
+        $('#chkCheckEpisodeNo').attr('disabled', !checkboxvalue.checked);
+        $('#chkCheckLeadZero').attr('disabled', !checkboxvalue.checked);
+    };
+
+    function CheckAddText11(checkboxvalue) {
+        $('#txtAdditionalText').attr('disabled', !checkboxvalue.checked);
+    }
+
+    function AddTextfocuslost(evntobj) {
+        displaytitleAddseries[2] = $('#txtAdditionalText').val();
+        //$('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[1] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+        $('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+    }
+    function CheckAddText(checkboxvalue) {
+
+        if (checkboxvalue.checked) {
+            displaytitleAddseries[2] = $('#txtAdditionalText').val();
+            $('#txtAdditionalText').css("visibility", "visible");
+        }
+        else {
+            displaytitleAddseries[2] = '';
+            $('#txtAdditionalText').css("visibility", "hidden");
+        }
+        //$('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[1] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+        $('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+    }
+    function CheckSeries(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitleAddseries[0] = currentseriestitle;
+        else
+            displaytitleAddseries[0] = '';
+        //$('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[1] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+        $('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+    };
+    function CheckEpisodeNum(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitleAddseries[4] = '1';
+        else
+            displaytitleAddseries[4] = '';
+        //$('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[1] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+        $('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+
+    }
+    function CheckSeason(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitleAddseries[1] = currentseasontitle;
+        else
+            displaytitleAddseries[1] = '';
+        //$('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[1] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+        $('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+    }
+    function CheckLeadZero(checkboxvalue) {
+        if (checkboxvalue.checked)
+            displaytitleAddseries[3] = '000';
+        else
+            displaytitleAddseries[3] = '';
+        //$('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[1] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+        $('#txtSeriesTitle').val(displaytitleAddseries[0] + ' ' + displaytitleAddseries[2] + ' ' + displaytitleAddseries[3] + ' ' + displaytitleAddseries[4]);
+    } 
+</script>

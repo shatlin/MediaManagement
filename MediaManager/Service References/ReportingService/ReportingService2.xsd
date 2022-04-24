@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/ReportingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/ReportingService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/ReportingService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+  <xs:complexType name="GetReportServerDataRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="ReportsVO" nillable="true" type="q1:ReportsVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetReportServerDataRequest" nillable="true" type="tns:GetReportServerDataRequest" />
+  <xs:complexType name="GetReportServerDataResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="ReportsVO" nillable="true" type="q2:ReportsVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetReportServerDataResponse" nillable="true" type="tns:GetReportServerDataResponse" />
+  <xs:complexType name="ExportReportRequest">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ColoumnName" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ExportOption" type="q4:ExportOptionEnum" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="InputReportParams" nillable="true" type="q5:ArrayOfReportSPParameter" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExportReportRequest" nillable="true" type="tns:ExportReportRequest" />
+  <xs:complexType name="ExportReportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExportedFIlePath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExportReportResponse" nillable="true" type="tns:ExportReportResponse" />
+</xs:schema>

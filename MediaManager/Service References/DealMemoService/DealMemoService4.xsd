@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/DealMemoService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.GeneralProgramming" />
+  <xs:element name="Lookup_DealMemoProgrammeTitles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q1:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup_DealMemoProgrammeTitlesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="Lookup_DealMemoProgrammeTitlesResult" nillable="true" type="q2:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDuration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q3:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="GetDurationResult" nillable="true" type="q4:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoforReview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoReviewRequest" nillable="true" type="q5:SearchDealMemoReviewRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoforReviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoforReviewResult" nillable="true" type="q6:SearchDealMemoReviewResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchLanguageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q7:SearchLanguageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchLanguageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchLanguageDetailsResult" nillable="true" type="q8:SearchLanguageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLanguageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q9:SaveLanguageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLanguageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveLanguageDetailsResult" nillable="true" type="q10:SaveLanguageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchLanguageDetails_SS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q11:SearchLanguageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchLanguageDetails_SSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchLanguageDetails_SSResult" nillable="true" type="q12:SearchLanguageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLanguageDetails_SS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q13:SaveLanguageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLanguageDetails_SSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveLanguageDetails_SSResult" nillable="true" type="q14:SaveLanguageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCodeDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q15:SearchCodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCodeDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchCodeDetailsResult" nillable="true" type="q16:SearchCodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCodeDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q17:SaveCodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCodeDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveCodeDetailsResult" nillable="true" type="q18:SaveCodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUserDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q19:SearchUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUserDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchUserDetailsResult" nillable="true" type="q20:SearchUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q21:SaveUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveUserDetailsResult" nillable="true" type="q22:SaveUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCompetitorDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q23:SearchCompetitorRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCompetitorDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchCompetitorDetailsResult" nillable="true" type="q24:SearchCompetitorResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCompetitorDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q25:SaveCompetitorRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCompetitorDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveCompetitorDetailsResult" nillable="true" type="q26:SaveCompetitorResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCompetitorForLookUp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="request" nillable="true" type="q27:SearchCompetitorRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCompetitorForLookUpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchCompetitorForLookUpResult" nillable="true" type="q28:SearchCompetitorResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyDealMemoProgramLicenseeRuns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q29:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyDealMemoProgramLicenseeRunsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="CopyDealMemoProgramLicenseeRunsResult" nillable="true" type="q30:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMediaRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q31:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMediaRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchMediaRightsResult" nillable="true" type="q32:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDeleteMediaRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q33:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDeleteMediaRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="InsertDeleteMediaRightsResult" nillable="true" type="q34:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyMediaRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q35:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyMediaRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="CopyMediaRightsResult" nillable="true" type="q36:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatchUpPlatformRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q37:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatchUpPlatformRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="GetCatchUpPlatformRightsResult" nillable="true" type="q38:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q39:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoResult" nillable="true" type="q40:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q41:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoDetailsResult" nillable="true" type="q42:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoGridLevelDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q43:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoGridLevelDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoGridLevelDetailsResult" nillable="true" type="q44:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoLanguageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q45:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoLanguageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoLanguageDetailsResult" nillable="true" type="q46:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDefaultLanguageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q47:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDefaultLanguageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoDefaultLanguageDetailsResult" nillable="true" type="q48:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoHistoryDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q49:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoHistoryDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoHistoryDetailsResult" nillable="true" type="q50:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoProtectionDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q51:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoProtectionDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoProtectionDetailsResult" nillable="true" type="q52:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDefaultProtectionDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q53:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDefaultProtectionDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoDefaultProtectionDetailsResult" nillable="true" type="q54:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoTerritoryDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q55:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoTerritoryDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoTerritoryDetailsResult" nillable="true" type="q56:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDefaultTerritoryDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q57:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoDefaultTerritoryDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoDefaultTerritoryDetailsResult" nillable="true" type="q58:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoMaterialDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q59:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoMaterialDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoMaterialDetailsResult" nillable="true" type="q60:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoPaymentDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q61:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoPaymentDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoPaymentDetailsResult" nillable="true" type="q62:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoProgrammeDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q63:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoProgrammeDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoProgrammeDetailsResult" nillable="true" type="q64:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoSeriesDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="seriesTreeRequest" nillable="true" type="q65:SeriesTreeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoSeriesDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoSeriesDetailsResult" nillable="true" type="q66:SeriesTreeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoSeriesDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="seriesTreeRequest" nillable="true" type="q67:SeriesTreeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoSeriesDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveDealMemoSeriesDetailsResult" nillable="true" type="q68:SeriesTreeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoCPDDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchCPDRequest" nillable="true" type="q69:SearchCPDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoCPDDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoCPDDetailsResult" nillable="true" type="q70:SearchCPDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoCPDDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="saveCPDRequest" nillable="true" type="q71:SaveCPDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoCPDDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveDealMemoCPDDetailsResult" nillable="true" type="q72:SaveCPDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="saveDealMemoRequest" nillable="true" type="q73:SaveDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveDealMemoDetailsResult" nillable="true" type="q74:SaveDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoLiveDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q75:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDealMemoLiveDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchDealMemoLiveDetailsResult" nillable="true" type="q76:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoLiveDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q77:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDealMemoLiveDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SaveDealMemoLiveDetailsResult" nillable="true" type="q78:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateEpisodeDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="seriesTreeRequest" nillable="true" type="q79:SeriesTreeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateEpisodeDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="GenerateEpisodeDetailsResult" nillable="true" type="q80:SeriesTreeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoAllocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q81:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoAllocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="CheckDealMemoAllocationResult" nillable="true" type="q82:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoChannelRuns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q83:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoChannelRunsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="CheckDealMemoChannelRunsResult" nillable="true" type="q84:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoLiveDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q85:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoLiveDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="CheckDealMemoLiveDateResult" nillable="true" type="q86:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoSign">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q87:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDealMemoSignResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="CheckDealMemoSignResult" nillable="true" type="q88:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeDealMemoStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q89:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeDealMemoStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="ChangeDealMemoStatusResult" nillable="true" type="q90:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteDealMemo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q91:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteDealMemoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="ExecuteDealMemoResult" nillable="true" type="q92:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveBudgetTitle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q93:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveBudgetTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="MoveBudgetTitleResult" nillable="true" type="q94:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBudgetedDealMemo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoReviewRequest" nillable="true" type="q95:SearchDealMemoReviewRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBudgetedDealMemoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="SearchBudgetedDealMemoResult" nillable="true" type="q96:SearchDealMemoReviewResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup_DealMemoStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q97:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup_DealMemoStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="Lookup_DealMemoStatusResult" nillable="true" type="q98:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup_DealMemoChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.GeneralProgramming" minOccurs="0" name="channelMaintenanceRequest" nillable="true" type="q99:ChannelMaintenanceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup_DealMemoChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.GeneralProgramming" minOccurs="0" name="Lookup_DealMemoChannelResult" nillable="true" type="q100:ChannelMaintenanceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup_DealMemoPaymentAmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="searchDealMemoRequest" nillable="true" type="q101:SearchDealMemoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lookup_DealMemoPaymentAmtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.DealMemo" minOccurs="0" name="Lookup_DealMemoPaymentAmtResult" nillable="true" type="q102:SearchDealMemoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

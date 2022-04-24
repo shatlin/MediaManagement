@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagerLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="FidCodeVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="COD_DESCRIPTION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COD_TYPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COD_VALUE" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FidCodeVO" nillable="true" type="tns:FidCodeVO" />
+  <xs:complexType name="ArrayOfFidCodeVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidCodeVO" nillable="true" type="tns:FidCodeVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidCodeVO" nillable="true" type="tns:ArrayOfFidCodeVO" />
+  <xs:complexType name="LibraryVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q2:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Is_active" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LibUserLinkId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Storage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StorageDetailID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StorageID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StorageType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StorageTypeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="listLibraryVO" nillable="true" type="tns:ArrayOfLibraryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LibraryVO" nillable="true" type="tns:LibraryVO" />
+  <xs:complexType name="ArrayOfLibraryVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LibraryVO" nillable="true" type="tns:LibraryVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLibraryVO" nillable="true" type="tns:ArrayOfLibraryVO" />
+  <xs:complexType name="MaterialVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CommId" type="xs:int" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MOC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialList" nillable="true" type="tns:ArrayOfMaterialVO" />
+          <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Person_contacted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaterialVO" nillable="true" type="tns:MaterialVO" />
+  <xs:complexType name="ArrayOfMaterialVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialVO" nillable="true" type="tns:MaterialVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaterialVO" nillable="true" type="tns:ArrayOfMaterialVO" />
+  <xs:complexType name="BookOutVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q4:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Acc_Rej_status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookoutId" type="xs:int" />
+          <xs:element minOccurs="0" name="ByUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CapturedDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CourierDetails" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DispatchNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GivenTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecInRSABy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToUser" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookOutVO" nillable="true" type="tns:BookOutVO" />
+  <xs:complexType name="ArrayOfBookOutVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookOutVO" nillable="true" type="tns:BookOutVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookOutVO" nillable="true" type="tns:ArrayOfBookOutVO" />
+  <xs:complexType name="BookInVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q5:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Acc_Rej_status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Acc_Rej_status_desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookinID" type="xs:int" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Distributor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenRefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="GivenBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialTypeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MpEntryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MpID" type="xs:int" />
+          <xs:element minOccurs="0" name="PrimaryGenre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrammeTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceiptNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StatusID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Storage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Supp_Tx_Mnet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierTypeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkingTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bookinList" nillable="true" type="tns:ArrayOfBookInVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookInVO" nillable="true" type="tns:BookInVO" />
+  <xs:complexType name="ArrayOfBookInVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookInVO" nillable="true" type="tns:BookInVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookInVO" nillable="true" type="tns:ArrayOfBookInVO" />
+</xs:schema>

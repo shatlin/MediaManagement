@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="BaseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAppMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseResponse" nillable="true" type="tns:BaseResponse" />
+  <xs:complexType name="ArrayOfAppMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppMessage" nillable="true" type="tns:AppMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppMessage" nillable="true" type="tns:ArrayOfAppMessage" />
+  <xs:complexType name="AppMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="Type" type="q1:MessageTypeEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppMessage" nillable="true" type="tns:AppMessage" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleID" type="ser:guid" />
+          <xs:element minOccurs="0" name="TasksList" nillable="true" type="tns:ArrayOfTaskVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="BaseVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuditData" nillable="true" type="tns:AuditDataVO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAppMessage" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="PersistFlag" type="q2:PersistFlagEnum" />
+      <xs:element minOccurs="0" name="SuccessFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdateCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseVO" nillable="true" type="tns:BaseVO" />
+  <xs:complexType name="AuditDataVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EntryOperator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditDataVO" nillable="true" type="tns:AuditDataVO" />
+  <xs:complexType name="ArrayOfTaskVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskVO" nillable="true" type="tns:TaskVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskVO" nillable="true" type="tns:ArrayOfTaskVO" />
+  <xs:complexType name="TaskVO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Task" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskVO" nillable="true" type="tns:TaskVO" />
+  <xs:complexType name="BaseRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BaseRequest" nillable="true" type="tns:BaseRequest" />
+  <xs:complexType name="ArrayOfMENUserVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MENUserVO" nillable="true" type="tns:MENUserVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMENUserVO" nillable="true" type="tns:ArrayOfMENUserVO" />
+  <xs:complexType name="MENUserVO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MENUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MENUserLogin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ManagerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserStatus" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MENUserVO" nillable="true" type="tns:MENUserVO" />
+  <xs:complexType name="ArrayOfSystemUserVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SystemUserVO" nillable="true" type="tns:SystemUserVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemUserVO" nillable="true" type="tns:ArrayOfSystemUserVO" />
+  <xs:complexType name="SystemUserVO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleList" nillable="true" type="tns:ArrayOfRole" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SystemUserVO" nillable="true" type="tns:SystemUserVO" />
+  <xs:complexType name="SystemDepartmentsVO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DepartmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SystemDepartmentsVO" nillable="true" type="tns:SystemDepartmentsVO" />
+  <xs:complexType name="ArrayOfSystemDepartmentsVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SystemDepartmentsVO" nillable="true" type="tns:SystemDepartmentsVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemDepartmentsVO" nillable="true" type="tns:ArrayOfSystemDepartmentsVO" />
+</xs:schema>

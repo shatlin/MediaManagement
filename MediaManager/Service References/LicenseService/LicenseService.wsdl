@@ -1,0 +1,1665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LicenseService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.Licenses" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.Licenses" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.DealMemo" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILicense_SaveLicenseeDeletionDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseeDeletionDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseeDeletionDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseeDeletionDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseeDeletionDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionbyNumberDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionbyNumberDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionbyNumberDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionbyNumberDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionbyNumberDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeSrchDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeSrchDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeSrchDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeSrchDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeSrchDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseebyNumberDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseebyNumberDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseebyNumberDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseebyNumberDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseebyNumberDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseeDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseeDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveMagicLicenseeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMagicLicenseeDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveMagicLicenseeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMagicLicenseeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveMagicLicenseeDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseebyNumberDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseebyNumberDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseebyNumberDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseebyNumberDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseebyNumberDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseeDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseeDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseeDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseeDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseeDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveMagicLicenseeDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMagicLicenseeDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveMagicLicenseeDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMagicLicenseeDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveMagicLicenseeDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseebyNumberDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseebyNumberDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseebyNumberDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMagicLicenseebyNumberDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchMagicLicenseebyNumberDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseData" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseData_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseDetail_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q12:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseDetailforCatchup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseDetailforCatchup" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseDetailforCatchup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseDetailforCatchupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseDetailforCatchup_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q13:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseDataforCatchup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseDataforCatchup" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseDataforCatchup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseDataforCatchupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseDataforCatchup_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q14:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseTerritoryPricing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseTerritoryPricing" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseTerritoryPricing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseTerritoryPricingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseTerritoryPricing_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q15:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseHistory" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseHistory_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q16:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicensePaymentPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicensePaymentPlan" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicensePaymentPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicensePaymentPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicensePaymentPlan_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q17:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicensePaymentSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicensePaymentSchedule" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicensePaymentSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicensePaymentScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicensePaymentSchedule_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q18:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseData" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseData_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q19:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseTerritoryPricing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseTerritoryPricing" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseTerritoryPricing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseTerritoryPricingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseTerritoryPricing_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q20:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseHistory" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseHistory_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q21:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicensePaymentPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicensePaymentPlan" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicensePaymentPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicensePaymentPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicensePaymentPlan_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q22:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseStatus" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseStatus_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q23:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseStartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseStartDate" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseStartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseStartDate_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q24:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseEndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseEndDate" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseEndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseEndDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseEndDate_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q25:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseTBAChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseTBAChange" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseTBAChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseTBAChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseTBAChange_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q26:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_CalculateLicensePayMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateLicensePayMonth" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_CalculateLicensePayMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateLicensePayMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_CalculateLicensePayMonth_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q27:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicensePaymentPlanPB_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicensePaymentPlanPB" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicensePaymentPlanPB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicensePaymentPlanPBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicensePaymentPlanPB_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q28:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialData" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialData_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q29:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialDetail_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q30:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialTerritoryPricing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialTerritoryPricing" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialTerritoryPricing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialTerritoryPricingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialTerritoryPricing_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q31:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialHistory" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseMaintenanceSpecialHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseMaintenanceSpecialHistory_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q32:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseMaintenanceSpecialData" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseMaintenanceSpecialDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialData_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q33:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialTerritoryPricing_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseMaintenanceSpecialTerritoryPricing" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialTerritoryPricing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseMaintenanceSpecialTerritoryPricingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialTerritoryPricing_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q34:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseMaintenanceSpecialHistory" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseMaintenanceSpecialHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseMaintenanceSpecialHistory_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q35:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseMaintenanceSpecialStatus" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseMaintenanceSpecialStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialStatus_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q36:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialStartDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseMaintenanceSpecialStartDate" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialStartDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseMaintenanceSpecialStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialStartDate_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q37:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialEndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseMaintenanceSpecialEndDate" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialEndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateLicenseMaintenanceSpecialEndDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_ValidateLicenseMaintenanceSpecialEndDate_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q38:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q39:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseeDeletionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseeDeletionDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseeDeletionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLicenseeDeletionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SaveLicenseeDeletionDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q40:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionbyNumberDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionbyNumberDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionbyNumberDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionbyNumberDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionbyNumberDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q41:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionDetails_SS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionDetails_SS" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionDetails_SS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLicenseeDeletionDetails_SSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILicense_SearchLicenseeDeletionDetails_SS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q42:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="ILicense">
+    <wsdl:operation name="SaveLicenseeDeletionDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails_SS" message="tns:ILicense_SaveLicenseeDeletionDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails_SSResponse" message="tns:ILicense_SaveLicenseeDeletionDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseeDeletionDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionbyNumberDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails_SS" message="tns:ILicense_SearchLicenseeDeletionbyNumberDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails_SSResponse" message="tns:ILicense_SearchLicenseeDeletionbyNumberDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseeDeletionbyNumberDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeSrchDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeSrchDetails" message="tns:ILicense_SearchLicenseeSrchDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeSrchDetailsResponse" message="tns:ILicense_SearchLicenseeSrchDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeSrchDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseeSrchDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseebyNumberDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseebyNumberDetails" message="tns:ILicense_SearchLicenseebyNumberDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseebyNumberDetailsResponse" message="tns:ILicense_SearchLicenseebyNumberDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseebyNumberDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseebyNumberDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseeDetails" message="tns:ILicense_SearchMagicLicenseeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseeDetailsResponse" message="tns:ILicense_SearchMagicLicenseeDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseeDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchMagicLicenseeDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMagicLicenseeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveMagicLicenseeDetails" message="tns:ILicense_SaveMagicLicenseeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveMagicLicenseeDetailsResponse" message="tns:ILicense_SaveMagicLicenseeDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveMagicLicenseeDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveMagicLicenseeDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseebyNumberDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails" message="tns:ILicense_SearchMagicLicenseebyNumberDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetailsResponse" message="tns:ILicense_SearchMagicLicenseebyNumberDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchMagicLicenseebyNumberDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseeDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseeDetails_SS" message="tns:ILicense_SearchMagicLicenseeDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseeDetails_SSResponse" message="tns:ILicense_SearchMagicLicenseeDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseeDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchMagicLicenseeDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMagicLicenseeDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveMagicLicenseeDetails_SS" message="tns:ILicense_SaveMagicLicenseeDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveMagicLicenseeDetails_SSResponse" message="tns:ILicense_SaveMagicLicenseeDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveMagicLicenseeDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveMagicLicenseeDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseebyNumberDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails_SS" message="tns:ILicense_SearchMagicLicenseebyNumberDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails_SSResponse" message="tns:ILicense_SearchMagicLicenseebyNumberDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchMagicLicenseebyNumberDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseData" message="tns:ILicense_SearchLicenseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDataResponse" message="tns:ILicense_SearchLicenseData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDataMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseData_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDetail" message="tns:ILicense_SearchLicenseDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDetailResponse" message="tns:ILicense_SearchLicenseDetail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDetailMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseDetail_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseDetailforCatchup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDetailforCatchup" message="tns:ILicense_SearchLicenseDetailforCatchup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDetailforCatchupResponse" message="tns:ILicense_SearchLicenseDetailforCatchup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseDetailforCatchupMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseDetailforCatchup_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseDataforCatchup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseDataforCatchup" message="tns:ILicense_SaveLicenseDataforCatchup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseDataforCatchupResponse" message="tns:ILicense_SaveLicenseDataforCatchup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseDataforCatchupMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseDataforCatchup_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseTerritoryPricing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseTerritoryPricing" message="tns:ILicense_SearchLicenseTerritoryPricing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseTerritoryPricingResponse" message="tns:ILicense_SearchLicenseTerritoryPricing_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseTerritoryPricingMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseTerritoryPricing_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseHistory" message="tns:ILicense_SearchLicenseHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseHistoryResponse" message="tns:ILicense_SearchLicenseHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseHistoryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseHistory_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicensePaymentPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicensePaymentPlan" message="tns:ILicense_SearchLicensePaymentPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicensePaymentPlanResponse" message="tns:ILicense_SearchLicensePaymentPlan_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicensePaymentPlanMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicensePaymentPlan_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicensePaymentSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicensePaymentSchedule" message="tns:ILicense_SearchLicensePaymentSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicensePaymentScheduleResponse" message="tns:ILicense_SearchLicensePaymentSchedule_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicensePaymentScheduleMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicensePaymentSchedule_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseData" message="tns:ILicense_SaveLicenseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseDataResponse" message="tns:ILicense_SaveLicenseData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseDataMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseData_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseTerritoryPricing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseTerritoryPricing" message="tns:ILicense_SaveLicenseTerritoryPricing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseTerritoryPricingResponse" message="tns:ILicense_SaveLicenseTerritoryPricing_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseTerritoryPricingMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseTerritoryPricing_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseHistory" message="tns:ILicense_SaveLicenseHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseHistoryResponse" message="tns:ILicense_SaveLicenseHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseHistoryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseHistory_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicensePaymentPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicensePaymentPlan" message="tns:ILicense_SaveLicensePaymentPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicensePaymentPlanResponse" message="tns:ILicense_SaveLicensePaymentPlan_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicensePaymentPlanMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicensePaymentPlan_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseStatus" message="tns:ILicense_ValidateLicenseStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseStatusResponse" message="tns:ILicense_ValidateLicenseStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseStatusMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_ValidateLicenseStatus_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseStartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseStartDate" message="tns:ILicense_ValidateLicenseStartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseStartDateResponse" message="tns:ILicense_ValidateLicenseStartDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseStartDateMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_ValidateLicenseStartDate_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseEndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseEndDate" message="tns:ILicense_ValidateLicenseEndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseEndDateResponse" message="tns:ILicense_ValidateLicenseEndDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseEndDateMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_ValidateLicenseEndDate_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseTBAChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseTBAChange" message="tns:ILicense_ValidateLicenseTBAChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseTBAChangeResponse" message="tns:ILicense_ValidateLicenseTBAChange_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseTBAChangeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_ValidateLicenseTBAChange_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLicensePayMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/CalculateLicensePayMonth" message="tns:ILicense_CalculateLicensePayMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/CalculateLicensePayMonthResponse" message="tns:ILicense_CalculateLicensePayMonth_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/CalculateLicensePayMonthMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_CalculateLicensePayMonth_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicensePaymentPlanPB">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicensePaymentPlanPB" message="tns:ILicense_SaveLicensePaymentPlanPB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicensePaymentPlanPBResponse" message="tns:ILicense_SaveLicensePaymentPlanPB_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicensePaymentPlanPBMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicensePaymentPlanPB_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialData" message="tns:ILicense_SearchLicenseMaintenanceSpecialData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialDataResponse" message="tns:ILicense_SearchLicenseMaintenanceSpecialData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialDataMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseMaintenanceSpecialData_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialDetail" message="tns:ILicense_SearchLicenseMaintenanceSpecialDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialDetailResponse" message="tns:ILicense_SearchLicenseMaintenanceSpecialDetail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialDetailMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseMaintenanceSpecialDetail_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialTerritoryPricing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialTerritoryPricing" message="tns:ILicense_SearchLicenseMaintenanceSpecialTerritoryPricing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialTerritoryPricingResponse" message="tns:ILicense_SearchLicenseMaintenanceSpecialTerritoryPricing_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialTerritoryPricingMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseMaintenanceSpecialTerritoryPricing_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialHistory" message="tns:ILicense_SearchLicenseMaintenanceSpecialHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialHistoryResponse" message="tns:ILicense_SearchLicenseMaintenanceSpecialHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialHistoryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseMaintenanceSpecialHistory_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialData" message="tns:ILicense_SaveLicenseMaintenanceSpecialData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialDataResponse" message="tns:ILicense_SaveLicenseMaintenanceSpecialData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialDataMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseMaintenanceSpecialData_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialTerritoryPricing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialTerritoryPricing" message="tns:ILicense_SaveLicenseMaintenanceSpecialTerritoryPricing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialTerritoryPricingResponse" message="tns:ILicense_SaveLicenseMaintenanceSpecialTerritoryPricing_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialTerritoryPricingMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseMaintenanceSpecialTerritoryPricing_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialHistory" message="tns:ILicense_SaveLicenseMaintenanceSpecialHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialHistoryResponse" message="tns:ILicense_SaveLicenseMaintenanceSpecialHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialHistoryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseMaintenanceSpecialHistory_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStatus" message="tns:ILicense_ValidateLicenseMaintenanceSpecialStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStatusResponse" message="tns:ILicense_ValidateLicenseMaintenanceSpecialStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStatusMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_ValidateLicenseMaintenanceSpecialStatus_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialStartDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStartDate" message="tns:ILicense_ValidateLicenseMaintenanceSpecialStartDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStartDateResponse" message="tns:ILicense_ValidateLicenseMaintenanceSpecialStartDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStartDateMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_ValidateLicenseMaintenanceSpecialStartDate_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialEndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialEndDate" message="tns:ILicense_ValidateLicenseMaintenanceSpecialEndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialEndDateResponse" message="tns:ILicense_ValidateLicenseMaintenanceSpecialEndDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialEndDateMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_ValidateLicenseMaintenanceSpecialEndDate_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails" message="tns:ILicense_SearchLicenseeDeletionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionDetailsResponse" message="tns:ILicense_SearchLicenseeDeletionDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseeDeletionDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseeDeletionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails" message="tns:ILicense_SaveLicenseeDeletionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SaveLicenseeDeletionDetailsResponse" message="tns:ILicense_SaveLicenseeDeletionDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SaveLicenseeDeletionDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SaveLicenseeDeletionDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionbyNumberDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails" message="tns:ILicense_SearchLicenseeDeletionbyNumberDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetailsResponse" message="tns:ILicense_SearchLicenseeDeletionbyNumberDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseeDeletionbyNumberDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionDetails_SS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails_SS" message="tns:ILicense_SearchLicenseeDeletionDetails_SS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails_SSResponse" message="tns:ILicense_SearchLicenseeDeletionDetails_SS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails_SSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ILicense_SearchLicenseeDeletionDetails_SS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:ILicense">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveLicenseeDeletionDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionbyNumberDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeSrchDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeSrchDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseebyNumberDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseebyNumberDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseeDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMagicLicenseeDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveMagicLicenseeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseebyNumberDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseeDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseeDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMagicLicenseeDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveMagicLicenseeDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseebyNumberDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseData">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseDetail">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseDetailforCatchup">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseDetailforCatchup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseDataforCatchup">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseDataforCatchup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseTerritoryPricing">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseHistory">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicensePaymentPlan">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicensePaymentPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicensePaymentSchedule">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicensePaymentSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseData">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseTerritoryPricing">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseHistory">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicensePaymentPlan">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicensePaymentPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseStatus">
+      <soap:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseStartDate">
+      <soap:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseEndDate">
+      <soap:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseEndDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseTBAChange">
+      <soap:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseTBAChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLicensePayMonth">
+      <soap:operation soapAction="http://tempuri.org/ILicense/CalculateLicensePayMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicensePaymentPlanPB">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicensePaymentPlanPB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialData">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialDetail">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialTerritoryPricing">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialHistory">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialData">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialTerritoryPricing">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialHistory">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialStatus">
+      <soap:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialStartDate">
+      <soap:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialEndDate">
+      <soap:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialEndDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseeDeletionDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionbyNumberDetails">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionDetails_SS">
+      <soap:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails_SS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:ILicense">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SaveLicenseeDeletionDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionbyNumberDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeSrchDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeSrchDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseebyNumberDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseebyNumberDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseeDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMagicLicenseeDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveMagicLicenseeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseebyNumberDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseeDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseeDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMagicLicenseeDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveMagicLicenseeDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMagicLicenseebyNumberDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchMagicLicenseebyNumberDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseData">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseDetail">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseDetailforCatchup">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseDetailforCatchup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseDataforCatchup">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseDataforCatchup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseTerritoryPricing">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseHistory">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicensePaymentPlan">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicensePaymentPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicensePaymentSchedule">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicensePaymentSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseData">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseTerritoryPricing">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseHistory">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicensePaymentPlan">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicensePaymentPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseStatus">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseStartDate">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseStartDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseEndDate">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseEndDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseTBAChange">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseTBAChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLicensePayMonth">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/CalculateLicensePayMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicensePaymentPlanPB">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicensePaymentPlanPB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialData">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialDetail">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialTerritoryPricing">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseMaintenanceSpecialHistory">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseMaintenanceSpecialHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialData">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialTerritoryPricing">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialTerritoryPricing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseMaintenanceSpecialHistory">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseMaintenanceSpecialHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialStatus">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialStartDate">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialStartDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLicenseMaintenanceSpecialEndDate">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/ValidateLicenseMaintenanceSpecialEndDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLicenseeDeletionDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SaveLicenseeDeletionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionbyNumberDetails">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionbyNumberDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLicenseeDeletionDetails_SS">
+      <soap12:operation soapAction="http://tempuri.org/ILicense/SearchLicenseeDeletionDetails_SS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LicenseService">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/LicenseService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

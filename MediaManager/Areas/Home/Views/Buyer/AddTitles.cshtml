@@ -1,0 +1,275 @@
+﻿@model MediaManager.Areas.Home.ViewModels.AddTitlesViewModel
+@{
+    ViewBag.Title = "AddTitles";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Title</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"
+        type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js" type="text/javascript"></script>
+    <script src="~/Content/Scripts/Jquery_AutoComplete.js" type="text/javascript"></script>
+    <style type="text/css">
+    .ui-combobox {
+        position: relative;
+        display: inline-block;
+    }
+    .ui-combobox-toggle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: -1px;
+        padding: 0;
+        /* adjust styles for IE 6/7 */
+        *height: 1.7em;
+        *top: 0.1em;
+    }
+    .ui-combobox-input {
+        margin: 0;
+        padding: 0.3em;
+    }
+    .ui-autocomplete { position: absolute; cursor: default;  max-height: 200px; max-width:270px; overflow: auto;}	
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#DropdownPrimaryGenreLOV").combobox();
+            $("#DropdownSecondaryGenreLOV").combobox();
+            $("#DropdownProgrammeTypeLOV").combobox();
+            $("#DropdownLanguageLOV").combobox();
+            $("#DropdownProgrammeCategoryLOV").combobox();
+        });
+    </script>
+</head>
+<body>
+    <table class="ContentFormHolder">
+        <tr>
+            <td class="pagecontent">
+                <table>
+                    <tr>
+                        <td class="main-form">
+                            <div class="Grid">
+                                <table class="table AppForm">
+                                    <tr>
+                                        <td colspan="4" class="table-FormHeader">
+                                            Add Title
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Title
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.Title, new { placeholder = "Title" })
+                                        </td>
+                                        <td class="ColumnTitle">
+                                            Working Title
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Title Status
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td class="ColumnTitle">
+                                            Notes
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Primary Genre
+                                        </td>
+                                        <td>
+                                          <div class="ui-widget">
+                                            <select id="DropdownPrimaryGenreLOV">
+                                                 <option value="">Select one...</option>
+                                                @if (Model != null)
+                                                {
+                                                    if (Model.PrimaryGenreLOVlist != null)
+                                                    {
+                                                        foreach (var PrimeGenitem in Model.PrimaryGenreLOVlist)
+                                                        {
+                                                    <option value="Select" id="@PrimeGenitem.SportTypeValue">@PrimeGenitem.SportTypeValue
+                                                        ---- @PrimeGenitem.SportTypeDescription</option>
+                                                        }
+                                                    }
+                                                }
+                                            </select>
+                                            </div>
+                                        </td>
+                                        <td class="ColumnTitle">
+                                            Secondary Genre
+                                        </td>
+                                        <td>
+                                            <div class="ui-widget">
+                                                <select id="DropdownSecondaryGenreLOV" style="-webkit-appearance: menulist">
+                                                       <option value="">Select one...</option>
+                                                    @if (Model != null)
+                                                    {
+                                                        if (Model.SecondaryGenreLOVList != null)
+                                                        {
+                                                            foreach (var SecGenitem in Model.SecondaryGenreLOVList)
+                                                            {
+                                                        <option value="Select" id="@SecGenitem.CodeValue">@SecGenitem.CodeValue ---- @SecGenitem.CodeDescription</option>
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Director
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td class="ColumnTitle">
+                                            Run Time
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Producer
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td class="ColumnTitle">
+                                            Programme Type
+                                        </td>
+                                        <td>
+                                     <div class="ui-widget">
+                                            <select id="DropdownProgrammeTypeLOV">
+                                                  <option value="">Select one...</option>
+                                                @if (Model != null)
+                                                {
+                                                    if (Model.ProgrammeTypeLOVList != null)
+                                                    {
+                                                        foreach (var ProgTypeitem in Model.ProgrammeTypeLOVList)
+                                                        {
+                                                    <option value="Select" id="@ProgTypeitem.CodeValue">@ProgTypeitem.CodeValue ---- @ProgTypeitem.CodeDescription----@ProgTypeitem.Attribute----@ProgTypeitem.Attribute2</option>
+                                                        }
+                                                    }
+                                                }
+                                            </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Language
+                                        </td>
+                                        <td>
+                                        <div class="ui-widget">
+                                            <select id="DropdownLanguageLOV">
+                                                <option value="">Select one...</option>
+                                                @if (Model != null)
+                                                {
+                                                    if (Model.LanguageLOVList != null)
+                                                    {
+                                                        foreach (var Langitem in Model.LanguageLOVList)
+                                                        {
+                                                    <option value="Select" id="@Langitem.LanID">@Langitem.LanID---- @Langitem.LanName</option>
+                                                        }
+                                                    }
+                                                }
+                                            </select>
+                                            </div>
+                                        </td>
+                                        <td class="ColumnTitle">
+                                            Programme Category
+                                        </td>
+                                        <td>
+                                        <div class="ui-widget">
+                                            <select id="DropdownProgrammeCategoryLOV">
+                                                  <option value="">Select one...</option>
+                                                @if (Model != null)
+                                                {
+                                                    if (Model.ProgrammeCategoryLOVList != null)
+                                                    {
+                                                        foreach (var ProgCategitem in Model.ProgrammeCategoryLOVList)
+                                                        {
+                                                    <option value="Select" id="@ProgCategitem.ProgrammeCategoryCode">@ProgCategitem.ProgrammeCategoryCode
+                                                        ---- @ProgCategitem.ProgrammeCategoryDescription</option>
+                                                        }
+                                                    }
+                                                }
+                                            </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            MediaManager Age Restrictions
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td class="ColumnTitle">
+                                            Production Year
+                                        </td>
+                                        <td>
+                                            <table class=" table imageTable">
+                                                <tr>
+                                                    <td class="textColumn">
+                                                        -
+                                                    </td>
+                                                    <td class="imgColumn">
+                                                        <a href="@Url.Action("SearchTitles", "Scout")">
+                                                            <img src="@Url.Content("~/Images/lov_up_arrow.png")", alt="Synopsis" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Distributor
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td class="ColumnButton" colspan="2">
+                                            <input type="submit" value="Add to my Tasks" />
+                                            <input type="submit" value="Add" />
+                                            <input type="submit" value="Reset" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ColumnTitle">
+                                            Synopsis
+                                        </td>
+                                        <td colspan="3">
+                                            -
+                                        </td>
+                                    </tr>
+                                </table>
+                                @*  <br />
+                            <div class="alignRight">
+                                <input type="submit" value="Add to my Tasks" />
+                                <input type="submit" value="Add" />
+                                <input type="submit" value="Reset" /></div>*@
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

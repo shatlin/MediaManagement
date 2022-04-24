@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" />
+  <xs:complexType name="MeiGenRefRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q1:LookupKeyEnum" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q2:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeiGenRefRequest" nillable="true" type="tns:MeiGenRefRequest" />
+  <xs:complexType name="MeiGenRefResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q3:MeiGenRefLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeiGenRefResponse" nillable="true" type="tns:MeiGenRefResponse" />
+  <xs:complexType name="LicShortRequest">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q4:LookupKeyEnum" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q5:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicShortRequest" nillable="true" type="tns:LicShortRequest" />
+  <xs:complexType name="LicShortResponse">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q6:LicShortLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicShortResponse" nillable="true" type="tns:LicShortResponse" />
+  <xs:complexType name="ContractAgencyRequest">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q7:LookupKeyEnum" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q8:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractAgencyRequest" nillable="true" type="tns:ContractAgencyRequest" />
+  <xs:complexType name="ContractAgencyResponse">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q9:ContractAgencyLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractAgencyResponse" nillable="true" type="tns:ContractAgencyResponse" />
+  <xs:complexType name="ChannelServiceRequest">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q10:LookupKeyEnum" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q11:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChannelServiceRequest" nillable="true" type="tns:ChannelServiceRequest" />
+  <xs:complexType name="ChannelServiceResponse">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q12:ChannelServiceLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChannelServiceResponse" nillable="true" type="tns:ChannelServiceResponse" />
+  <xs:complexType name="PrimeLevelRequest">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q13:LookupKeyEnum" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q14:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrimeLevelRequest" nillable="true" type="tns:PrimeLevelRequest" />
+  <xs:complexType name="PrimeLevelResponse">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q15:PrimeLevelLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrimeLevelResponse" nillable="true" type="tns:PrimeLevelResponse" />
+  <xs:complexType name="PrimeTimeRequest">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q16:LookupKeyEnum" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q17:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrimeTimeRequest" nillable="true" type="tns:PrimeTimeRequest" />
+  <xs:complexType name="PrimeTimeResponse">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q18:PrimeTimeLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrimeTimeResponse" nillable="true" type="tns:PrimeTimeResponse" />
+  <xs:complexType name="ContractStatusRequest">
+    <xs:sequence>
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q19:LookupKeyEnum" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q20:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractStatusRequest" nillable="true" type="tns:ContractStatusRequest" />
+  <xs:complexType name="ContractStatusResponse">
+    <xs:sequence>
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q21:ContractStatusLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractStatusResponse" nillable="true" type="tns:ContractStatusResponse" />
+  <xs:complexType name="ContractCalcTypeRequest">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q22:LookupKeyEnum" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q23:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractCalcTypeRequest" nillable="true" type="tns:ContractCalcTypeRequest" />
+  <xs:complexType name="ContractCalcTypeResponse">
+    <xs:sequence>
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q24:ContractCalcTypeLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractCalcTypeResponse" nillable="true" type="tns:ContractCalcTypeResponse" />
+  <xs:complexType name="ContractRoyaltyRequest">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q25:LookupKeyEnum" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q26:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractRoyaltyRequest" nillable="true" type="tns:ContractRoyaltyRequest" />
+  <xs:complexType name="ContractRoyaltyResponse">
+    <xs:sequence>
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q27:ContractRoyaltyLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractRoyaltyResponse" nillable="true" type="tns:ContractRoyaltyResponse" />
+  <xs:complexType name="SubCatRequest">
+    <xs:sequence>
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q28:LookupKeyEnum" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q29:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubCatRequest" nillable="true" type="tns:SubCatRequest" />
+  <xs:complexType name="SubCatResponse">
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q30:SubCatLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubCatResponse" nillable="true" type="tns:SubCatResponse" />
+  <xs:complexType name="MoveBudgetRequest">
+    <xs:sequence>
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q31:LookupKeyEnum" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q32:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveBudgetRequest" nillable="true" type="tns:MoveBudgetRequest" />
+  <xs:complexType name="MoveBudgetResponse">
+    <xs:sequence>
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q33:MoveBudgetLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveBudgetResponse" nillable="true" type="tns:MoveBudgetResponse" />
+  <xs:complexType name="LicEventRequest">
+    <xs:sequence>
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q34:LookupKeyEnum" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q35:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicEventRequest" nillable="true" type="tns:LicEventRequest" />
+  <xs:complexType name="LicEventResponse">
+    <xs:sequence>
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q36:LicEventLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicEventResponse" nillable="true" type="tns:LicEventResponse" />
+  <xs:complexType name="LicensePlayRequest">
+    <xs:sequence>
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q37:LookupKeyEnum" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q38:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicensePlayRequest" nillable="true" type="tns:LicensePlayRequest" />
+  <xs:complexType name="LicensePlayResponse">
+    <xs:sequence>
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q39:LicensePlayLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicensePlayResponse" nillable="true" type="tns:LicensePlayResponse" />
+  <xs:complexType name="PriceCodeRequest">
+    <xs:sequence>
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q40:LookupKeyEnum" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q41:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceCodeRequest" nillable="true" type="tns:PriceCodeRequest" />
+  <xs:complexType name="PriceCodeResponse">
+    <xs:sequence>
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q42:PriceCodeLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceCodeResponse" nillable="true" type="tns:PriceCodeResponse" />
+  <xs:complexType name="LicenseStatusRequest">
+    <xs:sequence>
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q43:LookupKeyEnum" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q44:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicenseStatusRequest" nillable="true" type="tns:LicenseStatusRequest" />
+  <xs:complexType name="LicenseStatusResponse">
+    <xs:sequence>
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q45:LicenseStatusLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicenseStatusResponse" nillable="true" type="tns:LicenseStatusResponse" />
+  <xs:complexType name="LicRightsRequest">
+    <xs:sequence>
+      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q46:LookupKeyEnum" />
+      <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q47:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicRightsRequest" nillable="true" type="tns:LicRightsRequest" />
+  <xs:complexType name="LicRightsResponse">
+    <xs:sequence>
+      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q48:LicRightsLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicRightsResponse" nillable="true" type="tns:LicRightsResponse" />
+  <xs:complexType name="CodeMaintRequest">
+    <xs:sequence>
+      <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q49:LookupKeyEnum" />
+      <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q50:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodeMaintRequest" nillable="true" type="tns:CodeMaintRequest" />
+  <xs:complexType name="CodeMaintResponse">
+    <xs:sequence>
+      <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q51:CodeMaintTypeLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CodeMaintResponse" nillable="true" type="tns:CodeMaintResponse" />
+  <xs:complexType name="MediaTypeRequest">
+    <xs:sequence>
+      <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q52:LookupKeyEnum" />
+      <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q53:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaTypeRequest" nillable="true" type="tns:MediaTypeRequest" />
+  <xs:complexType name="MediaTypeResponse">
+    <xs:sequence>
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q54:MediaTypeLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaTypeResponse" nillable="true" type="tns:MediaTypeResponse" />
+  <xs:complexType name="DeliveryRequest">
+    <xs:sequence>
+      <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q55:LookupKeyEnum" />
+      <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q56:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryRequest" nillable="true" type="tns:DeliveryRequest" />
+  <xs:complexType name="DeliveryResponse">
+    <xs:sequence>
+      <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q57:DeliveryLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryResponse" nillable="true" type="tns:DeliveryResponse" />
+  <xs:complexType name="MediaPlatformRequest">
+    <xs:sequence>
+      <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="LookupKeyEnum" type="q58:LookupKeyEnum" />
+      <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" minOccurs="0" name="ModuleEnum" type="q59:ModuleEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaPlatformRequest" nillable="true" type="tns:MediaPlatformRequest" />
+  <xs:complexType name="MediaPlatformResponse">
+    <xs:sequence>
+      <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" minOccurs="0" name="Lookup" nillable="true" type="q60:MediaPlatformLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaPlatformResponse" nillable="true" type="tns:MediaPlatformResponse" />
+</xs:schema>

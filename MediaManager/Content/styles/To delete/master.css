@@ -1,0 +1,128 @@
+﻿body
+{
+    margin: 0;   
+}
+#topDivider {
+    background-color: #FAFAD2; 
+    border-bottom: 2px double #B5B5B5; 
+    height: 90px; 
+    padding: 15px 0 10px 30px;
+}
+.display-set {
+    width: 40%;
+    padding: 6px 10px 14px 10px;
+    background-color: #EAF2FF;
+    margin-left: 30px;
+    border: 3px double #8F8F8F;
+}
+.display-label {
+    font-family: Tahoma;
+    font-size: 0.80em;
+    font-weight: bold;
+    padding: 3px;    
+}
+.display-field {   
+    font-family: Tahoma;
+    font-size: 0.85em;
+    padding: 3px;  
+    border: 1px solid #8F8F8F;
+    background-color: #FFFFFF;
+}
+.edit-set {
+    width: 440px;
+    padding: 6px 10px 14px 10px;
+    background-color: #F5E6C9;
+    margin-left: 7px;
+    margin-right: 7px;
+    border: 3px double #8F8F8F;
+}
+.ui-dialog-content div.edit-set {
+   /* width: 100%; */
+    margin: 0 20px 0 0;
+    background-color: transparent;
+}
+.ui-loading-icon 
+{
+    position: relative; 
+    top: 50px; 
+    left: 220px;
+}
+.button:hover {
+    background-color: white;
+    color: #006EFF;
+}
+.editor-label {
+    font-family: Tahoma;
+    font-size: 0.80em;
+    font-weight: bold;
+    padding: 3px;       
+}
+.editor-field {
+    padding: 1px;  
+    border: 1px solid #8F8F8F;
+    background-color: #FFFFFF;    
+}
+.editor-field-hidden {
+    display: none;
+}
+.editor-field input{
+    font-family: Tahoma;
+    font-size: 0.85em;
+    padding: 2px;  
+    border-style: none; 
+    width: 98%; 
+    background-color: transparent;
+}
+.readonly {
+    background-color:#C9C9C9;
+}
+#ajaxResult {
+    display: none; 
+    color: #00FFFF;
+    font-family: arial;
+    font-size: 10pt;
+    font-weight:bold;
+    margin-top: 6px;
+}
+.resultMsg {
+    display: none; 
+    color: #136CBA;
+    font-family: arial;
+    font-size: 10pt;
+    font-weight:bold;
+    margin-bottom: 6px;
+}
+input[type="submit"], input[type="button"], button
+{
+    background: url("../Images/img_btn.png") repeat-x scroll 50% 50% #E6E6E6;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px 4px 4px 4px;
+    color: #555555;
+    font: 12px BPreplayRegular,Helvetica,Arial;
+    height: 25px;
+    margin-right: 4px;
+    padding: 4px;
+    width: 100px;
+}
+.search_table
+{
+    width: 800px; 
+    border: 3px double gray;
+    border-collapse: collapse; 
+    font-family: Tahoma; 
+    font-size: 0.9em
+}
+.table_search_header
+{
+    background-color: #EAF2FF;
+    font-size: 0.85em; 
+    font-weight: bold;
+    border: 1px solid gray;
+    padding: 2px 4px;    
+}
+.table_search_td
+{
+    border: 1px solid gray;
+    padding: 2px 4px;
+    font-size: 0.85em; 
+}

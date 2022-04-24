@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b6261101-e5be-4fb8-a981-a0987ac35f72" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ContractLicenseLookupService.xsd" MetadataType="Schema" ID="15e70256-416e-49a7-910b-97be9c8ab477" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ContractLicenseLookupService1.xsd" MetadataType="Schema" ID="fea5190e-752b-44a7-a4e3-eefe72518a08" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ContractLicenseLookupService2.xsd" MetadataType="Schema" ID="95b17d47-8c3a-4189-b2d2-3d21ab25e1e4" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ContractLicenseLookupService3.xsd" MetadataType="Schema" ID="bb446ef1-98bb-4b1e-85c2-723dc2dea8db" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ContractLicenseLookupService4.xsd" MetadataType="Schema" ID="da681f41-3b2c-48e1-9dd9-38a6613008a6" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ContractLicenseLookupService5.xsd" MetadataType="Schema" ID="62b0052c-f572-4557-900f-d8bdb89832bb" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ContractLicenseLookupService.wsdl" MetadataType="Wsdl" ID="ea4ecda4-b434-46f0-bc8f-dfba6d3ae630" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

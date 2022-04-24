@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.SuperSport" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.SuperSport" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.Common" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="ArrayOfProgrammeVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProgrammeVO" nillable="true" type="tns:ProgrammeVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProgrammeVO" nillable="true" type="tns:ArrayOfProgrammeVO" />
+  <xs:complexType name="ProgrammeVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrayOfDay" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BinID" type="xs:int" />
+          <xs:element minOccurs="0" name="CasAward" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CasName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CasRole" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelService" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Colour" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommentImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CopyImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DelayedImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Duration" type="ser:duration" />
+          <xs:element minOccurs="0" name="DurationUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Episode_number" type="xs:int" />
+          <xs:element minOccurs="0" name="Fgl_live_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Fgl_location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fgl_time" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fgl_venue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenAward" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenQuality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenRatingInt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenReleaseYear" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenStuCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenSubGenre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gen_ref_no" type="xs:int" />
+          <xs:element minOccurs="0" name="Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenreDuration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IntendedLicense" type="xs:int" />
+          <xs:element minOccurs="0" name="Lic_number" type="xs:int" />
+          <xs:element minOccurs="0" name="Lic_start" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LicenseRuns" type="xs:int" />
+          <xs:element minOccurs="0" name="Licensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Licensor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LiveImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Llic_end" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MPAARating" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MacroDuration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxEpisodeCount" type="xs:int" />
+          <xs:element minOccurs="0" name="Nationlity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PremierImage" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.Common" minOccurs="0" name="ProgrammeInfoList" nillable="true" type="q2:ArrayOfColumnsVO" />
+          <xs:element minOccurs="0" name="ProgrammeOperation" type="ser:char" />
+          <xs:element minOccurs="0" name="RemainingRuns" type="xs:int" />
+          <xs:element minOccurs="0" name="RepeatedImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchActEndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SchActStartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SchChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchEndTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchEventType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchItemType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchLicNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SchNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SchParent" type="xs:int" />
+          <xs:element minOccurs="0" name="SchSCheduleNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SchSatelliteComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchSatelliteTimeIn" type="xs:int" />
+          <xs:element minOccurs="0" name="SchSatelliteTimeOut" type="xs:int" />
+          <xs:element minOccurs="0" name="SchSlot" type="xs:int" />
+          <xs:element minOccurs="0" name="SchStartTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchStudioComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchStudioTimeIn" type="xs:int" />
+          <xs:element minOccurs="0" name="SchStudioTimeOut" type="xs:int" />
+          <xs:element minOccurs="0" name="SchSuperSet" type="xs:int" />
+          <xs:element minOccurs="0" name="SchType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScheduleSlot" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleStartTime" type="xs:int" />
+          <xs:element minOccurs="0" name="Season_title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Series_number" type="xs:int" />
+          <xs:element minOccurs="0" name="Show_number" type="xs:int" />
+          <xs:element minOccurs="0" name="Show_title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SkipEpisode" type="xs:int" />
+          <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SuperSetTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Synopsis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SytType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Teams" nillable="true" type="tns:ArrayOfCastVO" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WarningImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Working_title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeVO" nillable="true" type="tns:ProgrammeVO" />
+  <xs:complexType name="ArrayOfCastVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CastVO" nillable="true" type="tns:CastVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCastVO" nillable="true" type="tns:ArrayOfCastVO" />
+  <xs:complexType name="CastVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseVO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CastVO" nillable="true" type="tns:CastVO" />
+</xs:schema>

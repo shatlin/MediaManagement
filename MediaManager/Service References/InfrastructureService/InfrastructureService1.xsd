@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/InfrastructureService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="LoadMenusRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LoggedInUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModuleId" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserRoles" nillable="true" type="q2:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadMenusRequest" nillable="true" type="tns:LoadMenusRequest" />
+  <xs:complexType name="LoadMenusResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MenuList" nillable="true" type="q3:ArrayOfMenuVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadMenusResponse" nillable="true" type="tns:LoadMenusResponse" />
+  <xs:complexType name="LoadRolesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q4:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadRolesRequest" nillable="true" type="tns:LoadRolesRequest" />
+  <xs:complexType name="LoadRolesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q5:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MenUserVODetails" nillable="true" type="q5:MENUserVO" />
+          <xs:element minOccurs="0" name="ProfileCatalogXML" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Roles" nillable="true" type="q5:ArrayOfRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoadRolesResponse" nillable="true" type="tns:LoadRolesResponse" />
+  <xs:complexType name="GetAppParametersRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="GetAppParametersRequest" nillable="true" type="tns:GetAppParametersRequest" />
+  <xs:complexType name="GetAppParametersResponse">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="AppParameterList" nillable="true" type="q6:ArrayOfAppParameterVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAppParametersResponse" nillable="true" type="tns:GetAppParametersResponse" />
+  <xs:complexType name="LoadControlRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoadControlRequest" nillable="true" type="tns:LoadControlRequest" />
+  <xs:complexType name="LoadControlResponse">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" minOccurs="0" name="Controls" nillable="true" type="q7:ArrayOfControl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoadControlResponse" nillable="true" type="tns:LoadControlResponse" />
+</xs:schema>

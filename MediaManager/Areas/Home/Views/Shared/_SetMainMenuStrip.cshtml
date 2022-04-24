@@ -1,0 +1,221 @@
+﻿@model MediaManager.Models.App_MenuModel
+<ul class="dropdown">
+    <li><a href="#">System Admin</a>
+        <ul>
+            <li><a href="~/Admin/Admin/ManageRoles">Manage Roles</a>
+                <ul>
+                </ul>
+            </li>
+            <li><a href="~/Admin/Admin/ManageUsers">Manage Users</a>
+                <ul>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">Scheduling</a>
+        <ul>
+            <li><a href="#">Reports
+                <div class="arrowRight">
+                    &nbsp;</div>
+            </a>
+                <ul>
+                    <li><a href="~/Scheduling/Report/SSCPerDayRpt">Linear - Day By Day Report</a>
+                        <ul>
+                        </ul>
+                    </li>
+                    <li><a href="~/Scheduling/Report/ScheduleChangesRpt">Linear - Schedule Changes Report</a>
+                        <ul>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Catch-Up Reports
+                <div class="arrowRight">
+                    &nbsp;</div>
+            </a>
+                <ul>
+                    <li><a href="~/Scheduling/Report/CatchUpDayByDayReport">Day By Day Report</a>
+                        <ul>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">Media Management</a>
+        <ul>
+            <li><a href="#">Programme Library<div class="arrowRight">
+                &nbsp;</div>
+            </a>
+                <ul>
+                    <li><a href="~/Media_Mgt/ProgrammeMaintenance/ProgrammeSearch">Programme Maintenance</a>
+                        <ul>
+                        </ul>
+                    </li>
+                    <li><a href="~/Media_Mgt/SeriesMaintaince/SeriesMaintaince">Series Title Maintenance</a>
+                        <ul>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">MediaManager Library<div class="arrowRight">
+                &nbsp;</div>
+            </a>
+                <ul>
+                    <li><a href="~/Media_Mgt/Library/LibraryMaintenance">Library Maintenance</a>
+                        <ul>
+                        </ul>
+                    </li>
+                    <li><a href="~/Media_Mgt/Library/LibraryBookIn">Library Book In</a>
+                        <ul>
+                        </ul>
+                    </li>
+                    <li><a href="~/Media_Mgt/Library/LibraryBookOut">Library Book Out</a>
+                        <ul>
+                        </ul>
+                    </li>
+                    <li><a href="~/Media_Mgt/Library/TrafficToSupplierCommunication">Traffic To Supplier
+                        Communication</a>
+                        <ul>
+                        </ul>
+                    </li>
+                    <li><a href="#">Reports
+                        <div class="arrowRight">
+                            &nbsp;</div>
+                    </a>
+                        <ul>
+                            <li><a href="~/Media_Mgt/Report/MediaManagerMaterialStsRpt">MediaManager Material Status Report</a>
+                                <ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">Acquisition</a>
+        <ul>
+            <li><a href="#">Deal Memo Administration
+                <div class="arrowRight">
+                    &nbsp;</div>
+            </a>
+                <ul>
+                    <li><a href="#">Deal Memo Maintenance
+                        <div class="arrowRight">
+                            &nbsp;</div>
+                    </a>
+                        <ul>
+                            <li><a href="~/Acquisition/DealMemoMaintenance/DealMemoSearch">Deal Memo Search</a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li><a href="~/Acquisition/DealMemoMaintenance/DealMemoMaintenance">New Deal Memo </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            @* <li><a href="~/Media_Mgt/Views/SeriesMaintaince/AddSeasonTitle">Add New Series</a>
+                                <ul>
+                                </ul>
+                            </li>*@
+                        </ul>
+                    </li>
+
+                    <li><a href="~/Acquisition/DealMemoUserMaintenance/DealMemoUserMaintenance">Deal Memo
+                        User Maintenance </a></li>
+
+
+                    <li><a href="#">Deal Memo Reports
+                        <div class="arrowRight">
+                            &nbsp;</div>
+                    </a>
+                        <ul>
+                            <li><a href="~/Acquisition/Report/DealsNotSigned">Deals Not Signed</a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li><a href="~/Acquisition/Report/ADMDealBetnDatesRpt">Deals Executed Between Two Dates</a>
+                                <ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+@*<ul id="Dropdownmenu">
+    @if (Model != null)
+    {
+        if (Model.MainMenu != null)
+        {
+            foreach (var menuItem in Model.MainMenu)
+            {
+        <li><a href="#">@menuItem.Caption</a>
+            <ul>
+                @if (@menuItem.MenuItemList != null && @menuItem.MenuItemList.Length > 0)
+                {
+                    foreach (var submenuitem in @menuItem.MenuItemList)
+                    {
+                    <li><a href="~/@menuItem.Caption.ToString().Replace(" ","")/@submenuitem.Caption.ToString().Replace(" ", "")">@submenuitem.Caption</a>
+                        <ul>
+                            @if (@submenuitem.SubMenuItemList != null && @submenuitem.SubMenuItemList.Length > 0)
+                            {
+                                foreach (var childmenuitem in @submenuitem.SubMenuItemList)
+                                {
+                                <li><a href="~/@menuItem.Caption.ToString().Replace(" ", "")/@submenuitem.Caption.ToString().Replace(" ", "")/@childmenuitem.Caption.ToString().Replace(" ", "")">@childmenuitem.Caption</a>
+                                    <ul>
+                                        @if (@childmenuitem.SubMenuItemList != null && @childmenuitem.SubMenuItemList.Length > 0)
+                                        {
+                                            foreach (var subchildmenuitem in @childmenuitem.SubMenuItemList)
+                                            {
+                                            <li><a href="~/@menuItem.Caption.ToString().Replace(" ", "")/@submenuitem.Caption.ToString().Replace(" ", "")/@childmenuitem.Caption.ToString().Replace(" ", "")/@subchildmenuitem.Caption.ToString().Replace(" ", "")">@subchildmenuitem.Caption</a></li>
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                    }
+                }
+            </ul>
+        </li>
+            }
+        }
+    }
+</ul>*@ @*<ul id="RoleBasedMenu">
+    @if (Model != null)
+    {
+        if (Model.RoleBasedMenu != null)
+        {
+            foreach (var menuItem in Model.RoleBasedMenu)
+            {
+                int index = @menuItem.IndexOf("/");
+                string controller = @menuItem.Substring(index+1);
+                int index1 = controller.IndexOf("/");
+                string menustring = controller.Split('/')[1];
+        <li>@Html.ActionLink(menustring, menustring.ToString().Replace(" ", ""), controller.Substring(0, index1), new { area = @menuItem.Substring(0, index) }, null)</li>
+            }
+        }
+    }
+</ul>*@
+<script language="javascript">
+    $(document).ready(function () {
+        $(window).resize(function () {
+            if ($(window).width() >= '900') {
+                $(".dropdown .subLevelRight").css('left', '100%');
+
+            } else {
+                $(".dropdown .subLevelRight").css('left', '-100%');
+            }
+        });
+
+
+    });
+
+
+</script>

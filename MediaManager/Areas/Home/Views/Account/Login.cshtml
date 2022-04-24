@@ -1,0 +1,128 @@
+﻿@model MediaManager.Models.LoginModel
+@using MediaManager.Infrastructure.Helpers;
+@{
+    ViewBag.Title = "Log in";
+    Layout = SharedPages.LayoutLoginPage; 
+ }
+
+@Scripts.Render("~/Content/LoginPagescripts")
+    @Scripts.Render("~/Content/NotyScripts")
+<table class="ContentFormHolder">
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td class="Login" id="login" style="display:none;">
+                        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="LoginForm" id="LoginForm" >
+                            
+                                <fieldset>
+                                
+                                    
+                                       <img src="~/Content/images/Login Manager.png"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="~/Content/images/logo.png"/>
+                                    <br />
+                                  
+                                  <br />
+                                    <ol>
+                                     <div style="margin-left:25px;">
+                                        <li >
+                                            @Html.TextBoxFor(m => m.UserName, new { @Value = "s.denistan", @class = "inputTextLargeLogin" }) 
+                                            @* @Html.TextBoxFor(m => m.UserName, new { @Value = "DemoUser", @class = "inputTextLarge" })*@
+                                        </li>
+                                        <li>
+                                          @*  @Html.LabelFor(m => m.Password)*@
+                                            @*Html.PasswordFor(m => m.Password, new { placeholder = "Password" })*@
+                                          @Html.PasswordFor(m => m.Password, new { @Value = "Damien5.3", @class = "inputTextLargeLogin" })
+                                        </li>
+                                        </div>
+                                        <br />
+                                        <li class="LoginbtnalignRight">
+                                          @*  @Html.CheckBoxFor(m => m.RememberMe)
+                                            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })*@
+                                            <input type="submit" id="btnSignIn" class="inputButton" value="Sign in" />
+                                        </li>
+                                    </ol>
+                                     
+                                </fieldset>
+                            </div>
+                           
+                            <div >
+                               @Html.ValidationSummary() 
+                            </div>
+                            @section Scripts 
+                            {
+                                @Scripts.Render("~/bundles/jqueryval")
+                            }
+                        }
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+  
+
+ 
+
+ <script type="text/javascript" >
+     $(function () {
+         $(".validation-summary-valid").hide();
+         $(".validation-summary-errors").hide();
+         var validatorDiv = $(".validation-summary-errors");
+         $("#login").fadeIn(500);
+
+
+         $("#btnSignIn").click(function () {
+             //             if ($('#UserName')) { 
+             //             
+             //             }
+         });
+
+         //{
+         //showMessage("<center>Best viewed in resolution 1280*1024, using the latest version of Google Chrome, Mozilla Firefox or Internet Explorer 9.</center>", 'alert');
+         //}
+         if ((validatorDiv != null) && validatorDiv.length > 0) {
+             $.noty.closeAll();
+             var errorArray = validatorDiv[0].innerText.split('.');
+             var errorMessage = "";
+             if (validatorDiv[0].innerText.toString().search("The User name field is required.The Password field is required.") >= 0) {
+                 errorMessage = "The User name field is required.<br/> The Password field is required.";
+             }
+             else if (validatorDiv[0].innerText.toString().search("The Password field is required.") >= 0) {
+                 errorMessage = "The Password field is required.";
+             }
+             else if (validatorDiv[0].innerText.toString().search("The User name field is required.") >= 0) {
+                 errorMessage = "The User name field is required.";
+             }
+             else
+                 errorMessage = validatorDiv[0].innerText;
+             //             if ((errorArray != null) && (errorArray.length > 1) && errorArray[1] == "The user name or password provided is incorrect.")
+             //                 errorMessage = errorArray[1];
+             //             else
+             //                 errorMessage = validatorDiv[0].innerText;
+             showMessage(errorMessage, 'error');
+         }
+         else
+             showMessage("<center>Best viewed in resolution 1280*1024, using the latest version of Google Chrome, Mozilla Firefox or Internet Explorer 9.</center>", 'alert');
+
+         $('#mainForm').bind('invalid-form.validate', function () {
+             var val = $('#mainForm').validate();
+             var errorMessage = "";
+             for (var i = 0; val.errorList[i]; i++) {
+                 var error = val.errorList[i];
+                 if (errorMessage == "") {
+                     errorMessage = error.message;
+                 }
+                 else {
+                     errorMessage = errorMessage + "<br /> " + error.message;
+                 }
+             }
+             if (errorMessage != "") {
+                 showMessage(errorMessage, 'error');
+             }
+         });
+     });
+</script>

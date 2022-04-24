@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SystemAdminService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContract.SystemAdmin" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.SystemAdmin" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISystemAdmin_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRoles_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateRoles_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasks" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetTasks_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetSystemUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetSystemUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetSystemUsers_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetSystemDepartmentDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemDepartmentDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetSystemDepartmentDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemDepartmentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetSystemDepartmentDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateUsers_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetMenUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetMenUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetMenUserDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetTaskControls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskControls" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetTaskControls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetTaskControls_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateTaskControls_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskControls" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateTaskControls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateTaskControls_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetEmails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmails" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetEmails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetEmails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateEmails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmails" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateEmails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateEmails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetEmailsForSS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmailsForSS" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetEmailsForSS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmailsForSSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetEmailsForSS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q12:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateEmailRolesForSS_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmailRolesForSS" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateEmailRolesForSS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmailRolesForSSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_UpdateEmailRolesForSS_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q13:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetApprovalFlowConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApprovalFlowConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetApprovalFlowConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApprovalFlowConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q14:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveApprovalFlowConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveApprovalFlowConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveApprovalFlowConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveApprovalFlowConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q15:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetFieldApprovalFlowConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldApprovalFlowConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetFieldApprovalFlowConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldApprovalFlowConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetFieldApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q16:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveFieldApprovalFlowConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFieldApprovalFlowConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveFieldApprovalFlowConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFieldApprovalFlowConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveFieldApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q17:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRegionsDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionsDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRegionsDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRegionsDetails_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q18:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRegions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegions" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRegions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_GetRegions_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q19:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveUserRegions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserRegions" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveUserRegions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAdmin_SaveUserRegions_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q20:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="ISystemAdmin">
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetRoles" message="tns:ISystemAdmin_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetRolesResponse" message="tns:ISystemAdmin_GetRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetRolesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetRoles_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateRoles" message="tns:ISystemAdmin_UpdateRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateRolesResponse" message="tns:ISystemAdmin_UpdateRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateRolesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_UpdateRoles_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetTasks" message="tns:ISystemAdmin_GetTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetTasksResponse" message="tns:ISystemAdmin_GetTasks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetTasksMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetTasks_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetSystemUsers" message="tns:ISystemAdmin_GetSystemUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetSystemUsersResponse" message="tns:ISystemAdmin_GetSystemUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetSystemUsersMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetSystemUsers_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDepartmentDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetSystemDepartmentDetails" message="tns:ISystemAdmin_GetSystemDepartmentDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetSystemDepartmentDetailsResponse" message="tns:ISystemAdmin_GetSystemDepartmentDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetSystemDepartmentDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetSystemDepartmentDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateUsers" message="tns:ISystemAdmin_UpdateUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateUsersResponse" message="tns:ISystemAdmin_UpdateUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateUsersMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_UpdateUsers_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetMenUserDetails" message="tns:ISystemAdmin_GetMenUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetMenUserDetailsResponse" message="tns:ISystemAdmin_GetMenUserDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetMenUserDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetMenUserDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskControls">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetTaskControls" message="tns:ISystemAdmin_GetTaskControls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetTaskControlsResponse" message="tns:ISystemAdmin_GetTaskControls_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetTaskControlsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetTaskControls_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskControls">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateTaskControls" message="tns:ISystemAdmin_UpdateTaskControls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateTaskControlsResponse" message="tns:ISystemAdmin_UpdateTaskControls_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateTaskControlsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_UpdateTaskControls_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetEmails" message="tns:ISystemAdmin_GetEmails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetEmailsResponse" message="tns:ISystemAdmin_GetEmails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetEmailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetEmails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateEmails" message="tns:ISystemAdmin_UpdateEmails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateEmailsResponse" message="tns:ISystemAdmin_UpdateEmails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateEmailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_UpdateEmails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailsForSS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetEmailsForSS" message="tns:ISystemAdmin_GetEmailsForSS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetEmailsForSSResponse" message="tns:ISystemAdmin_GetEmailsForSS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetEmailsForSSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetEmailsForSS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmailRolesForSS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateEmailRolesForSS" message="tns:ISystemAdmin_UpdateEmailRolesForSS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateEmailRolesForSSResponse" message="tns:ISystemAdmin_UpdateEmailRolesForSS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/UpdateEmailRolesForSSMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_UpdateEmailRolesForSS_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovalFlowConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetApprovalFlowConfiguration" message="tns:ISystemAdmin_GetApprovalFlowConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetApprovalFlowConfigurationResponse" message="tns:ISystemAdmin_GetApprovalFlowConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetApprovalFlowConfigurationMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveApprovalFlowConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/SaveApprovalFlowConfiguration" message="tns:ISystemAdmin_SaveApprovalFlowConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/SaveApprovalFlowConfigurationResponse" message="tns:ISystemAdmin_SaveApprovalFlowConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/SaveApprovalFlowConfigurationMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_SaveApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldApprovalFlowConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetFieldApprovalFlowConfiguration" message="tns:ISystemAdmin_GetFieldApprovalFlowConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetFieldApprovalFlowConfigurationResponse" message="tns:ISystemAdmin_GetFieldApprovalFlowConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetFieldApprovalFlowConfigurationMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetFieldApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFieldApprovalFlowConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/SaveFieldApprovalFlowConfiguration" message="tns:ISystemAdmin_SaveFieldApprovalFlowConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/SaveFieldApprovalFlowConfigurationResponse" message="tns:ISystemAdmin_SaveFieldApprovalFlowConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/SaveFieldApprovalFlowConfigurationMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_SaveFieldApprovalFlowConfiguration_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionsDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetRegionsDetails" message="tns:ISystemAdmin_GetRegionsDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetRegionsDetailsResponse" message="tns:ISystemAdmin_GetRegionsDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetRegionsDetailsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetRegionsDetails_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/GetRegions" message="tns:ISystemAdmin_GetRegions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/GetRegionsResponse" message="tns:ISystemAdmin_GetRegions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/GetRegionsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_GetRegions_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserRegions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAdmin/SaveUserRegions" message="tns:ISystemAdmin_SaveUserRegions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAdmin/SaveUserRegionsResponse" message="tns:ISystemAdmin_SaveUserRegions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISystemAdmin/SaveUserRegionsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:ISystemAdmin_SaveUserRegions_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:ISystemAdmin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRoles">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUsers">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetSystemUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDepartmentDetails">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetSystemDepartmentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenUserDetails">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetMenUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskControls">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetTaskControls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskControls">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateTaskControls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmails">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailsForSS">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetEmailsForSS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmailRolesForSS">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateEmailRolesForSS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovalFlowConfiguration">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveApprovalFlowConfiguration">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/SaveApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldApprovalFlowConfiguration">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetFieldApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFieldApprovalFlowConfiguration">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/SaveFieldApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionsDetails">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetRegionsDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/GetRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserRegions">
+      <soap:operation soapAction="http://tempuri.org/ISystemAdmin/SaveUserRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:ISystemAdmin">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetRoles">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRoles">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUsers">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetSystemUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDepartmentDetails">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetSystemDepartmentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenUserDetails">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetMenUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskControls">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetTaskControls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskControls">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateTaskControls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetEmails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmails">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateEmails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailsForSS">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetEmailsForSS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmailRolesForSS">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/UpdateEmailRolesForSS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovalFlowConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveApprovalFlowConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/SaveApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldApprovalFlowConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetFieldApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFieldApprovalFlowConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/SaveFieldApprovalFlowConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionsDetails">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetRegionsDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/GetRegions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserRegions">
+      <soap12:operation soapAction="http://tempuri.org/ISystemAdmin/SaveUserRegions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SystemAdminService">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/SystemAdmin/SystemAdminService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

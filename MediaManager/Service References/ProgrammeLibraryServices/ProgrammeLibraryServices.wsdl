@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProgrammeLibraryServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.MediaManagement.ProgrammeLibrary" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagement.ProgrammeLibrary.MNet" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagement.TraffixAndTransfers" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagement.MediaLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProgrammeLibrary_DeleteProgramQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProgramQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteProgramQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProgramQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteProgramQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteEpisode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEpisode" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteEpisode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEpisodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteEpisode_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveCastQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCastQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveCastQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCastQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveCastQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateEpisodeEventValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEpisodeEventValue" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateEpisodeEventValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEpisodeEventValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateEpisodeEventValue_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SentEmailFromSeriesTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SentEmailFromSeriesTitle" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SentEmailFromSeriesTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SentEmailFromSeriesTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SentEmailFromSeriesTitle_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProgramTitle" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProgramTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramTitle_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchCastQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCastQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchCastQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCastQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchCastQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_LocalProgramTitleSearchQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:LocalProgramTitleSearchQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_LocalProgramTitleSearchQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LocalProgramTitleSearchQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_LocalProgramTitleSearchQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveLocalProgramTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLocalProgramTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveLocalProgramTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLocalProgramTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveLocalProgramTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProducerQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProducerQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProducerQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProducerQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProducerQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveProducerQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProducerQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveProducerQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProducerQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveProducerQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchSeriesTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSeriesTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchSeriesTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSeriesTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchSeriesTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q12:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangeWorkingTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChangeWorkingTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangeWorkingTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChangeWorkingTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangeWorkingTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q13:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProgramQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProgramQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q14:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveProgramQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProgramQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveProgramQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProgramQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveProgramQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q15:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramLinkingQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProgramLinkingQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramLinkingQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProgramLinkingQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchProgramLinkingQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q16:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchTapeLinkingQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTapeLinkingQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchTapeLinkingQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTapeLinkingQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SearchTapeLinkingQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q17:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_LinkTapeTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkTapeTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_LinkTapeTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkTapeTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_LinkTapeTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q18:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodesCountQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEpisodesCountQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodesCountQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEpisodesCountQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodesCountQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q19:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetProgramDetailsQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramDetailsQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetProgramDetailsQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramDetailsQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetProgramDetailsQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q20:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetLicenseDetailsQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseDetailsQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetLicenseDetailsQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseDetailsQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetLicenseDetailsQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q21:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetCatchUpLicenseDetailsQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatchUpLicenseDetailsQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetCatchUpLicenseDetailsQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatchUpLicenseDetailsQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetCatchUpLicenseDetailsQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q22:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveEnterUpdateLiveInfoQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEnterUpdateLiveInfoQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveEnterUpdateLiveInfoQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEnterUpdateLiveInfoQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveEnterUpdateLiveInfoQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q23:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_AddSeriesTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSeriesTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_AddSeriesTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSeriesTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_AddSeriesTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q24:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteSeriesTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeriesTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteSeriesTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeriesTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteSeriesTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q25:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_AddSeasonTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSeasonTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_AddSeasonTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSeasonTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_AddSeasonTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q26:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteSeasonTitleQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeasonTitleQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteSeasonTitleQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeasonTitleQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DeleteSeasonTitleQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q27:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DisplayEpisodesQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayEpisodesQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DisplayEpisodesQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayEpisodesQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DisplayEpisodesQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q28:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangedEpisodeNoActualQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChangedEpisodeNoActualQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangedEpisodeNoActualQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChangedEpisodeNoActualQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangedEpisodeNoActualQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q29:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangedEpisodesOnClose_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChangedEpisodesOnClose" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangedEpisodesOnClose_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveChangedEpisodesOnCloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveChangedEpisodesOnClose_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q30:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveCreatedEpisodeQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCreatedEpisodeQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveCreatedEpisodeQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCreatedEpisodeQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveCreatedEpisodeQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q31:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateSeasonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSeasonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateSeasonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSeasonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateSeasonQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q32:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateSeriesQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSeriesQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateSeriesQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSeriesQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_UpdateSeriesQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q33:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodeDetailsQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEpisodeDetailsQuery" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodeDetailsQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEpisodeDetailsQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodeDetailsQuery_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q34:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DisplaySeasonTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaySeasonTitle" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DisplaySeasonTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaySeasonTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_DisplaySeasonTitle_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q35:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveUpdatedEpisodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUpdatedEpisodes" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveUpdatedEpisodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUpdatedEpisodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_SaveUpdatedEpisodes_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q36:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEpisodesList" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEpisodesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProgrammeLibrary_GetEpisodesList_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q37:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IProgrammeLibrary">
+    <wsdl:operation name="DeleteProgramQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteProgramQuery" message="tns:IProgrammeLibrary_DeleteProgramQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteProgramQueryResponse" message="tns:IProgrammeLibrary_DeleteProgramQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteProgramQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_DeleteProgramQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEpisode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteEpisode" message="tns:IProgrammeLibrary_DeleteEpisode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteEpisodeResponse" message="tns:IProgrammeLibrary_DeleteEpisode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteEpisodeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_DeleteEpisode_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCastQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveCastQuery" message="tns:IProgrammeLibrary_SaveCastQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveCastQueryResponse" message="tns:IProgrammeLibrary_SaveCastQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveCastQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveCastQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEpisodeEventValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateEpisodeEventValue" message="tns:IProgrammeLibrary_UpdateEpisodeEventValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateEpisodeEventValueResponse" message="tns:IProgrammeLibrary_UpdateEpisodeEventValue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateEpisodeEventValueMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_UpdateEpisodeEventValue_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SentEmailFromSeriesTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SentEmailFromSeriesTitle" message="tns:IProgrammeLibrary_SentEmailFromSeriesTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SentEmailFromSeriesTitleResponse" message="tns:IProgrammeLibrary_SentEmailFromSeriesTitle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SentEmailFromSeriesTitleMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SentEmailFromSeriesTitle_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramTitle" message="tns:IProgrammeLibrary_SearchProgramTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramTitleResponse" message="tns:IProgrammeLibrary_SearchProgramTitle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramTitleMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SearchProgramTitle_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCastQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchCastQuery" message="tns:IProgrammeLibrary_SearchCastQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchCastQueryResponse" message="tns:IProgrammeLibrary_SearchCastQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchCastQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SearchCastQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalProgramTitleSearchQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/LocalProgramTitleSearchQuery" message="tns:IProgrammeLibrary_LocalProgramTitleSearchQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/LocalProgramTitleSearchQueryResponse" message="tns:IProgrammeLibrary_LocalProgramTitleSearchQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/LocalProgramTitleSearchQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_LocalProgramTitleSearchQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLocalProgramTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveLocalProgramTitleQuery" message="tns:IProgrammeLibrary_SaveLocalProgramTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveLocalProgramTitleQueryResponse" message="tns:IProgrammeLibrary_SaveLocalProgramTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveLocalProgramTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveLocalProgramTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducerQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProducerQuery" message="tns:IProgrammeLibrary_SearchProducerQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProducerQueryResponse" message="tns:IProgrammeLibrary_SearchProducerQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProducerQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SearchProducerQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProducerQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveProducerQuery" message="tns:IProgrammeLibrary_SaveProducerQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveProducerQueryResponse" message="tns:IProgrammeLibrary_SaveProducerQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveProducerQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveProducerQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSeriesTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchSeriesTitleQuery" message="tns:IProgrammeLibrary_SearchSeriesTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchSeriesTitleQueryResponse" message="tns:IProgrammeLibrary_SearchSeriesTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchSeriesTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SearchSeriesTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangeWorkingTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangeWorkingTitleQuery" message="tns:IProgrammeLibrary_SaveChangeWorkingTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangeWorkingTitleQueryResponse" message="tns:IProgrammeLibrary_SaveChangeWorkingTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangeWorkingTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveChangeWorkingTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramQuery" message="tns:IProgrammeLibrary_SearchProgramQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramQueryResponse" message="tns:IProgrammeLibrary_SearchProgramQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SearchProgramQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgramQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveProgramQuery" message="tns:IProgrammeLibrary_SaveProgramQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveProgramQueryResponse" message="tns:IProgrammeLibrary_SaveProgramQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveProgramQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveProgramQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramLinkingQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramLinkingQuery" message="tns:IProgrammeLibrary_SearchProgramLinkingQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramLinkingQueryResponse" message="tns:IProgrammeLibrary_SearchProgramLinkingQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchProgramLinkingQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SearchProgramLinkingQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTapeLinkingQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchTapeLinkingQuery" message="tns:IProgrammeLibrary_SearchTapeLinkingQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchTapeLinkingQueryResponse" message="tns:IProgrammeLibrary_SearchTapeLinkingQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SearchTapeLinkingQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SearchTapeLinkingQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkTapeTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/LinkTapeTitleQuery" message="tns:IProgrammeLibrary_LinkTapeTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/LinkTapeTitleQueryResponse" message="tns:IProgrammeLibrary_LinkTapeTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/LinkTapeTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_LinkTapeTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodesCountQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodesCountQuery" message="tns:IProgrammeLibrary_GetEpisodesCountQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodesCountQueryResponse" message="tns:IProgrammeLibrary_GetEpisodesCountQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodesCountQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_GetEpisodesCountQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramDetailsQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetProgramDetailsQuery" message="tns:IProgrammeLibrary_GetProgramDetailsQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetProgramDetailsQueryResponse" message="tns:IProgrammeLibrary_GetProgramDetailsQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetProgramDetailsQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_GetProgramDetailsQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseDetailsQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetLicenseDetailsQuery" message="tns:IProgrammeLibrary_GetLicenseDetailsQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetLicenseDetailsQueryResponse" message="tns:IProgrammeLibrary_GetLicenseDetailsQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetLicenseDetailsQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_GetLicenseDetailsQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatchUpLicenseDetailsQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetCatchUpLicenseDetailsQuery" message="tns:IProgrammeLibrary_GetCatchUpLicenseDetailsQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetCatchUpLicenseDetailsQueryResponse" message="tns:IProgrammeLibrary_GetCatchUpLicenseDetailsQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetCatchUpLicenseDetailsQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_GetCatchUpLicenseDetailsQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEnterUpdateLiveInfoQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveEnterUpdateLiveInfoQuery" message="tns:IProgrammeLibrary_SaveEnterUpdateLiveInfoQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveEnterUpdateLiveInfoQueryResponse" message="tns:IProgrammeLibrary_SaveEnterUpdateLiveInfoQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveEnterUpdateLiveInfoQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveEnterUpdateLiveInfoQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSeriesTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/AddSeriesTitleQuery" message="tns:IProgrammeLibrary_AddSeriesTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/AddSeriesTitleQueryResponse" message="tns:IProgrammeLibrary_AddSeriesTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/AddSeriesTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_AddSeriesTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeriesTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteSeriesTitleQuery" message="tns:IProgrammeLibrary_DeleteSeriesTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteSeriesTitleQueryResponse" message="tns:IProgrammeLibrary_DeleteSeriesTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteSeriesTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_DeleteSeriesTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSeasonTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/AddSeasonTitleQuery" message="tns:IProgrammeLibrary_AddSeasonTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/AddSeasonTitleQueryResponse" message="tns:IProgrammeLibrary_AddSeasonTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/AddSeasonTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_AddSeasonTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeasonTitleQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteSeasonTitleQuery" message="tns:IProgrammeLibrary_DeleteSeasonTitleQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteSeasonTitleQueryResponse" message="tns:IProgrammeLibrary_DeleteSeasonTitleQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/DeleteSeasonTitleQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_DeleteSeasonTitleQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayEpisodesQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/DisplayEpisodesQuery" message="tns:IProgrammeLibrary_DisplayEpisodesQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/DisplayEpisodesQueryResponse" message="tns:IProgrammeLibrary_DisplayEpisodesQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/DisplayEpisodesQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_DisplayEpisodesQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangedEpisodeNoActualQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodeNoActualQuery" message="tns:IProgrammeLibrary_SaveChangedEpisodeNoActualQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodeNoActualQueryResponse" message="tns:IProgrammeLibrary_SaveChangedEpisodeNoActualQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodeNoActualQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveChangedEpisodeNoActualQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangedEpisodesOnClose">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodesOnClose" message="tns:IProgrammeLibrary_SaveChangedEpisodesOnClose_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodesOnCloseResponse" message="tns:IProgrammeLibrary_SaveChangedEpisodesOnClose_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodesOnCloseMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveChangedEpisodesOnClose_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCreatedEpisodeQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveCreatedEpisodeQuery" message="tns:IProgrammeLibrary_SaveCreatedEpisodeQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveCreatedEpisodeQueryResponse" message="tns:IProgrammeLibrary_SaveCreatedEpisodeQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveCreatedEpisodeQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveCreatedEpisodeQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeasonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateSeasonQuery" message="tns:IProgrammeLibrary_UpdateSeasonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateSeasonQueryResponse" message="tns:IProgrammeLibrary_UpdateSeasonQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateSeasonQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_UpdateSeasonQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeriesQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateSeriesQuery" message="tns:IProgrammeLibrary_UpdateSeriesQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateSeriesQueryResponse" message="tns:IProgrammeLibrary_UpdateSeriesQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/UpdateSeriesQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_UpdateSeriesQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodeDetailsQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodeDetailsQuery" message="tns:IProgrammeLibrary_GetEpisodeDetailsQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodeDetailsQueryResponse" message="tns:IProgrammeLibrary_GetEpisodeDetailsQuery_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodeDetailsQueryMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_GetEpisodeDetailsQuery_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplaySeasonTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/DisplaySeasonTitle" message="tns:IProgrammeLibrary_DisplaySeasonTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/DisplaySeasonTitleResponse" message="tns:IProgrammeLibrary_DisplaySeasonTitle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/DisplaySeasonTitleMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_DisplaySeasonTitle_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpdatedEpisodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveUpdatedEpisodes" message="tns:IProgrammeLibrary_SaveUpdatedEpisodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveUpdatedEpisodesResponse" message="tns:IProgrammeLibrary_SaveUpdatedEpisodes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/SaveUpdatedEpisodesMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_SaveUpdatedEpisodes_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodesList" message="tns:IProgrammeLibrary_GetEpisodesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodesListResponse" message="tns:IProgrammeLibrary_GetEpisodesList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IProgrammeLibrary/GetEpisodesListMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IProgrammeLibrary_GetEpisodesList_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:IProgrammeLibrary">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeleteProgramQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteProgramQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEpisode">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteEpisode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCastQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveCastQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEpisodeEventValue">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/UpdateEpisodeEventValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SentEmailFromSeriesTitle">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SentEmailFromSeriesTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramTitle">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProgramTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCastQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchCastQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LocalProgramTitleSearchQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/LocalProgramTitleSearchQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLocalProgramTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveLocalProgramTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducerQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProducerQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProducerQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveProducerQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSeriesTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchSeriesTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangeWorkingTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveChangeWorkingTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProgramQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgramQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveProgramQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramLinkingQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProgramLinkingQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTapeLinkingQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchTapeLinkingQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkTapeTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/LinkTapeTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodesCountQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetEpisodesCountQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramDetailsQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetProgramDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseDetailsQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetLicenseDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCatchUpLicenseDetailsQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetCatchUpLicenseDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEnterUpdateLiveInfoQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveEnterUpdateLiveInfoQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddSeriesTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/AddSeriesTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeriesTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteSeriesTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddSeasonTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/AddSeasonTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeasonTitleQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteSeasonTitleQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayEpisodesQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/DisplayEpisodesQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangedEpisodeNoActualQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodeNoActualQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangedEpisodesOnClose">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodesOnClose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCreatedEpisodeQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveCreatedEpisodeQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeasonQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/UpdateSeasonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeriesQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/UpdateSeriesQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodeDetailsQuery">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetEpisodeDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisplaySeasonTitle">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/DisplaySeasonTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpdatedEpisodes">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveUpdatedEpisodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodesList">
+      <soap:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetEpisodesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:IProgrammeLibrary">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="DeleteProgramQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteProgramQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEpisode">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteEpisode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCastQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveCastQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEpisodeEventValue">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/UpdateEpisodeEventValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SentEmailFromSeriesTitle">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SentEmailFromSeriesTitle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramTitle">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProgramTitle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCastQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchCastQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LocalProgramTitleSearchQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/LocalProgramTitleSearchQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLocalProgramTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveLocalProgramTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducerQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProducerQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProducerQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveProducerQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSeriesTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchSeriesTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangeWorkingTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveChangeWorkingTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProgramQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProgramQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveProgramQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProgramLinkingQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchProgramLinkingQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTapeLinkingQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SearchTapeLinkingQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkTapeTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/LinkTapeTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodesCountQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetEpisodesCountQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramDetailsQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetProgramDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseDetailsQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetLicenseDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCatchUpLicenseDetailsQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetCatchUpLicenseDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEnterUpdateLiveInfoQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveEnterUpdateLiveInfoQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddSeriesTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/AddSeriesTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeriesTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteSeriesTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddSeasonTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/AddSeasonTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeasonTitleQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/DeleteSeasonTitleQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayEpisodesQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/DisplayEpisodesQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangedEpisodeNoActualQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodeNoActualQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveChangedEpisodesOnClose">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveChangedEpisodesOnClose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCreatedEpisodeQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveCreatedEpisodeQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeasonQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/UpdateSeasonQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeriesQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/UpdateSeriesQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodeDetailsQuery">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetEpisodeDetailsQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisplaySeasonTitle">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/DisplaySeasonTitle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpdatedEpisodes">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/SaveUpdatedEpisodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEpisodesList">
+      <soap12:operation soapAction="http://tempuri.org/IProgrammeLibrary/GetEpisodesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProgrammeLibraryServices">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/ProgrammeLibraryService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,188 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.TapeMaintenanceViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Home/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Content/Scripts/slick.cellrangedecorator.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/slick.cellrangeselector.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/slick.cellselectionmodel.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/slick.formatters.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/slick.editors.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/slick.dataview.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/slick.grid.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/slick.rowmovemanager.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/firebugx.js" type="text/javascript"></script>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/slick.grid.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/examples.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/slick.pager.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/slick-default-theme.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/slick.grid.css" rel="stylesheet" type="text/css" />
+<script src="~/Content/Scripts/Media_Mgt/TapMaintenance/CreateNewTape.js"
+    type="text/javascript"></script>
+<script type="text/javascript">
+    var actionUrl = '@Url.Action("SearchProgrammeByTitle", "TapeMaintenance", new { area = "Media_Mgt" })';  
+</script>
+<form action="#" method="post">
+<div class="mainHeading">
+    Create New Tape
+</div>
+<table class="Layout" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            <div class="PlaceHolder">
+                <table class="tableLayout">
+                    <tr>
+                        <td colspan="2">
+                            <b>Search Tap</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%">
+                            Media Title
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.TapeTitle, new { @class = "inputTextSamll" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%">
+                            Tape No.
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.TapeNo, new { @class = "inputTextSamll" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%">
+                            Media Type
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(m => m.MediaType, Model.MediaType, new { @class = "inputTextSamll" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%">
+                            Library
+                        </td>
+                        <td>
+                          @Html.DropDownListFor(m => m.MediaLibrary, Model.MediaLibrary, new { @class = "inputTextSamll" })
+                           @* <select class="inputTextSamll" id="ddlLibrary">
+                                @if (Model != null)
+                                {
+                                    if (Model.LibraryList != null)
+                                    {
+                                    <option value="Select">--Select Option--</option>
+                                        foreach (var val in Model.LibraryList)
+                                        {
+                                    <option value="@val.LibraryNumber">@val.LibraryShortName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@val.LibraryDescription</option>
+                                        }
+                                    }
+                                }
+                            </select>*@
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10%">
+                            Storage
+                        </td>
+                        <td>
+                         @Html.DropDownListFor(m => m.Storage, Model.Storage, new { @class = "inputTextSamll" })
+                            @*<select class="inputTextSamll" id="ddlTapeType">
+                                @if (Model != null)
+                                {
+                                    if (Model.TapeTypeList != null)
+                                    {
+                                    <option value="Select">--Select Option--</option>
+                                        foreach (var val in Model.TapeTypeList)
+                                        {
+                                    <option value="@val.TapeFormat">@val.TapeFormat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@val.Description</option>
+                                        }
+                                    }
+                                }
+                            </select>*@
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<table class="Layout" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="3">
+            <div class="PlaceHolder" id="GridDiv">
+                <table class="tableLayout">
+                    <tr>
+                        <td width="10%">
+                            Programme Title
+                        </td>
+                        <td style="width: 20%">
+                            @Html.TextBoxFor(m => m.ProgrammeSearchTitle, new { @class = "inputText3col" })
+                        </td>
+                        <td>
+                            <input type="button" id="btnProgrammeSearch" class="inputButton" value="Search" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>    
+    <tr>
+        <td colspan="3">
+            <div class="PlaceHolder" id="GridDiv">
+                <table class="tableLayout">
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="gridProgrammeSearch" style="height: 150px;">
+                            </div>
+                            <div id="footerProgrammeSearch" class="grid-header" style="height: 25px; visibility: hidden">
+                                <label id="TotalRecordsProgrammeSearch">
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <b style="margin-left:35px;">Titles Added</b>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="PlaceHolder">
+                <table class="tableLayout">
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="gridAddedProgramme" style="height: 150px;">
+                            </div>
+                            <div id="footerAddedProgramme" class="grid-header" style="height: 25px; visibility: hidden">
+                                <label id="TotalRecordsAddedProgramme">
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <input style="margin-left:35px;" type="button" id="btnSave" class="inputButton" value="Save" />
+            <input style="margin-left:15px;" type="button" id="btnReset" class="inputButton" value="Reset" />
+        </td>
+    </tr>
+</table>
+</form>

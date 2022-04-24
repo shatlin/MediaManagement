@@ -1,0 +1,140 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.SeriesSearchViewModel
+@using MediaManager.ProgrammeLibraryServices;
+@{
+    ViewBag.Title = "Series Details";
+    Layout = MediaManager.Infrastructure.Helpers.SharedPages.LayoutPage;
+}
+@Styles.Render("~/Content/seriedetailstyles")
+@Scripts.Render("~/Content/seriedetailscripts")
+@*<h2>
+    SeriesDetails</h2>*@
+<br />
+<style type="text/css">
+    table.myTable
+    {
+        border-collapse: collapse;
+    }
+    table.myTable td, table.myTable th
+    {
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+
+<div style="font: normal 16px arial,calibri,sans-serif; font-weight: bold; padding: 4px 5px;">
+    Series/Episodes
+</div>
+
+<div style="border: 1px solid gray; padding: 6px 5px 0px 5px; margin: 2px 5px 4px 5px;
+    border-radius: 8px;" >
+    <table style="width: 100%; height: 700px; border-bottom-color: transparent" cellspacing="4"
+        cellpadding="0">
+        <tr>
+            <td style="width: 15%; vertical-align: top; border: 1px solid black; background-color: White;
+                padding-top: 10px;" align="left">
+                <div id="ContextMenuSectionToRender" style="height: 100%; padding-top: 5px;">
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <ul id="tree_root">
+                                    <li><a href="javascript:;" onclick="getEpisodeGrid('0','0','@Model.SeriesTitle.Replace("'", "@")','@Model.SeriesNumber')"  style="color:Black; cursor:pointer;">@Model.SeriesTitle</a>
+                                        @if (@Model.getSeasonResult != null)
+                                        {
+                                            <ul>
+                                                @foreach (SeriesVO item in @Model.getSeasonResult)
+                                                {
+                                                    <li><a onclick="getEpisodeGrid('@item.SeasonTitle.Replace("'", "@")','@item.SeasonNumber','@Model.SeriesTitle.Replace("'", "@")','@Model.SeriesNumber')"  style="color:Black; cursor:pointer;" >@item.SeasonTitle</a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        }
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    @*            </div>
+            </div>*@
+                </div>
+            </td>
+            <td width="0.5%">
+            </td>
+            <td id="td1" style="height: 100%; width: 85%; border: 1px solid black; background-color:White;" valign="top">
+                <table width="100%">
+                    <tr>
+                        <td>
+                        <div id="teamGrid" style="height: 100%;" class="PlaceHolderSeriesEpisode">
+                        </div>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        <tr style="height: 20px; border-bottom-color: transparent;">
+            <td align="right" colspan="3">
+                <input type="button" value="Episode Details" class="inputButton" onclick="EpisodeDetails()" />
+                <input type="button" value="Save" class="inputButton" onclick="Save()" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="TypeShowLOV" title="Programme Type">
+</div>
+<div id="EventLOV" title="Event Type">
+</div>
+<div id="SubGenreLOV" title="Sub Genre Type">
+</div>
+<div id="EpisodeDetailsPopup" title="Episode Details">
+</div>
+<ul id="SeriesTreeContextMenu" class="contextMenu">
+   @* <li class="edit"><a href="#SelectionScreen">Selection Screen</a></li>*@
+    <li class="edit"><a href="#AddSeriesTitle">Add Series Title</a></li>
+    <li class="cut0"><a href="#UpdateSeriesTitle">Update Series Title</a></li>
+    <li class="copy"><a href="#CreateEpisode">Create Episode</a></li>
+    <li class="paste"><a href="#ChangeEpisode">Change Episode</a></li>
+    <li class="delete"><a href="#AddSeasonTitle">Add Season Title</a></li>@*Working*@
+    <li class="quit"><a href="#UpdateSeasonTitle">Update Season Title</a></li>
+    <li class="quit"><a href="#EnterUpdateLiveInfo">Enter/Update Live Info</a></li>
+    <li class="quit"><a href="#ChangeEpisodenumberWorkingTitle">Change Episode number(Working
+        Title)</a></li>
+    <li class="quit"><a href="#ChangeEpisodenumberActualNumber">Change Episode number(Actual
+        Number)</a></li>
+    <li class="quit"><a href="#DeleteSeasonTitle">Delete Season Title</a></li>
+    <li class="quit"><a href="#DeleteSeriesTitle">Delete Series Title</a></li>
+</ul>
+<div id="ContextMenuPopup" title="Add Season Title">
+    @*@Html.Partial("AddSeasonTitle")*@ @*yes its partial view*@
+</div>
+<script src="~/Content/Scripts/Media_Mgt/SeriesMaintaince/SeriesDetails.js" type="text/javascript">
+</script>
+<script src="~/Content/SlickGrid-master/plugins/slick.autotooltips.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var SaveLiveinfoactionurl = '@Url.Action("SaveLiveinfo", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var SaveChangeEpisodeNoactionurl = '@Url.Action("SaveChangeEpisodeNo", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var SaveEpisodeDetailsactionurl = '@Url.Action("SaveEpisodeDetails", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var GetSubGenreLOVactionurl = '@Url.Action("GetSubGenreLOV", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var getEventLOVListactionurl = '@Url.Action("getEventLOVList", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var GetGenreLOVactionurl = '@Url.Action("GetGenreLOV", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var GetSeasonEpisodesactionurl = ' @Url.Action("GetSeasonEpisodes", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var DeleteSeasonDetailes = ' @Url.Action("DeleteSeasonTitleDetails", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var DeleteSeriesDetails = ' @Url.Action("DeleteSeriesTitleQuery", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var BasePopupurl = '@Url.Action("/", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var SeriesDetailsurl = '@Url.Action("SeriesDetails", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var AddUpdateSeriesTitleSavesurl = '@Url.Action("AddUpdateSeriesTitleSave", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var ProgrammeMaintenancepopupurl = '@Url.Action("ProgrammeMaintenancePopup", "ProgrammeMaintenance", new { area = "Media_Mgt" })';
+     var seriessearchurl = '@Url.Action("SeriesMaintaince", "SeriesMaintaince", new { area = "Media_Mgt" })';
+//   alert(BasePopupurl);
+    model=@Html.Raw(Json.Encode(Model));
+    pDeleteSeriesDetails=   model.SeriesNumber;
+    var DeleteSeriesModel = pDeleteSeriesDetails
+    //alert(window.opener.selectedseriestitle);
+   // alert(window.document.queryCommandValue('seriestitle'));
+      if (window.opener !=null)
+      {
+            currentseriestitle =window.opener.selectedseriestitle;
+            currentSeriesno =window.opener.selectedseriesno;
+             
+      }
+    
+</script>

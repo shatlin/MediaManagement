@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Scheduling.SuperSport" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Scheduling.SuperSport" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Scheduling/SchedulingOperationsServices.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.SuperSport" />
+  <xs:complexType name="GetChannelsRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling" minOccurs="0" name="ChannelVo" nillable="true" type="q1:ChannelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetChannelsRequest" nillable="true" type="tns:GetChannelsRequest" />
+  <xs:complexType name="GetChannelsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q2:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling" minOccurs="0" name="ChannelList" nillable="true" type="q3:ArrayOfChannelVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChannelsResponse" nillable="true" type="tns:GetChannelsResponse" />
+  <xs:complexType name="SaveProgrammeCollectionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q4:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.SuperSport" minOccurs="0" name="ProgrammeList" nillable="true" type="q5:ArrayOfProgrammeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveProgrammeCollectionRequest" nillable="true" type="tns:SaveProgrammeCollectionRequest" />
+  <xs:complexType name="SaveProgrammeCollectionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q6:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Entities.Scheduling.SuperSport" minOccurs="0" name="ProgrammeList" nillable="true" type="q7:ArrayOfProgrammeVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveProgrammeCollectionResponse" nillable="true" type="tns:SaveProgrammeCollectionResponse" />
+</xs:schema>

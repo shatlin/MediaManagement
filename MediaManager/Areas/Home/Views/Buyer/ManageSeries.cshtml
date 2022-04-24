@@ -1,0 +1,72 @@
+﻿@model MediaManager.Models.AddSeries
+
+@{
+    ViewBag.Title = "ManageSeries";
+}
+<script type="text/javascript">
+
+    function addSeries() {
+
+        $('#Partial').load('AddSeries');
+     }
+
+     function viewDetails() {
+
+         $('#Partial').load('ViewSeriesDetails'); 
+     }
+
+</script>
+<br /><br /><br />
+<div id="SearchSeries">
+<br />
+<br />
+
+<div style="background-color:Silver" >
+   <br /><br />
+
+<div style="font-size:20px; height: 30px; font-weight:bold; vertical-align:baseline; text-align:left; border:2px;" >
+      Search Series
+    </div>
+   <br /><br />
+  
+<table border="1">
+    <tr>
+        <td align="center" style="width:100px">
+        @Html.Label("Series")
+        </td>
+         <td align="center" style="width:200px">
+          @Html.DropDownList("Series")
+   <br /><br />
+
+        </td>
+    </tr>
+
+     
+     <tr>
+        <td align="right" style="width:30%">
+        <input type="button" value="Add Series" id="btnAddSeries" onclick="addSeries()"/>
+        </td>
+         <td align="right" style="width:40%">
+                  <input type="button" value="View Details" id="btnViewDetails" onclick="viewDetails()"/>
+                          </td>
+    </tr>
+    <tr>
+     <td class="pagecontent">
+     </td>
+    </tr>
+</table>
+
+</div>
+
+<div id="Partial">
+@if (Session["Series"] != null || Session["Season"] != null) 
+{
+    Html.Partial("AddSeries",Model);
+}
+    
+</div>
+</div>
+
+@*<%:Html.DropDownListFor(x => x.SelectedProduct, new SelectList(Model.Products, "Value", "Text"), "Please Select a product", new { id = "dropDown1", onchange="selectedIndexChanged()" })%>
+
+<%:Html.TextBoxFor(x => x.Name,new {id="txtName",onkeypress="ontextChanged()" })%>*@

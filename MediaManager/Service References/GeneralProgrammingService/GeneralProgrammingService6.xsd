@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.GeneralProgramming" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.DataContracts.Acquistion.GeneralProgramming" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" />
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/GeneralProgrammingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="ChannelMaintenanceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelAuthoritiesList" nillable="true" type="q2:ArrayOfAuthoritiesVO" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelTerritoriesList" nillable="true" type="q3:ArrayOfTerritoryVO" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Channels" nillable="true" type="q4:ChannelVO" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelsList" nillable="true" type="q5:ArrayOfChannelVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelMaintenanceRequest" nillable="true" type="tns:ChannelMaintenanceRequest" />
+  <xs:complexType name="ChannelMaintenanceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q6:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelAuthorities" nillable="true" type="q7:ArrayOfAuthoritiesVO" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelTerritories" nillable="true" type="q8:ArrayOfTerritoryVO" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Channels" nillable="true" type="q9:ChannelVO" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelsList" nillable="true" type="q10:ArrayOfChannelVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelMaintenanceResponse" nillable="true" type="tns:ChannelMaintenanceResponse" />
+  <xs:complexType name="GeneralProgrammingRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q11:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="GeneralProgVO" nillable="true" type="q12:GeneralProgrammingVO" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ListGeneralProgVO" nillable="true" type="q13:ArrayOfGeneralProgrammingVO" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaPlatformVO" nillable="true" type="q14:MediaPlatformGPVO" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaPlatformVOList" nillable="true" type="q15:ArrayOfMediaPlatformGPVO" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaServiceVO" nillable="true" type="q16:MediaServiceGPVO" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaServiceVOList" nillable="true" type="q17:ArrayOfMediaServiceGPVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralProgrammingRequest" nillable="true" type="tns:GeneralProgrammingRequest" />
+  <xs:complexType name="GeneralProgrammingResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q18:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="GeneralProgVO" nillable="true" type="q19:GeneralProgrammingVO" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaPlatformList" nillable="true" type="q20:ArrayOfMediaPlatformGPVO" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaPlatformVO" nillable="true" type="q21:MediaPlatformGPVO" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaServiceList" nillable="true" type="q22:ArrayOfMediaServiceGPVO" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="MediaServiceVO" nillable="true" type="q23:MediaServiceGPVO" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="generalProgrammingVOList" nillable="true" type="q24:ArrayOfGeneralProgrammingVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralProgrammingResponse" nillable="true" type="tns:GeneralProgrammingResponse" />
+  <xs:complexType name="CurrencyMaintenanceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q25:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Currencies" nillable="true" type="q26:CurrenciesVO" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="CurrenciesList" nillable="true" type="q27:ArrayOfCurrenciesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrencyMaintenanceRequest" nillable="true" type="tns:CurrencyMaintenanceRequest" />
+  <xs:complexType name="CurrencyMaintenanceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q28:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Currencies" nillable="true" type="q29:ArrayOfCurrenciesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrencyMaintenanceResponse" nillable="true" type="tns:CurrencyMaintenanceResponse" />
+  <xs:complexType name="LicenseeMaintenanceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q30:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="LicenseeAuthorities" nillable="true" type="q31:LicenseeAuthoritiesVO" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Licensees" nillable="true" type="q32:LicenseesVO" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="LicenseesList" nillable="true" type="q33:ArrayOfLicenseesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeMaintenanceRequest" nillable="true" type="tns:LicenseeMaintenanceRequest" />
+  <xs:complexType name="LicenseeMaintenanceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q34:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="LicenseeAuthorities" nillable="true" type="q35:ArrayOfLicenseeAuthoritiesVO" />
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Licensees" nillable="true" type="q36:ArrayOfLicenseesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeMaintenanceResponse" nillable="true" type="tns:LicenseeMaintenanceResponse" />
+  <xs:complexType name="SearchChannelBuyingCompanyRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q37:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Company" nillable="true" type="q38:CompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchChannelBuyingCompanyRequest" nillable="true" type="tns:SearchChannelBuyingCompanyRequest" />
+  <xs:complexType name="SearchChannelBuyingCompanyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q39:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="CompanyList" nillable="true" type="q40:ArrayOfCompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchChannelBuyingCompanyResponse" nillable="true" type="tns:SearchChannelBuyingCompanyResponse" />
+  <xs:complexType name="SaveChannelBuyingCompanyRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q41:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Company" nillable="true" type="q42:CompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveChannelBuyingCompanyRequest" nillable="true" type="tns:SaveChannelBuyingCompanyRequest" />
+  <xs:complexType name="SaveChannelBuyingCompanyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q43:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Company" nillable="true" type="q44:CompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveChannelBuyingCompanyResponse" nillable="true" type="tns:SaveChannelBuyingCompanyResponse" />
+  <xs:complexType name="SearchChannelServicesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q45:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelServicesList" nillable="true" type="q46:ChannelServicesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchChannelServicesRequest" nillable="true" type="tns:SearchChannelServicesRequest" />
+  <xs:complexType name="SearchChannelServicesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q47:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelServicesList" nillable="true" type="q48:ArrayOfChannelServicesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchChannelServicesResponse" nillable="true" type="tns:SearchChannelServicesResponse" />
+  <xs:complexType name="SaveChannelServicesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q49:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelServicesList" nillable="true" type="q50:ArrayOfChannelServicesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveChannelServicesRequest" nillable="true" type="tns:SaveChannelServicesRequest" />
+  <xs:complexType name="SaveChannelServicesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q51="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q51:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="ChannelServicesList" nillable="true" type="q52:ArrayOfChannelServicesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveChannelServicesResponse" nillable="true" type="tns:SaveChannelServicesResponse" />
+  <xs:complexType name="SearchTerritoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q53="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q53:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Territory" nillable="true" type="q54:TerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchTerritoryRequest" nillable="true" type="tns:SearchTerritoryRequest" />
+  <xs:complexType name="SearchTerritoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q55:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="TerritoryList" nillable="true" type="q56:ArrayOfTerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchTerritoryResponse" nillable="true" type="tns:SearchTerritoryResponse" />
+  <xs:complexType name="SaveTerritoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q57:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="TerritoryList" nillable="true" type="q58:ArrayOfTerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveTerritoryRequest" nillable="true" type="tns:SaveTerritoryRequest" />
+  <xs:complexType name="SaveTerritoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q59="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q59:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="TerritoryList" nillable="true" type="q60:ArrayOfTerritoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveTerritoryResponse" nillable="true" type="tns:SaveTerritoryResponse" />
+  <xs:complexType name="SearchRegionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q61="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q61:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Region" nillable="true" type="q62:RegionVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchRegionRequest" nillable="true" type="tns:SearchRegionRequest" />
+  <xs:complexType name="SearchRegionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q63="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q63:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="RegionList" nillable="true" type="q64:ArrayOfRegionVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchRegionResponse" nillable="true" type="tns:SearchRegionResponse" />
+  <xs:complexType name="SaveRegionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q65="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q65:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="RegionList" nillable="true" type="q66:ArrayOfRegionVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveRegionRequest" nillable="true" type="tns:SaveRegionRequest" />
+  <xs:complexType name="SaveRegionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q67="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q67:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="RegionList" nillable="true" type="q68:ArrayOfRegionVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveRegionResponse" nillable="true" type="tns:SaveRegionResponse" />
+  <xs:complexType name="SearchSubTypeAndCategoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q69="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q69:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SubTypeAndCategory" nillable="true" type="q70:SubTypeAndCategoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchSubTypeAndCategoryRequest" nillable="true" type="tns:SearchSubTypeAndCategoryRequest" />
+  <xs:complexType name="SearchSubTypeAndCategoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q71="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q71:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SubTypeAndCategoryList" nillable="true" type="q72:SubTypeAndCategoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchSubTypeAndCategoryResponse" nillable="true" type="tns:SearchSubTypeAndCategoryResponse" />
+  <xs:complexType name="SaveSubTypeAndCategoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q73="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q73:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SubTypeAndCategory" nillable="true" type="q74:SubTypeAndCategoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveSubTypeAndCategoryRequest" nillable="true" type="tns:SaveSubTypeAndCategoryRequest" />
+  <xs:complexType name="SaveSubTypeAndCategoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q75="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q75:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SubTypeAndCategory" nillable="true" type="q76:SubTypeAndCategoryVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveSubTypeAndCategoryResponse" nillable="true" type="tns:SaveSubTypeAndCategoryResponse" />
+  <xs:complexType name="SearchSupplierCompanyRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q77="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q77:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Company" nillable="true" type="q78:CompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchSupplierCompanyRequest" nillable="true" type="tns:SearchSupplierCompanyRequest" />
+  <xs:complexType name="SearchSupplierCompanyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q79="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q79:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Company" nillable="true" type="q80:CompanyVO" />
+          <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="CompanyList" nillable="true" type="q81:ArrayOfCompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchSupplierCompanyResponse" nillable="true" type="tns:SearchSupplierCompanyResponse" />
+  <xs:complexType name="SaveSupplierCompanyRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q82="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q82:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Company" nillable="true" type="q83:CompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveSupplierCompanyRequest" nillable="true" type="tns:SaveSupplierCompanyRequest" />
+  <xs:complexType name="SaveSupplierCompanyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q84="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q84:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="Company" nillable="true" type="q85:CompanyVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveSupplierCompanyResponse" nillable="true" type="tns:SaveSupplierCompanyResponse" />
+  <xs:complexType name="SearchSpotRateRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q86="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q86:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateList" nillable="true" type="q87:SpotRateVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchSpotRateRequest" nillable="true" type="tns:SearchSpotRateRequest" />
+  <xs:complexType name="SearchSpotRateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q88="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q88:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateExchangeList" nillable="true" type="q89:ArrayOfSpotRateExchangeRatesVO" />
+          <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateList" nillable="true" type="q90:ArrayOfSpotRateVO" />
+          <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateVO" nillable="true" type="q91:SpotRateVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchSpotRateResponse" nillable="true" type="tns:SearchSpotRateResponse" />
+  <xs:complexType name="SaveSpotRateRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q92="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q92:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateCurrencyList" nillable="true" type="q93:ArrayOfSpotRateVO" />
+          <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateExchangeList" nillable="true" type="q94:ArrayOfSpotRateExchangeRatesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveSpotRateRequest" nillable="true" type="tns:SaveSpotRateRequest" />
+  <xs:complexType name="SaveSpotRateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q95="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q95:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateCurrencyList" nillable="true" type="q96:ArrayOfSpotRateVO" />
+          <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Pluto.Entities.Acquisition.GeneralProgramming" minOccurs="0" name="SpotRateExchangeList" nillable="true" type="q97:ArrayOfSpotRateExchangeRatesVO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveSpotRateResponse" nillable="true" type="tns:SaveSpotRateResponse" />
+</xs:schema>

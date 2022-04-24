@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "ManageTitles";
+}
+<table class="ContentFormHolder">
+    <tr>
+        <td class="pagecontent">
+            <table>
+                <tr>
+                    <td class="main-form">
+                        <div class="Grid">
+                            <table class="table AppForm">
+                                <tr>
+                                    <td colspan="4" class="table-FormHeader">
+                                        Search Title
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ColumnTitle">
+                                        Title/Working Title
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td class="ColumnTitle">
+                                        Title Status
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ColumnTitle">
+                                        Primary Genre
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td class="ColumnTitle">
+                                        Secondary Genre
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ColumnTitle">
+                                        Distributor
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td class="ColumnTitle">
+                                        Deal Memo No
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ColumnTitle">
+                                        Series
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td class="ColumnTitle">
+                                        Season
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ColumnTitle">
+                                        Language
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td class="ColumnTitle">
+                                        Active Licenses
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td class="alignleft">
+                                            @Html.ActionLink("Add Title","AddTitles", "Buyer")
+                                        </td>
+                                        <td class="alignRight">
+                                            <input type="submit" value="Reset" />
+                                            <input type="submit" value="Search" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

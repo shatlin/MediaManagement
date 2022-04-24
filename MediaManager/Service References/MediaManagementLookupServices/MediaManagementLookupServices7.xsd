@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagement.MediaLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Entities.MediaManagement.MediaLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/MediaManagement/MediaManagementLookupServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" />
+  <xs:complexType name="TapesBookingVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q1:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AreaCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AreaDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BinID" type="xs:int" />
+          <xs:element minOccurs="0" name="BookDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BookeeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Booker" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GatePassNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LibVO" nillable="true" type="tns:LibraryVO" />
+          <xs:element minOccurs="0" name="PesNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReturnedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SequenceNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TapeBookingBatchNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TapeDetailsVO" nillable="true" type="tns:TapeVO" />
+          <xs:element minOccurs="0" name="ToBeRtdDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Why" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapesBookingVO" nillable="true" type="tns:TapesBookingVO" />
+  <xs:complexType name="LibraryVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q2:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArchivedSpaces" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AvailableSpaces" type="xs:int" />
+          <xs:element minOccurs="0" name="Column" type="xs:int" />
+          <xs:element minOccurs="0" name="Format" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormatDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LibraryShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ListLibraryPersonnel" nillable="true" type="tns:ArrayOfLibraryPersonnelVO" />
+          <xs:element minOccurs="0" name="Rack" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RackCount" type="xs:int" />
+          <xs:element minOccurs="0" name="Row" type="xs:int" />
+          <xs:element minOccurs="0" name="RowFrom" type="xs:int" />
+          <xs:element minOccurs="0" name="RowTo" type="xs:int" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalSpaces" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LibraryVO" nillable="true" type="tns:LibraryVO" />
+  <xs:complexType name="ArrayOfLibraryPersonnelVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LibraryPersonnelVO" nillable="true" type="tns:LibraryPersonnelVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLibraryPersonnelVO" nillable="true" type="tns:ArrayOfLibraryPersonnelVO" />
+  <xs:complexType name="LibraryPersonnelVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q3:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Blocked" type="xs:boolean" />
+          <xs:element minOccurs="0" name="BookingList" nillable="true" type="tns:ArrayOfTapesBookingVO" />
+          <xs:element minOccurs="0" name="Depatment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailNotificationExclusion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level" type="xs:int" />
+          <xs:element minOccurs="0" name="Libcode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonnelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Ranking" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LibraryPersonnelVO" nillable="true" type="tns:LibraryPersonnelVO" />
+  <xs:complexType name="ArrayOfTapesBookingVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TapesBookingVO" nillable="true" type="tns:TapesBookingVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTapesBookingVO" nillable="true" type="tns:ArrayOfTapesBookingVO" />
+  <xs:complexType name="TapeVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q4:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AirwayBillNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AspectRatio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookedInd" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookingList" nillable="true" type="tns:ArrayOfTapesBookingVO" />
+          <xs:element minOccurs="0" name="Col" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CourierComments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CourierCompany" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cps" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryNotes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormatVO" nillable="true" type="tns:TapesFormatVO" />
+          <xs:element minOccurs="0" name="LibVO" nillable="true" type="tns:LibraryVO" />
+          <xs:element minOccurs="0" name="LibraryNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LibraryShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pcb" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Production" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rack" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Registration1" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Registration2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Registration3" type="xs:long" />
+          <xs:element minOccurs="0" name="Row" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegmentList" nillable="true" type="tns:ArrayOfTapeSegmentsVO" />
+          <xs:element minOccurs="0" name="TapeAction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeBarcode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeCategoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeEntryOperator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeGenRefNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TapeLength" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeLicenseNum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeMediaFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeMediaType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TapeProNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TapeStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeSubTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeTxCommnets" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeUMID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Used" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeVO" nillable="true" type="tns:TapeVO" />
+  <xs:complexType name="TapesFormatVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q5:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BarcodeFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BarcodeTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoOfTapes" type="xs:int" />
+          <xs:element minOccurs="0" name="TapeFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeFormatType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeFormatTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeLength" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeLengthDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeTypeDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapesFormatVO" nillable="true" type="tns:TapesFormatVO" />
+  <xs:complexType name="ArrayOfTapeSegmentsVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TapeSegmentsVO" nillable="true" type="tns:TapeSegmentsVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTapeSegmentsVO" nillable="true" type="tns:ArrayOfTapeSegmentsVO" />
+  <xs:complexType name="TapeSegmentsVO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities" base="q6:BaseVO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AudioChannel1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AudioChannel2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AudioChannel3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegmentTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Som" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeSegmentsVO" nillable="true" type="tns:TapeSegmentsVO" />
+</xs:schema>

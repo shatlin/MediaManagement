@@ -1,0 +1,474 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.SeriesTreeViewModel
+@Styles.Render("~/Content/seriedetailstyles")
+@Scripts.Render("~/Content/seriedetailscripts")
+@*<h1>
+    This is my partial view</h1>*@
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" class="PlaceHolder_popup" width="97%">
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 10px; width: 1%;">
+                        &nbsp;
+                    </td>
+                    <td style="width: 15%; vertical-align: top; border: 1px solid black; background-color: White;
+                        padding-top: 10px;" align="left">
+                        <div id="ContextMenuSectionToRenderpopup" style="height: 305px; overflow: auto; padding-top: 5px;">
+                            <div id="SereisTreeDiv">
+                                <ul id="tree_root">
+                                    <li><a href="javascript:;">@Model.seriesvo.Title</a>
+                                        @if (@Model.seriesvo.Season_Data != null)
+                                        {
+                                            <ul>
+                                                @foreach (MediaManager.DealMemoService.SeriesVO item in @Model.seriesvo.Season_Data)
+                                                {
+@*    <li><a onclick="getEpisodeGrid('@item.SeasonTitle.Replace("'", "@")','@item.SeasonNumber','@Model.SeriesTitle.Replace("'", "@")','@Model.SeriesNumber')"  style="color:Black; cursor:pointer;" >@item.SeasonTitle</a>
+                    </li>*@
+                                                    //onclick="getEpisodeGrid(@item.Title)"
+                                                    //   if (@item.Episode_Data.Count > 0)
+                                                    //   {
+@* <li ><a  onclick="getEpisodeGrid('@item.Episode_Data[3].Episode_Working_Title')"  style="color: Black; cursor: pointer;" >@item.Title</a></li>*@
+                                                    <li><a  onclick="getEpisodeGrid('@Model.seriesvo.Title','@item.Title','@Model.DMVo_DMNumber','@Model.TypeComboSelection','@Model.RefNo','@Model.Type','@Model.ReleaseYear')"  style="color: Black; cursor: pointer;" >@item.Title</a></li>
+                                                    //    }
+                                                    // else
+                                                    //     {
+                                                    //    <li><a onclick="getEpisodeGrid('','','','','','','')" style="color: Black; cursor: pointer;">@item.Title</a></li>
+                                                    //      }
+                                                }
+                                            </ul>
+                                        }
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="1%">
+                    </td>
+                    <td width="89%">
+                        <table id="Parameters" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="18%">
+                                    @Html.LabelFor(m => m.NumberofUnlicencedEpisodes, new { @class = "label" })
+                                </td>
+                                <td width="14%">
+                                    @Html.TextBoxFor(m => m.NumberofUnlicencedEpisodes, new { @class = "inputTextSmaller" })
+                                </td>
+                                <td width="8%">
+                                </td>
+                                <td width="20%" valign="top">
+                                    Select Format of Working Title:
+                                </td>
+                                <td width="20%" valign="top">
+                                    Select Format of Titles:
+                                </td>
+                                <td width="10%">
+                                </td>
+                                <td width="10%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.FirstEpisodeNumber, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.FirstEpisodeNumber, new { @class = "inputTextSmaller" })
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkSeries)
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkSeries, new { @class = "label" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkWTSeries)
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkWTSeries, new { @class = "label" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    @Html.LabelFor(m => m.TextRelicence_From, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.TextRelicence_From, new { @class = "inputTextSmaller", @onblur = "TextRelicence_Fromfocuslost()" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.TextNextEpi, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.TextNextEpi, new { @class = "inputTextSmaller", @disabled = "disabled" })
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkSeason)
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkWTSeason, new { @class = "label" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkWTSeason)
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkWTSeason, new { @class = "label" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    @Html.LabelFor(m => m.TextRelicence_To, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.TextRelicence_To, new { @class = "inputTextSmaller", @onblur = "TextRelicence_Tofocuslost()" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.TextPriFirEpi, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.TextPriFirEpi, new { @class = "inputTextSmaller", @onblur = "TextPriFirEpifocuslost()" })
+                                </td>
+                                <td>
+                                    @*<input type="button" value="Change" class="inputButton" onclick="change_click()" />*@
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkAddText, new { @onclick = "ChkAddTextclick(this)" })
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkAddText, new { @class = "label" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkWTAddText, new { @onclick = "ChkWTAddTextclick(this)" })
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkWTAddText)
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.TextPriOthEpi, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.TextPriOthEpi, new { @class = "inputTextSmaller", @disabled = "disabled" })
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkEpi_No)
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkEpi_No, new { @class = "label" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(m => m.ChkWTEpi_No)
+                                            </td>
+                                            <td>
+                                                @Html.LabelFor(m => m.ChkWTEpi_No)
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.TextDuration, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.TextDuration, new { @class = "inputTextSmaller" })
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.LabelFor(m => m.TextWTAddText, new { @class = "label", @style = "visibility:collapse", @id = "lblWTAddText" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.TextWTAddText, new { @class = "inputTextSmaller", @style = "visibility:collapse", @id = "txtWTAddText" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.TextSportType, new { @class = "label" })
+                                </td>
+                                <td valign="middle">
+                                    @Html.TextBoxFor(m => m.TextSportType, new { @class = "inputTextSmaller" })
+                                    <img id="imgMethodSeriesTitleId2" src="~/Content/images/lov_down_arrow.png" style="padding-top: 5px" />
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.TextSubGenre)
+                                </td>
+                                <td valign="middle">
+                                    @Html.TextBoxFor(m => m.TextSubGenre, new { @class = "inputTextSmaller" })
+                                    <img id="imgMethodSeriesTitleId1" src="~/Content/images/lov_down_arrow.png" class="VerticalAlignMiddle" />
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.LabelFor(m => m.TextAddText, new { @class = "label", @style = "visibility:collapse", @id = "lblAddText" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.TextAddText, new { @class = "inputTextSmaller", @style = "visibility:collapse", @id = "txtAddText" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.TextEventType, new { @class = "label" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.TextEventType, new { @class = "inputTextSmaller" })
+                                    <img id="imgMethodSeriesTitleId" src="~/Content/images/lov_down_arrow.png" class="VerticalAlignMiddle" />
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td colspan="3" align="right" style="padding: 5px;">
+                                    <input type="button" value="Generate" id="btnSeriesTreeGenerate" class="inputButton"
+                                        onclick="Generate_click()" />
+                                    <input type="button" value="Save" id="btnSeriesTreeSave" class="inputButton" onclick="Save_click()" />
+                                    <input type="button" value="Cancel" class="inputButton" onclick="cancel_click()" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="PlaceHolder_popup" width="97%">
+                <tr>
+                    <td align="left" style="padding: 5px;">
+                        <div id="episodegrid" style="height: 260px; width: 1130px">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<div id="SportTypeLOV">
+</div>
+<div id="EventTypeLOV">
+</div>
+<div id="SubGenreLOV">
+</div>
+<ul id="SeriesTreeContextMenupopup" class="contextMenu">
+    <li class="edit"><a href="#AddSeasonTitle">Add Season Title</a></li>
+</ul>
+<div id="AddSeasonPopup" style="visibility: collapse">
+    <table class="PlaceHolder" width="85%" cellpadding="0" cellspacing="0" style="padding: 5px">
+        <tr>
+            <td width="3%">
+                &nbsp;
+            </td>
+            <td width="15%">
+                @Html.LabelFor(m => m.SeasonTitle, new { @class = "label" })
+            </td>
+            <td width="15%">
+                @Html.TextBoxFor(m => m.SeasonTitle, new { @class = "inputTextSmall" })
+            </td>
+            <td width="67%">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                @Html.LabelFor(m => m.SeasonNumber, new { @class = "label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.SeasonNumber, new { @class = "inputTextSmall" })
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+</div>
+@*<script src="~/Content/Scripts/Media_Mgt/SeriesMaintaince/SeriesTree.js" type="text/javascript"></script>*@
+<script src="~/Content/SlickGrid-master/plugins/slick.autotooltips.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var SportTypeactionUrl = '@Url.Action("GetGenreLOV", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var GetSubGenreLOVactionurl = '@Url.Action("GetSubGenreLOV", "SeriesMaintaince", new { area = "Media_Mgt" })';
+    var GetEventLOVListactionurl = '@Url.Action("getEventLOVList", "SeriesMaintaince", new { area = "Media_Mgt" })';
+
+    var GeteSeasonEpisode = '@Url.Action("GetSeasonEpisodes", "SeriesTree", new { area = "Media_Mgt" })';
+    var GenerateSeasonEpisodesUrl = '@Url.Action("GenerateSeasonEpisodes", "SeriesTree", new { area = "Media_Mgt" })';
+    var AddSeasonSaveUrl = '@Url.Action("AddSeasonSave", "SeriesTree", new { area = "Media_Mgt" })';
+    var SaveEpisodeDetailsUrl = '@Url.Action("SaveEpisodeDetails", "SeriesTree", new { area = "Media_Mgt" })';
+    $("#ContextMenuSectionToRenderpopup").contextMenu({
+
+        menu: 'SeriesTreeContextMenupopup'
+    },
+					function (action, el, pos) {
+					    //					    if (action == 'SelectionScreen') {
+					    AddSeason_click();
+					    //					    }
+					    //					   
+					    //					    if (action == 'ChangeEpisodenumberActualNumber' || action == 'AddSeasonTitle' || action == 'ChangeEpisodenumberWorkingTitle' || action == 'EnterUpdateLiveInfo' || action == 'UpdateSeasonTitle' || action == 'ChangeEpisode' || action == 'CreateEpisode' || action == 'UpdateSeriesTitle' || action == 'AddSeriesTitle') {
+					    //					        GeneratePop(action);
+
+					    //					    }
+					});
+
+
+
+    var emptyrow1 = [];
+    emptyrow1[0] = {
+        SequenceEpisodeno: "",
+        EpisodeTitle: "",
+        Duration: "",
+        Location: "",
+        Vennue: "",
+        LiveDate: "",
+        LiveTime: "",
+        Comments: "",
+        MemNo: "",
+        gridstatus: ""
+    };
+
+    var emptygridoptionsa = {
+        forceFitColumns: true
+    };
+    var seriestreeepisodecolumnsa = [
+                                { id: "Check", name: "Check", field: "Status", formatter: Slick.Formatters.Checkmark, editor: Slick.Editors.Checkbox, cssClass: "slick-cell-AlignCenter" },
+                                { id: "SequenceEpisodeno", width: 150, name: "Epi#", field: "SequenceEpisodeno" },
+                                { id: "episodeTitle", width: 2500, name: "Episode Title", field: "EpisodeTitle", editor: Slick.Editors.Text },
+                                { id: "Duration", width: 300, name: "Duration", field: "Duration", editor: Slick.Editors.Text },
+                                { id: "Vennue", width: 300, name: "Venue", field: "Vennue" },
+                                { id: "Location", width: 300, name: "Location", field: "Location" },
+                                { id: "LiveDate", width: 300, name: "Live Date", field: "LiveDate" },
+                                { id: "LiveTime", width: 300, name: "Live Time", field: "LiveTime" },
+                                { id: "MemNo", width: 300, name: "Mem No Where LIC Created", field: "MemNo" },
+                                { id: "Comments", width: 300, name: "Comments", field: "Comments", editor: Slick.Editors.LongText }
+
+
+                  ];
+    var grida = new Slick.Grid("#episodegrid", emptyrow1, seriestreeepisodecolumnsa, emptygridoptionsa);
+
+</script>
+<script src="~/Content/Scripts/Media_Mgt/SeriesMaintaince/SeriesTree.js" type="text/javascript"></script>

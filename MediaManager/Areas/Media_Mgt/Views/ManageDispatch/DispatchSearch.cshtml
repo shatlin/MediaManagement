@@ -1,0 +1,191 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.ManageDispatchViewModel
+@{
+    ViewBag.Title = "DispatchSearch.cshtml";
+    Layout = "~/Areas/Home/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        // Set Datepicker to textboxes.
+        $('#DispatchFrom').datepicker({ dateFormat: "dd/mm/yy" });
+        $('#DispatchTo').datepicker({ dateFormat: "dd/mm/yy" });
+        $('#DispatchDate').datepicker({ dateFormat: "dd/mm/yy" });
+        $('#ReceiptDate').datepicker({ dateFormat: "dd/mm/yy" });
+
+        $("#btnSearchDispatch").click(function (event) {
+            find_click();
+        });
+
+        function find_click() {
+            //set mouse cursor to wait.
+            $("body").css("cursor", "wait");
+            var grid;
+            var gridwidth = $("#teamGrid").width();
+            $('#teamGrid').css({ "width": gridwidth + "px", "height": "400px" });
+
+
+            var columns = [
+            { id: "dmNo", name: "DMNo", field: "DMNumber" },
+            { id: "contract", name: "Contract", field: "ContractNo" },
+            { id: "licensor", name: "Licensor", field: "LicenseNo" },
+            { id: "ContractEntity", name: "Contract Entity", field: "ContractEntity" },
+            { id: "MainLicensee", name: "MainLicensee", field: "MainLicensee" },
+            { id: "Method", name: "AmortMethod", field: "AmortMethod" },
+            { id: "date", name: "Date", field: "MemoDate" },
+            { id: "type", name: "Type", field: "Type" },
+            { id: "currency", name: "Currency", field: "Currency" },
+            { id: "status", name: "Status", field: "Status" },
+            { id: "SignQARequired", name: "SignQARequired", field: "SignQARequired" }
+            ];
+
+            var options = {
+                enableCellNavigation: true,
+                enableColumnReorder: false,
+                forceFitColumns: true
+
+            };
+
+            var myData = [];
+            var DealMemoViewModel = { DMNumber_Search: $("#DMNumber_Search").val(), ContractNo: $("#ContractNo").val(), Status: $("#Status").val(), AmortMethod: $("#AmortMethod").val(), Fromdate: $("#Fromdate").val(), Todate: $("#Todate").val() };
+
+            $.ajax({
+                url: '@Url.Action("GetDealMemo", "DealMemoMaintenance", new { area = "Acquisition" })',
+                type: "GET",
+                dataType: 'Json',
+                data: DealMemoViewModel,
+
+                success: function (data) {
+                    myData = data;
+                    debugger;
+                    grid = new Slick.Grid("#teamGrid", myData, columns, options);
+                    //set mouse cursor to default.       
+                    $("body").css("cursor", "auto");
+                    grid.onClick.subscribe(function (e, args) {
+                        var cell = grid.getCellFromEvent(e);
+                        var row = cell.row;
+                    });
+                },
+                error: function () {
+                    //set mouse cursor to default.       
+                    $("body").css("cursor", "auto");
+                    alert("error");
+                }
+            });
+        };
+
+    });
+</script>
+
+<div class="PlaceHolder">
+    <table class="tableLayout" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>
+                Search Dispatch
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(m => m.ItemType)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.ItemType, new { @class = "inputTextSamll" })
+                @Html.ValidationMessageFor(m => m.ItemType)
+            </td>
+            <td>
+                @Html.DisplayNameFor(m => m.ItemDetails)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.ItemDetails, new { @class = "inputTextSamll" })
+            </td>
+            <td>
+                @Html.DisplayNameFor(m => m.ProgramTitle)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.ProgramTitle, new { @class = "inputTextSamll" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(m => m.TitleStatus)
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.TitleStatus, Model.TitleStatus, new { @class = "inputTextSamll" })
+            </td>
+            <td>
+                @Html.DisplayNameFor(m => m.Distributor)
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.Distributor, Model.Distributor, new { @class = "inputTextSamll" })
+            </td>
+            <td>
+                Item ID
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.ItemID, new { @class = "inputTextSamll" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(m => m.DispatchStatus)
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.DispatchStatus, Model.DispatchStatus, new { @class = "inputTextSamll" })
+            </td>
+            <td>
+                @Html.DisplayNameFor(m => m.StatusDate)
+            </td>
+            <td colspan="3">
+                @Html.TextBoxFor(m => m.StatusDate, new { @class = "inputTextSamll" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dispatch From
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.DispatchFrom, new { @class = "inputTextSamll" })
+            </td>
+            <td>
+                Dispatch To
+            </td>
+            <td>
+                @Html.EditorFor(m => m.DispatchTo, new { @class = "inputTextSamll" })
+            </td>
+            <td>
+                Dispatch No
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.DispatchNo, new { @class = "inputTextSamll" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dispatch Date
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.DispatchDate, new { @class = "inputTextSamll" })
+            </td>
+            <td>
+                Receipt Date
+            </td>
+            <td colspan="3">
+                @Html.TextBoxFor(m => m.ReceiptDate, new { @class = "inputTextSamll" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+            </td>
+            <td>
+                <input type="button" id="btnSearchDispatch" class="inputButton" value="Search" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" align="left">
+                <div class="LoginFormErrorLogger">
+                    @Html.ValidationSummary()
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

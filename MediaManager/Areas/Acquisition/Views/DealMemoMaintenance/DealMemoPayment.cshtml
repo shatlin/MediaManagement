@@ -1,0 +1,81 @@
+﻿@model MediaManager.Areas.Acquisition.ViewModels.DealMemoMaintenanceViewModel
+<table class="Layout">
+    <tr>
+        <td>
+            <table class="tableLayout">
+                <tr>
+                    <td>
+                        <div class="subHeading" style="padding: 0px; ">
+                            Schedule of Payments
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="PaymentGrid" style="height: 180px; padding: 0px; ">
+                        </div>
+                    </td>
+                </tr>            
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr >
+                 <td style="width:150px"> </td>
+                    <td>
+                        Total :
+                    </td>
+                    <td>
+                        <input id="tbPayPercent" name="tbPayPercent" placeholder=".0000" readonly="readonly"
+                            style="width: 60px;" type="text" value="" class="inputTextSamll" />
+                    </td>
+                    <td>
+                        <input id="tbPayAmount" name="tbPayPercent" placeholder=".0000" readonly="readonly"
+                            style="width: 60px;" type="text" value="" class="inputTextSamll" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td id="divSplitPayment"  >
+            <div id="divSplit">
+                <table class="tableLayout" id="tblSplitPayment">
+                    <tr>
+                        <td>
+                            <div class="subHeading" style="padding: 0px;">
+                                Split of Payments
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="SplitPaymentGrid" style="height: 180px;">
+                            </div>
+                        </td>
+                    </tr>                  
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                              <td style="width:150px"> </td>
+                                    <td>
+                                        Total :
+                                    </td>
+                                    <td>
+                                        <input id="tbSplitPayPercent" name="tbSplitPayPercent" placeholder=".0000"  readonly="readonly"
+                                            style="width: 60px;" type="text" value="" class="inputTextSamll" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<div id="PaymentCodeLOV" title="Payment Code">
+</div>

@@ -1,0 +1,50 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <ul style="color:Black;font-size:12px">
+      
+           
+                    @*@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))*@
+                    @using (Html.BeginForm("LogOff","Account",new { area = "Home" },FormMethod.Post,new { id = "logoutForm" }))
+                    {
+                        
+                        @Html.AntiForgeryToken()
+         @*      <a href="#" style="color:Black;font-size:12px; font-family:Tahoma">&nbsp;|&nbsp;Database: MN_CATCHUP2_mnetqa &nbsp;|&nbsp;</a> *@ 
+                        <a href="#"  style="color:Black;font-size:12px; font-family:Tahoma" id="logOffbtn" onclick="Logoff()">&nbsp;|&nbsp; Login: @User.Identity.Name</a> 
+                        
+                    }
+                     
+   
+       </ul>         					                 
+}
+
+
+ <script language="javascript" type="text/javascript">
+
+     function Logoff() {
+
+
+         noty({
+             text: 'Are you sure you want to log off from the system?',
+             modal: false,
+             type: 'alert',
+             buttons: [
+    { addClass: 'inputButton', text: 'OK', onClick: function ($noty) {
+
+        window.location = "javascript:document.getElementById('logoutForm').submit()";
+        $noty.close();
+
+    }
+    },
+    { addClass: 'inputButton', text: 'Cancel', onClick: function ($noty) {
+        $noty.close();
+
+    }
+    }
+  ]
+         });        
+     
+     
+     } 
+ 
+ 
+ </script>

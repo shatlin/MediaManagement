@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="736e629d-1e35-433c-a453-e2c3be4dba10" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.200.10/MediaManagerServices/Common/LookupsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LookupsService.xsd" MetadataType="Schema" ID="f73c58ed-f692-4ac4-877d-c8a5e5115b18" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?xsd=xsd5" />
+    <MetadataFile FileName="LookupsService1.xsd" MetadataType="Schema" ID="7078cf93-373e-4745-82f1-2d048bea414b" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?xsd=xsd6" />
+    <MetadataFile FileName="LookupsService.disco" MetadataType="Disco" ID="ccd9af3f-bd93-49d2-b371-d51762401f51" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?disco" />
+    <MetadataFile FileName="LookupsService2.xsd" MetadataType="Schema" ID="64b71da6-3068-429d-8295-9c6cfa1c9244" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?xsd=xsd4" />
+    <MetadataFile FileName="LookupsServices.wsdl" MetadataType="Wsdl" ID="f27d6929-b066-4c6d-90e2-1112c5e5e3c9" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?wsdl" />
+    <MetadataFile FileName="LookupsService3.xsd" MetadataType="Schema" ID="b50e132e-2f93-4fec-83cf-b0d205e92dc0" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LookupsService4.xsd" MetadataType="Schema" ID="667dec20-14ce-4759-b933-e76a82a67ef8" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LookupsService5.xsd" MetadataType="Schema" ID="5113480c-74dd-4fb0-8ce6-ee9307ac727f" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LookupsService6.xsd" MetadataType="Schema" ID="fee4d9a6-f840-42f8-a659-d8d19d963b85" SourceId="1" SourceUrl="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Common/LookupsService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

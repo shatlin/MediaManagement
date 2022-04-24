@@ -1,0 +1,3812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="BudgetStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BudgetStatusLookup" nillable="true" type="tns:BudgetStatusLookup" />
+  <xs:complexType name="Lookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LookupItemList" nillable="true" type="tns:ArrayOfLookupItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lookup" nillable="true" type="tns:Lookup" />
+  <xs:complexType name="ArrayOfLookupItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LookupItem" nillable="true" type="tns:LookupItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookupItem" nillable="true" type="tns:ArrayOfLookupItem" />
+  <xs:complexType name="LookupItem">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="LookupItem" nillable="true" type="tns:LookupItem" />
+  <xs:complexType name="LicTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicTypeLookupItem" nillable="true" type="tns:LicTypeLookupItem" />
+  <xs:complexType name="TapeFormatTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TapeFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeFormatType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeLength" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeFormatTypeLookupItem" nillable="true" type="tns:TapeFormatTypeLookupItem" />
+  <xs:complexType name="CourierCompanyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CourierCompanyID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CourierCompanyName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CourierCompanyLookupItem" nillable="true" type="tns:CourierCompanyLookupItem" />
+  <xs:complexType name="ChannelCompanyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelCompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelCompanyNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelCompanyShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelCompanyLookupItem" nillable="true" type="tns:ChannelCompanyLookupItem" />
+  <xs:complexType name="LicenseeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicenseeChannelCompanyNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LicenseeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LicenseeShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeLookupItem" nillable="true" type="tns:LicenseeLookupItem" />
+  <xs:complexType name="BudgetCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BudgetCodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetCodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BudgetCodeLookupItem" nillable="true" type="tns:BudgetCodeLookupItem" />
+  <xs:complexType name="PersonnelLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PersonnelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonnelNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonnelLookUpItem" nillable="true" type="tns:PersonnelLookUpItem" />
+  <xs:complexType name="LibraryLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LibraryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LibraryShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LibraryLookUpItem" nillable="true" type="tns:LibraryLookUpItem" />
+  <xs:complexType name="CastRoleLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CastRoleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CastRoleCodeDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CastRoleLookUpItem" nillable="true" type="tns:CastRoleLookUpItem" />
+  <xs:complexType name="CastAwardLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CastAwardCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CastAwardDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CastAwardLookupItem" nillable="true" type="tns:CastAwardLookupItem" />
+  <xs:complexType name="LocalProgramStudioLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LocalStuCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocalstuDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocalProgramStudioLookupItem" nillable="true" type="tns:LocalProgramStudioLookupItem" />
+  <xs:complexType name="StudioCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StudioCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudioDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StudioCodeLookupItem" nillable="true" type="tns:StudioCodeLookupItem" />
+  <xs:complexType name="GetGenSeriesLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenSeriesCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenSeriesDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenSeriesLookupItem" nillable="true" type="tns:GetGenSeriesLookupItem" />
+  <xs:complexType name="GetGenCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenCodeDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenCodeLookupItem" nillable="true" type="tns:GetGenCodeLookupItem" />
+  <xs:complexType name="GetGenRatingMPAALookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenRattingMPAACode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenRattingMPAADesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenRatingMPAALookupItem" nillable="true" type="tns:GetGenRatingMPAALookupItem" />
+  <xs:complexType name="GetGenRatingINTLookUPItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenRattingINTCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenRattingINTDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenRatingINTLookUPItem" nillable="true" type="tns:GetGenRatingINTLookUPItem" />
+  <xs:complexType name="ProgrammeCategoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProgrammeCategoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrammeCategoryValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeCategoryLookupItem" nillable="true" type="tns:ProgrammeCategoryLookupItem" />
+  <xs:complexType name="GetSpokenLangLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LanguageID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSpokenLangLookupItem" nillable="true" type="tns:GetSpokenLangLookupItem" />
+  <xs:complexType name="SeriesLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SeriesNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SeriesTitle" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeriesLookupItem" nillable="true" type="tns:SeriesLookupItem" />
+  <xs:complexType name="SeasonLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParentSeriesNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SeasonNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SeasonTitle" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeasonLookupItem" nillable="true" type="tns:SeasonLookupItem" />
+  <xs:complexType name="GetGenDistributorLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ComShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenDistributorLookupItem" nillable="true" type="tns:GetGenDistributorLookupItem" />
+  <xs:complexType name="GetGenColorLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetColorCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GetColorDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenColorLookupItem" nillable="true" type="tns:GetGenColorLookupItem" />
+  <xs:complexType name="GetGenQualityLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenQualityCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenQualityDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenQualityLookupItem" nillable="true" type="tns:GetGenQualityLookupItem" />
+  <xs:complexType name="GetGenTargetGroupLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenTargetGroupCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenTargetGroupDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenTargetGroupLookupItem" nillable="true" type="tns:GetGenTargetGroupLookupItem" />
+  <xs:complexType name="GetGenNationalityLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenNationalityCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenNationalityDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenNationalityLookupItem" nillable="true" type="tns:GetGenNationalityLookupItem" />
+  <xs:complexType name="FillerTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SomeOtherProperty" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerTypeLookupItem" nillable="true" type="tns:FillerTypeLookupItem" />
+  <xs:complexType name="FillerCategoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SomeOtherProperty" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerCategoryLookupItem" nillable="true" type="tns:FillerCategoryLookupItem" />
+  <xs:complexType name="FillerDistributorLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SomeOtherProperty" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerDistributorLookupItem" nillable="true" type="tns:FillerDistributorLookupItem" />
+  <xs:complexType name="SportTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SportTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SportTypeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SportTypeLookupItem" nillable="true" type="tns:SportTypeLookupItem" />
+  <xs:complexType name="PlayStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlayStatusDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlayStatusValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlayStatusLookupItem" nillable="true" type="tns:PlayStatusLookupItem" />
+  <xs:complexType name="FillerViewedByLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SomeOtherProperty" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerViewedByLookupItem" nillable="true" type="tns:FillerViewedByLookupItem" />
+  <xs:complexType name="SupplierLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SupplierName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupplierNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SupplierShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="supplierNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SupplierLookupItem" nillable="true" type="tns:SupplierLookupItem" />
+  <xs:complexType name="ContractLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractLookupItem" nillable="true" type="tns:ContractLookupItem" />
+  <xs:complexType name="LicenseTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicenseTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseTypeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseTypeLookupItem" nillable="true" type="tns:LicenseTypeLookupItem" />
+  <xs:complexType name="BookingAreaLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AreaDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookingAreaLookupItem" nillable="true" type="tns:BookingAreaLookupItem" />
+  <xs:complexType name="PersonnelNameLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonnelNameLookupItem" nillable="true" type="tns:PersonnelNameLookupItem" />
+  <xs:complexType name="PersonnelUserLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PESCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PESNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonnelUserLookupItem" nillable="true" type="tns:PersonnelUserLookupItem" />
+  <xs:complexType name="ManagementLevelLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MngDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MngLevel" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ManagementLevelLookupItem" nillable="true" type="tns:ManagementLevelLookupItem" />
+  <xs:complexType name="SubGenreLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubGenreCodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubGenreCodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubGenreLookupItem" nillable="true" type="tns:SubGenreLookupItem" />
+  <xs:complexType name="RequestorLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AreaDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RequestorLookupItem" nillable="true" type="tns:RequestorLookupItem" />
+  <xs:complexType name="GetCompanyComTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCompanyComTypeLookupItem" nillable="true" type="tns:GetCompanyComTypeLookupItem" />
+  <xs:complexType name="GetCompanyCountryCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCompanyCountryCodeLookupItem" nillable="true" type="tns:GetCompanyCountryCodeLookupItem" />
+  <xs:complexType name="EnterpriseLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EntNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="EnterpriseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnterpriseShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnterpriseLookupItem" nillable="true" type="tns:EnterpriseLookupItem" />
+  <xs:complexType name="EnterpriseTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressTypeDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnterpriseTypeLookupItem" nillable="true" type="tns:EnterpriseTypeLookupItem" />
+  <xs:complexType name="CompanyTypeInternalLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyTypeInternalLookupItem" nillable="true" type="tns:CompanyTypeInternalLookupItem" />
+  <xs:complexType name="EpisodeTitleLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SGenTitle" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EpisodeTitleLookupItem" nillable="true" type="tns:EpisodeTitleLookupItem" />
+  <xs:complexType name="ParentEnterpriseLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParentEnterpriseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentEnterpriseShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParentEnterpriseLookupItem" nillable="true" type="tns:ParentEnterpriseLookupItem" />
+  <xs:complexType name="CompanyEnterpriseTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressTypeDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyEnterpriseTypeLookupItem" nillable="true" type="tns:CompanyEnterpriseTypeLookupItem" />
+  <xs:complexType name="PromoTypeLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PromoDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PromoType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoTypeLookUpItem" nillable="true" type="tns:PromoTypeLookUpItem" />
+  <xs:complexType name="PromoLibraryLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Library" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryAction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryLocation" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoLibraryLookUpItem" nillable="true" type="tns:PromoLibraryLookUpItem" />
+  <xs:complexType name="PromoMaterialStatusLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PromoMaterialStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PromoMaterialStatusDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoMaterialStatusLookUpItem" nillable="true" type="tns:PromoMaterialStatusLookUpItem" />
+  <xs:complexType name="PromoUserLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserContactDetails" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserDeptId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoUserLookUpItem" nillable="true" type="tns:PromoUserLookUpItem" />
+  <xs:complexType name="PromoProgrammeTypeLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PromoProgrammeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PromoProgrammeType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoProgrammeTypeLookUpItem" nillable="true" type="tns:PromoProgrammeTypeLookUpItem" />
+  <xs:complexType name="ChannelsForLicenseeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelsForLicenseeLookupItem" nillable="true" type="tns:ChannelsForLicenseeLookupItem" />
+  <xs:complexType name="UsersForChannelsLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UsersForChannelsLookupItem" nillable="true" type="tns:UsersForChannelsLookupItem" />
+  <xs:complexType name="FinYearForUpdateRollingBudgetLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BudNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ComNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ComShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComboId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinYear" type="xs:int" />
+          <xs:element minOccurs="0" name="LeeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LeeShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FinYearForUpdateRollingBudgetLookupItem" nillable="true" type="tns:FinYearForUpdateRollingBudgetLookupItem" />
+  <xs:complexType name="LicenseeForFinancialBudgetLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicenseeChannelCompanyNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LicenseeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="LicenseeShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeForFinancialBudgetLookupItem" nillable="true" type="tns:LicenseeForFinancialBudgetLookupItem" />
+  <xs:complexType name="UserLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Check" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserLookupItem" nillable="true" type="tns:UserLookupItem" />
+  <xs:complexType name="ActiveUserLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActiveUserLookupItem" nillable="true" type="tns:ActiveUserLookupItem" />
+  <xs:complexType name="RegionLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegionLookupItem" nillable="true" type="tns:RegionLookupItem" />
+  <xs:complexType name="TerritoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TerritoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerritoryName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TerritoryLookupItem" nillable="true" type="tns:TerritoryLookupItem" />
+  <xs:complexType name="CurrencyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCodeB" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrencyLookupItem" nillable="true" type="tns:CurrencyLookupItem" />
+  <xs:complexType name="SubTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubID" type="xs:int" />
+          <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubTypeLookupItem" nillable="true" type="tns:SubTypeLookupItem" />
+  <xs:complexType name="CompanyTypeCCLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyTypeCCLookupItem" nillable="true" type="tns:CompanyTypeCCLookupItem" />
+  <xs:complexType name="ProgrammeCombinationTypesLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComboId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeCombinationTypesLookupItem" nillable="true" type="tns:ProgrammeCombinationTypesLookupItem" />
+  <xs:complexType name="ChannelsForUserLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelUserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelsForUserLookupItem" nillable="true" type="tns:ChannelsForUserLookupItem" />
+  <xs:complexType name="FixedBudgetTemplateLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BudgetNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinYear" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgCombinationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FixedBudgetTemplateLookupItem" nillable="true" type="tns:FixedBudgetTemplateLookupItem" />
+  <xs:complexType name="RollingBudgetTemplateLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BudgetNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="BudgetTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinYear" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgCombinationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RollingBudgetTemplateLookupItem" nillable="true" type="tns:RollingBudgetTemplateLookupItem" />
+  <xs:complexType name="BudgetStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BudgetCodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetCodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BudgetStatusLookupItem" nillable="true" type="tns:BudgetStatusLookupItem" />
+  <xs:complexType name="FMMLockLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LockDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LockName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FMMLockLookupItem" nillable="true" type="tns:FMMLockLookupItem" />
+  <xs:complexType name="FMMStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StatusDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FMMStatusLookupItem" nillable="true" type="tns:FMMStatusLookupItem" />
+  <xs:complexType name="PaymentTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SomeOtherProperty" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentTypeLookupItem" nillable="true" type="tns:PaymentTypeLookupItem" />
+  <xs:complexType name="FinancialProgrammeTypeCombinationLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComboId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FinancialProgrammeTypeCombinationLookupItem" nillable="true" type="tns:FinancialProgrammeTypeCombinationLookupItem" />
+  <xs:complexType name="PromoActionLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Library" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoActionLookupItem" nillable="true" type="tns:PromoActionLookupItem" />
+  <xs:complexType name="PromoLibrarianLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Library" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibraryDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoLibrarianLookupItem" nillable="true" type="tns:PromoLibrarianLookupItem" />
+  <xs:complexType name="PromoLibraryUserTypeLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoLibraryUserTypeLookUpItem" nillable="true" type="tns:PromoLibraryUserTypeLookUpItem" />
+  <xs:complexType name="PromoAvailableMaterialLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenRefNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="GenReleaseYear" type="xs:int" />
+          <xs:element minOccurs="0" name="GenTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenTitleWorking" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LibId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PromoNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="PromoType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seq" type="xs:int" />
+          <xs:element minOccurs="0" name="StuCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StuName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoAvailableMaterialLookUpItem" nillable="true" type="tns:PromoAvailableMaterialLookUpItem" />
+  <xs:complexType name="PromoUserStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoUserStatusLookupItem" nillable="true" type="tns:PromoUserStatusLookupItem" />
+  <xs:complexType name="UserCompDetailLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserCompDetailLookupItem" nillable="true" type="tns:UserCompDetailLookupItem" />
+  <xs:complexType name="ChannelCompanyRptLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComShortname" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelCompanyRptLookupItem" nillable="true" type="tns:ChannelCompanyRptLookupItem" />
+  <xs:complexType name="ReportCurrencyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportCurrencyLookupItem" nillable="true" type="tns:ReportCurrencyLookupItem" />
+  <xs:complexType name="AmortMethodLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FsrDesc1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FsrDesc2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FsrDesc3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FsrDesc4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FsrValue1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FsrValue2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FsrValue3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FsrValue4" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AmortMethodLookupItem" nillable="true" type="tns:AmortMethodLookupItem" />
+  <xs:complexType name="DMSubGenreLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMSubGenreLookupItem" nillable="true" type="tns:DMSubGenreLookupItem" />
+  <xs:complexType name="GenEventLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenEventLookupItem" nillable="true" type="tns:GenEventLookupItem" />
+  <xs:complexType name="PaymentCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PatCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentCodeLookupItem" nillable="true" type="tns:PaymentCodeLookupItem" />
+  <xs:complexType name="MecCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MecCodeLookupItem" nillable="true" type="tns:MecCodeLookupItem" />
+  <xs:complexType name="MecItemClassLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MecItemClassLookupItem" nillable="true" type="tns:MecItemClassLookupItem" />
+  <xs:complexType name="BroadcastTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BroadcastTypeLookupItem" nillable="true" type="tns:BroadcastTypeLookupItem" />
+  <xs:complexType name="MecSoundTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MecSoundTypeLookupItem" nillable="true" type="tns:MecSoundTypeLookupItem" />
+  <xs:complexType name="RightsLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RightsLookupItem" nillable="true" type="tns:RightsLookupItem" />
+  <xs:complexType name="EventLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventLookupItem" nillable="true" type="tns:EventLookupItem" />
+  <xs:complexType name="LocationLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocationLookupItem" nillable="true" type="tns:LocationLookupItem" />
+  <xs:complexType name="VenueLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VenueLookupItem" nillable="true" type="tns:VenueLookupItem" />
+  <xs:complexType name="CityLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SomeOtherProperty" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CityLookupItem" nillable="true" type="tns:CityLookupItem" />
+  <xs:complexType name="LiveLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LiveLookupItem" nillable="true" type="tns:LiveLookupItem" />
+  <xs:complexType name="TypeShowLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attribute" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Attribute2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypeShowLookupItem" nillable="true" type="tns:TypeShowLookupItem" />
+  <xs:complexType name="ReturnCostLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReturnCostLookupItem" nillable="true" type="tns:ReturnCostLookupItem" />
+  <xs:complexType name="MemTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemTypeLookupItem" nillable="true" type="tns:MemTypeLookupItem" />
+  <xs:complexType name="DeliveryCostLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeliveryCostLookupItem" nillable="true" type="tns:DeliveryCostLookupItem" />
+  <xs:complexType name="DeliveryModeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeliveryModeLookupItem" nillable="true" type="tns:DeliveryModeLookupItem" />
+  <xs:complexType name="ContractFormLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractFormLookupItem" nillable="true" type="tns:ContractFormLookupItem" />
+  <xs:complexType name="MaterialsReturnLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaterialsReturnLookupItem" nillable="true" type="tns:MaterialsReturnLookupItem" />
+  <xs:complexType name="MemLicenseeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsBioscopeLicensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseeRegionID" type="xs:int" />
+          <xs:element minOccurs="0" name="MediaServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Number" type="xs:int" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemLicenseeLookupItem" nillable="true" type="tns:MemLicenseeLookupItem" />
+  <xs:complexType name="ComNameLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Number" type="xs:int" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComNameLookupItem" nillable="true" type="tns:ComNameLookupItem" />
+  <xs:complexType name="MemComNameLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Number" type="xs:int" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SignQA" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemComNameLookupItem" nillable="true" type="tns:MemComNameLookupItem" />
+  <xs:complexType name="MemCurrencyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemCurrencyLookupItem" nillable="true" type="tns:MemCurrencyLookupItem" />
+  <xs:complexType name="MemConNameLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConCalcType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConScheduleAfterPremLinFEA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConScheduleAfterPremLinSER" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemConNameLookupItem" nillable="true" type="tns:MemConNameLookupItem" />
+  <xs:complexType name="LanIDLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LanID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LanName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LanIDLookupItem" nillable="true" type="tns:LanIDLookupItem" />
+  <xs:complexType name="ProgramEventTypeLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgramEventTypeLookUpItem" nillable="true" type="tns:ProgramEventTypeLookUpItem" />
+  <xs:complexType name="PayAmountLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SerTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalPrice" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayAmountLookupItem" nillable="true" type="tns:PayAmountLookupItem" />
+  <xs:complexType name="GenRefNoLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SerNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SerTitle" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenRefNoLookupItem" nillable="true" type="tns:GenRefNoLookupItem" />
+  <xs:complexType name="MpyAmountLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalPrice" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MpyAmountLookupItem" nillable="true" type="tns:MpyAmountLookupItem" />
+  <xs:complexType name="MeiGenRefLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenRefNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubGenre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeiGenRefLookupItem" nillable="true" type="tns:MeiGenRefLookupItem" />
+  <xs:complexType name="LicShortLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsBioscopeLicensee" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LeeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Number" type="xs:int" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicShortLookupItem" nillable="true" type="tns:LicShortLookupItem" />
+  <xs:complexType name="LicNumberLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LeeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LeeNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicNumberLookupItem" nillable="true" type="tns:LicNumberLookupItem" />
+  <xs:complexType name="CompetitorLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompetitorDesp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Competitorcode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompetitorLookupItem" nillable="true" type="tns:CompetitorLookupItem" />
+  <xs:complexType name="ContractAgencyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractAgencyLookupItem" nillable="true" type="tns:ContractAgencyLookupItem" />
+  <xs:complexType name="ChannelServiceLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelServiceLookupItem" nillable="true" type="tns:ChannelServiceLookupItem" />
+  <xs:complexType name="PrimeLevelLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PrimeLevelLookupItem" nillable="true" type="tns:PrimeLevelLookupItem" />
+  <xs:complexType name="PrimeTimeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PrimeTimeLookupItem" nillable="true" type="tns:PrimeTimeLookupItem" />
+  <xs:complexType name="ContractStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractStatusLookupItem" nillable="true" type="tns:ContractStatusLookupItem" />
+  <xs:complexType name="ContractCalcTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractCalcTypeLookupItem" nillable="true" type="tns:ContractCalcTypeLookupItem" />
+  <xs:complexType name="ContractRoyaltyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConCalcType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractRoyaltyLookupItem" nillable="true" type="tns:ContractRoyaltyLookupItem" />
+  <xs:complexType name="SubCatLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubCatLookupItem" nillable="true" type="tns:SubCatLookupItem" />
+  <xs:complexType name="MoveBudgetLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ALDAmount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ALDEnd" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ALDLeeShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ALDStart" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ALDTBA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemLeeShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MemStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MoveBudgetLookupItem" nillable="true" type="tns:MoveBudgetLookupItem" />
+  <xs:complexType name="LicEventLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicEventLookupItem" nillable="true" type="tns:LicEventLookupItem" />
+  <xs:complexType name="LicensePlayLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicensePlayLookupItem" nillable="true" type="tns:LicensePlayLookupItem" />
+  <xs:complexType name="PriceCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceCodeLookupItem" nillable="true" type="tns:PriceCodeLookupItem" />
+  <xs:complexType name="LicenseStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseStatusLookupItem" nillable="true" type="tns:LicenseStatusLookupItem" />
+  <xs:complexType name="FixedBudgetReportLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BudgetComboID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetCompanyNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="BudgetCompanyShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetLicenseeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="BudgetLicenseeShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="BudgetStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BudgetYear" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FixedBudgetReportLookupItem" nillable="true" type="tns:FixedBudgetReportLookupItem" />
+  <xs:complexType name="LicRightsLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicRightsLookupItem" nillable="true" type="tns:LicRightsLookupItem" />
+  <xs:complexType name="CodeMaintTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CodeMaintTypeLookupItem" nillable="true" type="tns:CodeMaintTypeLookupItem" />
+  <xs:complexType name="PaymentStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaymentStatusCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentStatusDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentStatusLookupItem" nillable="true" type="tns:PaymentStatusLookupItem" />
+  <xs:complexType name="TitleAnLicenseeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TitleAnLicenseeLookupItem" nillable="true" type="tns:TitleAnLicenseeLookupItem" />
+  <xs:complexType name="SubscriberTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubscriberCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubscriberDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubscriberID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubscriberTypeLookupItem" nillable="true" type="tns:SubscriberTypeLookupItem" />
+  <xs:complexType name="AuditUserIdLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserIdDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserIdValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuditUserIdLookUpItem" nillable="true" type="tns:AuditUserIdLookUpItem" />
+  <xs:complexType name="DepartmentLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DepartmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepartmentLookUpItem" nillable="true" type="tns:DepartmentLookUpItem" />
+  <xs:complexType name="FinancialYearCompanyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Year" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FinancialYearCompanyLookupItem" nillable="true" type="tns:FinancialYearCompanyLookupItem" />
+  <xs:complexType name="MediaTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MediaTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaTypeDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaTypeLookupItem" nillable="true" type="tns:MediaTypeLookupItem" />
+  <xs:complexType name="DeliveryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MecDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MecValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeliveryLookupItem" nillable="true" type="tns:DeliveryLookupItem" />
+  <xs:complexType name="MediaPlatformLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MediaPlatformCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatformDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatformId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaPlatformLookupItem" nillable="true" type="tns:MediaPlatformLookupItem" />
+  <xs:complexType name="ScenarioLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ScenarioCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScenarioID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScenarioLookupItem" nillable="true" type="tns:ScenarioLookupItem" />
+  <xs:complexType name="GetAreaLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaId" type="xs:int" />
+          <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAreaLookupItem" nillable="true" type="tns:GetAreaLookupItem" />
+  <xs:complexType name="PB_MediaPlatformLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MediaPlatformCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatformDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PB_MediaPlatformLookupItem" nillable="true" type="tns:PB_MediaPlatformLookupItem" />
+  <xs:complexType name="PB_ProgrammeCategoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProgrammeCategoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrammeCategoryDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PB_ProgrammeCategoryLookupItem" nillable="true" type="tns:PB_ProgrammeCategoryLookupItem" />
+  <xs:complexType name="MediaServiceLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MediaServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaServiceDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaServiceLookupItem" nillable="true" type="tns:MediaServiceLookupItem" />
+  <xs:complexType name="BOCategoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOCategoryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BOCategoryDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BOCategoryLookupItem" nillable="true" type="tns:BOCategoryLookupItem" />
+  <xs:complexType name="TertiaryGenreLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TertiaryGenreCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TertiaryGenreDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TertiaryGenreLookupItem" nillable="true" type="tns:TertiaryGenreLookupItem" />
+  <xs:complexType name="PB_FinalGradeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FinalGradeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinalGradeDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PB_FinalGradeLookupItem" nillable="true" type="tns:PB_FinalGradeLookupItem" />
+  <xs:complexType name="MediaServicePlatformCombLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MediaPlatformCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaPlatformDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaServiceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaServiceDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaServicePlatformMapID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaServicePlatformCombLookupItem" nillable="true" type="tns:MediaServicePlatformCombLookupItem" />
+  <xs:complexType name="DealMemoNumberLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DealMemoNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DealMemoNumberLookupItem" nillable="true" type="tns:DealMemoNumberLookupItem" />
+  <xs:complexType name="TVODProgFormatTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProgFormatCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgFormatDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODProgFormatTypeLookupItem" nillable="true" type="tns:TVODProgFormatTypeLookupItem" />
+  <xs:complexType name="TVODProgrammeTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProgrammeTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrammeTypeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODProgrammeTypeLookupItem" nillable="true" type="tns:TVODProgrammeTypeLookupItem" />
+  <xs:complexType name="TVODProgCategoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProgrammeCategoryDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrammeCategoryValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODProgCategoryLookupItem" nillable="true" type="tns:TVODProgCategoryLookupItem" />
+  <xs:complexType name="TVODDealTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DealTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DealTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DealTypeNumber" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODDealTypeLookupItem" nillable="true" type="tns:TVODDealTypeLookupItem" />
+  <xs:complexType name="TVODCurrencyOfPaymentLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractCurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractCurrencyDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODCurrencyOfPaymentLookupItem" nillable="true" type="tns:TVODCurrencyOfPaymentLookupItem" />
+  <xs:complexType name="TVODMediaTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MediaTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaTypeDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODMediaTypeLookupItem" nillable="true" type="tns:TVODMediaTypeLookupItem" />
+  <xs:complexType name="TapeFormatLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TapeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeFormat" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeFormatLookUpItem" nillable="true" type="tns:TapeFormatLookUpItem" />
+  <xs:complexType name="TVODBOCategoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BOCategoryDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BOCategoryNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODBOCategoryLookupItem" nillable="true" type="tns:TVODBOCategoryLookupItem" />
+  <xs:complexType name="TVODRegionLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODRegionLookupItem" nillable="true" type="tns:TVODRegionLookupItem" />
+  <xs:complexType name="TVODMGFormulaLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MGFormulaCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MGFormulaDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MGFormulaXML" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODMGFormulaLookupItem" nillable="true" type="tns:TVODMGFormulaLookupItem" />
+  <xs:complexType name="TVODTerritoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TERCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TERName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TERNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODTerritoryLookupItem" nillable="true" type="tns:TVODTerritoryLookupItem" />
+  <xs:complexType name="TVODPaymentRuleLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaymentRuleFormula" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentRuleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentRuleNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODPaymentRuleLookupItem" nillable="true" type="tns:TVODPaymentRuleLookupItem" />
+  <xs:complexType name="TVODPaymentRuleOverageLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaymentRuleFormula" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentRuleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentRuleNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODPaymentRuleOverageLookupItem" nillable="true" type="tns:TVODPaymentRuleOverageLookupItem" />
+  <xs:complexType name="TVODLicStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicStatusCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicStatusDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODLicStatusLookupItem" nillable="true" type="tns:TVODLicStatusLookupItem" />
+  <xs:complexType name="TVODAmortMethodLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AmortCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AmortCodeDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODAmortMethodLookupItem" nillable="true" type="tns:TVODAmortMethodLookupItem" />
+  <xs:complexType name="TVODMainLicenseeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MLicenseeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MLicenseeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="MLicenseeShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODMainLicenseeLookupItem" nillable="true" type="tns:TVODMainLicenseeLookupItem" />
+  <xs:complexType name="TVODCurrencyLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCodeB" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODCurrencyLookupItem" nillable="true" type="tns:TVODCurrencyLookupItem" />
+  <xs:complexType name="TVODLicenseFeesFormulaLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicenseFeesFormula" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseFeesFormulaDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicenseFeesFormulaNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODLicenseFeesFormulaLookupItem" nillable="true" type="tns:TVODLicenseFeesFormulaLookupItem" />
+  <xs:complexType name="RackRowLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Rack" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Row" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RackRowLookUpItem" nillable="true" type="tns:RackRowLookUpItem" />
+  <xs:complexType name="TVODSpotRateSourceLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SourceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODSpotRateSourceLookupItem" nillable="true" type="tns:TVODSpotRateSourceLookupItem" />
+  <xs:complexType name="TVODBOSubCategoryLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BOSubCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BOSubCategoryDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BOSubCategoryNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODBOSubCategoryLookupItem" nillable="true" type="tns:TVODBOSubCategoryLookupItem" />
+  <xs:complexType name="TVODActualPriceConversionRuleLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActualPriceConversionRuleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActualPriceConversionRuleID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODActualPriceConversionRuleLookupItem" nillable="true" type="tns:TVODActualPriceConversionRuleLookupItem" />
+  <xs:complexType name="MoodLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MoodCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MoodCodeDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MoodLookupItem" nillable="true" type="tns:MoodLookupItem" />
+  <xs:complexType name="GetTaskLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Task" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTaskLookupItem" nillable="true" type="tns:GetTaskLookupItem" />
+  <xs:complexType name="GetTriggeringActionLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TriggeringAction" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTriggeringActionLookupItem" nillable="true" type="tns:GetTriggeringActionLookupItem" />
+  <xs:complexType name="GetSSEmailRolesLookUpItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSSEmailRolesLookUpItem" nillable="true" type="tns:GetSSEmailRolesLookUpItem" />
+  <xs:complexType name="RegionLeeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegionLeeLookupItem" nillable="true" type="tns:RegionLeeLookupItem" />
+  <xs:complexType name="TVODContractShortNameLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BoxofficeCurrency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContractEntityNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractTypeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Format" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormulaNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MainLicenseeNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="SupplierNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODContractShortNameLookupItem" nillable="true" type="tns:TVODContractShortNameLookupItem" />
+  <xs:complexType name="ChannelLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="ChannelShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelLookupItem" nillable="true" type="tns:ChannelLookupItem" />
+  <xs:complexType name="TVODPaymentCodeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaymentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODPaymentCodeLookupItem" nillable="true" type="tns:TVODPaymentCodeLookupItem" />
+  <xs:complexType name="GenreLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenreCodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenreCodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenreLookupItem" nillable="true" type="tns:GenreLookupItem" />
+  <xs:complexType name="ActionLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeAction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeComments" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActionLookupItem" nillable="true" type="tns:ActionLookupItem" />
+  <xs:complexType name="RolesLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RolesLookupItem" nillable="true" type="tns:RolesLookupItem" />
+  <xs:complexType name="TapeTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeFormat" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeTypeLookupItem" nillable="true" type="tns:TapeTypeLookupItem" />
+  <xs:complexType name="TapeLengthLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TapeLength" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeLengthLookupItem" nillable="true" type="tns:TapeLengthLookupItem" />
+  <xs:complexType name="LicPlayStatusLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicPlayStatusValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LicPlayStatysDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicPlayStatusLookupItem" nillable="true" type="tns:LicPlayStatusLookupItem" />
+  <xs:complexType name="ProgrammeTypeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProgrammeTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrammeTypeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeTypeLookupItem" nillable="true" type="tns:ProgrammeTypeLookupItem" />
+  <xs:complexType name="TapeCategoryLookupsItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeCategoryLookupsItem" nillable="true" type="tns:TapeCategoryLookupsItem" />
+  <xs:complexType name="TapeBookeeLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BookeeBlockFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookeeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookeeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookeeNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeBookeeLookupItem" nillable="true" type="tns:TapeBookeeLookupItem" />
+  <xs:complexType name="TapeBookeeActionLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BookeeAction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeBookeeActionLookupItem" nillable="true" type="tns:TapeBookeeActionLookupItem" />
+  <xs:complexType name="TapeBookeeRackLookupItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LookupItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArhRows" type="xs:int" />
+          <xs:element minOccurs="0" name="LibShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RackNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeBookeeRackLookupItem" nillable="true" type="tns:TapeBookeeRackLookupItem" />
+  <xs:complexType name="TVODLicenseFeesFormulaLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODLicenseFeesFormulaLookup" nillable="true" type="tns:TVODLicenseFeesFormulaLookup" />
+  <xs:complexType name="GenreLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenreLookup" nillable="true" type="tns:GenreLookup" />
+  <xs:complexType name="TapeLengthLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeLengthLookup" nillable="true" type="tns:TapeLengthLookup" />
+  <xs:complexType name="LicPlayStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicPlayStatusLookup" nillable="true" type="tns:LicPlayStatusLookup" />
+  <xs:complexType name="ProgrammeTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeTypeLookup" nillable="true" type="tns:ProgrammeTypeLookup" />
+  <xs:complexType name="TapeCategoryLookups">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeCategoryLookups" nillable="true" type="tns:TapeCategoryLookups" />
+  <xs:complexType name="TapeBookeeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeBookeeLookup" nillable="true" type="tns:TapeBookeeLookup" />
+  <xs:complexType name="TapeBookeeActionLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeBookeeActionLookup" nillable="true" type="tns:TapeBookeeActionLookup" />
+  <xs:complexType name="TapeBookeeRackLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeBookeeRackLookup" nillable="true" type="tns:TapeBookeeRackLookup" />
+  <xs:complexType name="RackRowLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RackRowLookup" nillable="true" type="tns:RackRowLookup" />
+  <xs:complexType name="TapeFormatLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeFormatLookUp" nillable="true" type="tns:TapeFormatLookUp" />
+  <xs:complexType name="TapeFormatTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeFormatTypeLookup" nillable="true" type="tns:TapeFormatTypeLookup" />
+  <xs:complexType name="CourierCompanyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CourierCompanyLookup" nillable="true" type="tns:CourierCompanyLookup" />
+  <xs:complexType name="ChannelCompanyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelCompanyLookup" nillable="true" type="tns:ChannelCompanyLookup" />
+  <xs:complexType name="LicenseeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeLookup" nillable="true" type="tns:LicenseeLookup" />
+  <xs:complexType name="BudgetCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BudgetCodeLookup" nillable="true" type="tns:BudgetCodeLookup" />
+  <xs:complexType name="PersonnelLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonnelLookUp" nillable="true" type="tns:PersonnelLookUp" />
+  <xs:complexType name="LibraryLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LibraryLookUp" nillable="true" type="tns:LibraryLookUp" />
+  <xs:complexType name="CastRoleLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CastRoleLookUp" nillable="true" type="tns:CastRoleLookUp" />
+  <xs:complexType name="CastAwardLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CastAwardLookup" nillable="true" type="tns:CastAwardLookup" />
+  <xs:complexType name="LocalProgramStudioLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocalProgramStudioLookUp" nillable="true" type="tns:LocalProgramStudioLookUp" />
+  <xs:complexType name="StudioCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StudioCodeLookup" nillable="true" type="tns:StudioCodeLookup" />
+  <xs:complexType name="GetGenSeriesLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenSeriesLookup" nillable="true" type="tns:GetGenSeriesLookup" />
+  <xs:complexType name="GetGenCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenCodeLookup" nillable="true" type="tns:GetGenCodeLookup" />
+  <xs:complexType name="GetGenRatingMPAALookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenRatingMPAALookup" nillable="true" type="tns:GetGenRatingMPAALookup" />
+  <xs:complexType name="GetGenRatingINTLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenRatingINTLookup" nillable="true" type="tns:GetGenRatingINTLookup" />
+  <xs:complexType name="ProgrammeCategoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeCategoryLookup" nillable="true" type="tns:ProgrammeCategoryLookup" />
+  <xs:complexType name="GetSpokenLangLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSpokenLangLookup" nillable="true" type="tns:GetSpokenLangLookup" />
+  <xs:complexType name="SeriesLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeriesLookup" nillable="true" type="tns:SeriesLookup" />
+  <xs:complexType name="SeasonLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeasonLookup" nillable="true" type="tns:SeasonLookup" />
+  <xs:complexType name="GetGenDistributorLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenDistributorLookup" nillable="true" type="tns:GetGenDistributorLookup" />
+  <xs:complexType name="GetGenColorLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenColorLookup" nillable="true" type="tns:GetGenColorLookup" />
+  <xs:complexType name="GetGenQualityLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenQualityLookup" nillable="true" type="tns:GetGenQualityLookup" />
+  <xs:complexType name="GetGenTargetGroupLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenTargetGroupLookup" nillable="true" type="tns:GetGenTargetGroupLookup" />
+  <xs:complexType name="GetGenNationalityLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGenNationalityLookup" nillable="true" type="tns:GetGenNationalityLookup" />
+  <xs:complexType name="FillerCategoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerCategoryLookup" nillable="true" type="tns:FillerCategoryLookup" />
+  <xs:complexType name="FillerDistributorLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerDistributorLookup" nillable="true" type="tns:FillerDistributorLookup" />
+  <xs:complexType name="FillerViewedByLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerViewedByLookup" nillable="true" type="tns:FillerViewedByLookup" />
+  <xs:complexType name="FillerTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FillerTypeLookup" nillable="true" type="tns:FillerTypeLookup" />
+  <xs:complexType name="SupplierLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SupplierLookup" nillable="true" type="tns:SupplierLookup" />
+  <xs:complexType name="ContractLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractLookup" nillable="true" type="tns:ContractLookup" />
+  <xs:complexType name="LicenseTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseTypeLookup" nillable="true" type="tns:LicenseTypeLookup" />
+  <xs:complexType name="BookingAreaLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookingAreaLookup" nillable="true" type="tns:BookingAreaLookup" />
+  <xs:complexType name="PersonnelNameLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonnelNameLookup" nillable="true" type="tns:PersonnelNameLookup" />
+  <xs:complexType name="PersonnelUserLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonnelUserLookup" nillable="true" type="tns:PersonnelUserLookup" />
+  <xs:complexType name="ManagementLevelLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ManagementLevelLookup" nillable="true" type="tns:ManagementLevelLookup" />
+  <xs:complexType name="SubGenreLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubGenreLookup" nillable="true" type="tns:SubGenreLookup" />
+  <xs:complexType name="RequestorLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RequestorLookup" nillable="true" type="tns:RequestorLookup" />
+  <xs:complexType name="SportTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SportTypeLookup" nillable="true" type="tns:SportTypeLookup" />
+  <xs:complexType name="PlayStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlayStatusLookup" nillable="true" type="tns:PlayStatusLookup" />
+  <xs:complexType name="GetCompanyComTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCompanyComTypeLookup" nillable="true" type="tns:GetCompanyComTypeLookup" />
+  <xs:complexType name="GetCompanyCountryCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCompanyCountryCodeLookup" nillable="true" type="tns:GetCompanyCountryCodeLookup" />
+  <xs:complexType name="EnterpriseLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnterpriseLookup" nillable="true" type="tns:EnterpriseLookup" />
+  <xs:complexType name="EnterpriseTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnterpriseTypeLookup" nillable="true" type="tns:EnterpriseTypeLookup" />
+  <xs:complexType name="CompanyTypeInternalLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyTypeInternalLookup" nillable="true" type="tns:CompanyTypeInternalLookup" />
+  <xs:complexType name="EpisodeTitleLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EpisodeTitleLookup" nillable="true" type="tns:EpisodeTitleLookup" />
+  <xs:complexType name="ParentEnterpriseLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParentEnterpriseLookup" nillable="true" type="tns:ParentEnterpriseLookup" />
+  <xs:complexType name="CompanyEnterpriseTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyEnterpriseTypeLookup" nillable="true" type="tns:CompanyEnterpriseTypeLookup" />
+  <xs:complexType name="PromoTypeLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoTypeLookUp" nillable="true" type="tns:PromoTypeLookUp" />
+  <xs:complexType name="PromoLibraryLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoLibraryLookUp" nillable="true" type="tns:PromoLibraryLookUp" />
+  <xs:complexType name="PromoMaterialStatusLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoMaterialStatusLookUp" nillable="true" type="tns:PromoMaterialStatusLookUp" />
+  <xs:complexType name="PromoUserLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoUserLookUp" nillable="true" type="tns:PromoUserLookUp" />
+  <xs:complexType name="PromoProgrammeTypeLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoProgrammeTypeLookUp" nillable="true" type="tns:PromoProgrammeTypeLookUp" />
+  <xs:complexType name="ChannelsForLicenseeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelsForLicenseeLookup" nillable="true" type="tns:ChannelsForLicenseeLookup" />
+  <xs:complexType name="UsersForChannelsLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UsersForChannelsLookup" nillable="true" type="tns:UsersForChannelsLookup" />
+  <xs:complexType name="FinYearForUpdateRollingBudgetLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FinYearForUpdateRollingBudgetLookup" nillable="true" type="tns:FinYearForUpdateRollingBudgetLookup" />
+  <xs:complexType name="LicenseeForFinancialBudgetLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseeForFinancialBudgetLookup" nillable="true" type="tns:LicenseeForFinancialBudgetLookup" />
+  <xs:complexType name="UserLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserLookup" nillable="true" type="tns:UserLookup" />
+  <xs:complexType name="ActiveUserLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActiveUserLookup" nillable="true" type="tns:ActiveUserLookup" />
+  <xs:complexType name="RegionLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegionLookup" nillable="true" type="tns:RegionLookup" />
+  <xs:complexType name="TerritoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TerritoryLookup" nillable="true" type="tns:TerritoryLookup" />
+  <xs:complexType name="CurrencyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrencyLookup" nillable="true" type="tns:CurrencyLookup" />
+  <xs:complexType name="SubTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubTypeLookup" nillable="true" type="tns:SubTypeLookup" />
+  <xs:complexType name="CompanyTypeCCLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyTypeCCLookup" nillable="true" type="tns:CompanyTypeCCLookup" />
+  <xs:complexType name="ProgrammeCombinationTypesLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgrammeCombinationTypesLookup" nillable="true" type="tns:ProgrammeCombinationTypesLookup" />
+  <xs:complexType name="ChannelsForUserLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelsForUserLookup" nillable="true" type="tns:ChannelsForUserLookup" />
+  <xs:complexType name="FixedBudgetTemplateLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FixedBudgetTemplateLookup" nillable="true" type="tns:FixedBudgetTemplateLookup" />
+  <xs:complexType name="RollingBudgetTemplateLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RollingBudgetTemplateLookup" nillable="true" type="tns:RollingBudgetTemplateLookup" />
+  <xs:complexType name="GetCompanyTypeCCLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCompanyTypeCCLookup" nillable="true" type="tns:GetCompanyTypeCCLookup" />
+  <xs:complexType name="FMMLockLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FMMLockLookup" nillable="true" type="tns:FMMLockLookup" />
+  <xs:complexType name="FMMStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FMMStatusLookup" nillable="true" type="tns:FMMStatusLookup" />
+  <xs:complexType name="PaymentTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentTypeLookup" nillable="true" type="tns:PaymentTypeLookup" />
+  <xs:complexType name="ChannelLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelLookup" nillable="true" type="tns:ChannelLookup" />
+  <xs:complexType name="PromoActionLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoActionLookup" nillable="true" type="tns:PromoActionLookup" />
+  <xs:complexType name="PromoLibrarianLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoLibrarianLookup" nillable="true" type="tns:PromoLibrarianLookup" />
+  <xs:complexType name="PromoLibraryUserTypeLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoLibraryUserTypeLookUp" nillable="true" type="tns:PromoLibraryUserTypeLookUp" />
+  <xs:complexType name="PromoAvailableMaterialLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoAvailableMaterialLookUp" nillable="true" type="tns:PromoAvailableMaterialLookUp" />
+  <xs:complexType name="PromoUserStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PromoUserStatusLookup" nillable="true" type="tns:PromoUserStatusLookup" />
+  <xs:complexType name="UserCompDetailLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserCompDetailLookup" nillable="true" type="tns:UserCompDetailLookup" />
+  <xs:complexType name="ChannelCompanyRptLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelCompanyRptLookup" nillable="true" type="tns:ChannelCompanyRptLookup" />
+  <xs:complexType name="ReportCurrencyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportCurrencyLookup" nillable="true" type="tns:ReportCurrencyLookup" />
+  <xs:complexType name="AmortMethodLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AmortMethodLookup" nillable="true" type="tns:AmortMethodLookup" />
+  <xs:complexType name="DMSubGenreLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DMSubGenreLookup" nillable="true" type="tns:DMSubGenreLookup" />
+  <xs:complexType name="GenEventLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenEventLookup" nillable="true" type="tns:GenEventLookup" />
+  <xs:complexType name="PaymentCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentCodeLookup" nillable="true" type="tns:PaymentCodeLookup" />
+  <xs:complexType name="MecCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MecCodeLookup" nillable="true" type="tns:MecCodeLookup" />
+  <xs:complexType name="MecItemClassLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MecItemClassLookup" nillable="true" type="tns:MecItemClassLookup" />
+  <xs:complexType name="MecSoundTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MecSoundTypeLookup" nillable="true" type="tns:MecSoundTypeLookup" />
+  <xs:complexType name="BroadcastTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BroadcastTypeLookup" nillable="true" type="tns:BroadcastTypeLookup" />
+  <xs:complexType name="RightsLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RightsLookup" nillable="true" type="tns:RightsLookup" />
+  <xs:complexType name="EventLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventLookup" nillable="true" type="tns:EventLookup" />
+  <xs:complexType name="LocationLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocationLookup" nillable="true" type="tns:LocationLookup" />
+  <xs:complexType name="VenueLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VenueLookup" nillable="true" type="tns:VenueLookup" />
+  <xs:complexType name="LicTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicTypeLookup" nillable="true" type="tns:LicTypeLookup" />
+  <xs:complexType name="LiveLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LiveLookup" nillable="true" type="tns:LiveLookup" />
+  <xs:complexType name="TypeShowLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypeShowLookup" nillable="true" type="tns:TypeShowLookup" />
+  <xs:complexType name="ReturnCostLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReturnCostLookup" nillable="true" type="tns:ReturnCostLookup" />
+  <xs:complexType name="MemTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemTypeLookup" nillable="true" type="tns:MemTypeLookup" />
+  <xs:complexType name="DeliveryCostLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeliveryCostLookup" nillable="true" type="tns:DeliveryCostLookup" />
+  <xs:complexType name="DeliveryModeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeliveryModeLookup" nillable="true" type="tns:DeliveryModeLookup" />
+  <xs:complexType name="ContractFormLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractFormLookup" nillable="true" type="tns:ContractFormLookup" />
+  <xs:complexType name="MaterialsReturnLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaterialsReturnLookup" nillable="true" type="tns:MaterialsReturnLookup" />
+  <xs:complexType name="MemLicenseeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemLicenseeLookup" nillable="true" type="tns:MemLicenseeLookup" />
+  <xs:complexType name="ComNameLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComNameLookup" nillable="true" type="tns:ComNameLookup" />
+  <xs:complexType name="MemComNameLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemComNameLookup" nillable="true" type="tns:MemComNameLookup" />
+  <xs:complexType name="MemCurrencyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemCurrencyLookup" nillable="true" type="tns:MemCurrencyLookup" />
+  <xs:complexType name="MemConNameLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemConNameLookup" nillable="true" type="tns:MemConNameLookup" />
+  <xs:complexType name="LanIDLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LanIDLookup" nillable="true" type="tns:LanIDLookup" />
+  <xs:complexType name="ProgramEventTypeLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgramEventTypeLookUp" nillable="true" type="tns:ProgramEventTypeLookUp" />
+  <xs:complexType name="PayAmountLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayAmountLookup" nillable="true" type="tns:PayAmountLookup" />
+  <xs:complexType name="GenRefNoLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenRefNoLookup" nillable="true" type="tns:GenRefNoLookup" />
+  <xs:complexType name="MpyAmountLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MpyAmountLookup" nillable="true" type="tns:MpyAmountLookup" />
+  <xs:complexType name="MeiGenRefLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeiGenRefLookup" nillable="true" type="tns:MeiGenRefLookup" />
+  <xs:complexType name="LicShortLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicShortLookup" nillable="true" type="tns:LicShortLookup" />
+  <xs:complexType name="LicNumberLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicNumberLookup" nillable="true" type="tns:LicNumberLookup" />
+  <xs:complexType name="CompetitorLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompetitorLookup" nillable="true" type="tns:CompetitorLookup" />
+  <xs:complexType name="ContractAgencyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractAgencyLookup" nillable="true" type="tns:ContractAgencyLookup" />
+  <xs:complexType name="ChannelServiceLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChannelServiceLookup" nillable="true" type="tns:ChannelServiceLookup" />
+  <xs:complexType name="PrimeLevelLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PrimeLevelLookup" nillable="true" type="tns:PrimeLevelLookup" />
+  <xs:complexType name="PrimeTimeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PrimeTimeLookup" nillable="true" type="tns:PrimeTimeLookup" />
+  <xs:complexType name="ContractStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractStatusLookup" nillable="true" type="tns:ContractStatusLookup" />
+  <xs:complexType name="ContractCalcTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractCalcTypeLookup" nillable="true" type="tns:ContractCalcTypeLookup" />
+  <xs:complexType name="ContractRoyaltyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContractRoyaltyLookup" nillable="true" type="tns:ContractRoyaltyLookup" />
+  <xs:complexType name="SubCatLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubCatLookup" nillable="true" type="tns:SubCatLookup" />
+  <xs:complexType name="MoveBudgetLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MoveBudgetLookup" nillable="true" type="tns:MoveBudgetLookup" />
+  <xs:complexType name="LicEventLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicEventLookup" nillable="true" type="tns:LicEventLookup" />
+  <xs:complexType name="LicensePlayLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicensePlayLookup" nillable="true" type="tns:LicensePlayLookup" />
+  <xs:complexType name="PriceCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceCodeLookup" nillable="true" type="tns:PriceCodeLookup" />
+  <xs:complexType name="LicenseStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicenseStatusLookup" nillable="true" type="tns:LicenseStatusLookup" />
+  <xs:complexType name="FixedBudgetReportLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FixedBudgetReportLookup" nillable="true" type="tns:FixedBudgetReportLookup" />
+  <xs:complexType name="LicRightsLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LicRightsLookup" nillable="true" type="tns:LicRightsLookup" />
+  <xs:complexType name="CodeMaintTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CodeMaintTypeLookup" nillable="true" type="tns:CodeMaintTypeLookup" />
+  <xs:complexType name="PaymentStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentStatusLookup" nillable="true" type="tns:PaymentStatusLookup" />
+  <xs:complexType name="TitleAnLicenseeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TitleAnLicenseeLookup" nillable="true" type="tns:TitleAnLicenseeLookup" />
+  <xs:complexType name="SubscriberTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubscriberTypeLookup" nillable="true" type="tns:SubscriberTypeLookup" />
+  <xs:complexType name="AuditUserIdLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuditUserIdLookUp" nillable="true" type="tns:AuditUserIdLookUp" />
+  <xs:complexType name="ScenarioLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScenarioLookup" nillable="true" type="tns:ScenarioLookup" />
+  <xs:complexType name="DepartmentLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepartmentLookUp" nillable="true" type="tns:DepartmentLookUp" />
+  <xs:complexType name="FinancialYearCompanyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FinancialYearCompanyLookup" nillable="true" type="tns:FinancialYearCompanyLookup" />
+  <xs:complexType name="MediaTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaTypeLookup" nillable="true" type="tns:MediaTypeLookup" />
+  <xs:complexType name="DeliveryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeliveryLookup" nillable="true" type="tns:DeliveryLookup" />
+  <xs:complexType name="MediaPlatformLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaPlatformLookup" nillable="true" type="tns:MediaPlatformLookup" />
+  <xs:complexType name="GetAreaLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAreaLookup" nillable="true" type="tns:GetAreaLookup" />
+  <xs:complexType name="CityLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CityLookup" nillable="true" type="tns:CityLookup" />
+  <xs:complexType name="PB_ProgrammeCategoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PB_ProgrammeCategoryLookup" nillable="true" type="tns:PB_ProgrammeCategoryLookup" />
+  <xs:complexType name="MediaServiceLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaServiceLookup" nillable="true" type="tns:MediaServiceLookup" />
+  <xs:complexType name="BOCategoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BOCategoryLookup" nillable="true" type="tns:BOCategoryLookup" />
+  <xs:complexType name="TertiaryGenreLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TertiaryGenreLookup" nillable="true" type="tns:TertiaryGenreLookup" />
+  <xs:complexType name="PB_FinalGradeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PB_FinalGradeLookup" nillable="true" type="tns:PB_FinalGradeLookup" />
+  <xs:complexType name="MediaServicePlatformCombLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaServicePlatformCombLookup" nillable="true" type="tns:MediaServicePlatformCombLookup" />
+  <xs:complexType name="DealMemoNumberLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DealMemoNumberLookup" nillable="true" type="tns:DealMemoNumberLookup" />
+  <xs:complexType name="TVODProgFormatTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODProgFormatTypeLookup" nillable="true" type="tns:TVODProgFormatTypeLookup" />
+  <xs:complexType name="TVODProgrammeTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODProgrammeTypeLookup" nillable="true" type="tns:TVODProgrammeTypeLookup" />
+  <xs:complexType name="TVODProgCategoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODProgCategoryLookup" nillable="true" type="tns:TVODProgCategoryLookup" />
+  <xs:complexType name="TVODDealTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODDealTypeLookup" nillable="true" type="tns:TVODDealTypeLookup" />
+  <xs:complexType name="TVODCurrencyOfPaymentLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODCurrencyOfPaymentLookup" nillable="true" type="tns:TVODCurrencyOfPaymentLookup" />
+  <xs:complexType name="TVODMediaTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODMediaTypeLookup" nillable="true" type="tns:TVODMediaTypeLookup" />
+  <xs:complexType name="TVODContractShortNameLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODContractShortNameLookup" nillable="true" type="tns:TVODContractShortNameLookup" />
+  <xs:complexType name="TVODBOCategoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODBOCategoryLookup" nillable="true" type="tns:TVODBOCategoryLookup" />
+  <xs:complexType name="TVODRegionLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODRegionLookup" nillable="true" type="tns:TVODRegionLookup" />
+  <xs:complexType name="TVODMGFormulaLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODMGFormulaLookup" nillable="true" type="tns:TVODMGFormulaLookup" />
+  <xs:complexType name="TVODTerritoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODTerritoryLookup" nillable="true" type="tns:TVODTerritoryLookup" />
+  <xs:complexType name="TVODPaymentRuleLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODPaymentRuleLookup" nillable="true" type="tns:TVODPaymentRuleLookup" />
+  <xs:complexType name="TVODPaymentRuleOverageLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODPaymentRuleOverageLookup" nillable="true" type="tns:TVODPaymentRuleOverageLookup" />
+  <xs:complexType name="TVODLicStatusLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODLicStatusLookup" nillable="true" type="tns:TVODLicStatusLookup" />
+  <xs:complexType name="TVODAmortMethodLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODAmortMethodLookup" nillable="true" type="tns:TVODAmortMethodLookup" />
+  <xs:complexType name="TVODMainLicenseeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODMainLicenseeLookup" nillable="true" type="tns:TVODMainLicenseeLookup" />
+  <xs:complexType name="TVODCurrencyLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODCurrencyLookup" nillable="true" type="tns:TVODCurrencyLookup" />
+  <xs:complexType name="FinancialProgrammeTypeCombinationLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FinancialProgrammeTypeCombinationLookup" nillable="true" type="tns:FinancialProgrammeTypeCombinationLookup" />
+  <xs:complexType name="TVODPaymentCodeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODPaymentCodeLookup" nillable="true" type="tns:TVODPaymentCodeLookup" />
+  <xs:complexType name="TVODSpotRateSourceLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODSpotRateSourceLookup" nillable="true" type="tns:TVODSpotRateSourceLookup" />
+  <xs:complexType name="TVODBOSubCategoryLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODBOSubCategoryLookup" nillable="true" type="tns:TVODBOSubCategoryLookup" />
+  <xs:complexType name="TVODActualPriceConversionRuleLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TVODActualPriceConversionRuleLookup" nillable="true" type="tns:TVODActualPriceConversionRuleLookup" />
+  <xs:complexType name="MoodLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MoodLookup" nillable="true" type="tns:MoodLookup" />
+  <xs:complexType name="ActionLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActionLookup" nillable="true" type="tns:ActionLookup" />
+  <xs:complexType name="GetTriggeringActionLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTriggeringActionLookup" nillable="true" type="tns:GetTriggeringActionLookup" />
+  <xs:complexType name="GetSSEmailRolesLookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSSEmailRolesLookUp" nillable="true" type="tns:GetSSEmailRolesLookUp" />
+  <xs:complexType name="RegionLeeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegionLeeLookup" nillable="true" type="tns:RegionLeeLookup" />
+  <xs:complexType name="PB_MediaPlatformLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PB_MediaPlatformLookup" nillable="true" type="tns:PB_MediaPlatformLookup" />
+  <xs:complexType name="GetTaskLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTaskLookup" nillable="true" type="tns:GetTaskLookup" />
+  <xs:complexType name="RolesLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RolesLookup" nillable="true" type="tns:RolesLookup" />
+  <xs:complexType name="TapeTypeLookup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lookup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapeTypeLookup" nillable="true" type="tns:TapeTypeLookup" />
+</xs:schema>

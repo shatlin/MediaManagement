@@ -1,0 +1,356 @@
+/*
+IMPORTANT:
+In order to preserve the uniform grid appearance, all cell styles need to have padding, margin and border sizes.
+No built-in (selected, editable, highlight, flashing, invalid, loading, :focus) or user-specified CSS
+classes should alter those!
+*/
+
+.slick-header-columns {
+  
+  /*border-bottom: 1px solid silver;*/
+  white-space: pre !important;
+  height: 27px;
+
+}
+
+.slick-header-column {
+  
+  border-right: 1px solid silver;
+  text-transform:capitalize;
+  font-size: 11px;
+  font-family:"Tahoma",arial,sans-serif;
+  color:Black !important;
+  padding:0px !important;
+  padding-top:1px !important;
+  padding-left:2px !important;
+  vertical-align:top !important; 
+}
+
+.slick-header-column:hover, .slick-header-column-active {
+  
+}
+
+.slick-headerrow 
+{
+
+  background: #ffffff;
+  
+}
+
+.slick-headerrow-column {
+   background: #ffffff;
+  border-bottom: 0;
+  height: 100%;
+}
+
+.slick-row.ui-state-active {
+  background: #F5F7D7;
+}
+
+.slick-row {
+  position: absolute;
+  background: white;
+  border: 0px;
+  text-transform: uppercase;
+}
+
+
+
+.slick-cell.selected
+    {
+        background-color: blue !important;
+         border-color:  #CCC;
+         color: white !important;
+         border-style: solid;
+    }
+    
+    .slick-row.selected
+    {
+        z-index: 10;
+        background: #blue !important;
+        color: white !important;
+    }
+    
+
+.slick-cell {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 11px;
+  font-family:"Tahoma",arial,sans-serif;
+    
+}
+
+.slick-cell.active {
+  border-color:  #CCC;
+  border-style: solid;
+}
+
+.slick-group {
+  border-bottom: 2px solid silver;
+}
+
+.slick-group-toggle {
+  width: 9px;
+  height: 9px;
+  margin-right: 5px;
+}
+
+.slick-group-toggle.expanded {
+  background: url(images/collapse.gif) no-repeat center center;
+}
+
+.slick-group-toggle.collapsed {
+  background: url(images/expand.gif) no-repeat center center;
+}
+
+.slick-group-totals {
+  color: gray;
+  background: white;
+}
+
+
+   .NonEditable {
+	/*background: #f5f5f5;*/
+	background: #f5f5f5;
+	color:gray;
+	}
+
+.slick-cell-AlignCenter
+{
+    text-align:center;
+}
+
+.slick-sortable-placeholder {
+  background: silver !important;
+}
+
+.slick-row.odd {
+  /*background: #fafafa;*/
+}
+
+.slick-row.ui-state-active {
+  background: #F5F7D7;
+}
+
+.slick-row.loading {
+  opacity: 0.5;
+  filter: alpha(opacity = 50);
+}
+
+.slick-cell.invalid {
+  border-color: red;
+
+}
+
+
+.HeaderLovImage
+{
+    background: url('images/lov_down_arrow.png') no-repeat !important ;
+    background-position:right !important ;
+    
+}
+
+.percent-complete-bar {
+  display: inline-block;
+  height: 6px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+/* Slick.Editors.Text, Slick.Editors.Date */
+input.editor-text {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  background: White;
+  outline: 0;
+  padding: 0;
+  font-size: 11px;
+  font-family:"Tahoma",arial,sans-serif;
+    color:Black;
+  text-transform: uppercase;
+  border: 0px solid transparent;
+  border-right: 0px dotted silver;
+  border-bottom-color: white;
+  padding: 0px 0px 0px 0px;
+    background: #CCC !important;
+
+}
+
+
+
+input.editor-text:focus
+{
+background: #CCC !important;
+ outline: none;
+    border: 0px #CCC;
+    box-shadow: 0px 0px 0px #CCC;
+    -moz-box-shadow: 0px 0px 0px #CCC;
+    -webkit-box-shadow: 0px 0px 0px #CCC;
+}
+
+
+.ui-datepicker-trigger {
+  margin-top: 2px;
+  padding: 0;
+  vertical-align: top;
+}
+
+/* Slick.Editors.PercentComplete */
+input.editor-percentcomplete {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  outline: 0;
+  padding: 0;
+
+  float: left;
+}
+
+.editor-percentcomplete-picker {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 100%;
+  background: url("images/pencil.gif") no-repeat center center;
+  overflow: visible;
+  z-index: 1000;
+  float: right;
+}
+
+.editor-percentcomplete-helper {
+  border: 0 solid gray;
+  position: absolute;
+  top: -2px;
+  left: -9px;
+  background: url("images/editor-helper-bg.gif") no-repeat top left;
+  padding-left: 9px;
+
+  width: 120px;
+  height: 140px;
+  display: none;
+  overflow: visible;
+}
+
+.editor-percentcomplete-wrapper {
+  background: beige;
+  padding: 20px 8px;
+
+  width: 100%;
+  height: 98px;
+  border: 1px solid gray;
+  border-left: 0;
+}
+
+.editor-percentcomplete-buttons {
+  float: right;
+}
+
+.editor-percentcomplete-buttons button {
+  width: 80px;
+}
+
+.editor-percentcomplete-slider {
+  float: left;
+}
+
+.editor-percentcomplete-picker:hover .editor-percentcomplete-helper {
+  display: block;
+}
+
+.editor-percentcomplete-helper:hover {
+  display: block;
+}
+
+/* Slick.Editors.YesNoSelect */
+/*
+select.editor-yesno {
+  width: 100%;
+  margin: 0;
+  vertical-align: top;
+  color: black !important;
+   font-size: 11px;
+    font-family:"Tahoma",arial,sans-serif;
+}
+*/
+select.editor-yesno {
+border-top:0px solid gray;
+border-left:0px solid #7bc1f7;
+border-right:0px solid #7bc1f7;
+border-bottom:0px solid #7bc1f7;
+background: #fff;
+color: #333;
+margin: 1px 0 1px 0;
+padding: 0px;
+width: 100%;
+height: 99%;
+vertical-align:top;
+text-transform:uppercase;
+-moz-border-radius:5px;
+-khtml-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+font-size:11px;
+/*font-family:Calibri,arial;*/
+ font-family:"Tahoma",arial,sans-serif;
+}
+ 
+/* Slick.Editors.Checkbox */
+input.editor-checkbox {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+}
+
+
+/*Soting and Filtering Css */
+
+
+
+    .slick-headerrow-column
+    {
+       
+        text-overflow: clip;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      
+    }
+    
+    .slick-headerrow-column input
+    {
+        background: url("images/filter.png") no-repeat center left;
+        background-color:White !important;
+        margin: 0;
+        padding-left: 6px;
+        width: 100%;
+        height: 100%;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        text-transform: uppercase;
+         font-size: 11px;
+        font-family:"Tahoma",arial,sans-serif;
+        color:Black;
+        font-style:normal;
+    }
+    
+    
+.ui-dialog .slick-cell.editable
+{
+    z-index: 1005;
+}
+
+.ui-dialog .slick-headerrow-column 
+{
+    z-index: 1005;
+}
+
+.cell-right-align
+{
+  text-align:right;
+}

@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ContractLicenseLookupService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointTCP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Entities.Enums" />
+      <xsd:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.Lookups" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IContractLicenseLookupService_GetGenRef_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenRef" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetGenRef_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetGenRef_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q1:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicShort_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicShort" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicShort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicShortResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicShort_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q2:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractAgency_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractAgency" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractAgency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractAgency_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q3:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetChannelService_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelService" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetChannelService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetChannelService_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q4:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPrimeLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrimeLevel" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPrimeLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrimeLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPrimeLevel_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q5:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPrimeTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrimeTime" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPrimeTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrimeTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPrimeTime_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q6:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractStatus" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractStatus_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q7:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractCalcType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractCalcType" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractCalcType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractCalcTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractCalcType_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q8:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractRoyalty_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractRoyalty" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractRoyalty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractRoyaltyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetContractRoyalty_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q9:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetSubCat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCat" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetSubCat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetSubCat_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q10:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMoveBudget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoveBudget" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMoveBudget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoveBudgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMoveBudget_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q11:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicEvent" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicEvent_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q12:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicPlay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicPlay" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicPlay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicPlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicPlay_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q13:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPriceCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceCode" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPriceCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetPriceCode_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q14:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicStatus" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicStatus_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q15:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicRights" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetLicRights_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q16:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetCodeMaint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeMaint" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetCodeMaint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeMaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetCodeMaint_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q17:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMediaType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaType" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMediaType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMediaType_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q18:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetDeliveryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryType" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetDeliveryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetDeliveryType_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q19:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMediaPlatform_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaPlatform" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMediaPlatform_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaPlatformResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContractLicenseLookupService_GetMediaPlatform_MNetServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Infrastructure.ExceptionHandling.Exceptions" name="detail" element="q20:MNetServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IContractLicenseLookupService">
+    <wsdl:operation name="GetGenRef">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetGenRef" message="tns:IContractLicenseLookupService_GetGenRef_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetGenRefResponse" message="tns:IContractLicenseLookupService_GetGenRef_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetGenRefMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetGenRef_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicShort">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicShort" message="tns:IContractLicenseLookupService_GetLicShort_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicShortResponse" message="tns:IContractLicenseLookupService_GetLicShort_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicShortMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetLicShort_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractAgency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractAgency" message="tns:IContractLicenseLookupService_GetContractAgency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractAgencyResponse" message="tns:IContractLicenseLookupService_GetContractAgency_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractAgencyMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetContractAgency_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetChannelService" message="tns:IContractLicenseLookupService_GetChannelService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetChannelServiceResponse" message="tns:IContractLicenseLookupService_GetChannelService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetChannelServiceMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetChannelService_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimeLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPrimeLevel" message="tns:IContractLicenseLookupService_GetPrimeLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPrimeLevelResponse" message="tns:IContractLicenseLookupService_GetPrimeLevel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPrimeLevelMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetPrimeLevel_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimeTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPrimeTime" message="tns:IContractLicenseLookupService_GetPrimeTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPrimeTimeResponse" message="tns:IContractLicenseLookupService_GetPrimeTime_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPrimeTimeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetPrimeTime_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractStatus" message="tns:IContractLicenseLookupService_GetContractStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractStatusResponse" message="tns:IContractLicenseLookupService_GetContractStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractStatusMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetContractStatus_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractCalcType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractCalcType" message="tns:IContractLicenseLookupService_GetContractCalcType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractCalcTypeResponse" message="tns:IContractLicenseLookupService_GetContractCalcType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractCalcTypeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetContractCalcType_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractRoyalty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractRoyalty" message="tns:IContractLicenseLookupService_GetContractRoyalty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractRoyaltyResponse" message="tns:IContractLicenseLookupService_GetContractRoyalty_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetContractRoyaltyMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetContractRoyalty_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetSubCat" message="tns:IContractLicenseLookupService_GetSubCat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetSubCatResponse" message="tns:IContractLicenseLookupService_GetSubCat_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetSubCatMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetSubCat_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoveBudget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMoveBudget" message="tns:IContractLicenseLookupService_GetMoveBudget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMoveBudgetResponse" message="tns:IContractLicenseLookupService_GetMoveBudget_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMoveBudgetMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetMoveBudget_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicEvent" message="tns:IContractLicenseLookupService_GetLicEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicEventResponse" message="tns:IContractLicenseLookupService_GetLicEvent_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicEventMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetLicEvent_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicPlay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicPlay" message="tns:IContractLicenseLookupService_GetLicPlay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicPlayResponse" message="tns:IContractLicenseLookupService_GetLicPlay_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicPlayMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetLicPlay_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPriceCode" message="tns:IContractLicenseLookupService_GetPriceCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPriceCodeResponse" message="tns:IContractLicenseLookupService_GetPriceCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetPriceCodeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetPriceCode_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicStatus" message="tns:IContractLicenseLookupService_GetLicStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicStatusResponse" message="tns:IContractLicenseLookupService_GetLicStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicStatusMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetLicStatus_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicRights" message="tns:IContractLicenseLookupService_GetLicRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicRightsResponse" message="tns:IContractLicenseLookupService_GetLicRights_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetLicRightsMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetLicRights_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeMaint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetCodeMaint" message="tns:IContractLicenseLookupService_GetCodeMaint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetCodeMaintResponse" message="tns:IContractLicenseLookupService_GetCodeMaint_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetCodeMaintMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetCodeMaint_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMediaType" message="tns:IContractLicenseLookupService_GetMediaType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMediaTypeResponse" message="tns:IContractLicenseLookupService_GetMediaType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMediaTypeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetMediaType_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetDeliveryType" message="tns:IContractLicenseLookupService_GetDeliveryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetDeliveryTypeResponse" message="tns:IContractLicenseLookupService_GetDeliveryType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetDeliveryTypeMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetDeliveryType_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaPlatform">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMediaPlatform" message="tns:IContractLicenseLookupService_GetMediaPlatform_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMediaPlatformResponse" message="tns:IContractLicenseLookupService_GetMediaPlatform_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IContractLicenseLookupService/GetMediaPlatformMNetServiceExceptionFault" name="MNetServiceExceptionFault" message="tns:IContractLicenseLookupService_GetMediaPlatform_MNetServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointHTTP" type="tns:IContractLicenseLookupService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGenRef">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetGenRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicShort">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicShort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractAgency">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelService">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetChannelService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimeLevel">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetPrimeLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimeTime">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetPrimeTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractStatus">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractCalcType">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractCalcType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractRoyalty">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractRoyalty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCat">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetSubCat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoveBudget">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetMoveBudget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicEvent">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicPlay">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicPlay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceCode">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetPriceCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicStatus">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicRights">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeMaint">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetCodeMaint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaType">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetMediaType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryType">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetDeliveryType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaPlatform">
+      <soap:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetMediaPlatform" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EndPointTCP" type="tns:IContractLicenseLookupService">
+    <wsp:PolicyReference URI="#EndPointTCP_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetGenRef">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetGenRef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicShort">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicShort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractAgency">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractAgency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelService">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetChannelService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimeLevel">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetPrimeLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimeTime">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetPrimeTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractStatus">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractCalcType">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractCalcType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractRoyalty">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetContractRoyalty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCat">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetSubCat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoveBudget">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetMoveBudget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicEvent">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicPlay">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicPlay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceCode">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetPriceCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicStatus">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicRights">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetLicRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeMaint">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetCodeMaint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaType">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetMediaType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryType">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetDeliveryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaPlatform">
+      <soap12:operation soapAction="http://tempuri.org/IContractLicenseLookupService/GetMediaPlatform" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MNetServiceExceptionFault">
+        <soap12:fault use="literal" name="MNetServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContractLicenseLookupService">
+    <wsdl:port name="EndPointHTTP" binding="tns:EndPointHTTP">
+      <soap:address location="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc" />
+    </wsdl:port>
+    <wsdl:port name="EndPointTCP" binding="tns:EndPointTCP">
+      <soap12:address location="net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/ContractLicenseLookupService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/NTVMQARPT0124.FPS.NIHILENT.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

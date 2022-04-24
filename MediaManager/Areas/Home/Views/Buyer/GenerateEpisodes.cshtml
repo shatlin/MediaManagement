@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "GenerateEpisodes";
+}
+
+<br /><br />
+<h2>Generate Episodes</h2>
+
+
+<br />
+<div id="EpisodeGeneration" style="background-color:Silver">
+<div style="margin-left:50px; margin-right:50px">
+<br /><br />
+<fieldset>
+<legend>Title Generation</legend>
+
+<table>
+<tr >
+
+<text style=" font-weight:bold">Title Generation</text>
+</tr>
+
+<tr>
+<td>@Html.Label("Series")</td>
+<td>@Html.TextBox("Series",@Session["Series"])</td>
+<td>@Html.Label("Season")</td>
+<td>@Html.TextBox("Season", @Session["Season"])</td>
+</tr>
+
+<tr>
+<td>@Html.Label("Number of Episodes")</td>
+<td>@Html.TextBox("Number of Episodes")</td>
+<td>@Html.Label("First Episode Number")</td>
+<td>@Html.TextBox("First Episode Number")</td>
+</tr>
+</table>
+</fieldset>
+<br /><br />
+<fieldset>
+
+
+<div>
+<p style=" font-weight:bold">Title </p>
+</div>
+
+<table>
+<tr>
+<td>@Html.Label("Title Name") </td>
+<td>@Html.TextBox("Title Name", null, new { id = "txtTitleName", @readonly = "readonly", style = "width:700px" })</td>
+</tr>
+</table>
+<table>
+<tr>
+@*<%:Html.DropDownListFor(x => x.SelectedProduct, new SelectList(Model.Products, "Value", "Text"), "Please Select a product", new { id = "dropDown1", onchange="selectedIndexChanged()" })%>*@
+<td>@Html.CheckBox("Series1", false, new { id = "cbSeries" })</td> @*"TODO", onclick = "Checked()"*@
+<td>@Html.Label("Series")</td>
+
+<td>@Html.CheckBox("Season1",false)</td>
+<td>@Html.Label("Season")</td>
+
+<td>@Html.CheckBox("Additional Text1", false)</td>
+<td>@Html.Label("Additional Text")</td>
+<td>@Html.TextBox("Additional Text1", null, new { id = "txtaddText", @readonly = "readonly", style = "width:500px" })</td>
+
+</tr>
+<tr>
+<td>@Html.CheckBox("Leading Zeros Y/N1", false)</td>
+<td>@Html.Label("Leading Zeros Y/N")</td>
+
+<td>@Html.CheckBox("Episode Number1", false)</td>
+<td>@Html.Label("Episode Number")</td>
+
+</tr>
+</table>
+</fieldset>
+<br /><br />
+<fieldset >
+<div>
+<p style=" font-weight:bold"> Working Title </p>
+</div>
+
+<table>
+<tr>
+<td>@Html.Label("Working Title Name") </td>
+<td>@Html.TextBox("Working Title Name", null, new { id = "txtwTitleName", @readonly = "readonly", style = "width:700px" })</td>
+</tr>
+</table>
+<table>
+
+<tr>
+<td>@Html.CheckBox("Series2",false)</td>
+<td>@Html.Label("Series")</td>
+
+<td>@Html.CheckBox("Season2",false)</td>
+<td>@Html.Label("Season")</td>
+
+<td>@Html.CheckBox("Additional Text2", false)</td>
+<td>@Html.Label("Additional Text")</td>
+<td>@Html.TextBox("Additional Text2", null, new { id = "txtwaddText", @readonly = "readonly", style = "width:500px" })</td>
+</tr>
+<tr>
+<td>@Html.CheckBox("Leading Zeros Y/N2", false)</td>
+<td>@Html.Label("Leading Zeros Y/N")</td>
+
+<td>@Html.CheckBox("Episode Number2", false)</td>
+<td>@Html.Label("Episode Number")</td>
+
+</tr>
+</table>
+</fieldset>
+<br /><br />
+<div style="text-align:right">
+<input type="button" id="btnGenerateEpisodes" value="Generate Episodes"  onclick="generate()"  />
+</div>
+</div>
+</div>

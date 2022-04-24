@@ -1,0 +1,85 @@
+﻿@model MediaManager.Areas.Acquisition.ViewModels.DealMemoMaintenanceViewModel
+<table class="Layout" cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="100%" colspan="3">
+            <div id="TypeShowLOV" title="Programme Type" />
+            <div id="TitleLOV" title="Matching Titles" />
+            <div id="ProgramCategoryLOV" title="Programme Category" />
+            <div id="BOCategoryLOV" title="BO Category" />
+            <div id="EventTypeLOV" title="Event Type" />
+            <div id="LicenseeLOV" title="Licensees" />
+            <div id="ChannelServiceLOV" title="Channels & Services" />
+            <div id="ChannelListLOV" title="Channels" />
+            <div id="PlateformRights" title="Catch-Up Platforms" />
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" colspan="3">
+            <div class="PlaceHolderPopup">
+                <div class="subHeading" style="padding: 0px;">
+                    Programme Particulars
+                </div>
+                <div id="gridProgramParticular" style="height: 140px;" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" align="left" colspan="3">
+            <input type="submit" name="btnTitleDetails" value="Title Details" id="btnTitleDetails"
+                class="inputButton" onclick="btnTitleDetails_click()" />&nbsp;&nbsp;
+            <input type="submit" name="btnSeriesTree" value="Series Tree" id="btnSeriesTree"
+                 class="inputButton" onclick="btnSeriesTree_click()" />&nbsp;&nbsp;
+            @*  <input type="submit" name="btnMediaRights" value="Media Rights" id="btnMediaRights"
+                class="inputButton" />*@
+        </td>
+    </tr>
+    <tr>
+        <td width="69%">
+            <div class="PlaceHolderPopup">
+                <div class="subHeading" style="padding: 0px;">
+                    Linear Licensee Allocation
+                </div>
+                <div id="gridLicensee" style="height: 115px;" />
+            </div>
+        </td>
+        <td width="1%">
+        </td>
+        <td width="30%">
+            <div class="PlaceHolderPopup">
+                <div class="subHeading" style="padding: 0px;">
+                    Runs Per Channel
+                </div>
+                <div id="gridRunsPerChannel" style="height: 115px;" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" align="right">
+           
+          <span style="font-size:11px;font-family:Tahoma;">Total Runs:</span> 
+           
+            <input name="txtTotalRuns" type="text" id="txtTotalRuns" readonly="readonly" style="width: 60px;" 
+                class="inputTextSamll" />
+        </td>
+    </tr>
+    <tr>
+        <td width="69%">
+            <div class="PlaceHolderPopup">
+                <div class="subHeading" style="padding: 0px;">
+                    Catchup License Allocation
+                </div>
+                <div id="gridCatchUpLicenseeAllocation" style="height: 115px;" />
+            </div>
+        </td>
+        <td width="1%">
+        </td>
+        <td width="30%">
+            <div class="PlaceHolderPopup">
+                <div class="subHeading" style="padding: 0px;">
+                    Platform Rights
+                </div>
+                <div id="gridPlatformRights" style="height: 115px;" />
+            </div>
+        </td>
+    </tr>
+</table>

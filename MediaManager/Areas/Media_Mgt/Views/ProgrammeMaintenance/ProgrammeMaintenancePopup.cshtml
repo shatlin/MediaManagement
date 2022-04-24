@@ -1,0 +1,837 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.ProgrammeMaintenanceViewModel
+@{
+    ViewBag.Title = "Programme Maintenance";
+   
+}
+@*<script src="~/Content/SlickGrid-master/lib/jquery.event.drag-2.0.min.js" type="text/javascript"></script>
+<script src="~/Content/SlickGrid-master/slick.core.js" type="text/javascript"></script>
+<script src="~/Content/SlickGrid-master/slick.dataview.js" type="text/javascript"></script>
+<script src="~/Content/SlickGrid-master/slick.grid.js" type="text/javascript"></script>
+<script src="~/Content/SlickGrid-master/slick.editors.js" type="text/javascript"></script>
+<script src="~/Content/SlickGrid-master/plugins/slick.rowselectionmodel.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/Helper/SlickGridManager.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/Helper/shortcut.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/jquery/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/jquery/Jquery_BrowserCompatibility.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/Helper/Validation.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/jquery/jquery.validate.min.js" type="text/javascript"></script>
+<script src="~/Content/Scripts/jquery/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>*@
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "Programmeform" }))
+{   <div class="mainHeading">
+    Programme Maintenance</div>
+    <div class="ProgrammeDiv">
+        <table class="Layout" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="pagecontent">
+                    <div class="PlaceHolder">
+                        <table class="tableLayout">
+                            <tr>
+                                <td colspan="10">
+                                    <b></b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="12%">
+                                    Programme Title
+                                </td>
+                                <td class="RequiredIndicator">
+                                    *
+                                </td>
+                                <td colspan="4">
+                                    @Html.TextBoxFor(m => m.ProgrammeTitle, new { @class = "inputText3col addReadOnly" })
+                                </td>
+                                <td width="2%">
+                                    &nbsp;
+                                </td>
+                                <td width="13%">
+                                    Ref No
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.RefNo, new { @class = "inputTextSamll", @readonly = "readonly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="12%">
+                                    Working Title
+                                </td>
+                                <td class="RequiredIndicator">
+                                    *
+                                </td>
+                                <td colspan="4">
+                                    @Html.TextBoxFor(m => m.WorkingTitle, new { @class = "inputText3col addReadOnly" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Parent
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.Parent, new { @class = "inputTextSamll", @readonly = "readonly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Sub Title
+                                </td>
+                                <td>
+                                </td>
+                                <td colspan="4">
+                                    @Html.TextBoxFor(m => m.SubTitle, new { @class = "inputText3col addReadOnly" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Type
+                                </td>
+                                <td class="RequiredIndicator">
+                                    *
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.Type, new SelectList(@Model.TypeLOVList, "ProgrammeTypeValue", "ProgrammeTypeValue"), "--Select Option--", new { @class = "addReadOnly" })
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Music Title
+                                </td>
+                                <td>
+                                </td>
+                                <td colspan="4">
+                                    @Html.TextBoxFor(m => m.MusicTitle, new { @class = "inputText3col addReadOnly" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Production Year
+                                </td>
+                                <td class="RequiredIndicator">
+                                    *
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.ProductionYear, new { @class = "inputTextSamll addReadOnly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Poem Title
+                                </td>
+                                <td>
+                                </td>
+                                <td colspan="4">
+                                    @Html.TextBoxFor(m => m.PoemTitle, new { @class = "inputText3col addReadOnly" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Nationality
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.Nationality, new SelectList(@Model.NationalityLOVList, "GenNationalityCode", "GenNationalityDesc"), "--Select Option--", new { @class = "addReadOnly" })
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Web Title
+                                </td>
+                                <td>
+                                </td>
+                                <td colspan="4">
+                                    @Html.TextBoxFor(m => m.WebTitle, new { @class = "inputText3col addReadOnly" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Duration
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.DurationC, new { @class = "inputTextSamll addReadOnly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Distributor
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @* @Html.DropDownListFor(m => m.Distributor, new SelectList(@Model.DistributorsLOVList,"ComShortName", "ComShortName"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="Distributor" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.DistributorsLOVList != null)
+                                                {
+                                                <option value="Select">--Select Option--</option>
+                                                    foreach (var dist in Model.DistributorsLOVList)
+                                                    {
+                                                        if (@Model.Distributor != "")
+                                                        {
+                                                            if (@dist.ComShortName == @Model.Distributor)
+                                                            {
+                                                <option value="@dist.ComShortName:@dist.ComName" selected="selected">@dist.ComShortName</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dist.ComShortName:@dist.ComName" >@dist.ComShortName</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dist.ComShortName:@dist.ComName" >@dist.ComShortName</option>
+                                                        }
+                                                    }
+
+
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td colspan="3">
+                                    @Html.TextBox("DistributorSelectedValue", null, new { @class = "inputTextcolLarge", @readonly = "true" })
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.DurationS, new SelectList(Model.DurationOptions.Select(x => new { Value = x, Text = x }), "Value", "Text"), new { @class = "select addReadOnly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Production House
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @* @Html.DropDownListFor(m => m.ProductionHouse, new SelectList(@Model.ProductionHouseLOVList, "StudioCode", "StudioCode"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="ProductionHouse" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.ProductionHouseLOVList != null)
+                                                {
+                                                <option value="Select">--Select Option--</option>
+                                                    foreach (var dropddownval in Model.ProductionHouseLOVList)
+                                                    {
+                                                        if (@Model.ProductionHouse != "")
+                                                        {
+                                                            if (@dropddownval.StudioCode == @Model.ProductionHouse)
+                                                            {
+                                                <option value="@dropddownval.StudioCode:@dropddownval.StudioDescription" selected="selected">@dropddownval.StudioCode</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dropddownval.StudioCode:@dropddownval.StudioDescription">@dropddownval.StudioCode</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dropddownval.StudioCode:@dropddownval.StudioDescription">@dropddownval.StudioCode</option>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td colspan="3">
+                                    @Html.TextBox("ProductionHouseSelectedValue", null, new { @class = "inputTextcolLarge", @readonly = "true" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Episode
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.Episodes, new { @class = "inputTextSamll addReadOnly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Primary Genre
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @* @Html.DropDownListFor(m => m.PrimaryGenre, new SelectList(@Model.PrimaryGenreLOVList, "ProgrammeCategoryValue", "ProgrammeCategoryDescription"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="PrimaryGenre" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.PrimaryGenreLOVList != null)
+                                                {
+                                                <option value="Select">--Select Option--</option>
+                                                    foreach (var dropddownval in Model.PrimaryGenreLOVList)
+                                                    {
+
+                                                        if (@Model.PrimaryGenre != "")
+                                                        {
+                                                            if (@dropddownval.ProgrammeCategoryValue == @Model.PrimaryGenre)
+                                                            {
+                                                <option value="@dropddownval.ProgrammeCategoryValue:@dropddownval.ProgrammeCategoryDescription" selected="selected">@dropddownval.ProgrammeCategoryDescription</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dropddownval.ProgrammeCategoryValue:@dropddownval.ProgrammeCategoryDescription">@dropddownval.ProgrammeCategoryDescription</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dropddownval.ProgrammeCategoryValue:@dropddownval.ProgrammeCategoryDescription">@dropddownval.ProgrammeCategoryDescription</option>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td colspan="3">
+                                    @Html.TextBox("PrimaryGenreSelectedValue", null, new { @class = "inputTextcolLarge", @readonly = "true" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Awards
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.Awards, new { @class = "inputTextSamll addReadOnly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Secondary Genre
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @*  @Html.DropDownListFor(m => m.SecondaryGenre, new SelectList(@Model.SecondaryGenreLOVList, "SubGenreCodeValue", "SubGenreCodeDescription"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="SecondaryGenre" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.SecondaryGenreLOVList != null)
+                                                {
+                                                <option value="Select">--Select Option--</option>
+                                                    foreach (var dropddownval in Model.SecondaryGenreLOVList)
+                                                    {
+
+                                                        if (@Model.SecondaryGenre != "")
+                                                        {
+                                                            if (@dropddownval.SubGenreCodeValue == @Model.SecondaryGenre)
+                                                            {
+                                                <option value="@dropddownval.SubGenreCodeValue:@dropddownval.SubGenreCodeDescription" selected="selected">@dropddownval.SubGenreCodeDescription</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dropddownval.SubGenreCodeValue:@dropddownval.SubGenreCodeDescription">@dropddownval.SubGenreCodeDescription</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dropddownval.SubGenreCodeValue:@dropddownval.SubGenreCodeDescription">@dropddownval.SubGenreCodeDescription</option>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td colspan="3">
+                                    @Html.TextBox("SecondaryGenreSelectedValue", null, new { @class = "inputTextcolLarge", @readonly = "true" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Target Group
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.TargetGroup, new SelectList(@Model.TargetGroupLOVList, "GenTargetGroupCode", "GenTargetGroupCode"), "--Select Option--", new { @class = "addReadOnly" })
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Tertiary Genre
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @* @Html.DropDownListFor(m => m.TertiaryGenre, new SelectList(@Model.TertiaryGenreLOVList, "TertiaryGenreCode", "TertiaryGenreDescription"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="TertiaryGenre" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.TertiaryGenreLOVList != null)
+                                                {
+                                                <option value="Select">--Select Option--</option>
+                                                    foreach (var dropddownval in Model.TertiaryGenreLOVList)
+                                                    {
+
+                                                        if (@Model.TertiaryGenre != "")
+                                                        {
+                                                            if (@dropddownval.TertiaryGenreCode == @Model.TertiaryGenre)
+                                                            {
+                                                <option value="@dropddownval.TertiaryGenreCode:@dropddownval.TertiaryGenreDescription" selected="selected">@dropddownval.TertiaryGenreDescription</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dropddownval.TertiaryGenreCode:@dropddownval.TertiaryGenreDescription">@dropddownval.TertiaryGenreDescription</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dropddownval.TertiaryGenreCode:@dropddownval.TertiaryGenreDescription">@dropddownval.TertiaryGenreDescription</option>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td colspan="3">
+                                    @Html.TextBox("TertiaryGenreSelectedValue", null, new { @class = "inputTextcolLarge", @readonly = "true" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    Link For Poster Art
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.LinkForPosterAct, new { @class = "inputTextLarge addReadOnly" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Domestic Age Restriction
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.DomesticAgeRestriction, new SelectList(@Model.AgeRestricationLOVList, "GenRattingMPAACode", "GenRattingMPAACode"), "--Select Option--", new { disabled = "disabled", @readonly = "readonly" })
+                                    </div>
+                                </td>
+                                <td>
+                                    Colour Code
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @* @Html.DropDownListFor(m => m.ColourCode, new SelectList(@Model.ColorLOVList, "GetColorCode", "GetColorCode"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="ColourCode" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.ColorLOVList != null)
+                                                {
+                                                <option value="Select">--Select Option--</option>
+                                                    foreach (var dropddownval in Model.ColorLOVList)
+                                                    {
+                                                        if (@Model.TertiaryGenre != "")
+                                                        {
+                                                            if (@dropddownval.GetColorCode == @Model.ColourCode)
+                                                            {
+                                                <option value="@dropddownval.GetColorCode:@dropddownval.GetColorDesc" selected="selected">@dropddownval.GetColorCode</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dropddownval.GetColorCode:@dropddownval.GetColorDesc">@dropddownval.GetColorCode</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dropddownval.GetColorCode:@dropddownval.GetColorDesc">@dropddownval.GetColorCode</option>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    @Html.TextBox("ColorCodeSelectedValue", null, new { @class = "inputTextcolSmall", @readonly = "true" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    @Html.CheckBoxFor(m => m.WideScreen, new { @class = "addReadOnly" })
+                                    WideScreen
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.CheckBoxFor(m => m.CatComplete, new { @class = "addReadOnly" })
+                                    Cat Complete
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    MediaManager Age Restriction
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.MediaManagerAgeRestriction, new SelectList(@Model.AgeRestricationLOVList, "GenRattingMPAACode", "GenRattingMPAACode"), "--Select Option--", new { disabled = "disabled", @readonly = "readonly" })
+                                    </div>
+                                </td>
+                                <td>
+                                    User Code
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @*  @Html.DropDownListFor(m => m.UserCode, new SelectList(@Model.UserCodeLOVList, "GenCode", "GenCode"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="UserCode" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.UserCodeLOVList != null)
+                                                {
+                                                <option value="Select">--Select Option--</option>
+                                                    foreach (var dropddownval in Model.UserCodeLOVList)
+                                                    {
+
+                                                        if (@Model.UserCode != "")
+                                                        {
+                                                            if (@dropddownval.GenCode == @Model.UserCode)
+                                                            {
+                                                <option value="@dropddownval.GenCode:@dropddownval.GenCodeDesc" selected="selected">@dropddownval.GenCode</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dropddownval.GenCode:@dropddownval.GenCodeDesc">@dropddownval.GenCode</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dropddownval.GenCode:@dropddownval.GenCodeDesc">@dropddownval.GenCode</option>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    @Html.TextBox("UserCodeSelectedValue", null, new { @class = "inputTextcolSmall", @readonly = "true" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    @Html.CheckBoxFor(m => m.NPACopy, new { @class = "addReadOnly" })
+                                    NFA Copy
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.CheckBoxFor(m => m.TXDigitized, new { @class = "addReadOnly" })
+                                    TX-Digitized
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Quality / Grade
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.QualityGrade, new SelectList(@Model.QualityLOVList, "GenQualityCode", "GenQualityCode"), "--Select Option--", new { @class = "addReadOnly" })
+                                    </div>
+                                </td>
+                                <td>
+                                    Spoken Language
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @* @Html.DropDownListFor(m => m.SpokenLanguage, new SelectList(@Model.SpokenLangLOVList, "LanguageID", "LanguageID"), "Select", new { @class = "addReadOnly" })*@
+                                        <select id="SpokenLanguage" class="addReadOnly">
+                                            @if (Model != null)
+                                            {
+                                                if (Model.SpokenLangLOVList != null)
+                                                {
+                                                <option value="0">--Select Option--</option>
+                                                    foreach (var dropddownval in Model.SpokenLangLOVList)
+                                                    {
+
+                                                        if (@Model.SpokenLanguage != "")
+                                                        {
+                                                            if (@dropddownval.LanguageID == @Model.SpokenLanguage)
+                                                            {
+                                                <option value="@dropddownval.LanguageID:@dropddownval.LanguageName" selected="selected">@dropddownval.LanguageID</option>
+                                                            }
+                                                            else
+                                                            {
+                                                <option value="@dropddownval.LanguageID:@dropddownval.LanguageName">@dropddownval.LanguageID</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                <option value="@dropddownval.LanguageID:@dropddownval.LanguageName">@dropddownval.LanguageID</option>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    @Html.TextBox("SpokenLanguageSelectedValue", null, new { @class = "inputTextcolSmall", @readonly = "true" })
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    @Html.CheckBoxFor(m => m.Archive, new { @class = "addReadOnly" })
+                                    Archive
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @*<div id="xx" style=" visibility:visible">
+                                        @Html.DropDownListFor(m => m.Distributor, new SelectList(@Model.DistributorsLOVList, "ComShortName", "ComName"), "Select", new { @id = "tt" })
+                                        </div>*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Programme Category
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.ProgrammeCategory, new SelectList(@Model.ProgrammeCategoryLOVList, "ProgrammeCategoryCode", "ProgrammeCategoryCode"), "--Select Option--", new { @class = "addReadOnly" })
+                                    </div>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Mood
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="ui-widget">
+                                        @Html.DropDownListFor(m => m.Mood, new SelectList(@Model.MoodLOVList, "MoodCode", "MoodCode"), "--Select Option--", new { @class = "addReadOnly" })
+                                    </div>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="PlaceHolder">
+                        <table class="tableLayout">
+                            <tr>
+                                <td>
+                                    <table class="tableLayout" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td style="padding-top: 10px">
+                                                <div id="tabs">
+                                                    <ul>
+                                                        <li><a href="#Synopsis">Synopsis</a></li>
+                                                        <li><a href="#CastDetail">Cast Detail</a></li>
+                                                    </ul>
+                                                    <div id="Synopsis">
+                                                        <table class="tableLayout">
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.DropDownListFor(m => m.SynopsisId, new SelectList(Model.SynopsisOptions.Select(x => new { Value = x, Text = x }), "Value", "Text"), new { @class = "select addReadOnly", @id = "Synopsis1" })
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    @if (Model.SynopsisId != null)
+                                                                    {
+                                                                        if (Model.SynopsisId == "Full Synopsis")
+                                                                        {
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: block;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                    
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        }
+                                                                        if (Model.SynopsisId == "Local Synopsis")
+                                                                        {
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: block;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })                                                                           
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        }
+                                                                        if (Model.SynopsisId == "Short Synopsis")
+                                                                        {
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: block;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                    
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        }
+                                                                        if (Model.SynopsisId == "Web Synopsis")
+                                                                        {
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: block;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                                                                                          
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        }
+                                                                        if (Model.SynopsisId == "Mobile Synopsis")
+                                                                        {
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: block;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                    
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                            
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        }
+                                                                        if (Model.SynopsisId == "EPG Synopsis")
+                                                                        {
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: block;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                    
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                           
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })  
+                                                                        }
+                                                                        if (Model.SynopsisId == "--Select Option--")
+                                                                        {
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "display: block;width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })                                                                               
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })                                                                    
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {                                                            
+                                                                        @Html.TextAreaFor(m => m.SynopsisDetails, new { @id = "Synopsisarea", @rows = "2", @cols = "20", @style = "width:100%;height:121px;background-color:#C0C0C0", @ReadOnly = "ReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[1].SynDetails, new { @id = "SynopsisareaLocal", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[0].SynDetails, new { @id = "SynopsisareaFull", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[3].SynDetails, new { @id = "SynopsisareaWeb", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[4].SynDetails, new { @id = "SynopsisareaMobile", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[5].SynDetails, new { @id = "SynopsisareaEPG", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                        @Html.TextAreaFor(m => m.synopsisList[2].SynDetails, new { @id = "SynopsisareaShort", @rows = "2", @cols = "20", @style = "display: none;width:100%;height:121px;background-color:#FFFFFF", @class = "addReadOnly" })
+                                                                    }
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div id="CastDetail">
+                                                        <table class="Layout">
+                                                            <tr>
+                                                                <td>
+                                                                    <div id="CdetailsGrid" style="height: 146px; width:100%;">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <div id="CRoleLOV" title="Cast Role">
+                                                        </div>
+                                                        <div id="CAwardLOV" title="Cast Awards">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="padding-bottom: 5px; padding-top: 5px;">
+                                    <input type="button" id="btnSearch" class="inputButton" value="Search" onclick="location.href='ProgrammeSearch'" />
+                                    <input type="button" id="btnEdit" class="inputButton" value="Edit" onclick="EditableScreen()" />
+                                    <input type="button" id="btnSave" class="inputButton" value="Save" onclick="SaveData()" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>                                         
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}
+<script type="text/javascript">
+    var BindGridwithgridUrl = '@Url.Action("View1", "ProgrammeMaintenance", new { area = "Media_Mgt" })';
+    var SaveDataUrl = '@Url.Action("SaveProgramme", "ProgrammeMaintenance", new { area = "Media_Mgt" })';
+    var CastRoleUrl = '@Url.Action("GetCastROleLOVList", "ProgrammeMaintenance", new { area = "Media_Mgt" })';
+    var CastAwardUrl = '@Url.Action("GetCastAwardLOVList", "ProgrammeMaintenance", new { area = "Media_Mgt" })';
+</script>
+<script src="~/Content/Scripts/Media_Mgt/ProgrammeMaintenance/ProgrammeMaintenance.js"
+    type="text/javascript"></script>

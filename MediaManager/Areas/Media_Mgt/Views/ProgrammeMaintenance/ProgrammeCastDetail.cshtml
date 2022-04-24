@@ -1,0 +1,247 @@
+﻿@model MediaManager.Areas.Media_Mgt.ViewModels.ProgrammeMaintenanceViewModel
+
+<table class="Layout">
+<tr>
+<td>
+  <div id="CdetailsGrid" style="width:1328px;height:146px"></div>
+</td>
+</tr>
+<tr>
+<td>  
+</td>
+</tr>
+</table>
+<div id="CRoleLOV" title="Cast Role"></div>
+<div id="CAwardLOV" title="Cast Awards"></div>
+
+ <style type="text/css">
+         .cell-effort-driven {
+      text-align: center;
+         }
+    </style>
+
+<script type="text/javascript">
+    var selrow;
+    var gitems;
+    var selectedrow;
+    var cellvalue;
+    var grid;
+    var dataView;
+    var columns = [
+                    { id: "ProgrammeCastRole", name: "Role", field: "ProgrammeCastRole", editor: Slick.Editors.Text },
+                    { id: "ProgrammeCastName", name: "Name", field: "ProgrammeCastName", editor: Slick.Editors.Text },
+                    { id: "ProgramCastOrder.", name: "No.", field: "ProgramCastOrder", editor: Slick.Editors.Text },
+                    { id: "ProgrammeCastAward", name: "Award", field: "ProgrammeCastAward", editor: Slick.Editors.Text },
+                    { id: "ProgramCastDescription", name: "Description", field: "ProgramCastDescription", editor: Slick.Editors.Text }
+                  ];
+    var columns1 = [
+                    { id: "ProgrammeCastRole", name: "Role", field: "ProgrammeCastRole", editor: Slick.Editors.Text },
+                    { id: "ProgrammeCastName", name: "Name", field: "ProgrammeCastName", editor: Slick.Editors.Text },
+                    { id: "ProgramCastOrder.", name: "No.", field: "ProgramCastOrder", editor: Slick.Editors.Text },
+                    { id: "ProgrammeCastAward", name: "Award", field: "ProgrammeCastAward", editor: Slick.Editors.Text },
+                    { id: "ProgramCastDescription", name: "Description", field: "ProgramCastDescription", editor: Slick.Editors.Text }
+                  ];
+    var options = {
+        enableCellNavigation: true,
+        enableColumnReorder: false,
+        forceFitColumns: true,
+        editable: true,
+        asyncEditorLoading: false,
+        enableAddRow: true
+    };
+
+    $(function () {
+        var data = [];
+        for (var i = 0; i < 1; i++) {
+            data[i] = {
+                ProgrammeCastRole: " ",
+                ProgrammeCastName: " ",
+                ProgramCastOrder: " ",
+                ProgrammeCastAward: " ",
+                ProgramCastDescription: " "
+
+            }
+        };
+        grid = new Slick.Grid("#CdetailsGrid", data, columns, options);
+        dataView = new Slick.Data.DataView();
+        grid.setColumns(columns);
+
+
+        grid.onAddNewRow.subscribe(function (e, args) {
+            var item = args.item;
+            var column = args.column;
+//            alert('hi');
+            grid.invalidateRow(data.length);
+            $.extend(item, args.item);
+            data.push(item);
+            grid.updateRowCount();
+            grid.render();
+
+        });
+
+        grid.onKeyDown.subscribe(function (e, args) {
+            var cell = grid.getCellFromEvent(e);
+            if (grid.getColumns()[cell.cell].id == "ProgrammeCastRole") {
+                if (e.keyCode == 120) {
+                    selrow = cell.row;
+                    gitems = args.item;
+                    cellvalue = data[args.row][grid.getColumns()[args.cell].field];
+                    $("#CRoleLOV").dialog("open");
+                }
+            }
+            else if (grid.getColumns()[cell.cell].id == "ProgrammeCastAward") {
+                if (e.keyCode == 120) {
+                    selrow = cell.row;
+                    gitems = args.item;
+                    selectedrow = data[selrow];
+                    cellvalue = data[args.row][grid.getColumns()[args.cell].field];
+                    if (data[selrow]["ProgrammeCastRole"] != " ") {
+                        $("#CAwardLOV").dialog("open");
+                    }
+                    else {
+                        alert("Please Select value for the role");
+                        //grid.setActiveCell(selectedrow.ProgrammeCastRole);
+                    }
+                }
+            }
+        });
+
+        $("#CRoleLOV").dialog({
+            autoOpen: false,
+            height: 400,
+            width: 700,
+            modal: true,
+
+            open: function (event, ui) {
+                $('#CRoleLOV').css({ "width": "700px", "height": "400px" });
+                var myData = [];
+                var DealMemoViewModel;
+                var columns = [
+                                                                           { id: "CastRoleCode", name: "CastRoleCode", field: "CastRoleCode" },
+                                                                           { id: "CastRoleCodeDesc", name: "CastRoleCodeDesc", field: "CastRoleCodeDesc" }
+
+                                            ];
+
+                var options = {
+                    enableCellNavigation: true,
+                    enableColumnReorder: false,
+                    forceFitColumns: true
+                };
+
+                $.ajax({
+                    url: '@Url.Action("GetCastROleLOVList", "ProgrammeMaintenance", new { area = "Media_Mgt" })',
+                    type: "GET",
+                    dataType: 'Json',
+                    data: DealMemoViewModel,
+
+                    success: function (data) {
+                        myData = data;
+                        Rgrid = new Slick.Grid("#CRoleLOV", myData, columns, options);
+
+                        Rgrid.onClick.subscribe(function (e, args) {
+                            var cell = Rgrid.getCellFromEvent(e);
+                            var row = cell.row;
+                            selectedvalue = data[row];
+                        });
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+            },
+            buttons: {
+                "OK": function () {
+                    var cdata = grid.getData();
+
+                    var item = { "ProgrammeCastRole": selectedvalue.CastRoleCode };
+                    $.extend(item, gitems);
+                    if (cellvalue == null) {
+                        cdata.push(item);
+                    }
+                    else {
+                        cdata.splice(selrow, 1);
+                        cdata.push(item);
+                    }
+                    grid.setData(cdata);
+                    grid.render();
+                    $(this).dialog("close");
+                },
+                "Cancel": function () {
+                    $(this).dialog("close");
+                }
+            },
+            close: function () { }
+        });
+
+        $("#CAwardLOV").dialog({
+            autoOpen: false,
+            height: 400,
+            width: 700,
+            modal: true,
+
+            open: function (event, ui) {
+                $('#CAwardLOV').css({ "width": "700px", "height": "400px" });
+                var myData = [];
+                var DealMemoViewModel;
+                var columns = [
+                                                                           { id: "CastAwardCode", name: "CastAwardCode", field: "CastAwardCode" },
+                                                                           { id: "CastAwardDesc", name: "CastAwardDesc", field: "CastAwardDesc" }
+
+                                            ];
+
+                var options = {
+                    enableCellNavigation: true,
+                    enableColumnReorder: false,
+                    forceFitColumns: true
+                };
+
+                $.ajax({
+                    url: '@Url.Action("GetCastAwardLOVList", "ProgrammeMaintenance", new { area = "Media_Mgt" })',
+                    type: "GET",
+                    dataType: 'Json',
+                    data: DealMemoViewModel,
+
+                    success: function (data) {
+                        myData = data;
+                        Rgrid = new Slick.Grid("#CAwardLOV", myData, columns, options);
+
+                        Rgrid.onClick.subscribe(function (e, args) {
+                            var cell = Rgrid.getCellFromEvent(e);
+                            var row = cell.row;
+                            selectedvalue = data[row];
+                        });
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+            },
+            buttons: {
+                "OK": function () {
+                    var cdata = grid.getData();
+                    var item = { "ProgrammeCastRole": selectedrow.ProgrammeCastRole, "ProgrammeCastName": selectedrow.ProgrammeCastName, "ProgramCastOrder": selectedrow.ProgramCastOrder, "ProgrammeCastAward": selectedvalue.CastAwardCode, "ProgramCastDescription": selectedvalue.CastAwardDesc };
+                    $.extend(item, gitems);
+                    if (cellvalue == null) {
+                        cdata.splice(selrow, 1);
+
+                        cdata.push(item);
+                    }
+                    else {
+                        cdata.splice(selrow, 1);
+                        cdata.push(item);
+                    }
+
+                    grid.setData(cdata);
+
+                    grid.render();
+                    $(this).dialog("close");
+                },
+                "Cancel": function () {
+                    $(this).dialog("close");
+                }
+            },
+            close: function () { }
+        });
+
+    });
+ </script>

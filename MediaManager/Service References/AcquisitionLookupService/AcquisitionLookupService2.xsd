@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ntvmqarpt0124.fps.nihilent.com/MediaManagerServices/Acquisition/AcquisitionLookupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" />
+  <xs:element name="GetDeliveryCost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="deliveryCostRequest" nillable="true" type="q1:DeliveryCostRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryCostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetDeliveryCostResult" nillable="true" type="q2:DeliveryCostResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="deliveryModeRequest" nillable="true" type="q3:DeliveryModeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryModeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetDeliveryModeResult" nillable="true" type="q4:DeliveryModeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContractForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="contractFormRequest" nillable="true" type="q5:ContractFormRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContractFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetContractFormResult" nillable="true" type="q6:ContractFormResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialsReturn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="materialReturnRequest" nillable="true" type="q7:MaterialsReturnRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialsReturnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMaterialsReturnResult" nillable="true" type="q8:MaterialsReturnResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemLicensee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="memLicenseeRequest" nillable="true" type="q9:MemLicenseeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemLicenseeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMemLicenseeResult" nillable="true" type="q10:MemLicenseeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="comNameRequest" nillable="true" type="q11:ComNameRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetComNameResult" nillable="true" type="q12:ComNameResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemComName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="memComNameRequest" nillable="true" type="q13:MemComNameRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemComNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMemComNameResult" nillable="true" type="q14:MemComNameResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemCurrency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="memCurrencyRequest" nillable="true" type="q15:MemCurrencyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemCurrencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMemCurrencyResult" nillable="true" type="q16:MemCurrencyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemConName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="memConNameRequest" nillable="true" type="q17:MemConNameRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemConNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMemConNameResult" nillable="true" type="q18:MemConNameResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="lanIDRequest" nillable="true" type="q19:LanIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetLanIDResult" nillable="true" type="q20:LanIDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="payAmountRequest" nillable="true" type="q21:PayAmountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetPayAmountResult" nillable="true" type="q22:PayAmountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGenRefNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="genRefNoRequest" nillable="true" type="q23:GenRefNoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGenRefNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetGenRefNoResult" nillable="true" type="q24:GenRefNoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMpyAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="mpyAmountRequest" nillable="true" type="q25:MpyAmountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMpyAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMpyAmountResult" nillable="true" type="q26:MpyAmountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="licNumberRequest" nillable="true" type="q27:LicNumberRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetLicNumberResult" nillable="true" type="q28:LicNumberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompetitor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="comLookupRequest" nillable="true" type="q29:CompetitorLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompetitorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetCompetitorResult" nillable="true" type="q30:CompetitorLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPB_MediaPlatformLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q31:PB_MediaPlatformLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPB_MediaPlatformLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetPB_MediaPlatformLookupResult" nillable="true" type="q32:PB_MediaPlatformLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBOCategoryLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q33:BOCategoryLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBOCategoryLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetBOCategoryLookupResult" nillable="true" type="q34:BOCategoryLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaServiceLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q35:MediaServiceLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaServiceLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMediaServiceLookupResult" nillable="true" type="q36:MediaServiceLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPB_ProgrammeCategoryLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q37:PB_ProgrammeCategoryLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPB_ProgrammeCategoryLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetPB_ProgrammeCategoryLookupResult" nillable="true" type="q38:PB_ProgrammeCategoryLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaServicePlatformCombLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q39:MediaServicePlatformCombLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaServicePlatformCombLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMediaServicePlatformCombLookupResult" nillable="true" type="q40:MediaServicePlatformCombLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDealMemoNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="dealMemoNumberRequest" nillable="true" type="q41:DealMemoNumberLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDealMemoNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetDealMemoNumberResult" nillable="true" type="q42:DealMemoNumberLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionLeeLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="getRegionLeeLookupRequest" nillable="true" type="q43:RegionLeeLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionLeeLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetRegionLeeLookupResult" nillable="true" type="q44:RegionLeeLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyTypeInternal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="companyTypeInternalRequest" nillable="true" type="q45:CompanyTypeInternalRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyTypeInternalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetCompanyTypeInternalResult" nillable="true" type="q46:CompanyTypeInternalResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnterprise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="enterpriseRequest" nillable="true" type="q47:EnterpriseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnterpriseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetEnterpriseResult" nillable="true" type="q48:EnterpriseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnterpriseType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="enterpriseTypeRequest" nillable="true" type="q49:EnterpriseTypeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnterpriseTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetEnterpriseTypeResult" nillable="true" type="q50:EnterpriseTypeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyEnterpriseType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="companyEnterpriseTypeRequest" nillable="true" type="q51:CompanyEnterpriseTypeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyEnterpriseTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetCompanyEnterpriseTypeResult" nillable="true" type="q52:CompanyEnterpriseTypeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentEnterprise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="parentEnterpriseRequest" nillable="true" type="q53:ParentEnterpriseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentEnterpriseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetParentEnterpriseResult" nillable="true" type="q54:ParentEnterpriseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="currencyRequest" nillable="true" type="q55:CurrencyLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetCurrencyResult" nillable="true" type="q56:CurrencyLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="regionRequest" nillable="true" type="q57:RegionLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetRegionResult" nillable="true" type="q58:RegionLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTerritory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="territoryRequest" nillable="true" type="q59:TerritoryLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTerritoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetTerritoryResult" nillable="true" type="q60:TerritoryLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="userRequest" nillable="true" type="q61:UserLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetUserResult" nillable="true" type="q62:UserLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="subtypeRequest" nillable="true" type="q63:SubTypeLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetSubTypeResult" nillable="true" type="q64:SubTypeLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="activeUserRequest" nillable="true" type="q65:ActiveUserLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetActiveUserResult" nillable="true" type="q66:ActiveUserLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyTypeCC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="companyTypeCCRequest" nillable="true" type="q67:CompanyTypeCCLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyTypeCCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetCompanyTypeCCResult" nillable="true" type="q68:CompanyTypeCCLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q69:UserCompDetailLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetCompanyDetailResult" nillable="true" type="q70:UserCompDetailLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannelCompanyRpt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q71:ChannelCompanyRptLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannelCompanyRptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetChannelCompanyRptResult" nillable="true" type="q72:ChannelCompanyRptLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportCurrency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="request" nillable="true" type="q73:ReportCurrencyLookupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportCurrencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetReportCurrencyResult" nillable="true" type="q74:ReportCurrencyLookupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAmortMethod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="amortMethodRequest" nillable="true" type="q75:AmortMethodRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAmortMethodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetAmortMethodResult" nillable="true" type="q76:AmortMethodResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubGenre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="dmSubGenreRequest" nillable="true" type="q77:DMSubGenreRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubGenreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetSubGenreResult" nillable="true" type="q78:DMSubGenreResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGenEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="genEventRequest" nillable="true" type="q79:GenEventRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGenEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetGenEventResult" nillable="true" type="q80:GenEventResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="paymentCodeRequest" nillable="true" type="q81:PaymentCodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetPaymentCodeResult" nillable="true" type="q82:PaymentCodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMecCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="mecCodeRequest" nillable="true" type="q83:MecCodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMecCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMecCodeResult" nillable="true" type="q84:MecCodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMecSoundType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="mecSoundTypeRequest" nillable="true" type="q85:MecSoundTypeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMecSoundTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMecSoundTypeResult" nillable="true" type="q86:MecSoundTypeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBroadcastType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="broadcastTypeRequest" nillable="true" type="q87:BroadcastTypeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBroadcastTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetBroadcastTypeResult" nillable="true" type="q88:BroadcastTypeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="mecItemClassRequest" nillable="true" type="q89:MecItemClassRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetItemClassResult" nillable="true" type="q90:MecItemClassResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="rightsRequest" nillable="true" type="q91:RightsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetRightsResult" nillable="true" type="q92:RightsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="eventRequest" nillable="true" type="q93:EventRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetEventResult" nillable="true" type="q94:EventResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="locationRequest" nillable="true" type="q95:LocationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetLocationResult" nillable="true" type="q96:LocationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVenue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="venueRequest" nillable="true" type="q97:VenueRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVenueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetVenueResult" nillable="true" type="q98:VenueResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="licTypeRequest" nillable="true" type="q99:LicTypeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetLicTypeResult" nillable="true" type="q100:LicTypeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="liveRequest" nillable="true" type="q101:LiveRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetLiveResult" nillable="true" type="q102:LiveResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeShow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="typeShowRequest" nillable="true" type="q103:TypeShowRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeShowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetTypeShowResult" nillable="true" type="q104:TypeShowResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReturnCost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="returnCostRequest" nillable="true" type="q105:ReturnCostRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReturnCostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetReturnCostResult" nillable="true" type="q106:ReturnCostResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="memTypeRequest" nillable="true" type="q107:MemTypeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMemTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Pluto.Common.DataContracts" minOccurs="0" name="GetMemTypeResult" nillable="true" type="q108:MemTypeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

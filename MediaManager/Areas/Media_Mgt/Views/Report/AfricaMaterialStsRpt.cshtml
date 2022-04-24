@@ -1,0 +1,135 @@
+﻿@model MediaManager.Areas.Media_Mgt.Models.AfrMatStatusRptModel
+@using MediaManager.Infrastructure.Helpers;
+@{
+    Layout = SharedPages.LayoutPage; 
+}
+
+<div class="mainHeading" style="padding-left:10px;">
+    MediaManager Material Status Report</div>
+    <div></div>
+<div class="ReportsubHeading"  style="width:55%">Report Parameters</div>
+ <div class="ReportPlaceHolder"  style="width:55%">
+<table border="1" width="100%">
+    <tr>
+        <td>
+            
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm"}))
+            {
+               
+                    <fieldset>
+                        <table class="tableLayout">
+                            <tr>
+                                <td width="10%">
+                                
+                                </td>                              
+                                <td style="text-align:left" width="20%">@Html.Label("Programme Title") 
+                                </td>
+                               
+                                <td width="10%">
+                                    @Html.TextBoxFor(model => model.ProgTitle, new { @class = "inputTextSamll", @placeholder = "%" })
+                                </td>
+                                <td width="5%"></td>
+                               
+                                <td style="text-align:left" width="25%">@Html.Label("Ref No")</td>
+                               
+                                <td width="10%">
+                                    @Html.TextBoxFor(model => model.RefNo, new { @class = "inputTextSamll", @placeholder = "%" })
+                                </td>
+                                <td width="23%"></td>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                            <td width="10%">
+                                
+                                </td>  
+                                
+                                <td style="text-align:left">@Html.Label("Material ID")</td >
+                               
+                                <td>
+                                    @Html.TextBoxFor(model => model.MaterialId, new { @class = "inputTextSamll", @placeholder = "%" })
+                                </td>
+                                 <td>
+                                   <img id="imgMediaPlateform" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />                                 
+                                 </td>
+                               
+                                <td style="text-align:left">@Html.Label("Material Name")</td >
+                               
+                                <td>
+                                    @Html.TextBoxFor(model => model.MaterialName, new { @class = "inputTextSamll", @placeholder = "%" })
+                                </td>
+                                 <td></td>
+                            </tr>
+                            <tr>
+                                <td width="10%">
+                                
+                                </td>  
+                                <td style="text-align:left">@Html.Label("Supplier")
+                               
+                                </td>
+                                <td > 
+                                    @Html.TextBoxFor(model => model.SupplierId, new { @class = "inputTextSamll", @placeholder = "%" })
+                                    @Html.HiddenFor(model => model.SupplierIDForGen)
+                                </td>
+                                
+                                 <td>
+                                   <img id="imgSupplier" src="~/Content/images/lov_down_arrow.png" alt="" class="VerticalAlignMiddle" />                                 
+                                 </td>
+                                 <td style="text-align:left" width="20%">@Html.Label("Dispatch No")
+                                </td>
+                                 
+                                <td>
+                                   @Html.TextBoxFor(model => model.DispatchNo, new { @class = "inputTextSamll", @placeholder = "%" })
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                               <td width="10%">
+                                
+                                </td>  
+                                <td style="text-align:left">@Html.Label("Receipt No")
+                                </td>
+                                 
+                                <td >
+                                   @Html.TextBoxFor(model => model.ReceiptNo, new { @class = "inputTextSamll", @placeholder = "%" })
+                                </td>
+                                <td></td>
+                               
+                                <td>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                               
+                            
+                                 
+                                <td align="right" colspan="7" >
+                                   <input type="submit" id="btnExportToExcel" name="btnExportToExcel" class="inputButton" value="Export To Excel" /> 
+                                   <input type="submit" name="btnGenerate" id="btnGenerate" class="inputButton" value="Generate" />
+                                   <input type="button" id="btnReset" value="Reset" class="inputButton" />
+                                </td>
+                               
+                            </tr>
+                        </table>
+                    </fieldset>
+               
+    
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+            }
+        </td>
+    </tr>
+</table>
+                 </div>
+                 <script type="text/javascript">
+                     var urlMaterialLookup = '@Url.Action("GetMaterialList", "Library", new { area = "Media_Mgt" })';
+                     var urlSupplierLookup = '@Url.Action("GetSupplierlList", "Report", new { area = "Media_Mgt" })';
+                 </script>
+                 @*<script type="text/javascript" src="~/Content/Scripts/Media_Mgt/Library/LibraryBookIn.js"></script>*@
+                 <script type="text/javascript" src="~/Content/Scripts/Media_Mgt/Library/MediaManagerMaterialStatus.js"></script>
